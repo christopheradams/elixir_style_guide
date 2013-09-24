@@ -114,17 +114,16 @@ evolves.
 
 ## Syntax
 
-* Use `def` with parentheses when there are arguments. Omit the
-  parentheses when the method doesn't accept any arguments.
+* Always `def` with parentheses.
 
 ```Elixir
   # bad
-  def some_method()
+  def some_method
     # body omitted
   end
 
   # good
-  def some_method
+  def some_method()
     # body omitted
   end
 
@@ -190,6 +189,50 @@ evolves.
 
   # good
   f(3 + 2) + 1
+```
+
+* Use parentheses in function calls, especially inside a pipeline. 
+
+```Elixir
+  # bad
+  f 3
+
+  # good
+  f(3)
+
+  # bad and parses as f(3 |> g), which is not what you want
+  f 3 |> g
+
+  # good
+  f(3) |> g()
+```
+
+* Omit parentheses in macro calls when a do block is passed.
+
+```Elixir
+  # bad
+  quote(do
+    foo
+  end)
+
+  # good
+  quote do
+    foo
+  end
+
+* Optionally omit parentheses in function calls (outside a pipeline) when
+  the last argument is a function expression.
+
+```Elixir
+  # good 
+  Enum.reduce(1..10, 0, fn x, acc ->
+    x + acc
+  end)
+
+  # also good
+  Enum.reduce 1..10, 0, fn x, acc ->
+    x + acc
+  end
 ```
 
 ## Naming
