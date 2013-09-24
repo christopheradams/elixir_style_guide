@@ -72,8 +72,8 @@ evolves.
   $ git config --global core.autocrlf true
 ```
 * Use spaces around operators, after commas, colons and semicolons, around `{`
-  and before `}`. Whitespace might be (mostly) irrelevant to the Ruby
-  interpreter, but its proper use is the key to writing easily
+  and before `}`. Whitespace might be (mostly) irrelevant to the Elixir
+  runtime, but its proper use is the key to writing easily
   readable code.
 
 ```Elixir
@@ -336,7 +336,7 @@ This work is licensed under a [Creative Commons Attribution 3.0 Unported License
 
 # Attribution
 The structure of this guide, bits of example code, and many of the initial 
-points made in this document were barrowed from the 
+points made in this document were borrowed from the 
 [Ruby community style guide](https://github.com/bbatsov/ruby-style-guide).
 A lot of things were applicable to Elixir and allowed me to get
 _some_ document out quicker to start the conversation.
