@@ -100,6 +100,17 @@ evolves.
   end
 ```
 
+* ...but run different clauses that match for the same function together.
+
+```Elixir
+  def some_method([]) do
+    :ok
+  end
+  def some_method([first|rest]) do
+    some_method(rest)
+  end
+```
+
 * Use the |> operator to chain methods together 
 
 ```Elixir
