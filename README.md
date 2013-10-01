@@ -110,6 +110,17 @@ evolves.
   some_string |> String.downcase |> String.strip
 ```
 
+* Start a chain with with a bare variable or value and _not_ the first function in your chain
+Can anyone think of a better way to word the above?
+
+```Elixir
+  # bad
+  String.strip(some_string) |> String.downcase |> String.codepoints
+
+  # good
+  some_string |> String.strip |> String.downcase |> String.codepoints
+```
+
 * Avoid trailing whitespace.
 
 ## Syntax
