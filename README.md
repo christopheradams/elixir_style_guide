@@ -51,25 +51,27 @@ evolves.
 * Use two **spaces** per indentation level. No hard tabs.
 
 ```Elixir
-  # bad - four spaces
-  def some_method
-      do_something
-  end
-
-  # good
-  def some_method
+# bad - four spaces
+def some_method
     do_something
-  end
+end
+
+# good
+def some_method
+  do_something
+end
 ```
 
 * Use Unix-style line endings. (\*BSD/Solaris/Linux/OSX users are covered by default,
   Windows users have to be extra careful.)
+
+
     * If you're using Git you might want to add the following
     configuration setting to protect your project from Windows line
     endings creeping in:
 
 ```bash
-  $ git config --global core.autocrlf true
+$ git config --global core.autocrlf true
 ```
 
 * Use spaces around operators, after commas, colons and semicolons, around `{`
@@ -77,26 +79,26 @@ evolves.
   but its proper use is the key to writing easily readable code.
 
 ```Elixir
-  sum = 1 + 2
-  { a, b } = { 2, 3 }
-  Enum.map( [1, 2, 3], fn ( num ) -> IO.puts num end
+sum = 1 + 2
+{ a, b } = { 2, 3 }
+Enum.map( [1, 2, 3], fn ( num ) -> IO.puts num end
 ```
 
 * Use empty lines between `def`s and to break up a method into logical
   paragraphs.
 
 ```Elixir
-  def some_method(some_data)
-    altered_data = Module.Function(data)
-  end
+def some_method(some_data)
+  altered_data = Module.Function(data)
+end
 
-  def some_method
-    result
-  end
+def some_method
+  result
+end
 
-  def some_other_method
-    another_result
-  end
+def some_other_method
+  another_result
+end
 ```
 
 * ...but run different clauses that match for the same function together.
@@ -113,11 +115,11 @@ evolves.
 * Use the pipeline operator ( |> ) to chain methods together
 
 ```Elixir
-  # bad
-  String.strip(String.downcase(some_string))
+# bad
+String.strip(String.downcase(some_string))
 
-  # good
-  some_string |> String.downcase |> String.strip
+# good
+some_string |> String.downcase |> String.strip
 ```
 
 * Start a chain with with a bare variable or value and _not_ the first function in your chain
@@ -138,78 +140,78 @@ Can anyone think of a better way to word the above?
 * Always `def` with parentheses.
 
 ```Elixir
-  # bad
-  def some_method
-    # body omitted
-  end
+# bad
+def some_method
+  # body omitted
+end
 
-  # good
-  def some_method()
-    # body omitted
-  end
+# good
+def some_method()
+  # body omitted
+end
 
-  # bad
-  def some_method_with_arguments arg1, arg2
-    # body omitted
-  end
+# bad
+def some_method_with_arguments arg1, arg2
+  # body omitted
+end
 
-  # good
-  def some_method_with_arguments(arg1, arg2)
-    # body omitted
-  end
+# good
+def some_method_with_arguments(arg1, arg2)
+  # body omitted
+end
 ```
 
 * Never use `do:` for multi-line `if/unless`.
 
 ```Elixir
-  # bad
-  if some_condition, do:
-    # a line of code
-    # another line of code
-    # note no end in this block
-  
-  # good
-  if some_condition
-    # some
-    # lines
-    # of code
-  end
+# bad
+if some_condition, do:
+  # a line of code
+  # another line of code
+  # note no end in this block
+
+# good
+if some_condition
+  # some
+  # lines
+  # of code
+end
 ```
 
 * Use `do:` for single line `if/unless` statements
 
 ```Elixir
-  # good
-  if some_condition, do: # some_stuff
+# good
+if some_condition, do: # some_stuff
 ```
 
 
 * Never use `unless` with `else`. Rewrite these with the positive case first.
 
 ```Elixir
-  # bad
-  unless success?
-    IO.puts 'failure'
-  else
-    IO.puts 'success'
-  end
+# bad
+unless success?
+  IO.puts 'failure'
+else
+  IO.puts 'success'
+end
 
-  # good
-  if success?
-    IO.puts 'success'
-  else
-    IO.puts 'failure'
-  end
+# good
+if success?
+  IO.puts 'success'
+else
+  IO.puts 'failure'
+end
 ```
 
 * Never put a space between a method name and the opening parenthesis.
 
 ```Elixir
-  # bad
-  f (3 + 2) + 1
+# bad
+f (3 + 2) + 1
 
-  # good
-  f(3 + 2) + 1
+# good
+f(3 + 2) + 1
 ```
 
 * Use parentheses in function calls, especially inside a pipeline.
@@ -262,63 +264,63 @@ Can anyone think of a better way to word the above?
 * Use `snake_case` for symbols, methods and variables.
 
 ```Elixir
-  # bad
-  :"some symbol"
-  :SomeSymbol
-  :someSymbol
+# bad
+:"some symbol"
+:SomeSymbol
+:someSymbol
 
-  someVar = 5
+someVar = 5
 
-  def someMethod
-    ...
-  end
+def someMethod
+  ...
+end
 
-  def SomeMethod
-   ...
-  end
+def SomeMethod
+ ...
+end
 
-  # good
-  :some_symbol
+# good
+:some_symbol
 
-  def some_method
-    ...
-  end
+def some_method
+  ...
+end
 ```
 
 * Use `CamelCase` for modules.  (Keep acronyms like HTTP,
   RFC, XML uppercase.)
 
 ```Elixir
-  # bad
-  defmodule Somemodule
-    ...
-  end
+# bad
+defmodule Somemodule
+  ...
+end
 
-  defmodule Some_Module
-    ...
-  end
+defmodule Some_Module
+  ...
+end
 
-  defmodule SomeXml
-    ...
-  end
+defmodule SomeXml
+  ...
+end
 
-  # good
-  defmodule SomeModule
-    ...
-  end
+# good
+defmodule SomeModule
+  ...
+end
 
-  defmodule SomeXML
-    ...
-  end
+defmodule SomeXML
+  ...
+end
 ```
 
 * The names of predicate functions (a function that return a boolean value)
   should end in a question mark.
 
 ```Elixir
-  def is_string?(var)
-    # check if var is string     
-  end
+def is_string?(var)
+  # check if var is string     
+end
 ```
 
 ## Comments
@@ -330,8 +332,8 @@ Can anyone think of a better way to word the above?
   space](http://en.wikipedia.org/wiki/Sentence_spacing) after periods.
 
 ```Elixir
-  # bad
-  String.upcase(some_string) # Capitalize string.
+# bad
+String.upcase(some_string) # Capitalize string.
 ```
 
 * Keep existing comments up-to-date. An outdated comment is worse than no comment
