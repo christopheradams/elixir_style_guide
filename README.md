@@ -7,8 +7,8 @@ Style matters. Elixir has plenty of style but like all languages it can be stifl
 Don't stifle the style.
 
 This is my attempt at starting a community style guide for Elixir. Please
-feel free to make pull requests and contribute. I really want Elixir to 
-have as vibrant of a community as any language that's been around five 
+feel free to make pull requests and contribute. I really want Elixir to
+have as vibrant of a community as any language that's been around five
 times as long.
 
 If you're looking for other projects to contribute to please see Elixir's
@@ -21,9 +21,9 @@ Elixir support isn't complete but it's growing and I'm sure they could use contr
 
 I'm loving Elixir and really want to see it get off to a good
 start with great documentation and a vibrant community. I'm
-barrowing alot of the organization, several bits of code example,
-and a lot of the text below from the Ruby style in an attempt to 
-get this out quick. Additionally, everything I've included is the 
+borrowing a lot of the organization, several bits of code examples,
+and a lot of the text below from the Ruby style in an attempt to
+get this out quickly. Additionally, everything I've included is the
 opinion of a Junior level programmer who's only been programming for
 around a year. _Please_ jump in and fix any nonsense you find and let's
 keep a conversation going about Elixir best practices as the language
@@ -53,7 +53,7 @@ evolves.
 ```Elixir
   # bad - four spaces
   def some_method
-    do_something
+      do_something
   end
 
   # good
@@ -62,7 +62,7 @@ evolves.
   end
 ```
 
-* Use Unix-style line endings. (*BSD/Solaris/Linux/OSX users are covered by default,
+* Use Unix-style line endings. (\*BSD/Solaris/Linux/OSX users are covered by default,
   Windows users have to be extra careful.)
     * If you're using Git you might want to add the following
     configuration setting to protect your project from Windows line
@@ -71,17 +71,16 @@ evolves.
 ```bash
   $ git config --global core.autocrlf true
 ```
+
 * Use spaces around operators, after commas, colons and semicolons, around `{`
-  and before `}`. Whitespace might be (mostly) irrelevant to the Ruby
-  interpreter, but its proper use is the key to writing easily
-  readable code.
+  and before `}`. Whitespace might be (mostly) irrelevant to the Elixir runtime,
+  but its proper use is the key to writing easily readable code.
 
 ```Elixir
   sum = 1 + 2
   { a, b } = { 2, 3 }
   Enum.map( [1, 2, 3], fn ( num ) -> IO.puts num end
 ```
-
 
 * Use empty lines between `def`s and to break up a method into logical
   paragraphs.
@@ -100,7 +99,18 @@ evolves.
   end
 ```
 
-* Use the pipeline operator ( |> )to chain functions together 
+* ...but run different clauses that match for the same function together.
+
+```Elixir
+  def some_method([]) do
+    :ok
+  end
+  def some_method([first|rest]) do
+    some_method(rest)
+  end
+```
+
+* Use the pipeline operator ( |> ) to chain methods together
 
 ```Elixir
   # bad
@@ -125,17 +135,16 @@ Can anyone think of a better way to word the above?
 
 ## Syntax
 
-* Use `def` with parentheses when there are arguments. Omit the
-  parentheses when the method doesn't accept any arguments.
+* Always `def` with parentheses.
 
 ```Elixir
   # bad
-  def some_method()
+  def some_method
     # body omitted
   end
 
   # good
-  def some_method
+  def some_method()
     # body omitted
   end
 
@@ -201,6 +210,51 @@ Can anyone think of a better way to word the above?
 
   # good
   f(3 + 2) + 1
+```
+
+* Use parentheses in function calls, especially inside a pipeline.
+
+```Elixir
+  # bad
+  f 3
+
+  # good
+  f(3)
+
+  # bad and parses as f(3 |> g), which is not what you want
+  f 3 |> g
+
+  # good
+  f(3) |> g()
+```
+
+* Omit parentheses in macro calls when a do block is passed.
+
+```Elixir
+  # bad
+  quote(do
+    foo
+  end)
+
+  # good
+  quote do
+    foo
+  end
+```
+
+* Optionally omit parentheses in function calls (outside a pipeline) when
+  the last argument is a function expression.
+
+```Elixir
+  # good 
+  Enum.reduce(1..10, 0, fn x, acc ->
+    x + acc
+  end)
+
+  # also good
+  Enum.reduce 1..10, 0, fn x, acc ->
+    x + acc
+  end
 ```
 
 ## Naming
@@ -347,7 +401,7 @@ This work is licensed under a [Creative Commons Attribution 3.0 Unported License
 
 # Attribution
 The structure of this guide, bits of example code, and many of the initial 
-points made in this document were barrowed from the 
+points made in this document were borrowed from the 
 [Ruby community style guide](https://github.com/bbatsov/ruby-style-guide).
 A lot of things were applicable to Elixir and allowed me to get
 _some_ document out quicker to start the conversation.
