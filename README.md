@@ -100,7 +100,7 @@ evolves.
   end
 ```
 
-* Use the |> operator to chain methods together 
+* Use the pipeline operator ( |> )to chain functions together 
 
 ```Elixir
   # bad
