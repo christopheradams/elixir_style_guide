@@ -104,12 +104,12 @@ end
 * ...but run different clauses that match for the same function together.
 
 ```Elixir
-  def some_method([]) do
-    :ok
-  end
-  def some_method([first|rest]) do
-    some_method(rest)
-  end
+def some_method([]) do
+  :ok
+end
+def some_method([first|rest]) do
+  some_method(rest)
+end
 ```
 
 * Use the pipeline operator ( |> ) to chain methods together
@@ -126,11 +126,11 @@ some_string |> String.downcase |> String.strip
 Can anyone think of a better way to word the above?
 
 ```Elixir
-  # bad
-  String.strip(some_string) |> String.downcase |> String.codepoints
+# bad
+String.strip(some_string) |> String.downcase |> String.codepoints
 
-  # good
-  some_string |> String.strip |> String.downcase |> String.codepoints
+# good
+some_string |> String.strip |> String.downcase |> String.codepoints
 ```
 
 * Avoid trailing whitespace.
@@ -217,46 +217,46 @@ f(3 + 2) + 1
 * Use parentheses in function calls, especially inside a pipeline.
 
 ```Elixir
-  # bad
-  f 3
+# bad
+f 3
 
-  # good
-  f(3)
+# good
+f(3)
 
-  # bad and parses as f(3 |> g), which is not what you want
-  f 3 |> g
+# bad and parses as f(3 |> g), which is not what you want
+f 3 |> g
 
-  # good
-  f(3) |> g()
+# good
+f(3) |> g()
 ```
 
 * Omit parentheses in macro calls when a do block is passed.
 
 ```Elixir
-  # bad
-  quote(do
-    foo
-  end)
+# bad
+quote(do
+  foo
+end)
 
-  # good
-  quote do
-    foo
-  end
+# good
+quote do
+  foo
+end
 ```
 
 * Optionally omit parentheses in function calls (outside a pipeline) when
   the last argument is a function expression.
 
 ```Elixir
-  # good 
-  Enum.reduce(1..10, 0, fn x, acc ->
-    x + acc
-  end)
+# good 
+Enum.reduce(1..10, 0, fn x, acc ->
+  x + acc
+end)
 
-  # also good
-  Enum.reduce 1..10, 0, fn x, acc ->
-    x + acc
-  end
+# also good
+Enum.reduce 1..10, 0, fn x, acc ->
+  x + acc
+end
 ```
 
 ## Naming
