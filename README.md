@@ -122,10 +122,13 @@ String.strip(String.downcase(some_string))
 some_string |> String.downcase |> String.strip
 ```
 
-* Start a chain with with a bare variable or value and _not_ the first function in your chain
-Can anyone think of a better way to word the above?
+* Use _bare_ variables in the first part of a function chain
 
 ```Elixir
+# THE WORST!
+# This actually parses as String.strip( "nope" |> String.downcase ).
+String.strip "nope" |> String.downcase
+
 # bad
 String.strip(some_string) |> String.downcase |> String.codepoints
 
@@ -137,26 +140,24 @@ some_string |> String.strip |> String.downcase |> String.codepoints
 
 ## Syntax
 
-* Always `def` with parentheses.
+* Use parens when you have arguments, no parens when you don't
 
 ```Elixir
 # bad
-def some_method
+def some_method arg1, arg2
   # body omitted
 end
 
-# good
 def some_method()
   # body omitted
 end
 
-# bad
-def some_method_with_arguments arg1, arg2
-  # body omitted
+# good
+def some_method(arg1, arg2)
+  #body omitted
 end
 
-# good
-def some_method_with_arguments(arg1, arg2)
+def some_method
   # body omitted
 end
 ```
