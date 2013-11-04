@@ -81,7 +81,7 @@ $ git config --global core.autocrlf true
 ```Elixir
 sum = 1 + 2
 { a, b } = { 2, 3 }
-Enum.map( [1, 2, 3], fn ( num ) -> IO.puts num end
+Enum.map( ["one", "two", "three"], fn ( num ) -> IO.puts num end
 ```
 
 * Use empty lines between `def`s and to break up a method into logical
