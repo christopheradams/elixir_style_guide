@@ -6,6 +6,8 @@
 Style matters. Elixir has plenty of style but like all languages it can be stifled.
 Don't stifle the style.
 
+# The Elixir Style Guide
+
 This is my attempt at starting a community style guide for Elixir. Please
 feel free to make pull requests and contribute. I really want Elixir to
 have as vibrant of a community as any language that's been around five
@@ -13,18 +15,6 @@ times as long.
 
 If you're looking for other projects to contribute to please see Elixir's
 [list of projects](https://github.com/elixir-lang/elixir/wiki/Projects)
-
-# The Elixir Style Guide
-
-I'm loving Elixir and really want to see it get off to a good
-start with great documentation and a vibrant community. I'm
-borrowing a lot of the organization, several bits of code examples,
-and a lot of the text below from the Ruby style in an attempt to
-get this out quickly. Additionally, everything I've included is the
-opinion of a Junior level programmer who's only been programming for
-around a year. _Please_ jump in and fix any nonsense you find and let's
-keep a conversation going about Elixir best practices as the language
-evolves.
 
 ## Table of Contents
 
