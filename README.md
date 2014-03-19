@@ -14,9 +14,6 @@ times as long.
 If you're looking for other projects to contribute to please see Elixir's
 [list of projects](https://github.com/elixir-lang/elixir/wiki/Projects)
 
-If you're coming from Rails you may also want to check out [Chicago Boss](http://www.chicagoboss.org/)
-Elixir support isn't complete but it's growing and I'm sure they could use contributors.
-
 # The Elixir Style Guide
 
 I'm loving Elixir and really want to see it get off to a good
