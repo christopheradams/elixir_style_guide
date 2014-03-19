@@ -52,12 +52,12 @@ evolves.
 
 ```Elixir
 # bad - four spaces
-def some_method
+def some_method do
     do_something
 end
 
 # good
-def some_method
+def some_method do
   do_something
 end
 ```
@@ -88,15 +88,15 @@ Enum.map( ["one", "two", "three"], fn ( num ) -> IO.puts num end )
   paragraphs.
 
 ```Elixir
-def some_method(some_data)
+def some_method(some_data) do
   altered_data = Module.Function(data)
 end
 
-def some_method
+def some_method do
   result
 end
 
-def some_other_method
+def some_other_method do
   another_result
 end
 ```
@@ -144,20 +144,20 @@ some_string |> String.strip |> String.downcase |> String.codepoints
 
 ```Elixir
 # bad
-def some_method arg1, arg2
+def some_method arg1, arg2 do
   # body omitted
 end
 
-def some_method()
+def some_method() do
   # body omitted
 end
 
 # good
-def some_method(arg1, arg2)
+def some_method(arg1, arg2) do
   #body omitted
 end
 
-def some_method
+def some_method do
   # body omitted
 end
 ```
@@ -249,7 +249,7 @@ end
   the last argument is a function expression.
 
 ```Elixir
-# good 
+# good
 Enum.reduce(1..10, 0, fn x, acc ->
   x + acc
 end)
@@ -272,18 +272,18 @@ end
 
 someVar = 5
 
-def someMethod
+def someMethod do
   ...
 end
 
-def SomeMethod
+def SomeMethod do
  ...
 end
 
 # good
 :some_symbol
 
-def some_method
+def some_method do
   ...
 end
 ```
@@ -293,24 +293,24 @@ end
 
 ```Elixir
 # bad
-defmodule Somemodule
+defmodule Somemodule do
   ...
 end
 
-defmodule Some_Module
+defmodule Some_Module do
   ...
 end
 
-defmodule SomeXml
+defmodule SomeXml do
   ...
 end
 
 # good
-defmodule SomeModule
+defmodule SomeModule do
   ...
 end
 
-defmodule SomeXML
+defmodule SomeXML do
   ...
 end
 ```
@@ -319,8 +319,8 @@ end
   should end in a question mark.
 
 ```Elixir
-def is_string?(var)
-  # check if var is string     
+def is_string?(var) do
+  # check if var is string
 end
 ```
 
@@ -403,8 +403,8 @@ advance for your help!
 This work is licensed under a [Creative Commons Attribution 3.0 Unported License](http://creativecommons.org/licenses/by/3.0/deed.en_US)
 
 # Attribution
-The structure of this guide, bits of example code, and many of the initial 
-points made in this document were borrowed from the 
+The structure of this guide, bits of example code, and many of the initial
+points made in this document were borrowed from the
 [Ruby community style guide](https://github.com/bbatsov/ruby-style-guide).
 A lot of things were applicable to Elixir and allowed me to get
 _some_ document out quicker to start the conversation.
