@@ -249,13 +249,13 @@ end
 
 ## Naming
 
-* Use `snake_case` for symbols, methods and variables.
+* Use `snake_case` for atoms, methods and variables.
 
 ```Elixir
 # bad
-:"some symbol"
-:SomeSymbol
-:someSymbol
+:"some atom"
+:SomeAtom
+:someAtom
 
 someVar = 5
 
@@ -268,7 +268,7 @@ def SomeMethod do
 end
 
 # good
-:some_symbol
+:some_atom
 
 def some_method do
   ...
