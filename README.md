@@ -270,6 +270,8 @@ end
 # good
 :some_atom
 
+some_var = 5
+
 def some_method do
   ...
 end
