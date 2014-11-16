@@ -107,6 +107,11 @@ String.strip(String.downcase(some_string))
 
 # good
 some_string |> String.downcase |> String.strip
+
+# Multiline pipelines use a single level of indentation. 
+some_string
+|> String.downcase
+|> String.strip
 ```
 
 * Use _bare_ variables in the first part of a function chain
