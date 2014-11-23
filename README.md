@@ -38,12 +38,12 @@ If you're looking for other projects to contribute to please see Elixir's
 * Use two **spaces** per indentation level. No hard tabs.
 
 ```Elixir
-# bad - four spaces
+# not preferred - four spaces
 def some_method do
     do_something
 end
 
-# good
+# preferred
 def some_method do
   do_something
 end
@@ -102,13 +102,13 @@ end
 * Use the pipeline operator ( |> ) to chain methods together
 
 ```Elixir
-# bad
+# not preferred
 String.strip(String.downcase(some_string))
 
-# good
+# preferred
 some_string |> String.downcase |> String.strip
 
-# Multiline pipelines use a single level of indentation. 
+# Multiline pipelines use a single level of indentation.
 some_string
 |> String.downcase
 |> String.strip
@@ -121,10 +121,10 @@ some_string
 # This actually parses as String.strip( "nope" |> String.downcase ).
 String.strip "nope" |> String.downcase
 
-# bad
+# not preferred
 String.strip(some_string) |> String.downcase |> String.codepoints
 
-# good
+# preferred
 some_string |> String.strip |> String.downcase |> String.codepoints
 ```
 
@@ -135,7 +135,7 @@ some_string |> String.strip |> String.downcase |> String.codepoints
 * Use parens when you have arguments, no parens when you don't
 
 ```Elixir
-# bad
+# not preferred
 def some_method arg1, arg2 do
   # body omitted
 end
@@ -144,7 +144,7 @@ def some_method() do
   # body omitted
 end
 
-# good
+# preferred
 def some_method(arg1, arg2) do
   #body omitted
 end
@@ -157,13 +157,13 @@ end
 * Never use `do:` for multi-line `if/unless`.
 
 ```Elixir
-# bad
+# not preferred
 if some_condition, do:
   # a line of code
   # another line of code
   # note no end in this block
 
-# good
+# preferred
 if some_condition
   # some
   # lines
@@ -174,7 +174,7 @@ end
 * Use `do:` for single line `if/unless` statements
 
 ```Elixir
-# good
+# preferred
 if some_condition, do: # some_stuff
 ```
 
@@ -182,14 +182,14 @@ if some_condition, do: # some_stuff
 * Never use `unless` with `else`. Rewrite these with the positive case first.
 
 ```Elixir
-# bad
+# not preferred
 unless success?
   IO.puts 'failure'
 else
   IO.puts 'success'
 end
 
-# good
+# preferred
 if success?
   IO.puts 'success'
 else
@@ -200,38 +200,38 @@ end
 * Never put a space between a method name and the opening parenthesis.
 
 ```Elixir
-# bad
+# not preferred
 f (3 + 2) + 1
 
-# good
+# preferred
 f(3 + 2) + 1
 ```
 
 * Use parentheses in function calls, especially inside a pipeline.
 
 ```Elixir
-# bad
+# not preferred
 f 3
 
-# good
+# preferred
 f(3)
 
-# bad and parses as f(3 |> g), which is not what you want
+# not preferred and parses as f(3 |> g), which is not what you want
 f 3 |> g
 
-# good
+# preferred
 f(3) |> g()
 ```
 
 * Omit parentheses in macro calls when a do block is passed.
 
 ```Elixir
-# bad
+# not preferred
 quote(do
   foo
 end)
 
-# good
+# preferred
 quote do
   foo
 end
@@ -241,12 +241,12 @@ end
   the last argument is a function expression.
 
 ```Elixir
-# good
+# preferred
 Enum.reduce(1..10, 0, fn x, acc ->
   x + acc
 end)
 
-# also good
+# also preferred
 Enum.reduce 1..10, 0, fn x, acc ->
   x + acc
 end
@@ -257,7 +257,7 @@ end
 * Use `snake_case` for atoms, methods and variables.
 
 ```Elixir
-# bad
+# not preferred
 :"some atom"
 :SomeAtom
 :someAtom
@@ -272,7 +272,7 @@ def SomeMethod do
  ...
 end
 
-# good
+# preferred
 :some_atom
 
 some_var = 5
@@ -286,7 +286,7 @@ end
   RFC, XML uppercase.)
 
 ```Elixir
-# bad
+# not preferred
 defmodule Somemodule do
   ...
 end
@@ -299,7 +299,7 @@ defmodule SomeXml do
   ...
 end
 
-# good
+# preferred
 defmodule SomeModule do
   ...
 end
@@ -327,7 +327,7 @@ end
   space](http://en.wikipedia.org/wiki/Sentence_spacing) after periods.
 
 ```Elixir
-# bad
+# not preferred
 String.upcase(some_string) # Capitalize string.
 ```
 
