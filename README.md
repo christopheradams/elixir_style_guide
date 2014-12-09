@@ -367,6 +367,25 @@ at all.
 
 ## Modules
 
+* Use one module per file unless the module is only used internally by
+  another module (such as a test.)
+* Use underscored file names for `CamelCase` module names.
+
+```Elixir
+# file is called some_module.ex
+
+defmodule SomeModule do
+end
+```
+
+* Represent each level of nesting within a module name as a directory.
+
+```Elixir
+# file is called parser/core/xml_parser.ex
+
+defmodule Parser.Core.XMLParser do
+end
+```
 
 ## Exceptions
 
