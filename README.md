@@ -115,6 +115,8 @@ some_string
 |> String.strip
 ```
 
+While this is the preferred method, take into account that copy pasting multiline pipelines into IEX might result in a syntax error as IEX will evaluate the first line without realizing that the next line has a pipeline.
+
 * Use _bare_ variables in the first part of a function chain
 
 ```Elixir
