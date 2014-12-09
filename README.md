@@ -42,12 +42,12 @@ If you're looking for other projects to contribute to please see Elixir's
 
 ```Elixir
 # not preferred - four spaces
-def some_method do
+def some_function do
     do_something
 end
 
 # preferred
-def some_method do
+def some_function do
   do_something
 end
 ```
@@ -74,19 +74,19 @@ sum = 1 + 2
 Enum.map(["one", "two", "three"], fn (num) -> IO.puts num end)
 ```
 
-* Use empty lines between `def`s and to break up a method into logical
+* Use empty lines between `def`s and to break up a function into logical
   paragraphs.
 
 ```Elixir
-def some_method(some_data) do
+def some_function(some_data) do
   altered_data = Module.Function(data)
 end
 
-def some_method do
+def some_function do
   result
 end
 
-def some_other_method do
+def some_other_function do
   another_result
 end
 ```
@@ -94,15 +94,15 @@ end
 * ...but run different clauses that match for the same function together.
 
 ```Elixir
-def some_method([]) do
+def some_function([]) do
   :ok
 end
-def some_method([first|rest]) do
-  some_method(rest)
+def some_function([first|rest]) do
+  some_function(rest)
 end
 ```
 
-* Use the pipeline operator ( |> ) to chain methods together
+* Use the pipeline operator ( |> ) to chain functions together
 
 ```Elixir
 # not preferred
@@ -139,20 +139,20 @@ some_string |> String.strip |> String.downcase |> String.codepoints
 
 ```Elixir
 # not preferred
-def some_method arg1, arg2 do
+def some_function arg1, arg2 do
   # body omitted
 end
 
-def some_method() do
+def some_function() do
   # body omitted
 end
 
 # preferred
-def some_method(arg1, arg2) do
+def some_function(arg1, arg2) do
   #body omitted
 end
 
-def some_method do
+def some_function do
   # body omitted
 end
 ```
@@ -200,7 +200,7 @@ else
 end
 ```
 
-* Never put a space between a method name and the opening parenthesis.
+* Never put a space between a function name and the opening parenthesis.
 
 ```Elixir
 # not preferred
@@ -257,7 +257,7 @@ end
 
 ## Naming
 
-* Use `snake_case` for atoms, methods and variables.
+* Use `snake_case` for atoms, functions and variables.
 
 ```Elixir
 # not preferred
@@ -267,11 +267,11 @@ end
 
 someVar = 5
 
-def someMethod do
+def someFunction do
   ...
 end
 
-def SomeMethod do
+def SomeFunction do
  ...
 end
 
@@ -280,7 +280,7 @@ end
 
 some_var = 5
 
-def some_method do
+def some_function do
   ...
 end
 ```
