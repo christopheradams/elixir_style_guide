@@ -6,6 +6,9 @@
 Style matters. Elixir has plenty of style but like all languages it can be stifled.
 Don't stifle the style.
 
+**NOTE**: From here on out, you get a PR merged, you get added as a collaborator. People who have
+PRs merged have been added as collaborators.
+
 # The Elixir Style Guide
 
 This is my attempt at starting a community style guide for Elixir. Please
