@@ -64,14 +64,12 @@ end
 $ git config --global core.autocrlf true
 ```
 
-* Use spaces around operators, after commas, colons and semicolons, around `{`
-  and before `}`. Do not put spaces after the opening or before the closing parenthesis. Whitespace might be (mostly) irrelevant to the Elixir runtime,
-  but its proper use is the key to writing easily readable code.
+* Use spaces around operators, after commas, colons and semicolons. Do not put spaces around matched pairs like brackets, parenthesis, etc. Whitespace might be (mostly) irrelevant to the Elixir runtime, but its proper use is the key to writing easily readable code.
 
 ```Elixir
 sum = 1 + 2
-{ a, b } = { 2, 3 }
-Enum.map(["one", "two", "three"], fn (num) -> IO.puts num end)
+{a, b} = {2, 3}
+Enum.map(["one", <<"two">>, "three"], fn num -> IO.puts num end)
 ```
 
 * Use empty lines between `def`s and to break up a method into logical
