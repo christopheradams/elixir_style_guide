@@ -167,7 +167,7 @@ if some_condition, do:
   # note no end in this block
 
 # preferred
-if some_condition
+if some_condition do
   # some
   # lines
   # of code
@@ -186,14 +186,14 @@ if some_condition, do: # some_stuff
 
 ```Elixir
 # not preferred
-unless success?
+unless success? do
   IO.puts 'failure'
 else
   IO.puts 'success'
 end
 
 # preferred
-if success?
+if success? do
   IO.puts 'success'
 else
   IO.puts 'failure'
