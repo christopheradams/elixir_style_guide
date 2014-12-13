@@ -135,7 +135,7 @@ some_string |> String.strip |> String.downcase |> String.codepoints
 
 ## Syntax
 
-* Use parens when you have arguments, no parens when you don't
+* Use parentheses when you have arguments, no parentheses when you don't
 
 ```Elixir
 # not preferred
