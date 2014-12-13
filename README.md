@@ -26,6 +26,7 @@ If you're looking for other projects to contribute to please see Elixir's
 * [Naming](#naming)
 * [Comments](#comments)
     * [Comment Annotations](#comment-annotations)
+* [Modules](#modules)
 * [Exceptions](#exceptions)
 * [Collections](#collections)
 * [Strings](#strings)
