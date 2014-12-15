@@ -26,6 +26,7 @@ If you're looking for other projects to contribute to please see Elixir's
 * [Naming](#naming)
 * [Comments](#comments)
     * [Comment Annotations](#comment-annotations)
+* [Modules](#modules)
 * [Exceptions](#exceptions)
 * [Collections](#collections)
 * [Strings](#strings)
@@ -135,7 +136,7 @@ some_string |> String.strip |> String.downcase |> String.codepoints
 
 ## Syntax
 
-* Use parens when you have arguments, no parens when you don't
+* Use parentheses when you have arguments, no parentheses when you don't
 
 ```Elixir
 # not preferred
