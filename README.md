@@ -314,11 +314,11 @@ end
 ```
 
 * The names of predicate functions (a function that return a boolean value)
-  should end in a question mark.
+  should have a trailing question mark rather than a leading `is_` or similar.
 
 ```Elixir
-def is_string?(var) do
-  # check if var is string
+def cool?(var) do
+  # checks if var is cool
 end
 ```
 
