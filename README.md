@@ -78,7 +78,7 @@ Enum.map(["one", <<"two">>, "three"], fn num -> IO.puts num end)
 
 ```Elixir
 def some_function(some_data) do
-  altered_data = Module.Function(data)
+  altered_data = Module.function(data)
 end
 
 def some_function do
@@ -87,6 +87,14 @@ end
 
 def some_other_function do
   another_result
+end
+
+def a_longer_function do
+  one
+  two
+
+  three
+  four
 end
 ```
 
