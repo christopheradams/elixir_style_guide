@@ -140,19 +140,13 @@ the first line without realizing that the next line has a pipeline.
 ```Elixir
 # THE WORST!
 # This actually parses as: String.strip( "nope" |> String.downcase )
-String.strip "nope"
-|> String.downcase
+String.strip "nope" |> String.downcase
 
 # not preferred
-String.strip(some_string)
-|> String.downcase
-|> String.codepoints
+String.strip(some_string) |> String.downcase |> String.codepoints
 
 # preferred
-some_string
-|> String.strip
-|> String.downcase
-|> String.codepoints
+some_string |> String.strip |> String.downcase |> String.codepoints
 ```
 
 * Avoid trailing whitespace.
