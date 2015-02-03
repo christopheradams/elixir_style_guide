@@ -124,6 +124,11 @@ some_string |> String.downcase |> String.strip
 some_string
 |> String.downcase
 |> String.strip
+
+# Multiline pipelines on the right side of a pattern match should be indented to below the pattern match
+sanitized_string = some_string
+                   |> String.downcase
+                   |> String.strip
 ```
 
 While this is the preferred method, take into account that copy pasting
@@ -134,14 +139,20 @@ the first line without realizing that the next line has a pipeline.
 
 ```Elixir
 # THE WORST!
-# This actually parses as String.strip( "nope" |> String.downcase ).
-String.strip "nope" |> String.downcase
+# This actually parses as: String.strip( "nope" |> String.downcase )
+String.strip "nope"
+|> String.downcase
 
 # not preferred
-String.strip(some_string) |> String.downcase |> String.codepoints
+String.strip(some_string)
+|> String.downcase
+|> String.codepoints
 
 # preferred
-some_string |> String.strip |> String.downcase |> String.codepoints
+some_string
+|> String.strip
+|> String.downcase
+|> String.codepoints
 ```
 
 * Avoid trailing whitespace.
