@@ -1,8 +1,8 @@
 # Prelude
 
-> Liquid architecture. It's like jazz - you improvise, you work together, you
+> Liquid architecture. It's like jazz — you improvise, you work together, you
 > play off each other, you make something, they make something. <br/>
-> -- Frank Gehry
+> —Frank Gehry
 
 Style matters. Elixir has plenty of style but like all languages it can be
 stifled.  Don't stifle the style.
@@ -65,7 +65,7 @@ $ git config --global core.autocrlf true
 ```
 
 * Use spaces around operators, after commas, colons and semicolons. Do not put
-  spaces around matched pairs like brackets, parenthesis, etc. Whitespace might
+  spaces around matched pairs like brackets, parentheses, etc. Whitespace might
   be (mostly) irrelevant to the Elixir runtime, but its proper use is the key to
   writing easily readable code.
 
@@ -111,7 +111,7 @@ def some_function([first|rest]) do
 end
 ```
 
-* Use the pipeline operator ( |> ) to chain functions together
+* Use the pipeline operator (`|>`) to chain functions together
 
 ```Elixir
 # not preferred
@@ -349,7 +349,7 @@ String.upcase(some_string) # Capitalize string.
 * Keep existing comments up-to-date. An outdated comment is worse than no
   comment at all.
 * Avoid writing comments to explain bad code. Refactor the code to make it
-  self-explanatory. (Do or do not - there is no try. --Yoda)
+  self-explanatory. ("Do — or do not — there is no try." —Yoda)
 
 ### Comment Annotations
 
