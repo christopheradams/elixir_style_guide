@@ -414,6 +414,30 @@ end
 
 ## Misc
 
+* Use :else as the catch-all test expression in cond.
+
+```Elixir
+# not preferred
+cond do
+  1 + 2 == 5 ->
+    "Nope"
+  1 + 3 == 5 ->
+    "Uh, uh"
+  true ->
+    "OK"
+end
+
+# preferred
+cond do
+  1 + 2 == 5 ->
+    "Nope"
+  1 + 3 == 5 ->
+    "Uh, uh"
+  :else ->
+    "OK"
+end
+```
+
 ## Tools
 
 # Contributing
