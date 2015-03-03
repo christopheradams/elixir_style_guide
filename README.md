@@ -42,7 +42,7 @@ page with [list of projects] or [hex package manager site].
 
 * Use two **spaces** per indentation level. No hard tabs.
 
-```Elixir
+```elixir
 # not preferred - four spaces
 def some_function do
     do_something
@@ -69,7 +69,7 @@ $ git config --global core.autocrlf true
   be (mostly) irrelevant to the Elixir runtime, but its proper use is the key to
   writing easily readable code.
 
-```Elixir
+```elixir
 sum = 1 + 2
 {a, b} = {2, 3}
 Enum.map(["one", <<"two">>, "three"], fn num -> IO.puts num end)
@@ -78,7 +78,7 @@ Enum.map(["one", <<"two">>, "three"], fn num -> IO.puts num end)
 * Use empty lines between `def`s and to break up a function into logical
   paragraphs.
 
-```Elixir
+```elixir
 def some_function(some_data) do
   altered_data = Module.function(data)
 end
@@ -102,7 +102,7 @@ end
 
 * ...but run different clauses that match for the same function together.
 
-```Elixir
+```elixir
 def some_function([]) do
   :ok
 end
@@ -113,7 +113,7 @@ end
 
 * Use the pipeline operator ( |> ) to chain functions together
 
-```Elixir
+```elixir
 # not preferred
 String.strip(String.downcase(some_string))
 
@@ -132,7 +132,7 @@ the first line without realizing that the next line has a pipeline.
 
 * Use _bare_ variables in the first part of a function chain
 
-```Elixir
+```elixir
 # THE WORST!
 # This actually parses as String.strip( "nope" |> String.downcase ).
 String.strip "nope" |> String.downcase
@@ -150,7 +150,7 @@ some_string |> String.strip |> String.downcase |> String.codepoints
 
 * Use parentheses when you have arguments, no parentheses when you don't
 
-```Elixir
+```elixir
 # not preferred
 def some_function arg1, arg2 do
   # body omitted
@@ -172,7 +172,7 @@ end
 
 * Never use `do:` for multi-line `if/unless`.
 
-```Elixir
+```elixir
 # not preferred
 if some_condition, do:
   # a line of code
@@ -189,7 +189,7 @@ end
 
 * Use `do:` for single line `if/unless` statements
 
-```Elixir
+```elixir
 # preferred
 if some_condition, do: # some_stuff
 ```
@@ -197,7 +197,7 @@ if some_condition, do: # some_stuff
 
 * Never use `unless` with `else`. Rewrite these with the positive case first.
 
-```Elixir
+```elixir
 # not preferred
 unless success? do
   IO.puts 'failure'
@@ -215,7 +215,7 @@ end
 
 * Never put a space between a function name and the opening parenthesis.
 
-```Elixir
+```elixir
 # not preferred
 f (3 + 2) + 1
 
@@ -225,7 +225,7 @@ f(3 + 2) + 1
 
 * Use parentheses in function calls, especially inside a pipeline.
 
-```Elixir
+```elixir
 # not preferred
 f 3
 
@@ -241,7 +241,7 @@ f(3) |> g()
 
 * Omit parentheses in macro calls when a do block is passed.
 
-```Elixir
+```elixir
 # not preferred
 quote(do
   foo
@@ -256,7 +256,7 @@ end
 * Optionally omit parentheses in function calls (outside a pipeline) when the
   last argument is a function expression.
 
-```Elixir
+```elixir
 # preferred
 Enum.reduce(1..10, 0, fn x, acc ->
   x + acc
@@ -272,7 +272,7 @@ end
 
 * Use `snake_case` for atoms, functions and variables.
 
-```Elixir
+```elixir
 # not preferred
 :"some atom"
 :SomeAtom
@@ -300,7 +300,7 @@ end
 
 * Use `CamelCase` for modules (Keep acronyms like HTTP, RFC, XML uppercase).
 
-```Elixir
+```elixir
 # not preferred
 defmodule Somemodule do
   ...
@@ -327,7 +327,7 @@ end
 * The names of predicate functions (a function that return a boolean value)
   should have a trailing question mark rather than a leading `is_` or similar.
 
-```Elixir
+```elixir
 def cool?(var) do
   # checks if var is cool
 end
@@ -341,7 +341,7 @@ end
 * Comments longer than a word are capitalized and use punctuation. Use
   [one space](http://en.wikipedia.org/wiki/Sentence_spacing) after periods.
 
-```Elixir
+```elixir
 # not preferred
 String.upcase(some_string) # Capitalize string.
 ```
@@ -384,7 +384,7 @@ String.upcase(some_string) # Capitalize string.
   module (such as a test).
 * Use underscored file names for `CamelCase` module names.
 
-```Elixir
+```elixir
 # file is called some_module.ex
 
 defmodule SomeModule do
@@ -393,7 +393,7 @@ end
 
 * Represent each level of nesting within a module name as a directory.
 
-```Elixir
+```elixir
 # file is called parser/core/xml_parser.ex
 
 defmodule Parser.Core.XMLParser do
