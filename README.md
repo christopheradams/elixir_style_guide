@@ -111,7 +111,7 @@ def some_function([first|rest]) do
 end
 ```
 
-* Use the pipeline operator ( |> ) to chain functions together.
+* Use the pipeline operator (`|>`) to chain functions together.
 
 ```elixir
 # not preferred
@@ -134,7 +134,7 @@ the first line without realizing that the next line has a pipeline.
 
 ```elixir
 # THE WORST!
-# This actually parses as String.strip( "nope" |> String.downcase ).
+# This actually parses as String.strip("nope" |> String.downcase).
 String.strip "nope" |> String.downcase
 
 # not preferred
