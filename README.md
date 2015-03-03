@@ -54,8 +54,8 @@ def some_function do
 end
 ```
 
-* Use Unix-style line endings. (\*BSD/Solaris/Linux/OSX users are covered by
-  default, Windows users have to be extra careful.)
+* Use Unix-style line endings (\*BSD/Solaris/Linux/OSX users are covered by
+  default, Windows users have to be extra careful).
 
     * If you're using Git you might want to add the following configuration
       setting to protect your project from Windows line endings creeping in:
@@ -76,7 +76,7 @@ Enum.map(["one", <<"two">>, "three"], fn num -> IO.puts num end)
 ```
 
 * Use empty lines between `def`s and to break up a function into logical
-  paragraphs.
+  paragraphs...
 
 ```elixir
 def some_function(some_data) do
@@ -111,7 +111,7 @@ def some_function([first|rest]) do
 end
 ```
 
-* Use the pipeline operator ( |> ) to chain functions together
+* Use the pipeline operator ( |> ) to chain functions together.
 
 ```elixir
 # not preferred
@@ -130,7 +130,7 @@ While this is the preferred method, take into account that copy pasting
 multiline pipelines into IEX might result in a syntax error as IEX will evaluate
 the first line without realizing that the next line has a pipeline.
 
-* Use _bare_ variables in the first part of a function chain
+* Use _bare_ variables in the first part of a function chain.
 
 ```elixir
 # THE WORST!
@@ -148,7 +148,7 @@ some_string |> String.strip |> String.downcase |> String.codepoints
 
 ## Syntax
 
-* Use parentheses when you have arguments, no parentheses when you don't
+* Use parentheses when you have arguments, no parentheses when you don't.
 
 ```elixir
 # not preferred
@@ -187,7 +187,7 @@ if some_condition do
 end
 ```
 
-* Use `do:` for single line `if/unless` statements
+* Use `do:` for single line `if/unless` statements.
 
 ```elixir
 # preferred
