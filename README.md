@@ -100,12 +100,13 @@ def a_longer_function do
 end
 ```
 
-* ...but run different clauses that match for the same function together.
+* ...also for different clauses that match for the same function together.
 
 ```elixir
 def some_function([]) do
   :ok
 end
+
 def some_function([first|rest]) do
   some_function(rest)
 end
