@@ -389,6 +389,10 @@ end
 defmodule Parser.Core.XMLParser do
 end
 ```
+* No newline after defmodule
+* No newline before first function def
+* Newline after "module-level-code-blocks"
+
 
 ## Exceptions
 
