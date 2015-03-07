@@ -125,10 +125,12 @@ some_string
 |> String.downcase
 |> String.strip
 
-# Multiline pipelines on the right side of a pattern match should be indented to below the pattern match
-sanitized_string = some_string
-                   |> String.downcase
-                   |> String.strip
+# Multiline pipelines on the right side of a pattern match
+# should be indented on a newline
+sanitized_string =
+  some_string
+  |> String.downcase
+  |> String.strip
 ```
 
 While this is the preferred method, take into account that copy pasting
