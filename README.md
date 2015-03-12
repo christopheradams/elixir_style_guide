@@ -227,6 +227,12 @@ f(3 + 2) + 1
 
 ```elixir
 # not preferred
+f
+
+# preferred
+f()
+
+# not preferred
 f 3
 
 # preferred
