@@ -100,14 +100,33 @@ def a_longer_function do
 end
 ```
 
-* ...but run different clauses that match for the same function together.
+* ...but run single-line `def`s that match for the same function together.
 
 ```elixir
+def some_function(nil), do: {:err, "No Value"}
+def some_function([]), do: :ok
+def some_function([first|rest]) do
+  some_function(rest)
+end
+```
+
+* If you have more than one multi-line `def`s do not use single-line `def`s.
+
+```elixir
+def some_function(nil) do
+  {:err, "No Value"}
+end
+
 def some_function([]) do
   :ok
 end
+
 def some_function([first|rest]) do
   some_function(rest)
+end
+
+def some_function([first|rest], opts) do
+  some_function(rest, opts)
 end
 ```
 
