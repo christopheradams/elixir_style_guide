@@ -28,6 +28,7 @@ page with [list of projects] or [hex package manager site].
 * [Comments](#comments)
     * [Comment Annotations](#comment-annotations)
 * [Modules](#modules)
+* [Documentation](#documentation)
 * [Exceptions](#exceptions)
 * [Collections](#collections)
 * [Strings](#strings)
@@ -422,6 +423,107 @@ end
 * No newline before first function def
 * Newline after "module-level-code-blocks"
 
+## Documentation
+
+Documentation in Elixir (when read either in `iex` with `h` or generated with
+[ExDoc](https://github.com/elixir-lang/ex_doc) uses the [Module Attributes](\
+http://elixir-lang.org/getting-started/module-attributes.html#as-annotations)
+`@moduledoc` and `@doc`.
+
+ * Always include a `@moduledoc` attribute the line after `defmodule` in your
+   module.
+
+```elixir
+# not preferred
+
+defmodule SomeModule do
+
+  @moduledoc """
+  About the module
+  """
+  ...
+end
+
+defmodule AnotherModule do
+  use SomeModule
+  @moduledoc """
+  About the module
+  """
+  ...
+end
+
+# preferred
+
+defmodule SomeModule do
+  @moduledoc """
+  About the module
+  """
+  ...
+end
+```
+
+ * Use `@moduledoc` false if you do not intend on documenting the module.
+
+```elixir
+defmodule SomeModule do
+  @moduledoc false
+  ...
+end
+```
+
+ * Separate code after the `@moduledoc` with a new line.
+
+```elixir
+# not preferred
+
+defmodule SomeModule do
+  @moduledoc """
+  About the module
+  """
+  use AnotherModule
+end
+
+# preferred
+defmodule SomeModule do
+  @moduledoc """
+  About the module
+  """
+
+  use AnotherModule
+end
+```
+
+ * Use heredocs with markdown for documentation.
+
+```elixir
+# not preferred
+
+defmodule SomeModule do
+  @moduledoc "About the module"
+end
+
+defmodule SomeModule do
+  @moduledoc """
+  About the module
+
+  Examples:
+  iex> SomeModule.some_function
+  :result
+  """
+end
+
+# preferred
+defmodule SomeModule do
+  @moduledoc """
+  About the module
+
+  ## Examples
+
+      iex> SomeModule.some_function
+      :result
+  """
+end
+```
 
 ## Exceptions
 
