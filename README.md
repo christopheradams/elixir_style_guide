@@ -1,5 +1,7 @@
 # Prelude
 
+[![Join the chat at https://gitter.im/niftyn8/elixir_style_guide](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/niftyn8/elixir_style_guide?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 > Liquid architecture. It's like jazz - you improvise, you work together, you
 > play off each other, you make something, they make something. <br/>
 > -- Frank Gehry
