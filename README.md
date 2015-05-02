@@ -546,6 +546,30 @@ end
 
 ## Misc
 
+* An atom can be used as a catch-all expression in a `cond` as it evaluates
+  to a truthy value. Suggested atoms are `:else` or `:otherwise`
+
+```elixir
+cond do
+  1 + 2 == 5 ->
+    "Nope"
+  1 + 3 == 5 ->
+    "Uh, uh"
+  :else ->
+    "OK"
+end
+
+# is the same as
+cond do
+  1 + 2 == 5 ->
+    "Nope"
+  1 + 3 == 5 ->
+    "Uh, uh"
+  true ->
+    "OK"
+end
+```
+
 ## Tools
 
 # Contributing
