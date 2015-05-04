@@ -240,6 +240,19 @@ else
 end
 ```
 
+* Always use true as the last condition of a `cond` statement.
+
+```elixir
+cond do
+  1 + 2 == 5 ->
+    "Nope"
+  1 + 3 == 5 ->
+    "Uh, uh"
+  true ->
+    "OK"
+end
+```
+
 * Never put a space between a function name and the opening parenthesis.
 
 ```elixir
