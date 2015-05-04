@@ -34,7 +34,7 @@ page with [list of projects] or [hex package manager site].
 * [Strings](#strings)
 * [Regular Expressions](#regular-expressions)
 * [Metaprogramming](#metaprogramming)
-* [Misc](#misc)
+* [Suggested Alternatives](#suggested-alternatives)
 * [Tools](#tools)
 
 ## Source Code Layout
@@ -544,7 +544,11 @@ end
 
 * Avoid needless metaprogramming.
 
-## Misc
+## Suggested Alternatives
+
+Suggested alternatives are styles that haven't been seen much in the community yet but might provide some value.
+
+#### Cond
 
 * An atom can be used as a catch-all expression in a `cond` as it evaluates
   to a truthy value. Suggested atoms are `:else` or `:otherwise`
