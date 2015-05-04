@@ -240,7 +240,7 @@ else
 end
 ```
 
-* Always use true as the last condition of a `cond` statement.
+* Always use `true` as the last condition of a `cond` statement.
 
 ```elixir
 cond do
