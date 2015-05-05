@@ -34,7 +34,7 @@ page with [list of projects] or [hex package manager site].
 * [Strings](#strings)
 * [Regular Expressions](#regular-expressions)
 * [Metaprogramming](#metaprogramming)
-* [Misc](#misc)
+* [Suggested Alternatives](#suggested-alternatives)
 * [Tools](#tools)
 
 ## Source Code Layout
@@ -237,6 +237,19 @@ if success? do
   IO.puts 'success'
 else
   IO.puts 'failure'
+end
+```
+
+* Always use `true` as the last condition of a `cond` statement.
+
+```elixir
+cond do
+  1 + 2 == 5 ->
+    "Nope"
+  1 + 3 == 5 ->
+    "Uh, uh"
+  true ->
+    "OK"
 end
 ```
 
@@ -544,7 +557,11 @@ end
 
 * Avoid needless metaprogramming.
 
-## Misc
+## Suggested Alternatives
+
+Suggested alternatives are styles that haven't been seen much in the community yet but might provide some value.
+
+#### Cond
 
 * An atom can be used as a catch-all expression in a `cond` as it evaluates
   to a truthy value. Suggested atoms are `:else` or `:otherwise`
