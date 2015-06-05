@@ -551,6 +551,16 @@ end
 
 ## Strings
 
+Match strings using the string concatenator rather than binary patterns:
+
+```elixir
+# not preferred
+<<"my"::utf8, _rest>> = "my string"
+
+# preferred
+"my" <> _rest = "my string"
+```
+
 ## Regular Expressions
 
 ## Metaprogramming
