@@ -551,7 +551,7 @@ end
 
 ## Strings
 
-Match strings using the string concatenator rather than binary patterns:
+ * Match strings using the string concatenator rather than binary patterns:
 
 ```elixir
 # not preferred
