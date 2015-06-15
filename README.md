@@ -338,7 +338,7 @@ def some_function do
 end
 ```
 
-* Use `CamelCase` for modules (Keep acronyms like HTTP, RFC, XML uppercase).
+* Use `CamelCase` for modules. Keep acronyms like HTTP, RFC, XML uppercase (when an acronym is followed by a word (e.g. REST Client) then separate them using an underscore (e.g. `REST_Client`)).
 
 ```elixir
 # not preferred
@@ -354,12 +354,24 @@ defmodule SomeXml do
   ...
 end
 
+defmodule RestClient do
+  ...
+end
+
+defmodule RESTClient do
+  ...
+end
+
 # preferred
 defmodule SomeModule do
   ...
 end
 
 defmodule SomeXML do
+  ...
+end
+
+defmodule REST_Client do
   ...
 end
 ```
