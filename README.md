@@ -189,7 +189,7 @@ end
 
 # preferred
 def some_function(arg1, arg2) do
-  #body omitted
+  # body omitted
 end
 
 def some_function do
@@ -276,7 +276,7 @@ f(3)
 f 3 |> g
 
 # preferred
-f(3) |> g()
+f(3) |> g
 ```
 
 * Omit parentheses in macro calls when a do block is passed.
@@ -399,12 +399,9 @@ String.upcase(some_string) # Capitalize string.
   describing the problem.
 * If multiple lines are required to describe the problem, subsequent lines
   should be indented two spaces after the `#`.
-
 * In cases where the problem is so obvious that any documentation would be
   redundant, annotations may be left at the end of the offending line with no
   note. This usage should be the exception and not the rule.
-
-
 * Use `TODO` to note missing features or functionality that should be added at a
   later date.
 * Use `FIXME` to note broken code that needs to be fixed.
