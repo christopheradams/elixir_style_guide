@@ -440,7 +440,7 @@ end
 * No newline before first function def
 * Newline after "module-level-code-blocks"
 
-* Place macros (such as model associations) at the top of a module definition.
+* Place model association macros at the top of a module definition.
 ```elixir
 # file is called app/web/models/user.ex
 # preferred
