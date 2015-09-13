@@ -625,6 +625,8 @@ end
 
 ## Tools
 
+* [Dogma](https://github.com/lpil/dogma) - Code style linter for Elixir.
+
 # Contributing
 
 It's my hope that this will become a central hub for community discussion on
