@@ -17,8 +17,7 @@ This is my attempt at starting a community style guide for Elixir. Please feel
 free to make pull requests and contribute. I really want Elixir to have as
 vibrant of a community as any language that's been around five times as long.
 
-If you're looking for other projects to contribute to please see Elixir's wiki
-page with [list of projects] or [hex package manager site].
+If you're looking for other projects to contribute to please see the [hex package manager site].
 
 ## Table of Contents
 
@@ -654,5 +653,4 @@ A community style guide is meaningless without the community's support.  Please
 Tweet, star, and let any Elixir programmer know about this guide so they can
 contribute.
 
-[list of projects]: https://github.com/elixir-lang/elixir/wiki/Projects
 [hex package manager site]: https://hex.pm/packages
