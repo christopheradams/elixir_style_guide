@@ -272,11 +272,11 @@ f 3
 # preferred
 f(3)
 
-# not preferred and parses as f(3 |> g), which is not what you want
-f 3 |> g
+# not preferred and parses as rem(2, (3 |> g), which is not what you want
+2 |> rem 3 |> g
 
 # preferred
-f(3) |> g
+2 |> rem(3) |> g
 ```
 
 * Omit parentheses in macro calls when a do block is passed.
