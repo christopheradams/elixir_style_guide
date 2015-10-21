@@ -272,7 +272,7 @@ f 3
 # preferred
 f(3)
 
-# not preferred and parses as rem(2, (3 |> g), which is not what you want
+# not preferred and parses as rem(2, (3 |> g)), which is not what you want
 2 |> rem 3 |> g
 
 # preferred
