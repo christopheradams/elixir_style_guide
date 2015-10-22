@@ -139,7 +139,7 @@ String.strip(String.downcase(some_string))
 # preferred
 some_string |> String.downcase |> String.strip
 
-# Multiline pipelines use a single level of indentation.
+# Multiline pipelines are not further indented
 some_string
 |> String.downcase
 |> String.strip
