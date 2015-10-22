@@ -337,7 +337,7 @@ def some_function do
 end
 ```
 
-* Use `CamelCase` for modules (Keep acronyms like HTTP, RFC, XML uppercase).
+* Use `PascalCase` for modules (Keep acronyms like HTTP, RFC, XML uppercase).
 
 ```elixir
 # not preferred
@@ -418,7 +418,7 @@ String.upcase(some_string) # Capitalize string.
 
 * Use one module per file unless the module is only used internally by another
   module (such as a test).
-* Use underscored file names for `CamelCase` module names.
+* Use underscored file names for `PascalCase` module names.
 
 ```elixir
 # file is called some_module.ex
