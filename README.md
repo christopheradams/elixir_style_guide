@@ -4,20 +4,23 @@
 > play off each other, you make something, they make something. <br/>
 > —Frank Gehry
 
-Style matters. Elixir has plenty of style but like all languages it can be
+Style matters. [Elixir] has plenty of style but like all languages it can be
 stifled.  Don't stifle the style.
 
 **NOTE**: From here on out, you get a PR merged, you get added as a
 collaborator. People who have PRs merged have been added as collaborators.
 
 
-# The Elixir Style Guide
+# [The Elixir Style Guide][Elixir Style Guide]
 
-This is my attempt at starting a community style guide for Elixir. Please feel
-free to make pull requests and contribute. I really want Elixir to have as
-vibrant of a community as any language that's been around five times as long.
+This is my attempt at starting a community style guide for the
+[Elixir programming language][Elixir].
+Please feel free to make pull requests and contribute. We really want Elixir to
+have as vibrant of a community as any language that's been around five times as
+long.
 
-If you're looking for other projects to contribute to please see the [hex package manager site].
+If you're looking for other projects to contribute to please see the
+[Hex package manager site][Hex].
 
 ## Table of Contents
 
@@ -594,7 +597,8 @@ raise ArgumentError, "this is not valid"
 
 ## Suggested Alternatives
 
-Suggested alternatives are styles that haven't been seen much in the community yet but might provide some value.
+Suggested alternatives are styles that haven't been seen much in the community
+yet but might provide some value.
 
 #### Cond
 
@@ -635,22 +639,26 @@ improvements. Thanks in advance for your help!
 
 ![Creative Commons License](http://i.creativecommons.org/l/by/3.0/88x31.png)
 This work is licensed under a
-[Creative Commons Attribution 3.0 Unported License](http://creativecommons.org/licenses/by/3.0/deed.en_US)
+[Creative Commons Attribution 3.0 Unported License][license]
 
 
 # Attribution
 
 The structure of this guide, bits of example code, and many of the initial
-points made in this document were borrowed from the
-[Ruby community style guide](https://github.com/bbatsov/ruby-style-guide).  A
-lot of things were applicable to Elixir and allowed me to get _some_ document
+points made in this document were borrowed from the [Ruby community style guide].
+A lot of things were applicable to Elixir and allowed me to get _some_ document
 out quicker to start the conversation.
 
 
 # Spread the Word
 
 A community style guide is meaningless without the community's support.  Please
-Tweet, star, and let any Elixir programmer know about this guide so they can
+Tweet, star, and let any Elixir programmer know about
+[this guide][Elixir Style Guide] so they can
 contribute.
 
-[hex package manager site]: https://hex.pm/packages
+[Elixir Style Guide]: https://github.com/niftyn8/elixir_style_guide
+[Elixir]: http://elixir-lang.org
+[Hex]: https://hex.pm/packages
+[license]: http://creativecommons.org/licenses/by/3.0/deed.en_US
+[Ruby community style guide]: https://github.com/bbatsov/ruby-style-guide
