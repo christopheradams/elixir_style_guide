@@ -13,7 +13,7 @@ collaborator. People who have PRs merged have been added as collaborators.
 
 # [The Elixir Style Guide][Elixir Style Guide]
 
-This is my attempt at starting a community style guide for the
+This is our attempt at starting a community style guide for the
 [Elixir programming language][Elixir].
 Please feel free to make pull requests and contribute. We really want Elixir to
 have as vibrant of a community as any language that's been around five times as
@@ -630,7 +630,7 @@ end
 
 # Contributing
 
-It's my hope that this will become a central hub for community discussion on
+It's our hope that this will become a central hub for community discussion on
 best practices in Elixir. Feel free to open tickets or send pull requests with
 improvements. Thanks in advance for your help!
 
@@ -646,7 +646,7 @@ This work is licensed under a
 
 The structure of this guide, bits of example code, and many of the initial
 points made in this document were borrowed from the [Ruby community style guide].
-A lot of things were applicable to Elixir and allowed me to get _some_ document
+A lot of things were applicable to Elixir and allowed us to get _some_ document
 out quicker to start the conversation.
 
 
