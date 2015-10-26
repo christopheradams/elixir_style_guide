@@ -4,20 +4,22 @@
 > play off each other, you make something, they make something. <br/>
 > —Frank Gehry
 
-Style matters. [Elixir] has plenty of style but like all languages it can be
-stifled.  Don't stifle the style.
+Style matters.
+[Elixir] has plenty of style but like all languages it can be stifled.
+Don't stifle the style.
 
 **NOTE**: From here on out, you get a PR merged, you get added as a
-collaborator. People who have PRs merged have been added as collaborators.
+collaborator.
+People who have PRs merged have been added as collaborators.
 
 
 # [The Elixir Style Guide][Elixir Style Guide]
 
 This is our attempt at starting a community style guide for the
 [Elixir programming language][Elixir].
-Please feel free to make pull requests and contribute. We really want Elixir to
-have as vibrant of a community as any language that's been around five times as
-long.
+Please feel free to make pull requests and contribute.
+We really want Elixir to have as vibrant of a community as any language that's
+been around five times as long.
 
 If you're looking for other projects to contribute to please see the
 [Hex package manager site][Hex].
@@ -45,7 +47,8 @@ If you're looking for other projects to contribute to please see the
 
 <!-- TODO: Add crafty quote here -->
 
-* Use two **spaces** per indentation level. No hard tabs.
+* Use two **spaces** per indentation level.
+  No hard tabs.
 
   ```elixir
   # not preferred - four spaces
@@ -69,10 +72,10 @@ If you're looking for other projects to contribute to please see the
   $ git config --global core.autocrlf true
   ```
 
-* Use spaces around operators, after commas, colons and semicolons. Do not put
-  spaces around matched pairs like brackets, parentheses, etc. Whitespace might
-  be (mostly) irrelevant to the Elixir runtime, but its proper use is the key to
-  writing easily readable code.
+* Use spaces around operators, after commas, colons and semicolons.
+  Do not put spaces around matched pairs like brackets, parentheses, etc.
+  Whitespace might be (mostly) irrelevant to the Elixir runtime, but its proper
+  use is the key to writing easily readable code.
 
   ```elixir
   sum = 1 + 2
@@ -157,9 +160,9 @@ If you're looking for other projects to contribute to please see the
     |> String.strip
   ```
 
-While this is the preferred method, take into account that copy pasting
-multiline pipelines into IEX might result in a syntax error as IEX will evaluate
-the first line without realizing that the next line has a pipeline.
+  While this is the preferred method, take into account that copy-pasting
+  multiline pipelines into IEx might result in a syntax error, as IEx will
+  evaluate the first line without realizing that the next line has a pipeline.
 
 * Use _bare_ variables in the first part of a function chain.
 
@@ -226,7 +229,8 @@ the first line without realizing that the next line has a pipeline.
   if some_condition, do: # some_stuff
   ```
 
-* Never use `unless` with `else`. Rewrite these with the positive case first.
+* Never use `unless` with `else`.
+  Rewrite these with the positive case first.
 
   ```elixir
   # not preferred
@@ -276,7 +280,7 @@ the first line without realizing that the next line has a pipeline.
   # preferred
   f(3)
 
-  # not preferred and parses as rem(2, (3 |> g)), which is not what you want
+  # not preferred and parses as rem(2, (3 |> g)), which is not what you want.
   2 |> rem 3 |> g
 
   # preferred
@@ -381,43 +385,58 @@ the first line without realizing that the next line has a pipeline.
 
 ## Comments
 
-* Write self-documenting code and ignore the rest of this section. Seriously!
+* Write self-documenting code and ignore the rest of this section.
+  Seriously!
+
 * Use one space between the leading `#` character of the comment and the text of
   the comment.
-* Comments longer than a word are capitalized and use punctuation. Use
-  [one space](http://en.wikipedia.org/wiki/Sentence_spacing) after periods.
+
+* Comments longer than a word are capitalized and use punctuation.
+  Use [one space](http://en.wikipedia.org/wiki/Sentence_spacing) after periods.
 
   ```elixir
   # not preferred
   String.upcase(some_string) # Capitalize string.
   ```
 
-* Keep existing comments up-to-date. An outdated comment is worse than no
-  comment at all.
-* Avoid writing comments to explain bad code. Refactor the code to make it
-  self-explanatory. ("Do — or do not — there is no try." —Yoda)
+* Keep existing comments up-to-date.
+  An outdated comment is worse than no comment at all.
+
+* Avoid writing comments to explain bad code.
+  Refactor the code to make it self-explanatory.
+  ("Do — or do not — there is no try." —Yoda)
 
 ### Comment Annotations
 
 * Annotations should usually be written on the line immediately above the
   relevant code.
+
 * The annotation keyword is followed by a colon and a space, then a note
   describing the problem.
+
 * If multiple lines are required to describe the problem, subsequent lines
   should be indented two spaces after the `#`.
+
 * In cases where the problem is so obvious that any documentation would be
   redundant, annotations may be left at the end of the offending line with no
-  note. This usage should be the exception and not the rule.
+  note.
+  This usage should be the exception and not the rule.
+
 * Use `TODO` to note missing features or functionality that should be added at a
   later date.
+
 * Use `FIXME` to note broken code that needs to be fixed.
+
 * Use `OPTIMIZE` to note slow or inefficient code that may cause performance
   problems.
+
 * Use `HACK` to note code smells where questionable coding practices were used
   and should be refactored away.
+
 * Use `REVIEW` to note anything that should be looked at to confirm it is
-  working as intended. For example: `REVIEW: Are we sure this is how the client
-  does X currently?`
+  working as intended.
+  For example: `REVIEW: Are we sure this is how the client does X currently?`
+
 * Use other custom annotation keywords if it feels appropriate, but be sure to
   document them in your project's `README` or similar.
 
@@ -426,6 +445,7 @@ the first line without realizing that the next line has a pipeline.
 
 * Use one module per file unless the module is only used internally by another
   module (such as a test).
+
 * Use underscored file names for `CamelCase` module names.
 
   ```elixir
@@ -444,9 +464,11 @@ the first line without realizing that the next line has a pipeline.
   end
   ```
 
-* No newline after defmodule
-* No newline before first function def
-* Newline after "module-level-code-blocks"
+* No newline after defmodule.
+
+* No newline before first function def.
+
+* Newline after "module-level-code-blocks".
 
 
 ## Documentation
@@ -615,7 +637,8 @@ yet but might provide some value.
 #### Cond
 
 * An atom can be used as a catch-all expression in a `cond` as it evaluates
-  to a truthy value. Suggested atoms are `:else` or `:otherwise`
+  to a truthy value.
+  Suggested atoms are `:else` or `:otherwise`
 
   ```elixir
   cond do
@@ -645,8 +668,9 @@ yet but might provide some value.
 # Contributing
 
 It's our hope that this will become a central hub for community discussion on
-best practices in Elixir. Feel free to open tickets or send pull requests with
-improvements. Thanks in advance for your help!
+best practices in Elixir.
+Feel free to open tickets or send pull requests with improvements.
+Thanks in advance for your help!
 
 
 # License
@@ -666,10 +690,9 @@ out quicker to start the conversation.
 
 # Spread the Word
 
-A community style guide is meaningless without the community's support.  Please
-Tweet, star, and let any Elixir programmer know about
-[this guide][Elixir Style Guide] so they can
-contribute.
+A community style guide is meaningless without the community's support.
+Please Tweet, star, and let any Elixir programmer know about
+[this guide][Elixir Style Guide] so they can contribute.
 
 
 <!-- Links -->
