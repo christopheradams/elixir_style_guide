@@ -60,10 +60,10 @@ end
 * Use Unix-style line endings (\*BSD/Solaris/Linux/OSX users are covered by
   default, Windows users have to be extra careful).
 
-    * If you're using Git you might want to add the following configuration
-      setting to protect your project from Windows line endings creeping in:
+* If you're using Git you might want to add the following configuration
+  setting to protect your project from Windows line endings creeping in:
 
-```bash
+```sh
 $ git config --global core.autocrlf true
 ```
 
@@ -79,7 +79,7 @@ Enum.map(["one", <<"two">>, "three"], fn num -> IO.puts num end)
 ```
 
 * Use empty lines between `def`s and to break up a function into logical
-  paragraphs...
+  paragraphs.
 
 ```elixir
 def some_function(some_data) do
