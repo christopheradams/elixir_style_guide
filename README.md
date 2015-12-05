@@ -381,7 +381,15 @@ If you're looking for other projects to contribute to please see the
     # checks if var is cool
   end
   ```
+* Private function with the same name of public functions should start with `do_`.
 
+  ```elixir
+  def sum(list), do: do_sum(list, 0)
+
+  # private functions
+  defp do_sum([], total), do: total
+  defp do_sum([head|tail], total), do: do_sum(tail, head + total)
+  ```
 
 ## Comments
 
