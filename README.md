@@ -478,6 +478,41 @@ If you're looking for other projects to contribute to please see the
 
 * Newline after "module-level-code-blocks".
 
+* Reference other modules in the following order:
+
+    1. `@moduledoc`
+    1. `use`
+    1. `import`
+    1. `alias`
+    1. `require`
+    1. `@type`
+    1. `@module_attribute`
+
+  And, if you're really a perfectionist, sub-sort by alphabetical order. Here's
+  an overall example of how you should order things in your modules:
+
+  ```elixir
+  defmodule MyModule do
+    @moduledoc """
+    An example module
+    """
+
+    use GenServer
+    import Something
+    import SomethingElse
+    alias My.Long.Module.Name
+    alias My.Other.Module.Name
+    require Integer
+
+    @type params :: [{binary, binary}]
+
+    @module_attribute :foo
+    @other_attribute 100
+
+    ...
+  end
+  ```
+
 
 ## Documentation
 
