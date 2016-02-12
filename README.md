@@ -743,4 +743,3 @@ Please Tweet, star, and let any Elixir programmer know about
 [Elixir]: http://elixir-lang.org
 [Hex]: https://hex.pm/packages
 [license]: http://creativecommons.org/licenses/by/3.0/deed.en_US
-[Ruby community style guide]: https://github.com/bbatsov/ruby-style-guide
