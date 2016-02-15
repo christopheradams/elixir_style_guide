@@ -541,7 +541,7 @@ def some_function(_),
 ## Documentation
 
 Documentation in Elixir (when read either in `iex` with `h` or generated with
-[ExDoc](https://github.com/elixir-lang/ex_doc) uses the [Module Attributes](\
+[ExDoc](https://github.com/elixir-lang/ex_doc)) uses the [Module Attributes](\
 http://elixir-lang.org/getting-started/module-attributes.html#as-annotations)
 `@moduledoc` and `@doc`.
 
