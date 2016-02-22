@@ -127,7 +127,8 @@ def some_function(args),
   do: Enum.map(args, fn(arg) -> arg <> " is on a very long line!" end)
 ```
 
-When you use the convention above and you have more than one function clause using the `do:` syntax, put the `do:` on a new line for each function clause:
+When you use the convention above and you have more than one function clause
+using the `do:` syntax, put the `do:` on a new line for each function clause:
 
 ```elixir
 # not preferred
@@ -371,7 +372,7 @@ def some_function(_),
   end
   ```
 
-* Use `CamelCase` for modules (Keep acronyms like HTTP, RFC, XML uppercase).
+* Use `CamelCase` for modules (keep acronyms like HTTP, RFC, XML uppercase).
 
   ```elixir
   # not preferred
@@ -397,7 +398,7 @@ def some_function(_),
   end
   ```
 
-* The names of predicate functions (a function that return a boolean value)
+* The names of predicate functions (functions that return a boolean value)
   should have a trailing question mark rather than a leading `is_` or similar.
 
   ```elixir
@@ -405,7 +406,8 @@ def some_function(_),
     # checks if var is cool
   end
   ```
-* Private function with the same name of public functions should start with `do_`.
+* Private functions with the same name as public functions should start with
+  `do_`.
 
   ```elixir
   def sum(list), do: do_sum(list, 0)
@@ -545,8 +547,8 @@ Documentation in Elixir (when read either in `iex` with `h` or generated with
 http://elixir-lang.org/getting-started/module-attributes.html#as-annotations)
 `@moduledoc` and `@doc`.
 
- * Always include a `@moduledoc` attribute the line after `defmodule` in your
-   module.
+ * Always include a `@moduledoc` attribute in the line right after `defmodule`
+   in your module.
 
   ```elixir
   # not preferred
@@ -577,7 +579,7 @@ http://elixir-lang.org/getting-started/module-attributes.html#as-annotations)
   end
   ```
 
- * Use `@moduledoc` false if you do not intend on documenting the module.
+ * Use `@moduledoc false` if you do not intend on documenting the module.
 
   ```elixir
   defmodule SomeModule do
