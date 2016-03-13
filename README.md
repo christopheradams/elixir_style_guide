@@ -34,6 +34,7 @@ If you're looking for other projects to contribute to please see the
     * [Comment Annotations](#comment-annotations)
 * [Modules](#modules)
 * [Documentation](#documentation)
+* [Typespecs](#typespecs)
 * [Exceptions](#exceptions)
 * [Collections](#collections)
 * [Strings](#strings)
@@ -639,6 +640,61 @@ http://elixir-lang.org/getting-started/module-attributes.html#as-annotations)
         iex> SomeModule.some_function
         :result
     """
+  end
+  ```
+
+
+## Typespecs
+
+Typespecs are notation for declaring types and specifications, for
+documentation or for the static analysis tool Dialyzer.
+
+Custom types should be defined at the top of the module with the other
+directives (see [Modules](#modules)).
+
+* Place `@typedoc` and `@type` definitions together, and separate each
+  pair with a blank line.
+
+  ```elixir
+  defmodule SomeModule do
+    @moduledoc false
+
+    @typedoc "The name"
+    @type name :: atom
+
+    @typedoc "The result"
+    @type result :: {:ok, term} | {:error, term}
+
+    ...
+  end
+  ```
+
+*  If a union type is too long to fit on a single line, add a newline
+   and indent with spaces to keep the return types aligned.
+
+  ```elixir
+  # not preferred - no indentation
+  @type long_union_type :: some_type | another_type | some_other_type
+  | a_final_type
+
+  # preferred
+  @type long_union_type :: some_type | another_type | some_other_type
+                         | a_final_type
+
+  # also preferred - one return type per line
+  @type long_union_type :: some_type
+                         | another_type
+                         | some_other_type
+                         | a_final_type
+  ```
+
+* Place specifications right before the function definition,
+  separated by a newline.
+
+  ```elixir
+  @spec some_function(term) :: result
+  def some_function(some_data) do
+    {:ok, some_data}
   end
   ```
 
