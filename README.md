@@ -373,14 +373,14 @@ def some_function(_),
   end
   ```
 
-* Use `CamelCase` for modules (keep acronyms like HTTP, RFC, XML uppercase).
+* Use `PascalCase` for modules (keep acronyms like HTTP, RFC, XML uppercase).
 
   ```elixir
   # not preferred
   defmodule Somemodule do
     ...
   end
-
+  
   defmodule Some_Module do
     ...
   end
