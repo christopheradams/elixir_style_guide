@@ -209,7 +209,9 @@ def some_function(_),
 
 ## Syntax
 
-* Use parentheses when you have arguments, no parentheses when you don't.
+* Use parentheses when you have arguments, no parentheses when you don't. This
+  preference holds for both named and anonymous functions. For anonymous
+  functions, it's OK to omit parentheses when there is a single argument.
 
   ```elixir
   # not preferred
@@ -221,6 +223,9 @@ def some_function(_),
     # body omitted
   end
 
+  some_function = fn arg1, arg2 -> result end
+  some_function = fn () -> result end
+
   # preferred
   def some_function(arg1, arg2) do
     # body omitted
@@ -229,6 +234,11 @@ def some_function(_),
   def some_function do
     # body omitted
   end
+
+  some_function = fn (arg1, arg2) -> result end
+  some_function = fn (arg1) -> result end
+  some_function = fn arg1 -> result end
+  some_function = fn -> result end
   ```
 
 * Never use `do:` for multi-line `if/unless`.
@@ -380,7 +390,7 @@ def some_function(_),
   defmodule Somemodule do
     ...
   end
-  
+
   defmodule Some_Module do
     ...
   end
