@@ -125,7 +125,7 @@ If you're looking for other projects to contribute to please see the
 
 ```elixir
 def some_function(args),
-  do: Enum.map(args, fn(arg) -> arg <> " is on a very long line!" end)
+  do: Enum.map(args, fn (arg) -> arg <> " is on a very long line!" end)
 ```
 
 When you use the convention above and you have more than one function clause
@@ -342,12 +342,12 @@ def some_function(_),
 
   ```elixir
   # preferred
-  Enum.reduce(1..10, 0, fn x, acc ->
+  Enum.reduce(1..10, 0, fn (x, acc) ->
     x + acc
   end)
 
   # also preferred
-  Enum.reduce 1..10, 0, fn x, acc ->
+  Enum.reduce 1..10, 0, fn (x, acc) ->
     x + acc
   end
   ```
