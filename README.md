@@ -3,7 +3,7 @@
 
 ### Table of Contents
 
-* [Prelude](#prelude)
+* __[Prelude](#prelude)__
 * __[The Guide](#the-guide)__
     * [Source Code Layout](#source-code-layout)
     * [Syntax](#syntax)
@@ -20,10 +20,10 @@
     * [Metaprogramming](#metaprogramming)
     * [Suggested Alternatives](#suggested-alternatives)
     * _Tools_
-* [Getting Involved](#getting-involved)
+* __[Getting Involved](#getting-involved)__
     * [Contributing](#contributing)
     * [Spread the Word](#spread-the-word)
-* [Copying](#copying)
+* __[Copying](#copying)__
     * [License](#license)
     * [Attribution](#attribution)
 
