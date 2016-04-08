@@ -812,6 +812,9 @@ points made in this document were borrowed from the [Ruby community style guide]
 A lot of things were applicable to Elixir and allowed us to get _some_ document
 out quicker to start the conversation.
 
+Here's the
+[list of people who has kindly contributed](https://github.com/niftyn8/elixir_style_guide/graphs/contributors)
+to this project.
 
 # Spread the Word
 
