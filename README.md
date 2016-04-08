@@ -1,4 +1,34 @@
-# Prelude
+# [The Elixir Style Guide][Elixir Style Guide]
+
+
+### Table of Contents
+
+* [Prelude](#prelude)
+* __[The Guide](#the-guide)__
+    * [Source Code Layout](#source-code-layout)
+    * [Syntax](#syntax)
+    * [Naming](#naming)
+    * [Comments](#comments)
+        * [Comment Annotations](#comment-annotations)
+    * [Modules](#modules)
+    * [Documentation](#documentation)
+    * [Typespecs](#typespecs)
+    * [Exceptions](#exceptions)
+    * _Collections_
+    * [Strings](#strings)
+    * _Regular Expressions_
+    * [Metaprogramming](#metaprogramming)
+    * [Suggested Alternatives](#suggested-alternatives)
+    * _Tools_
+* [Getting Involved](#getting-involved)
+    * [Contributing](#contributing)
+    * [Spread the Word](#spread-the-word)
+* [Copying](#copying)
+    * [License](#license)
+    * [Attribution](#attribution)
+
+
+## Prelude
 
 > Liquid architecture. It's like jazz — you improvise, you work together, you
 > play off each other, you make something, they make something. <br/>
@@ -13,7 +43,7 @@ collaborator.
 People who have PRs merged have been added as collaborators.
 
 
-# [The Elixir Style Guide][Elixir Style Guide]
+## The Guide
 
 This is our attempt at starting a community style guide for the
 [Elixir programming language][Elixir].
@@ -25,26 +55,7 @@ If you're looking for other projects to contribute to please see the
 [Hex package manager site][Hex].
 
 
-## Table of Contents
-
-* [Source Code Layout](#source-code-layout)
-* [Syntax](#syntax)
-* [Naming](#naming)
-* [Comments](#comments)
-    * [Comment Annotations](#comment-annotations)
-* [Modules](#modules)
-* [Documentation](#documentation)
-* [Typespecs](#typespecs)
-* [Exceptions](#exceptions)
-* [Collections](#collections)
-* [Strings](#strings)
-* [Regular Expressions](#regular-expressions)
-* [Metaprogramming](#metaprogramming)
-* [Suggested Alternatives](#suggested-alternatives)
-* [Tools](#tools)
-
-
-## Source Code Layout
+### Source Code Layout
 
 <!-- TODO: Add crafty quote here -->
 
@@ -207,7 +218,7 @@ def some_function(_),
 * Avoid trailing whitespace.
 
 
-## Syntax
+### Syntax
 
 * Use parentheses when you have arguments, no parentheses when you don't.
 
@@ -343,7 +354,7 @@ def some_function(_),
   ```
 
 
-## Naming
+### Naming
 
 * Use `snake_case` for atoms, functions and variables.
 
@@ -418,7 +429,7 @@ def some_function(_),
   defp do_sum([head|tail], total), do: do_sum(tail, head + total)
   ```
 
-## Comments
+### Comments
 
 * Write self-documenting code and ignore the rest of this section.
   Seriously!
@@ -441,7 +452,7 @@ def some_function(_),
   Refactor the code to make it self-explanatory.
   ("Do — or do not — there is no try." —Yoda)
 
-### Comment Annotations
+#### Comment Annotations
 
 * Annotations should usually be written on the line immediately above the
   relevant code.
@@ -476,7 +487,7 @@ def some_function(_),
   document them in your project's `README` or similar.
 
 
-## Modules
+### Modules
 
 * Use one module per file unless the module is only used internally by another
   module (such as a test).
@@ -541,7 +552,7 @@ def some_function(_),
   ```
 
 
-## Documentation
+### Documentation
 
 Documentation in Elixir (when read either in `iex` with `h` or generated with
 [ExDoc](https://github.com/elixir-lang/ex_doc)) uses the [Module Attributes](\
@@ -644,7 +655,7 @@ http://elixir-lang.org/getting-started/module-attributes.html#as-annotations)
   ```
 
 
-## Typespecs
+### Typespecs
 
 Typespecs are notation for declaring types and specifications, for
 documentation or for the static analysis tool Dialyzer.
@@ -699,7 +710,7 @@ directives (see [Modules](#modules)).
   ```
 
 
-## Exceptions
+### Exceptions
 
   * Make exception names end with a trailing `Error`.
 
@@ -731,9 +742,13 @@ directives (see [Modules](#modules)).
     ```
 
 
-## Collections
+### Collections
 
-## Strings
+_No guidelines for collections have been added yet._
+
+
+
+### Strings
 
 * Match strings using the string concatenator rather than binary patterns:
 
@@ -746,15 +761,18 @@ directives (see [Modules](#modules)).
   ```
 
 
-## Regular Expressions
+### Regular Expressions
+
+_No guidelines for regular expressions have been added yet._
 
 
-## Metaprogramming
+
+### Metaprogramming
 
 * Avoid needless metaprogramming.
 
 
-## Suggested Alternatives
+### Suggested Alternatives
 
 Suggested alternatives are styles that haven't been seen much in the community
 yet but might provide some value.
@@ -787,10 +805,15 @@ yet but might provide some value.
   ```
 
 
-## Tools
+### Tools
+
+_No tools have been added yet._
 
 
-# Contributing
+## Getting Involved
+
+
+### Contributing
 
 It's our hope that this will become a central hub for community discussion on
 best practices in Elixir.
@@ -798,26 +821,29 @@ Feel free to open tickets or send pull requests with improvements.
 Thanks in advance for your help!
 
 
-# License
+### Spread the Word
+
+A community style guide is meaningless without the community's support.
+Please Tweet, star, and let any Elixir programmer know about
+[this guide][Elixir Style Guide] so they can contribute.
+
+
+## Copying
+
+
+### License
 
 ![Creative Commons License](http://i.creativecommons.org/l/by/3.0/88x31.png)
 This work is licensed under a
 [Creative Commons Attribution 3.0 Unported License][license]
 
 
-# Attribution
+### Attribution
 
 The structure of this guide, bits of example code, and many of the initial
 points made in this document were borrowed from the [Ruby community style guide].
 A lot of things were applicable to Elixir and allowed us to get _some_ document
 out quicker to start the conversation.
-
-
-# Spread the Word
-
-A community style guide is meaningless without the community's support.
-Please Tweet, star, and let any Elixir programmer know about
-[this guide][Elixir Style Guide] so they can contribute.
 
 
 <!-- Links -->
