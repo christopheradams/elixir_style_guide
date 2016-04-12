@@ -125,7 +125,7 @@ If you're looking for other projects to contribute to please see the
 
 ```elixir
 def some_function(args),
-  do: Enum.map(args, fn(arg) -> arg <> " is on a very long line!" end)
+  do: Enum.map(args, fn (arg) -> arg <> " is on a very long line!" end)
 ```
 
 When you use the convention above and you have more than one function clause
@@ -209,7 +209,9 @@ def some_function(_),
 
 ## Syntax
 
-* Use parentheses when you have arguments, no parentheses when you don't.
+* Use parentheses when you have arguments, no parentheses when you don't. This
+  preference holds for both named and anonymous functions. For anonymous
+  functions, it's OK to omit parentheses when there is a single argument.
 
   ```elixir
   # not preferred
@@ -221,6 +223,9 @@ def some_function(_),
     # body omitted
   end
 
+  some_function = fn arg1, arg2 -> result end
+  some_function = fn () -> result end
+
   # preferred
   def some_function(arg1, arg2) do
     # body omitted
@@ -229,6 +234,11 @@ def some_function(_),
   def some_function do
     # body omitted
   end
+
+  some_function = fn (arg1, arg2) -> result end
+  some_function = fn (arg1) -> result end
+  some_function = fn arg1 -> result end
+  some_function = fn -> result end
   ```
 
 * Never use `do:` for multi-line `if/unless`.
@@ -332,12 +342,12 @@ def some_function(_),
 
   ```elixir
   # preferred
-  Enum.reduce(1..10, 0, fn x, acc ->
+  Enum.reduce(1..10, 0, fn (x, acc) ->
     x + acc
   end)
 
   # also preferred
-  Enum.reduce 1..10, 0, fn x, acc ->
+  Enum.reduce 1..10, 0, fn (x, acc) ->
     x + acc
   end
   ```
@@ -380,7 +390,7 @@ def some_function(_),
   defmodule Somemodule do
     ...
   end
-  
+
   defmodule Some_Module do
     ...
   end
