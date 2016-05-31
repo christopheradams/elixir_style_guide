@@ -17,5 +17,5 @@ formatting/markup/style rules so that the style remains consistent:
 * don't make lines longer than 80 characters (most editors have an auto-wrapping
   functionality, for example [emacs](http://emacswiki.org/emacs/LineWrap) or
   [vim](http://vim.wikia.com/wiki/Automatic_word_wrapping));
-* leave **two newlines** before each first-level header (`#`) and **one
-  newline** before every other type of headers (`##` to `######`).
+* leave **two newlines** before each first, second and third level header (`#` to `###`) and **one
+  newline** before every other type of headers (`####` to `######`).
