@@ -93,7 +93,7 @@ If you're looking for other projects to contribute to please see the
   ```elixir
   sum = 1 + 2
   {a, b} = {2, 3}
-  Enum.map(["one", <<"two">>, "three"], fn num -> IO.puts num end)
+  Enum.map(["one", <<"two">>, "three"], fn(num) -> IO.puts(num) end)
   ```
 
 * Use empty lines between `def`s and to break up a function into logical
