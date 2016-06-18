@@ -344,12 +344,12 @@ def some_function(_),
 
   ```elixir
   # preferred
-  Enum.reduce(1..10, 0, fn x, acc ->
+  Enum.reduce(1..10, 0, fn(x, acc) ->
     x + acc
   end)
 
   # also preferred
-  Enum.reduce 1..10, 0, fn x, acc ->
+  Enum.reduce 1..10, 0, fn(x, acc) ->
     x + acc
   end
   ```
