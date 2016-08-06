@@ -354,6 +354,22 @@ def some_function(_),
   end
   ```
 
+* Use parentheses for calls to function with a zero arity so they can be destinguished from variables.
+
+  ```elixir
+  defp do_stuff, do: ...
+  
+  # not preferred
+  def my_func do
+    do_stuff # is this a variable or a function call
+  end
+  
+  # preferred
+  def my_func do
+    do_stuff() # this is clearly a function call
+  end
+  ```
+
 
 ### Naming
 
