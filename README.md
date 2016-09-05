@@ -401,7 +401,7 @@ def some_function(_),
   end
   ```
 
-* Use `PascalCase` for modules (keep acronyms like HTTP, RFC, XML uppercase).
+* Use `CamelCase` for modules (keep acronyms like HTTP, RFC, XML uppercase).
 
   ```elixir
   # not preferred
