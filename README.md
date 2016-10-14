@@ -358,12 +358,12 @@ def some_function(_),
 
   ```elixir
   defp do_stuff, do: ...
-  
+
   # not preferred
   def my_func do
     do_stuff # is this a variable or a function call
   end
-  
+
   # preferred
   def my_func do
     do_stuff() # this is clearly a function call
@@ -427,14 +427,23 @@ def some_function(_),
   end
   ```
 
-* The names of predicate functions (functions that return a boolean value)
-  should have a trailing question mark rather than a leading `is_` or similar.
-
+* The names of predicate macros (compile-time generated functions that return a boolean value) _that can be used within guards_ should be prefixed with `is_`.
+  For a list of allowed expressions, see
+  [Expressions in Guard Clauses](http://elixir-lang.org/getting-started/case-cond-and-if.html#expressions-in-guard-clauses).
   ```elixir
-  def cool?(var) do
-    # checks if var is cool
+  defmacro is_cool(var) do
+    quote do: unquote(var) == "cool"
   end
   ```
+
+* The names of predicate functions _that cannot be used within guards_ should
+  have a trailing question mark (`?`) rather than the `is_` (or similar) prefix.
+  ```elixir
+  def cool?(var) do
+    # Complex check if var is cool not possible in a pure function.
+  end
+  ```
+
 * Private functions with the same name as public functions should start with
   `do_`.
 
