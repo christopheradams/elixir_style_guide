@@ -19,3 +19,10 @@ formatting/markup/style rules so that the style remains consistent:
   [vim](http://vim.wikia.com/wiki/Automatic_word_wrapping));
 * leave **two newlines** before each first, second and third level header (`#` to `###`) and **one
   newline** before every other type of headers (`####` to `######`).
+
+Install [markdownlint](https://github.com/mivok/markdownlint) to check your
+changes, and run:
+
+```sh
+mdl --style 'markdown.rb' README.md
+```
