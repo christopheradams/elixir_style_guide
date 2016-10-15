@@ -847,9 +847,10 @@ Thanks in advance for your help!
 
 ### Spread the Word
 
-A community style guide is meaningless without the community's support.
-Please Tweet, star, and let any Elixir programmer know about
-[this guide][Elixir Style Guide] so they can contribute.
+A community style guide is meaningless without the community's support. Please
+tweet, [star](https://github.com/niftyn8/elixir_style_guide/stargazers), and let
+any Elixir programmer know about [this guide][Elixir Style Guide] so they can
+contribute.
 
 
 ## Copying
@@ -872,13 +873,6 @@ out quicker to start the conversation.
 Here's the
 [list of people who has kindly contributed](https://github.com/niftyn8/elixir_style_guide/graphs/contributors)
 to this project.
-
-## Spread the Word
-
-A community style guide is meaningless without the community's support. Please
-tweet, [star](https://github.com/niftyn8/elixir_style_guide/stargazers), and let
-any Elixir programmer know about [this guide][Elixir Style Guide] so they can
-contribute.
 
 <!-- Links -->
 [Elixir Style Guide]: https://github.com/niftyn8/elixir_style_guide
