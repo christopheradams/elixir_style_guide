@@ -354,7 +354,8 @@ def some_function(_),
   end
   ```
 
-* Use parentheses for calls to function with a zero arity so they can be destinguished from variables.
+* Use parentheses for calls to function with a zero arity so they can be
+  destinguished from variables.
 
   ```elixir
   defp do_stuff, do: ...
@@ -431,6 +432,7 @@ def some_function(_),
   boolean value) _that can be used within guards_ should be prefixed with `is_`.
   For a list of allowed expressions, see
   [Expressions in Guard Clauses](http://elixir-lang.org/getting-started/case-cond-and-if.html#expressions-in-guard-clauses).
+
   ```elixir
   defmacro is_cool(var) do
     quote do: unquote(var) == "cool"
@@ -439,6 +441,7 @@ def some_function(_),
 
 * The names of predicate functions _that cannot be used within guards_ should
   have a trailing question mark (`?`) rather than the `is_` (or similar) prefix.
+
   ```elixir
   def cool?(var) do
     # Complex check if var is cool not possible in a pure function.
@@ -586,8 +589,8 @@ Documentation in Elixir (when read either in `iex` with `h` or generated with
 http://elixir-lang.org/getting-started/module-attributes.html#as-annotations)
 `@moduledoc` and `@doc`.
 
- * Always include a `@moduledoc` attribute in the line right after `defmodule`
-   in your module.
+* Always include a `@moduledoc` attribute in the line right after `defmodule` in
+  your module.
 
   ```elixir
   # not preferred
@@ -618,7 +621,7 @@ http://elixir-lang.org/getting-started/module-attributes.html#as-annotations)
   end
   ```
 
- * Use `@moduledoc false` if you do not intend on documenting the module.
+* Use `@moduledoc false` if you do not intend on documenting the module.
 
   ```elixir
   defmodule SomeModule do
@@ -627,7 +630,7 @@ http://elixir-lang.org/getting-started/module-attributes.html#as-annotations)
   end
   ```
 
- * Separate code after the `@moduledoc` with a new line.
+* Separate code after the `@moduledoc` with a new line.
 
   ```elixir
   # not preferred
@@ -649,7 +652,7 @@ http://elixir-lang.org/getting-started/module-attributes.html#as-annotations)
   end
   ```
 
- * Use heredocs with markdown for documentation.
+* Use heredocs with markdown for documentation.
 
   ```elixir
   # not preferred
@@ -707,8 +710,8 @@ directives (see [Modules](#modules)).
   end
   ```
 
-*  If a union type is too long to fit on a single line, add a newline
-   and indent with spaces to keep the return types aligned.
+* If a union type is too long to fit on a single line, add a newline
+  and indent with spaces to keep the return types aligned.
 
   ```elixir
   # not preferred - no indentation
@@ -739,7 +742,7 @@ directives (see [Modules](#modules)).
 
 ### Exceptions
 
-  * Make exception names end with a trailing `Error`.
+* Make exception names end with a trailing `Error`.
 
     ```elixir
     # not preferred
@@ -757,8 +760,8 @@ directives (see [Modules](#modules)).
     end
     ```
 
-  * Use lowercase error messages when raising exceptions, with no trailing
-    punctuation.
+* Use lowercase error messages when raising exceptions, with no trailing
+  punctuation.
 
     ```elixir
     # not preferred
@@ -878,9 +881,10 @@ to this project.
 
 ## Spread the Word
 
-A community style guide is meaningless without the community's support.
-Please tweet, [star](https://github.com/niftyn8/elixir_style_guide/stargazers),
-and let any Elixir programmer know about [this guide][Elixir Style Guide] so they can contribute.
+A community style guide is meaningless without the community's support. Please
+tweet, [star](https://github.com/niftyn8/elixir_style_guide/stargazers), and let
+any Elixir programmer know about [this guide][Elixir Style Guide] so they can
+contribute.
 
 <!-- Links -->
 [Elixir Style Guide]: https://github.com/niftyn8/elixir_style_guide
