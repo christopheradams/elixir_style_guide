@@ -773,7 +773,6 @@ directives (see [Modules](#modules)).
 _No guidelines for collections have been added yet._
 
 
-
 ### Strings
 
 * Match strings using the string concatenator rather than binary patterns:
@@ -790,7 +789,6 @@ _No guidelines for collections have been added yet._
 ### Regular Expressions
 
 _No guidelines for regular expressions have been added yet._
-
 
 
 ### Metaprogramming
