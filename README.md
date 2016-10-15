@@ -427,7 +427,8 @@ def some_function(_),
   end
   ```
 
-* The names of predicate macros (compile-time generated functions that return a boolean value) _that can be used within guards_ should be prefixed with `is_`.
+* The names of predicate macros (compile-time generated functions that return a
+  boolean value) _that can be used within guards_ should be prefixed with `is_`.
   For a list of allowed expressions, see
   [Expressions in Guard Clauses](http://elixir-lang.org/getting-started/case-cond-and-if.html#expressions-in-guard-clauses).
   ```elixir
