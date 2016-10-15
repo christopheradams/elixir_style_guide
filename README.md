@@ -542,6 +542,7 @@ def some_function(_),
 * Reference other modules in the following order:
 
     1. `@moduledoc`
+    1. `@behaviour`
     1. `use`
     1. `import`
     1. `alias`
@@ -557,6 +558,8 @@ def some_function(_),
     @moduledoc """
     An example module
     """
+
+    @behaviour MyBehaviour
 
     use GenServer
     import Something
