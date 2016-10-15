@@ -1,0 +1,13 @@
+sudo: false
+
+language: ruby
+
+rvm:
+  - 2.3.0
+
+install:
+  - gem install mdl
+
+script:
+  - mdl --style 'markdown.rb' README.md
+  - mdl --style 'markdown.rb' CONTRIBUTING.md
