@@ -475,13 +475,6 @@ def some_function(_),
   String.upcase(some_string) # Capitalize string.
   ```
 
-* Keep existing comments up-to-date.
-  An outdated comment is worse than no comment at all.
-
-* Avoid writing comments to explain bad code.
-  Refactor the code to make it self-explanatory.
-  ("Do — or do not — there is no try." —Yoda)
-
 #### Comment Annotations
 
 * Annotations should usually be written on the line immediately above the
