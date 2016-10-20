@@ -459,6 +459,7 @@ def some_function(_),
   defp do_sum([head|tail], total), do: do_sum(tail, head + total)
   ```
 
+
 ### Comments
 
 * Write self-documenting code and ignore the rest of this section.
