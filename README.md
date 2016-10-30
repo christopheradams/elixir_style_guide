@@ -354,8 +354,8 @@ def some_function(_),
   end
   ```
 
-* Use parentheses for calls to function with a zero arity so they can be
-  destinguished from variables.
+* Use parentheses for calls to functions with zero arity, so they can be
+  distinguished from variables.
 
   ```elixir
   defp do_stuff, do: ...
