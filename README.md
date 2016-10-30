@@ -540,7 +540,7 @@ def some_function(_),
 
 * Newline after "module-level-code-blocks".
 
-* Reference other modules in the following order:
+* List module attributes and directives in the following order:
 
     1. `@moduledoc`
     1. `@behaviour`
