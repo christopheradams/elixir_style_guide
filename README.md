@@ -389,7 +389,7 @@ def some_function(_),
   end
 
   def SomeFunction do
-   ...
+    ...
   end
 
   # preferred
@@ -741,32 +741,32 @@ directives (see [Modules](#modules)).
 
 * Make exception names end with a trailing `Error`.
 
-    ```elixir
-    # not preferred
-    defmodule BadHTTPCode do
-      defexception [:message]
-    end
+  ```elixir
+  # not preferred
+  defmodule BadHTTPCode do
+    defexception [:message]
+  end
 
-    defmodule BadHTTPCodeException do
-      defexception [:message]
-    end
+  defmodule BadHTTPCodeException do
+    defexception [:message]
+  end
 
-    # preferred
-    defmodule BadHTTPCodeError do
-      defexception [:message]
-    end
-    ```
+  # preferred
+  defmodule BadHTTPCodeError do
+    defexception [:message]
+  end
+  ```
 
 * Use lowercase error messages when raising exceptions, with no trailing
   punctuation.
 
-    ```elixir
-    # not preferred
-    raise ArgumentError, "This is not valid."
+  ```elixir
+  # not preferred
+  raise ArgumentError, "This is not valid."
 
-    # preferred
-    raise ArgumentError, "this is not valid"
-    ```
+  # preferred
+  raise ArgumentError, "this is not valid"
+  ```
 
 
 ### Collections
