@@ -730,6 +730,18 @@ directives (see [Modules](#modules)).
                          | a_final_type
   ```
 
+* Name the main type for a module `t`, for example: the type specification for a
+  struct.
+
+  ```elixir
+  defstruct name: nil, params: []
+
+  @type t :: %__MODULE__{
+    name: String.t,
+    params: Keyword.t
+  }
+  ```
+
 * Place specifications right before the function definition,
   separated by a newline.
 
