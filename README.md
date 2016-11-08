@@ -13,6 +13,7 @@
     * [Modules](#modules)
     * [Documentation](#documentation)
     * [Typespecs](#typespecs)
+    * [Structs](#structs)
     * [Exceptions](#exceptions)
     * _Collections_
     * [Strings](#strings)
@@ -739,6 +740,18 @@ directives (see [Modules](#modules)).
   end
   ```
 
+
+### Structs
+
+* If all the struct's fields default to nil, supply them as a list of atoms.
+
+  ```elixir
+  # not preferred
+  defstruct name: nil, params: nil
+
+  # preferred
+  defstruct [:name, :params]
+  ```
 
 ### Exceptions
 
