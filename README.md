@@ -548,6 +548,7 @@ def some_function(_),
     1. `import`
     1. `alias`
     1. `require`
+    1. `defstruct`
     1. `@type`
     1. `@module_attribute`
 
@@ -568,6 +569,8 @@ def some_function(_),
     alias My.Long.Module.Name
     alias My.Other.Module.Name
     require Integer
+
+    defstruct name: nil, params: []
 
     @type params :: [{binary, binary}]
 
