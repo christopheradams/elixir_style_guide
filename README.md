@@ -202,7 +202,7 @@ def some_function(_),
   multiline pipelines into IEx might result in a syntax error, as IEx will
   evaluate the first line without realizing that the next line has a pipeline.
 
-* Never use the pipeline operator (`|>`) just once.
+* Avoid using the pipeline operator just once.
 
   ```elixir
   # not preferred
