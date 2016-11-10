@@ -202,6 +202,16 @@ def some_function(_),
   multiline pipelines into IEx might result in a syntax error, as IEx will
   evaluate the first line without realizing that the next line has a pipeline.
 
+* Avoid using the pipeline operator just once.
+
+  ```elixir
+  # not preferred
+  some_string |> String.downcase
+
+  # preferred
+  String.downcase(some_string)
+  ```
+
 * Use _bare_ variables in the first part of a function chain.
 
   ```elixir
