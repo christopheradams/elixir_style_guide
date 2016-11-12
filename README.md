@@ -136,26 +136,26 @@ If you're looking for other projects to contribute to please see the
   function body is long, put the `do:` on a new line indented one level more
   than the previous line.
 
-```elixir
-def some_function(args),
-  do: Enum.map(args, fn(arg) -> arg <> " is on a very long line!" end)
-```
+  ```elixir
+  def some_function(args),
+    do: Enum.map(args, fn(arg) -> arg <> " is on a very long line!" end)
+  ```
 
-When you use the convention above and you have more than one function clause
-using the `do:` syntax, put the `do:` on a new line for each function clause:
+  When you use the convention above and you have more than one function clause
+  using the `do:` syntax, put the `do:` on a new line for each function clause:
 
-```elixir
-# not preferred
-def some_function([]), do: :empty
-def some_function(_),
-  do: :very_long_line_here
+  ```elixir
+  # not preferred
+  def some_function([]), do: :empty
+  def some_function(_),
+    do: :very_long_line_here
 
-# preferred
-def some_function([]),
-  do: :empty
-def some_function(_),
-  do: :very_long_line_here
-```
+  # preferred
+  def some_function([]),
+    do: :empty
+  def some_function(_),
+    do: :very_long_line_here
+  ```
 
 * If you have more than one multi-line `def`s do not use single-line `def`s.
 
