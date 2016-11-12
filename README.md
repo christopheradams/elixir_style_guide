@@ -888,9 +888,9 @@ Thanks in advance for your help!
 ### Spread the Word
 
 A community style guide is meaningless without the community's support. Please
-tweet, [star](https://github.com/niftyn8/elixir_style_guide/stargazers), and let
-any Elixir programmer know about [this guide][Elixir Style Guide] so they can
-contribute.
+tweet, [star](https://github.com/levionessa/elixir_style_guide/stargazers), and
+let any Elixir programmer know about [this guide][Elixir Style Guide] so they
+can contribute.
 
 
 ## Copying
@@ -911,11 +911,11 @@ A lot of things were applicable to Elixir and allowed us to get _some_ document
 out quicker to start the conversation.
 
 Here's the
-[list of people who has kindly contributed](https://github.com/niftyn8/elixir_style_guide/graphs/contributors)
+[list of people who has kindly contributed](https://github.com/levionessa/elixir_style_guide/graphs/contributors)
 to this project.
 
 <!-- Links -->
-[Elixir Style Guide]: https://github.com/niftyn8/elixir_style_guide
+[Elixir Style Guide]: https://github.com/levionessa/elixir_style_guide
 [Elixir]: http://elixir-lang.org
 [Hex]: https://hex.pm/packages
 [license]: http://creativecommons.org/licenses/by/3.0/deed.en_US
