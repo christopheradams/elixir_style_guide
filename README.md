@@ -97,7 +97,7 @@ If you're looking for other projects to contribute to please see the
   Enum.map(["one", <<"two">>, "three"], fn num -> IO.puts num end)
   ```
 
-* Use empty lines between `def`s and to break up a function into logical
+* Use empty lines between `def`s to break up a function into logical
   paragraphs.
 
   ```elixir
