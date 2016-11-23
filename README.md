@@ -794,6 +794,13 @@ directives (see [Modules](#modules)).
   defstruct [:name, :params]
   ```
 
+* Indent additional lines of the struct definition, keeping the first keys
+  aligned.
+
+  ```elixir
+  defstruct foo: "test", bar: true, baz: false,
+            qux: false, quux: nil
+  ```
 
 ### Exceptions
 
