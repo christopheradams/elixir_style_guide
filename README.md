@@ -39,11 +39,6 @@ Style matters.
 [Elixir] has plenty of style but like all languages it can be stifled.
 Don't stifle the style.
 
-**NOTE**: When you submit a PR and it gets merged, you will be automatically added
-as a collaborator, but if you wouldn't like to be added, please mention it in
-your submission.
-People who have PRs merged have been added as collaborators.
-
 
 ## The Guide
 
