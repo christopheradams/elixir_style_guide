@@ -57,8 +57,10 @@ If you're looking for other projects to contribute to please see the
 
 <!-- TODO: Add crafty quote here -->
 
+<a name="spaces-indentation"></a>
 * Use two **spaces** per indentation level.
   No hard tabs.
+  [[link](#spaces-indentation)]
 
   ```elixir
   # not preferred - four spaces
