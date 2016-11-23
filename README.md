@@ -879,6 +879,9 @@ best practices in Elixir.
 Feel free to open tickets or send pull requests with improvements.
 Thanks in advance for your help!
 
+Check the [contributing guidelines](CONTRIBUTING.md)
+and [code of conduct](CODE_OF_CONDUCT.md) for more information.
+
 
 ### Spread the Word
 
