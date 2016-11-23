@@ -1,7 +1,7 @@
 # [The Elixir Style Guide][Elixir Style Guide]
 
 
-### Table of Contents
+## Table of Contents
 
 * __[Prelude](#prelude)__
 * __[The Guide](#the-guide)__
