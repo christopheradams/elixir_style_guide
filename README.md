@@ -32,7 +32,8 @@
 ## Prelude
 
 > Liquid architecture. It's like jazz — you improvise, you work together, you
-> play off each other, you make something, they make something. <br/>
+> play off each other, you make something, they make something.
+>
 > —Frank Gehry
 
 Style matters.
