@@ -78,7 +78,7 @@ If you're looking for other projects to contribute to please see the
   setting to protect your project from Windows line endings creeping in:
 
   ```sh
-  $ git config --global core.autocrlf true
+  git config --global core.autocrlf true
   ```
 
 * Use spaces around operators, after commas, colons and semicolons.
