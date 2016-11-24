@@ -897,7 +897,7 @@ yet but might provide some value.
 
 ### Tools
 
-Refer to [Awesome Elixir][Code Analysis] for libraies and tools that can help
+Refer to [Awesome Elixir][Code Analysis] for libraries and tools that can help
 with code analysis and style linting.
 
 
