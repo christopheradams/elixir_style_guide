@@ -20,7 +20,7 @@
     * _Regular Expressions_
     * [Metaprogramming](#metaprogramming)
     * [Suggested Alternatives](#suggested-alternatives)
-    * _Tools_
+    * [Tools](#tools)
 * __[Getting Involved](#getting-involved)__
     * [Contributing](#contributing)
     * [Spread the Word](#spread-the-word)
