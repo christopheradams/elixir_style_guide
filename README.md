@@ -897,7 +897,8 @@ yet but might provide some value.
 
 ### Tools
 
-_No tools have been added yet._
+Refer to [Awesome Elixir][Code Analysis] for libraies and tools that can help
+with code analysis and style linting.
 
 
 ## Getting Involved
@@ -949,3 +950,4 @@ to this project.
 [Hex]: https://hex.pm/packages
 [license]: http://creativecommons.org/licenses/by/3.0/deed.en_US
 [Ruby community style guide]: https://github.com/bbatsov/ruby-style-guide
+[Code Analysis]: https://github.com/h4cc/awesome-elixir#code-analysis
