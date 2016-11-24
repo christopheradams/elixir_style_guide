@@ -228,7 +228,7 @@ If you're looking for other projects to contribute to please see the
 
 ### Syntax
 
-* Use parentheses when you have arguments, no parentheses when you don't.
+* Use parentheses when a `def` has arguments, and omit them when it doesn't.
 
   ```elixir
   # not preferred
