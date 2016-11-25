@@ -57,8 +57,9 @@ If you're looking for other projects to contribute to please see the
 
 <!-- TODO: Add crafty quote here -->
 
-<a name="spaces-indentation"></a>
-* Use two **spaces** per indentation level.
+
+* <a name="spaces-indentation"></a>
+  Use two **spaces** per indentation level.
   No hard tabs.
   <sup>[[link](#spaces-indentation)]</sup>
 
@@ -74,13 +75,13 @@ If you're looking for other projects to contribute to please see the
   end
   ```
 
-<a name="line-endings"></a>
-* Use Unix-style line endings (\*BSD/Solaris/Linux/OSX users are covered by
+* <a name="line-endings"></a>
+  Use Unix-style line endings (\*BSD/Solaris/Linux/OSX users are covered by
   default, Windows users have to be extra careful).
   <sup>[[link](#line-endings)]</sup>
 
-<a name="autocrlf"></a>
-* If you're using Git you might want to add the following configuration
+* <a name="autocrlf"></a>
+  If you're using Git you might want to add the following configuration
   setting to protect your project from Windows line endings creeping in:
   <sup>[[link](#autocrlf)]</sup>
 
@@ -88,8 +89,8 @@ If you're looking for other projects to contribute to please see the
   git config --global core.autocrlf true
   ```
 
-<a name="spaces"></a>
-* Use spaces around operators, after commas, colons and semicolons.
+* <a name="spaces"></a>
+  Use spaces around operators, after commas, colons and semicolons.
   Do not put spaces around matched pairs like brackets, parentheses, etc.
   Whitespace might be (mostly) irrelevant to the Elixir runtime, but its proper
   use is the key to writing easily readable code.
@@ -101,8 +102,8 @@ If you're looking for other projects to contribute to please see the
   Enum.map(["one", <<"two">>, "three"], fn num -> IO.puts num end)
   ```
 
-<a name="empty-lines"></a>
-* Use empty lines between `def`s to break up a function into logical
+* <a name="empty-lines"></a>
+  Use empty lines between `def`s to break up a function into logical
   paragraphs.
   <sup>[[link](#empty-lines)]</sup>
 
@@ -128,8 +129,8 @@ If you're looking for other projects to contribute to please see the
   end
   ```
 
-<a name="single-line-defs"></a>
-* ...but run single-line `def`s that match for the same function together.
+* <a name="single-line-defs"></a>
+  ...but run single-line `def`s that match for the same function together.
   <sup>[[link](#single-line-defs)]</sup>
 
   ```elixir
@@ -140,8 +141,8 @@ If you're looking for other projects to contribute to please see the
   end
   ```
 
-<a name="long-dos"></a>
-* If you use the `do:` syntax with functions and the line that makes up the
+* <a name="long-dos"></a>
+  If you use the `do:` syntax with functions and the line that makes up the
   function body is long, put the `do:` on a new line indented one level more
   than the previous line.
   <sup>[[link](#long-dos)]</sup>
@@ -167,8 +168,8 @@ If you're looking for other projects to contribute to please see the
     do: :very_long_line_here
   ```
 
-<a name="multiple-function-defs"></a>
-* If you have more than one multi-line `def`s do not use single-line `def`s.
+* <a name="multiple-function-defs"></a>
+  If you have more than one multi-line `def`s do not use single-line `def`s.
   <sup>[[link](#multiple-function-defs)]</sup>
 
   ```elixir
@@ -189,8 +190,8 @@ If you're looking for other projects to contribute to please see the
   end
   ```
 
-<a name="chained-pipes"></a>
-* Use the pipeline operator (`|>`) to chain functions together.
+* <a name="chained-pipes"></a>
+  Use the pipeline operator (`|>`) to chain functions together.
   <sup>[[link](#chained-pipes)]</sup>
 
   ```elixir
@@ -217,8 +218,8 @@ If you're looking for other projects to contribute to please see the
   multiline pipelines into IEx might result in a syntax error, as IEx will
   evaluate the first line without realizing that the next line has a pipeline.
 
-<a name="avoid-single-pipelines"></a>
-* Avoid using the pipeline operator just once.
+* <a name="avoid-single-pipelines"></a>
+  Avoid using the pipeline operator just once.
   <sup>[[link](#avoid-single-pipelines)]</sup>
 
   ```elixir
@@ -229,8 +230,8 @@ If you're looking for other projects to contribute to please see the
   String.downcase(some_string)
   ```
 
-<a name="bare-variables"></a>
-* Use _bare_ variables in the first part of a function chain.
+* <a name="bare-variables"></a>
+  Use _bare_ variables in the first part of a function chain.
   <sup>[[link](#bare-variables)]</sup>
 
   ```elixir
@@ -245,15 +246,15 @@ If you're looking for other projects to contribute to please see the
   some_string |> String.strip |> String.downcase |> String.codepoints
   ```
 
-<a name="trailing-whitespace"></a>
-* Avoid trailing whitespace.
+* <a name="trailing-whitespace"></a>
+  Avoid trailing whitespace.
   <sup>[[link](#trailing-whitespace)]</sup>
 
 
 ### Syntax
 
-<a name="parentheses"></a>
-* Use parentheses when a `def` has arguments, and omit them when it doesn't.
+* <a name="parentheses"></a>
+  Use parentheses when a `def` has arguments, and omit them when it doesn't.
   <sup>[[link](#parentheses)]</sup>
 
   ```elixir
@@ -276,8 +277,8 @@ If you're looking for other projects to contribute to please see the
   end
   ```
 
-<a name="do-with-multi-line-if-unless"></a>
-* Never use `do:` for multi-line `if/unless`.
+* <a name="do-with-multi-line-if-unless"></a>
+  Never use `do:` for multi-line `if/unless`.
   <sup>[[link](#do-with-multi-line-if-unless)]</sup>
 
   ```elixir
@@ -295,8 +296,8 @@ If you're looking for other projects to contribute to please see the
   end
   ```
 
-<a name="do-with-single-line-if-unless"></a>
-* Use `do:` for single line `if/unless` statements.
+* <a name="do-with-single-line-if-unless"></a>
+  Use `do:` for single line `if/unless` statements.
   <sup>[[link](#do-with-single-line-if-unless)]</sup>
 
   ```elixir
@@ -304,8 +305,8 @@ If you're looking for other projects to contribute to please see the
   if some_condition, do: # some_stuff
   ```
 
-<a name="unless-with-else"></a>
-* Never use `unless` with `else`.
+* <a name="unless-with-else"></a>
+  Never use `unless` with `else`.
   Rewrite these with the positive case first.
   <sup>[[link](#unless-with-else)]</sup>
 
@@ -325,8 +326,8 @@ If you're looking for other projects to contribute to please see the
   end
   ```
 
-<a name="true-as-last-condition"></a>
-* Always use `true` as the last condition of a `cond` statement.
+* <a name="true-as-last-condition"></a>
+  Always use `true` as the last condition of a `cond` statement.
   <sup>[[link](#true-as-last-condition)]</sup>
 
   ```elixir
@@ -340,8 +341,8 @@ If you're looking for other projects to contribute to please see the
   end
   ```
 
-<a name="function-names-with-parentheses"></a>
-* Never put a space between a function name and the opening parenthesis.
+* <a name="function-names-with-parentheses"></a>
+  Never put a space between a function name and the opening parenthesis.
   <sup>[[link](#function-names-with-parentheses)]</sup>
 
   ```elixir
@@ -352,8 +353,8 @@ If you're looking for other projects to contribute to please see the
   f(3 + 2) + 1
   ```
 
-<a name="function-calls-and-parentheses"></a>
-* Use parentheses in function calls, especially inside a pipeline.
+* <a name="function-calls-and-parentheses"></a>
+  Use parentheses in function calls, especially inside a pipeline.
   <sup>[[link](#function-calls-and-parentheses)]</sup>
 
   ```elixir
@@ -370,8 +371,8 @@ If you're looking for other projects to contribute to please see the
   2 |> rem(3) |> g
   ```
 
-<a name="macro-calls-and-parentheses"></a>
-* Omit parentheses in macro calls when a do block is passed.
+* <a name="macro-calls-and-parentheses"></a>
+  Omit parentheses in macro calls when a do block is passed.
   <sup>[[link](#macro-calls-and-parentheses)]</sup>
 
   ```elixir
@@ -386,8 +387,8 @@ If you're looking for other projects to contribute to please see the
   end
   ```
 
-<a name="parentheses-and-function-expressions"></a>
-* Optionally omit parentheses in function calls (outside a pipeline) when the
+* <a name="parentheses-and-function-expressions"></a>
+  Optionally omit parentheses in function calls (outside a pipeline) when the
   last argument is a function expression.
   <sup>[[link](#parentheses-and-function-expressions)]</sup>
 
@@ -403,8 +404,8 @@ If you're looking for other projects to contribute to please see the
   end
   ```
 
-<a name="parentheses-and-functions-with-zero-arity"></a>
-* Use parentheses for calls to functions with zero arity, so they can be
+* <a name="parentheses-and-functions-with-zero-arity"></a>
+  Use parentheses for calls to functions with zero arity, so they can be
   distinguished from variables.
   <sup>[[link](#parentheses-and-functions-with-zero-arity)]</sup>
 
@@ -425,8 +426,8 @@ If you're looking for other projects to contribute to please see the
 
 ### Naming
 
-<a name="snake-case"></a>
-* Use `snake_case` for atoms, functions and variables.
+* <a name="snake-case"></a>
+  Use `snake_case` for atoms, functions and variables.
   <sup>[[link](#snake-case)]</sup>
 
   ```elixir
@@ -455,8 +456,8 @@ If you're looking for other projects to contribute to please see the
   end
   ```
 
-<a name="camel-case"></a>
-* Use `CamelCase` for modules (keep acronyms like HTTP, RFC, XML uppercase).
+* <a name="camel-case"></a>
+  Use `CamelCase` for modules (keep acronyms like HTTP, RFC, XML uppercase).
   <sup>[[link](#camel-case)]</sup>
 
   ```elixir
@@ -483,8 +484,8 @@ If you're looking for other projects to contribute to please see the
   end
   ```
 
-<a name="predicate-macro-names-with-guards"></a>
-* The names of predicate macros (compile-time generated functions that return a
+* <a name="predicate-macro-names-with-guards"></a>
+  The names of predicate macros (compile-time generated functions that return a
   boolean value) _that can be used within guards_ should be prefixed with `is_`.
   For a list of allowed expressions, see
   [Expressions in Guard Clauses](http://elixir-lang.org/getting-started/case-cond-and-if.html#expressions-in-guard-clauses).
@@ -496,8 +497,8 @@ If you're looking for other projects to contribute to please see the
   end
   ```
 
-<a name="predicate-macro-names-no-guards"></a>
-* The names of predicate functions _that cannot be used within guards_ should
+* <a name="predicate-macro-names-no-guards"></a>
+  The names of predicate functions _that cannot be used within guards_ should
   have a trailing question mark (`?`) rather than the `is_` (or similar) prefix.
   <sup>[[link](#predicate-macro-names-no-guards)]</sup>
 
@@ -507,8 +508,8 @@ If you're looking for other projects to contribute to please see the
   end
   ```
 
-<a name="private-functions-with-same-name-as-public"></a>
-* Private functions with the same name as public functions should start with
+* <a name="private-functions-with-same-name-as-public"></a>
+  Private functions with the same name as public functions should start with
   <sup>[[link](#private-functions-with-same-name-as-public)]</sup>
   `do_`.
 
@@ -523,18 +524,18 @@ If you're looking for other projects to contribute to please see the
 
 ### Comments
 
-<a name="self-documenting-code"></a>
-* Write self-documenting code and ignore the rest of this section.
+* <a name="self-documenting-code"></a>
+  Write self-documenting code and ignore the rest of this section.
   Seriously!
   <sup>[[link](#self-documenting-code)]</sup>
 
-<a name="comment-leading-spaces"></a>
-* Use one space between the leading `#` character of the comment and the text of
+* <a name="comment-leading-spaces"></a>
+  Use one space between the leading `#` character of the comment and the text of
   the comment.
   <sup>[[link](#comment-leading-spaces)]</sup>
 
-<a name="comment-spacing"></a>
-* Comments longer than a word are capitalized and use punctuation.
+* <a name="comment-spacing"></a>
+  Comments longer than a word are capitalized and use punctuation.
   Use [one space](http://en.wikipedia.org/wiki/Sentence_spacing) after periods.
   <sup>[[link](#comment-spacing)]</sup>
 
@@ -545,68 +546,68 @@ If you're looking for other projects to contribute to please see the
 
 #### Comment Annotations
 
-<a name="annotations"></a>
-* Annotations should usually be written on the line immediately above the
+* <a name="annotations"></a>
+  Annotations should usually be written on the line immediately above the
   relevant code.
   <sup>[[link](#annotations)]</sup>
 
-<a name="annotation-keyword"></a>
-* The annotation keyword is followed by a colon and a space, then a note
+* <a name="annotation-keyword"></a>
+  The annotation keyword is followed by a colon and a space, then a note
   describing the problem.
   <sup>[[link](#annotation-keyword)]</sup>
 
-<a name="multiple-line-annotations"></a>
-* If multiple lines are required to describe the problem, subsequent lines
+* <a name="multiple-line-annotations"></a>
+  If multiple lines are required to describe the problem, subsequent lines
   should be indented two spaces after the `#`.
   <sup>[[link](#multiple-line-annotations)]</sup>
 
-<a name="exceptions-to-annotations"></a>
-* In cases where the problem is so obvious that any documentation would be
+* <a name="exceptions-to-annotations"></a>
+  In cases where the problem is so obvious that any documentation would be
   redundant, annotations may be left at the end of the offending line with no
   note.
   This usage should be the exception and not the rule.
   <sup>[[link](#exceptions-to-annotations)]</sup>
 
-<a name="todo-notes"></a>
-* Use `TODO` to note missing features or functionality that should be added at a
+* <a name="todo-notes"></a>
+  Use `TODO` to note missing features or functionality that should be added at a
   later date.
   <sup>[[link](#todo-notes)]</sup>
 
-<a name="fixme-notes"></a>
-* Use `FIXME` to note broken code that needs to be fixed.
+* <a name="fixme-notes"></a>
+  Use `FIXME` to note broken code that needs to be fixed.
   <sup>[[link](#fixme-notes)]</sup>
 
-<a name="optimize-notes"></a>
-* Use `OPTIMIZE` to note slow or inefficient code that may cause performance
+* <a name="optimize-notes"></a>
+  Use `OPTIMIZE` to note slow or inefficient code that may cause performance
   problems.
   <sup>[[link](#optimize-notes)]</sup>
 
-<a name="hack-notes"></a>
-* Use `HACK` to note code smells where questionable coding practices were used
+* <a name="hack-notes"></a>
+  Use `HACK` to note code smells where questionable coding practices were used
   and should be refactored away.
   <sup>[[link](#hack-notes)]</sup>
 
-<a name="review-notes"></a>
-* Use `REVIEW` to note anything that should be looked at to confirm it is
+* <a name="review-notes"></a>
+  Use `REVIEW` to note anything that should be looked at to confirm it is
   working as intended.
   For example: `REVIEW: Are we sure this is how the client does X currently?`
   <sup>[[link](#review-notes)]</sup>
 
-<a name="custom-keywords"></a>
-* Use other custom annotation keywords if it feels appropriate, but be sure to
+* <a name="custom-keywords"></a>
+  Use other custom annotation keywords if it feels appropriate, but be sure to
   document them in your project's `README` or similar.
   <sup>[[link](#custom-keywords)]</sup>
 
 
 ### Modules
 
-<a name="one-module-per-file"></a>
-* Use one module per file unless the module is only used internally by another
+* <a name="one-module-per-file"></a>
+  Use one module per file unless the module is only used internally by another
   module (such as a test).
   <sup>[[link](#one-module-per-file)]</sup>
 
-<a name="underscored-filenames"></a>
-* Use underscored file names for `CamelCase` module names.
+* <a name="underscored-filenames"></a>
+  Use underscored file names for `CamelCase` module names.
   <sup>[[link](#underscored-filenames)]</sup>
 
   ```elixir
@@ -616,8 +617,8 @@ If you're looking for other projects to contribute to please see the
   end
   ```
 
-<a name="module-name-nesting"></a>
-* Represent each level of nesting within a module name as a directory.
+* <a name="module-name-nesting"></a>
+  Represent each level of nesting within a module name as a directory.
   <sup>[[link](#module-name-nesting)]</sup>
 
   ```elixir
@@ -627,20 +628,20 @@ If you're looking for other projects to contribute to please see the
   end
   ```
 
-<a name="no-newlines-after-defmodule"></a>
-* No newline after defmodule.
+* <a name="no-newlines-after-defmodule"></a>
+  No newline after defmodule.
   <sup>[[link](#no-newlines-after-defmodule)]</sup>
 
-<a name="no-newlines-before-first-function-def"></a>
-* No newline before first function def.
+* <a name="no-newlines-before-first-function-def"></a>
+  No newline before first function def.
   <sup>[[link](#no-newlines-before-first-function-def)]</sup>
 
-<a name="newline-after-module-level-code-blocks"></a>
-* Newline after "module-level-code-blocks".
+* <a name="newline-after-module-level-code-blocks"></a>
+  Newline after "module-level-code-blocks".
   <sup>[[link](#newline-after-module-level-code-blocks)]</sup>
 
-<a name="module-attribute-ordering"></a>
-* List module attributes and directives in the following order:
+* <a name="module-attribute-ordering"></a>
+  List module attributes and directives in the following order:
   <sup>[[link](#module-attribute-ordering)]</sup>
 
     1. `@moduledoc`
@@ -682,8 +683,10 @@ If you're looking for other projects to contribute to please see the
   end
   ```
 
-* Use the `__MODULE__` pseudo variable when a module refers to itself. This
+* <a name="module-pseudo-variable"></a>
+  Use the `__MODULE__` pseudo variable when a module refers to itself. This
   avoids having to update any self-references when the module name changes.
+  <sup>[[link](#module-pseudo-variable)]</sup>
 
   ```elixir
   defmodule SomeProject.SomeModule do
@@ -693,7 +696,9 @@ If you're looking for other projects to contribute to please see the
   end
   ```
 
-* If you want a prettier name for a module self-reference, set up an alias.
+* <a name="alias-self-referencing-modules"></a>
+  If you want a prettier name for a module self-reference, set up an alias.
+  <sup>[[link](#alias-self-referencing-modules)]</sup>
 
   ```elixir
   defmodule SomeProject.SomeModule do
@@ -713,8 +718,8 @@ Documentation in Elixir (when read either in `iex` with `h` or generated with
 http://elixir-lang.org/getting-started/module-attributes.html#as-annotations)
 `@moduledoc` and `@doc`.
 
-<a name="moduledocs"></a>
-* Always include a `@moduledoc` attribute in the line right after `defmodule` in
+* <a name="moduledocs"></a>
+  Always include a `@moduledoc` attribute in the line right after `defmodule` in
   your module.
   <sup>[[link](#moduledocs)]</sup>
 
@@ -747,8 +752,8 @@ http://elixir-lang.org/getting-started/module-attributes.html#as-annotations)
   end
   ```
 
-<a name="moduledoc-false"></a>
-* Use `@moduledoc false` if you do not intend on documenting the module.
+* <a name="moduledoc-false"></a>
+  Use `@moduledoc false` if you do not intend on documenting the module.
   <sup>[[link](#moduledoc-false)]</sup>
 
   ```elixir
@@ -758,8 +763,8 @@ http://elixir-lang.org/getting-started/module-attributes.html#as-annotations)
   end
   ```
 
-<a name="code-after-moduledoc"></a>
-* Separate code after the `@moduledoc` with a new line.
+* <a name="code-after-moduledoc"></a>
+  Separate code after the `@moduledoc` with a new line.
   <sup>[[link](#code-after-moduledoc)]</sup>
 
   ```elixir
@@ -782,8 +787,8 @@ http://elixir-lang.org/getting-started/module-attributes.html#as-annotations)
   end
   ```
 
-<a name="heredocs"></a>
-* Use heredocs with markdown for documentation.
+* <a name="heredocs"></a>
+  Use heredocs with markdown for documentation.
   <sup>[[link](#heredocs)]</sup>
 
   ```elixir
@@ -825,8 +830,8 @@ documentation or for the static analysis tool Dialyzer.
 Custom types should be defined at the top of the module with the other
 directives (see [Modules](#modules)).
 
-<a name="typedocs"></a>
-* Place `@typedoc` and `@type` definitions together, and separate each
+* <a name="typedocs"></a>
+  Place `@typedoc` and `@type` definitions together, and separate each
   pair with a blank line.
   <sup>[[link](#typedocs)]</sup>
 
@@ -844,8 +849,8 @@ directives (see [Modules](#modules)).
   end
   ```
 
-<a name="union-types"></a>
-* If a union type is too long to fit on a single line, add a newline
+* <a name="union-types"></a>
+  If a union type is too long to fit on a single line, add a newline
   and indent with spaces to keep the return types aligned.
   <sup>[[link](#union-types)]</sup>
 
@@ -865,8 +870,8 @@ directives (see [Modules](#modules)).
                          | a_final_type
   ```
 
-<a name="naming-main-types"></a>
-* Name the main type for a module `t`, for example: the type specification for a
+* <a name="naming-main-types"></a>
+  Name the main type for a module `t`, for example: the type specification for a
   struct.
   <sup>[[link](#naming-main-types)]</sup>
 
@@ -879,8 +884,8 @@ directives (see [Modules](#modules)).
   }
   ```
 
-<a name="specifications-before-function-defs"></a>
-* Place specifications right before the function definition,
+* <a name="specifications-before-function-defs"></a>
+  Place specifications right before the function definition,
   separated by a newline.
   <sup>[[link](#specifications-before-function-defs)]</sup>
 
@@ -894,8 +899,8 @@ directives (see [Modules](#modules)).
 
 ### Structs
 
-<a name="nil-struct-field-defaults"></a>
-* If all the struct's fields default to nil, supply them as a list of atoms.
+* <a name="nil-struct-field-defaults"></a>
+  If all the struct's fields default to nil, supply them as a list of atoms.
   <sup>[[link](#nil-struct-field-defaults)]</sup>
 
   ```elixir
@@ -906,8 +911,10 @@ directives (see [Modules](#modules)).
   defstruct [:name, :params]
   ```
 
-* Indent additional lines of the struct definition, keeping the first keys
+* <a name="additional-struct-def-lines"></a>
+  Indent additional lines of the struct definition, keeping the first keys
   aligned.
+  <sup>[[link](#additional-struct-def-lines)]</sup>
 
   ```elixir
   defstruct foo: "test", bar: true, baz: false,
@@ -916,8 +923,8 @@ directives (see [Modules](#modules)).
 
 ### Exceptions
 
-<a name="exception-names"></a>
-* Make exception names end with a trailing `Error`.
+* <a name="exception-names"></a>
+  Make exception names end with a trailing `Error`.
   <sup>[[link](#excepton-names)]</sup>
 
   ```elixir
@@ -936,8 +943,8 @@ directives (see [Modules](#modules)).
   end
   ```
 
-<a name="lowercase-error-messages"></a>
-* Use lowercase error messages when raising exceptions, with no trailing
+* <a name="lowercase-error-messages"></a>
+  Use lowercase error messages when raising exceptions, with no trailing
   punctuation.
   <sup>[[link](#)]</sup>
 
@@ -957,8 +964,8 @@ _No guidelines for collections have been added yet._
 
 ### Strings
 
-<a name="strings-matching-with-concatenator"></a>
-* Match strings using the string concatenator rather than binary patterns:
+* <a name="strings-matching-with-concatenator"></a>
+  Match strings using the string concatenator rather than binary patterns:
   <sup>[[link](#strings-matching-with-concatenator)]</sup>
 
   ```elixir
@@ -977,8 +984,8 @@ _No guidelines for regular expressions have been added yet._
 
 ### Metaprogramming
 
-<a name="avoid-metaprogramming"></a>
-* Avoid needless metaprogramming.
+* <a name="avoid-metaprogramming"></a>
+  Avoid needless metaprogramming.
   <sup>[[link](#avoid-metaprogramming)]</sup>
 
 
@@ -989,8 +996,8 @@ yet but might provide some value.
 
 #### Cond
 
-<a name="atom-conditions"></a>
-* An atom can be used as a catch-all expression in a `cond` as it evaluates
+* <a name="atom-conditions"></a>
+  An atom can be used as a catch-all expression in a `cond` as it evaluates
   to a truthy value.
   Suggested atoms are `:else` or `:otherwise`
   <sup>[[link](#atom-conditions)]</sup>
