@@ -102,10 +102,10 @@ If you're looking for other projects to contribute to please see the
   Enum.map(["one", <<"two">>, "three"], fn num -> IO.puts num end)
   ```
 
-* <a name="empty-lines"></a>
-  Use empty lines between `def`s to break up a function into logical
+* <a name="def-spacing"></a>
+  Use blank lines between `def`s to break up a function into logical
   paragraphs.
-  <sup>[[link](#empty-lines)]</sup>
+  <sup>[[link](#def-spacing)]</sup>
 
   ```elixir
   def some_function(some_data) do
@@ -207,7 +207,7 @@ If you're looking for other projects to contribute to please see the
   |> String.strip
 
   # Multiline pipelines on the right side of a pattern match
-  # should be indented on a newline
+  # should be indented on a new line
   sanitized_string =
     some_string
     |> String.downcase
@@ -628,17 +628,17 @@ If you're looking for other projects to contribute to please see the
   end
   ```
 
-* <a name="no-newlines-after-defmodule"></a>
-  No newline after defmodule.
-  <sup>[[link](#no-newlines-after-defmodule)]</sup>
+* <a name="defmodule-spacing"></a>
+  Don't put a blank line after `defmodule`.
+  <sup>[[link](#defmodule-spacing)]</sup>
 
-* <a name="no-newlines-before-first-function-def"></a>
-  No newline before first function def.
-  <sup>[[link](#no-newlines-before-first-function-def)]</sup>
+* <a name="no-blank-lines-before-first-function-def"></a>
+  No blank lines before first function `def`.
+  <sup>[[link](#no-blank-lines-before-first-function-def)]</sup>
 
-* <a name="newline-after-module-level-code-blocks"></a>
-  Newline after "module-level-code-blocks".
-  <sup>[[link](#newline-after-module-level-code-blocks)]</sup>
+* <a name="module-block-spacing"></a>
+  Put a blank line after module-level code blocks .
+  <sup>[[link](#module-block-spacing)]</sup>
 
 * <a name="module-attribute-ordering"></a>
   List module attributes and directives in the following order:
@@ -763,9 +763,9 @@ http://elixir-lang.org/getting-started/module-attributes.html#as-annotations)
   end
   ```
 
-* <a name="code-after-moduledoc"></a>
-  Separate code after the `@moduledoc` with a new line.
-  <sup>[[link](#code-after-moduledoc)]</sup>
+* <a name="moduledoc-spacing"></a>
+  Separate code after the `@moduledoc` with a blank line.
+  <sup>[[link](#moduledoc-spacing)]</sup>
 
   ```elixir
   # not preferred
@@ -884,10 +884,10 @@ directives (see [Modules](#modules)).
   }
   ```
 
-* <a name="specifications-before-function-defs"></a>
+* <a name="spec-spacing"></a>
   Place specifications right before the function definition,
-  separated by a newline.
-  <sup>[[link](#specifications-before-function-defs)]</sup>
+  without separating them by a blank line.
+  <sup>[[link](#spec-spacing)]</sup>
 
   ```elixir
   @spec some_function(term) :: result
