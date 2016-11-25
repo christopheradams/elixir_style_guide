@@ -636,10 +636,6 @@ If you're looking for other projects to contribute to please see the
   Don't put a blank line after `defmodule`.
   <sup>[[link](#defmodule-spacing)]</sup>
 
-* <a name="no-blank-lines-before-first-function-def"></a>
-  No blank lines before first function `def`.
-  <sup>[[link](#no-blank-lines-before-first-function-def)]</sup>
-
 * <a name="module-block-spacing"></a>
   Put a blank line after module-level code blocks .
   <sup>[[link](#module-block-spacing)]</sup>
