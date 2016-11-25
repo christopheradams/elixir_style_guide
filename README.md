@@ -250,6 +250,10 @@ If you're looking for other projects to contribute to please see the
   Avoid trailing whitespace.
   <sup>[[link](#trailing-whitespace)]</sup>
 
+* <a name="newline-eof"></a>
+  End each file with a newline.
+  <sup>[[link](#newline-eof)]</sup>
+
 
 ### Syntax
 
