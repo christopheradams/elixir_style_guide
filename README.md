@@ -510,8 +510,8 @@ If you're looking for other projects to contribute to please see the
 
 * <a name="private-functions-with-same-name-as-public"></a>
   Private functions with the same name as public functions should start with
-  <sup>[[link](#private-functions-with-same-name-as-public)]</sup>
   `do_`.
+  <sup>[[link](#private-functions-with-same-name-as-public)]</sup>
 
   ```elixir
   def sum(list), do: do_sum(list, 0)
@@ -925,7 +925,7 @@ directives (see [Modules](#modules)).
 
 * <a name="exception-names"></a>
   Make exception names end with a trailing `Error`.
-  <sup>[[link](#excepton-names)]</sup>
+  <sup>[[link](#exception-names)]</sup>
 
   ```elixir
   # not preferred
@@ -946,7 +946,7 @@ directives (see [Modules](#modules)).
 * <a name="lowercase-error-messages"></a>
   Use lowercase error messages when raising exceptions, with no trailing
   punctuation.
-  <sup>[[link](#)]</sup>
+  <sup>[[link](#lowercase-error-messages)]</sup>
 
   ```elixir
   # not preferred
