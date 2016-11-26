@@ -219,7 +219,7 @@ If you're looking for other projects to contribute to please see the
   evaluate the first line without realizing that the next line has a pipeline.
 
 * <a name="avoid-single-pipelines"></a>
-  Avoid using the pipeline operator just once.
+  Avoid using the pipe operator just once.
   <sup>[[link](#avoid-single-pipelines)]</sup>
 
   ```elixir
