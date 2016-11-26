@@ -190,9 +190,9 @@ If you're looking for other projects to contribute to please see the
   end
   ```
 
-* <a name="pipeline-operator"></a>
-  Use the pipeline operator (`|>`) to chain functions together.
-  <sup>[[link](#pipeline-operator)]</sup>
+* <a name="pipe-operator"></a>
+  Use the pipe operator (`|>`) to chain functions together.
+  <sup>[[link](#pipe-operator)]</sup>
 
   ```elixir
   # not preferred
