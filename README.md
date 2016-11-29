@@ -20,6 +20,7 @@
     * _Regular Expressions_
     * [Metaprogramming](#metaprogramming)
     * [Suggested Alternatives](#suggested-alternatives)
+    * [Style Guides](#style-guides)
     * [Tools](#tools)
 * __[Getting Involved](#getting-involved)__
     * [Contributing](#contributing)
@@ -1024,6 +1025,11 @@ yet but might provide some value.
   ```
 
 
+### Style Guides
+
+Check [Awesome Elixir][Style Guides] for a list of alternative style guides.
+
+
 ### Tools
 
 Refer to [Awesome Elixir][Code Analysis] for libraries and tools that can help
@@ -1080,3 +1086,4 @@ project.
 [license]: http://creativecommons.org/licenses/by/3.0/deed.en_US
 [Ruby community style guide]: https://github.com/bbatsov/ruby-style-guide
 [Code Analysis]: https://github.com/h4cc/awesome-elixir#code-analysis
+[Style Guides]: https://github.com/h4cc/awesome-elixir#styleguides
