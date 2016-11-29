@@ -1,13 +1,22 @@
 sudo: false
 
-language: ruby
+language: elixir
+
+elixir:
+  - 1.3.1
+
+otp_release:
+  - 19.0
 
 rvm:
   - 2.3.0
 
 install:
   - gem install mdl
+  - mix compile
 
 script:
   - mdl --style 'markdown.rb' README.md
   - mdl --style 'markdown.rb' CONTRIBUTING.md
+  - mix elixir_style_guide.check README.md
+  - mix elixir_style_guide.check CONTRIBUTING.md
