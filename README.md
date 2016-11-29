@@ -638,7 +638,7 @@ If you're looking for other projects to contribute to please see the
   <sup>[[link](#defmodule-spacing)]</sup>
 
 * <a name="module-block-spacing"></a>
-  Put a blank line after module-level code blocks .
+  Put a blank line after module-level code blocks.
   <sup>[[link](#module-block-spacing)]</sup>
 
 * <a name="module-attribute-ordering"></a>
