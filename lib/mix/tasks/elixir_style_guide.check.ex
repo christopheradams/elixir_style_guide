@@ -5,7 +5,7 @@ defmodule Mix.Tasks.ElixirStyleGuide.Check do
 
   @errors [
     [
-      regex: ~r/[^\s]$(?:\n{2}|\n{4,})(\#{1,3}\ .*)$/m,
+      regex: ~r/[^\s]$(?:\n{2}|\n{4,})\#{1,3}\ /m,
       error: "H1/H2/H3 headers should be preceded by two blank lines"
     ]
   ]
@@ -55,17 +55,24 @@ defmodule Mix.Tasks.ElixirStyleGuide.Check do
         captures -> List.flatten(captures)
       end
 
-    Enum.map(matches, fn match ->
-      line = count_lines(contents, match)
-      %{line: line, error: error[:error]}
+    line_nums = identify_lines(matches, contents)
+
+    Enum.map(line_nums, fn num ->
+      %{line: num, error: error[:error]}
     end)
   end
 
-  defp count_lines(contents, match) do
-    [head | _] = String.split(contents, match)
-    content = head <> match
-    newlines = Regex.scan(~r/\n/, content)
-    length(newlines) + 1
+  defp identify_lines(matches, contents) do
+    {line_nums, _} =
+      Enum.map_reduce(matches, {0, contents}, fn(match, {line, text}) ->
+        [head | rest] = String.split(text, match, parts: 2)
+        content = head <> match
+        newlines = Regex.scan(~r/\n/, content)
+        num = length(newlines)
+        [next] = rest
+        {line + num + 1, {line + num, next}}
+    end)
+    line_nums
   end
 
   defp print_reports(reports) do
