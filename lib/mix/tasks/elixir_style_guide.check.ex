@@ -7,6 +7,10 @@ defmodule Mix.Tasks.ElixirStyleGuide.Check do
     [
       regex: ~r/[^\s]$(?:\n{2}|\n{4,})\#{1,3}\ /m,
       error: "H1/H2/H3 headers should be preceded by two blank lines"
+    ],
+    [
+      regex: ~r/[^\s]$\n{3,}[^\#]/m,
+      error: "Multiple consecutive blank lines"
     ]
   ]
 
