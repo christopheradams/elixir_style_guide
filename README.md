@@ -528,10 +528,9 @@ If you're looking for other projects to contribute to please see the
 
 ### Comments
 
-* <a name="self-documenting-code"></a>
-  Write self-documenting code and ignore the rest of this section.
-  Seriously!
-  <sup>[[link](#self-documenting-code)]</sup>
+* <a name="expressive-code"></a>
+  Write expressive code and try to convey your program's intention through control-flow, structure and naming.
+  <sup>[[link](#expressive-code)]</sup>
 
 * <a name="comment-leading-spaces"></a>
   Use one space between the leading `#` character of the comment and the text of
