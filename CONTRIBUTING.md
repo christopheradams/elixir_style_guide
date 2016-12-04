@@ -18,10 +18,7 @@ formatting/markup/style rules so that the style remains consistent:
   functionality, for example [Emacs][Emacs LineWrap] or [Vim][Vim word wrap]);
 * use reference-style links, like `[an example][Example]`. Put the links in
   alphabetical order at the end of the document, and capitalize the first word
-  of the link label;
-* leave **two newlines** before each first, second and third level header (`#`
-  to `###`) and **one newline** before every other type of headers (`####` to
-  `######`).
+  of the link label.
 
 Install [Markdownlint] to check your changes, and run:
 
@@ -31,7 +28,6 @@ mdl --style 'markdown.rb' README.md
 
 **IMPORTANT**: By submitting a patch, you agree that your work will be
 licensed under the license used by the project.
-
 
 ## Collaborators
 

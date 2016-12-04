@@ -1,6 +1,5 @@
 # [The Elixir Style Guide][Elixir Style Guide]
 
-
 ## Table of Contents
 
 * __[Prelude](#prelude)__
@@ -29,7 +28,6 @@
   * [License](#license)
   * [Attribution](#attribution)
 
-
 ## Prelude
 
 > Liquid architecture. It's like jazz — you improvise, you work together, you
@@ -41,7 +39,6 @@ Style matters.
 [Elixir] has plenty of style but like all languages it can be stifled.
 Don't stifle the style.
 
-
 ## The Guide
 
 This is our attempt at starting a community style guide for the
@@ -52,7 +49,6 @@ been around five times as long.
 
 If you're looking for other projects to contribute to please see the
 [Hex package manager site][Hex].
-
 
 ### Source Code Layout
 
@@ -254,7 +250,6 @@ If you're looking for other projects to contribute to please see the
   End each file with a newline.
   <sup>[[link](#newline-eof)]</sup>
 
-
 ### Syntax
 
 * <a name="parentheses"></a>
@@ -427,7 +422,6 @@ If you're looking for other projects to contribute to please see the
   end
   ```
 
-
 ### Naming
 
 * <a name="snake-case"></a>
@@ -525,7 +519,6 @@ If you're looking for other projects to contribute to please see the
   defp do_sum([head|tail], total), do: do_sum(tail, head + total)
   ```
 
-
 ### Comments
 
 * <a name="expressive-code"></a>
@@ -601,7 +594,6 @@ If you're looking for other projects to contribute to please see the
   Use other custom annotation keywords if it feels appropriate, but be sure to
   document them in your project's `README` or similar.
   <sup>[[link](#custom-keywords)]</sup>
-
 
 ### Modules
 
@@ -709,7 +701,6 @@ If you're looking for other projects to contribute to please see the
     def name(%SomeModule{name: name}), do: name
   end
   ```
-
 
 ### Documentation
 
@@ -819,7 +810,6 @@ Documentation in Elixir (when read either in `iex` with `h` or generated with
   end
   ```
 
-
 ### Typespecs
 
 Typespecs are notation for declaring types and specifications, for
@@ -894,7 +884,6 @@ directives (see [Modules](#modules)).
   end
   ```
 
-
 ### Structs
 
 * <a name="nil-struct-field-defaults"></a>
@@ -918,7 +907,6 @@ directives (see [Modules](#modules)).
   defstruct foo: "test", bar: true, baz: false,
             qux: false, quux: nil
   ```
-
 
 ### Exceptions
 
@@ -955,11 +943,9 @@ directives (see [Modules](#modules)).
   raise ArgumentError, "this is not valid"
   ```
 
-
 ### Collections
 
 _No guidelines for collections have been added yet._
-
 
 ### Strings
 
@@ -975,18 +961,15 @@ _No guidelines for collections have been added yet._
   "my" <> _rest = "my string"
   ```
 
-
 ### Regular Expressions
 
 _No guidelines for regular expressions have been added yet._
-
 
 ### Metaprogramming
 
 * <a name="avoid-metaprogramming"></a>
   Avoid needless metaprogramming.
   <sup>[[link](#avoid-metaprogramming)]</sup>
-
 
 ### Suggested Alternatives
 
@@ -1022,20 +1005,16 @@ yet but might provide some value.
   end
   ```
 
-
 ### Style Guides
 
 Check [Awesome Elixir][Style Guides] for a list of alternative style guides.
-
 
 ### Tools
 
 Refer to [Awesome Elixir][Code Analysis] for libraries and tools that can help
 with code analysis and style linting.
 
-
 ## Getting Involved
-
 
 ### Contributing
 
@@ -1047,23 +1026,19 @@ Thanks in advance for your help!
 Check the [contributing guidelines](CONTRIBUTING.md)
 and [code of conduct](CODE_OF_CONDUCT.md) for more information.
 
-
 ### Spread the Word
 
 A community style guide is meaningless without the community's support. Please
 tweet, [star][Stargazers], and let any Elixir programmer know
 about [this guide][Elixir Style Guide] so they can contribute.
 
-
 ## Copying
-
 
 ### License
 
 ![Creative Commons License](http://i.creativecommons.org/l/by/3.0/88x31.png)
 This work is licensed under a
 [Creative Commons Attribution 3.0 Unported License][License]
-
 
 ### Attribution
 
