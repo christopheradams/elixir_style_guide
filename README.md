@@ -529,7 +529,8 @@ If you're looking for other projects to contribute to please see the
 ### Comments
 
 * <a name="expressive-code"></a>
-  Write expressive code and try to convey your program's intention through control-flow, structure and naming.
+  Write expressive code and try to convey your program's intention through
+  control-flow, structure and naming.
   <sup>[[link](#expressive-code)]</sup>
 
 * <a name="comment-leading-spaces"></a>
