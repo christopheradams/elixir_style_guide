@@ -646,8 +646,9 @@ If you're looking for other projects to contribute to please see the
   1. `@type`
   1. `@module_attribute`
 
-  And, if you're really a perfectionist, sub-sort by alphabetical order. Here's
-  an overall example of how you should order things in your modules:
+  Add a blank line between each grouping, and sort the terms (like module names)
+  alphabetically.
+  Here's an overall example of how you should order things in your modules:
 
   ```elixir
   defmodule MyModule do
@@ -658,10 +659,13 @@ If you're looking for other projects to contribute to please see the
     @behaviour MyBehaviour
 
     use GenServer
+
     import Something
     import SomethingElse
+
     alias My.Long.Module.Name
     alias My.Other.Module.Name
+
     require Integer
 
     defstruct name: nil, params: []
