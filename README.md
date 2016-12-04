@@ -5,29 +5,29 @@
 
 * __[Prelude](#prelude)__
 * __[The Guide](#the-guide)__
-    * [Source Code Layout](#source-code-layout)
-    * [Syntax](#syntax)
-    * [Naming](#naming)
-    * [Comments](#comments)
-        * [Comment Annotations](#comment-annotations)
-    * [Modules](#modules)
-    * [Documentation](#documentation)
-    * [Typespecs](#typespecs)
-    * [Structs](#structs)
-    * [Exceptions](#exceptions)
-    * _Collections_
-    * [Strings](#strings)
-    * _Regular Expressions_
-    * [Metaprogramming](#metaprogramming)
-    * [Suggested Alternatives](#suggested-alternatives)
-    * [Style Guides](#style-guides)
-    * [Tools](#tools)
+  * [Source Code Layout](#source-code-layout)
+  * [Syntax](#syntax)
+  * [Naming](#naming)
+  * [Comments](#comments)
+    * [Comment Annotations](#comment-annotations)
+  * [Modules](#modules)
+  * [Documentation](#documentation)
+  * [Typespecs](#typespecs)
+  * [Structs](#structs)
+  * [Exceptions](#exceptions)
+  * _Collections_
+  * [Strings](#strings)
+  * _Regular Expressions_
+  * [Metaprogramming](#metaprogramming)
+  * [Suggested Alternatives](#suggested-alternatives)
+  * [Style Guides](#style-guides)
+  * [Tools](#tools)
 * __[Getting Involved](#getting-involved)__
-    * [Contributing](#contributing)
-    * [Spread the Word](#spread-the-word)
+  * [Contributing](#contributing)
+  * [Spread the Word](#spread-the-word)
 * __[Copying](#copying)__
-    * [License](#license)
-    * [Attribution](#attribution)
+  * [License](#license)
+  * [Attribution](#attribution)
 
 
 ## Prelude
@@ -644,15 +644,15 @@ If you're looking for other projects to contribute to please see the
   List module attributes and directives in the following order:
   <sup>[[link](#module-attribute-ordering)]</sup>
 
-    1. `@moduledoc`
-    1. `@behaviour`
-    1. `use`
-    1. `import`
-    1. `alias`
-    1. `require`
-    1. `defstruct`
-    1. `@type`
-    1. `@module_attribute`
+  1. `@moduledoc`
+  1. `@behaviour`
+  1. `use`
+  1. `import`
+  1. `alias`
+  1. `require`
+  1. `defstruct`
+  1. `@type`
+  1. `@module_attribute`
 
   And, if you're really a perfectionist, sub-sort by alphabetical order. Here's
   an overall example of how you should order things in your modules:
