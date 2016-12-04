@@ -15,14 +15,15 @@ If you edit the `README.md` file, please stick to this set of
 formatting/markup/style rules so that the style remains consistent:
 
 * don't make lines longer than 80 characters (most editors have an auto-wrapping
-  functionality, for example [emacs](http://emacswiki.org/emacs/LineWrap) or
-  [vim](http://vim.wikia.com/wiki/Automatic_word_wrapping));
+  functionality, for example [Emacs][Emacs LineWrap] or [Vim][Vim word wrap]);
+* use reference-style links, like `[an example][Example]`. Put the links in
+  alphabetical order at the end of the document, and capitalize the first word
+  of the link label;
 * leave **two newlines** before each first, second and third level header (`#`
   to `###`) and **one newline** before every other type of headers (`####` to
   `######`).
 
-Install [markdownlint](https://github.com/mivok/markdownlint) to check your
-changes, and run:
+Install [Markdownlint] to check your changes, and run:
 
 ```sh
 mdl --style 'markdown.rb' README.md
@@ -43,3 +44,8 @@ merge approved changes.
 1. Minor changes and corrections can be merged without review.
 1. Significant changes or new style rules should be discussed and approved in a
    pull request.
+
+<!-- Links -->
+[Emacs LineWrap]: http://emacswiki.org/emacs/LineWrap
+[Markdownlint]: https://github.com/mivok/markdownlint
+[Vim word wrap]: http://vim.wikia.com/wiki/Automatic_word_wrapping

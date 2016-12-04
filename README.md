@@ -491,8 +491,8 @@ If you're looking for other projects to contribute to please see the
 * <a name="predicate-macro-names-with-guards"></a>
   The names of predicate macros (compile-time generated functions that return a
   boolean value) _that can be used within guards_ should be prefixed with `is_`.
-  For a list of allowed expressions, see
-  [Expressions in Guard Clauses](http://elixir-lang.org/getting-started/case-cond-and-if.html#expressions-in-guard-clauses).
+  For a list of allowed expressions, see the [Guard][Guard Expressions] docs.
+
   <sup>[[link](#predicate-macro-names-with-guards)]</sup>
 
   ```elixir
@@ -540,7 +540,7 @@ If you're looking for other projects to contribute to please see the
 
 * <a name="comment-spacing"></a>
   Comments longer than a word are capitalized and use punctuation.
-  Use [one space](http://en.wikipedia.org/wiki/Sentence_spacing) after periods.
+  Use [one space][Sentence Spacing] after periods.
   <sup>[[link](#comment-spacing)]</sup>
 
   ```elixir
@@ -714,9 +714,7 @@ If you're looking for other projects to contribute to please see the
 ### Documentation
 
 Documentation in Elixir (when read either in `iex` with `h` or generated with
-[ExDoc](https://github.com/elixir-lang/ex_doc)) uses the [Module Attributes](\
-http://elixir-lang.org/getting-started/module-attributes.html#as-annotations)
-`@moduledoc` and `@doc`.
+[ExDoc]) uses the [Module Attributes] `@moduledoc` and `@doc`.
 
 * <a name="moduledocs"></a>
   Always include a `@moduledoc` attribute in the line right after `defmodule` in
@@ -1064,7 +1062,7 @@ about [this guide][Elixir Style Guide] so they can contribute.
 
 ![Creative Commons License](http://i.creativecommons.org/l/by/3.0/88x31.png)
 This work is licensed under a
-[Creative Commons Attribution 3.0 Unported License][license]
+[Creative Commons Attribution 3.0 Unported License][License]
 
 
 ### Attribution
@@ -1078,12 +1076,16 @@ Here's the [list of people who has kindly contributed][Contributors] to this
 project.
 
 <!-- Links -->
-[Elixir Style Guide]: https://github.com/christopheradams/elixir_style_guide
-[Stargazers]: https://github.com/christopheradams/elixir_style_guide/stargazers
-[Contributors]: https://github.com/christopheradams/elixir_style_guide/graphs/contributors
-[Elixir]: http://elixir-lang.org
-[Hex]: https://hex.pm/packages
-[license]: http://creativecommons.org/licenses/by/3.0/deed.en_US
-[Ruby community style guide]: https://github.com/bbatsov/ruby-style-guide
 [Code Analysis]: https://github.com/h4cc/awesome-elixir#code-analysis
+[Contributors]: https://github.com/christopheradams/elixir_style_guide/graphs/contributors
+[Elixir Style Guide]: https://github.com/christopheradams/elixir_style_guide
+[Elixir]: http://elixir-lang.org
+[ExDoc]: https://github.com/elixir-lang/ex_doc
+[Guard Expressions]: http://elixir-lang.org/getting-started/case-cond-and-if.html#expressions-in-guard-clauses
+[Hex]: https://hex.pm/packages
+[License]: http://creativecommons.org/licenses/by/3.0/deed.en_US
+[Module Attributes]: http://elixir-lang.org/getting-started/module-attributes.html#as-annotations
+[Ruby community style guide]: https://github.com/bbatsov/ruby-style-guide
+[Sentence Spacing]: http://en.wikipedia.org/wiki/Sentence_spacing
+[Stargazers]: https://github.com/christopheradams/elixir_style_guide/stargazers
 [Style Guides]: https://github.com/h4cc/awesome-elixir#styleguides
