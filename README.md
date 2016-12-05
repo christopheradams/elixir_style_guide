@@ -422,6 +422,32 @@ If you're looking for other projects to contribute to please see the
   end
   ```
 
+* <a name="with-clauses"></a>
+  Indent and align successive `with` clauses.
+  Put the `do:` argument on a new line, indented normally.
+  <sup>[[link](#with-clauses)]</sup>
+
+  ```elixir
+  with {:ok, foo} <- fetch(opts, :foo),
+       {:ok, bar} <- fetch(opts, :bar),
+    do: {:ok, foo, bar}
+  ```
+
+* <a name="with-else"></a>
+  If the `with` expression has a `do` block with more than one line, or has an
+  `else` option, use multiline syntax.
+  <sup>[[link](#with-else)]</sup>
+
+  ```elixir
+  with {:ok, foo} <- fetch(opts, :foo),
+       {:ok, bar} <- fetch(opts, :bar) do
+    {:ok, foo, bar}
+  else
+    :error ->
+      {:error, :bad_arg}
+  end
+  ```
+
 ### Naming
 
 * <a name="snake-case"></a>
