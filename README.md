@@ -486,7 +486,6 @@ If you're looking for other projects to contribute to please see the
   The names of predicate macros (compile-time generated functions that return a
   boolean value) _that can be used within guards_ should be prefixed with `is_`.
   For a list of allowed expressions, see the [Guard][Guard Expressions] docs.
-
   <sup>[[link](#predicate-macro-names-with-guards)]</sup>
 
   ```elixir
