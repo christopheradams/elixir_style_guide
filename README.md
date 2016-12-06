@@ -95,7 +95,7 @@ If you're looking for other projects to contribute to please see the
   ```elixir
   sum = 1 + 2
   {a, b} = {2, 3}
-  Enum.map(["one", <<"two">>, "three"], fn num -> IO.puts num end)
+  Enum.map(["one", <<"two">>, "three"], fn(num) -> IO.puts(num) end)
   ```
 
 * <a name="def-spacing"></a>
@@ -393,12 +393,12 @@ If you're looking for other projects to contribute to please see the
 
   ```elixir
   # preferred
-  Enum.reduce(1..10, 0, fn x, acc ->
+  Enum.reduce(1..10, 0, fn(x, acc) ->
     x + acc
   end)
 
   # also preferred
-  Enum.reduce 1..10, 0, fn x, acc ->
+  Enum.reduce 1..10, 0, fn(x, acc) ->
     x + acc
   end
   ```
