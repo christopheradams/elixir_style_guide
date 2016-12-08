@@ -18,6 +18,7 @@
   * [Strings](#strings)
   * _Regular Expressions_
   * [Metaprogramming](#metaprogramming)
+  * [Testing](#testing)
   * [Suggested Alternatives](#suggested-alternatives)
   * [Style Guides](#style-guides)
   * [Tools](#tools)
@@ -1000,6 +1001,28 @@ _No guidelines for regular expressions have been added yet._
   Avoid needless metaprogramming.
   <sup>[[link](#avoid-metaprogramming)]</sup>
 
+### Testing
+
+* <a name="testing-assert-order"></a>
+  When writing [ExUnit] assertions, be consistent with the order of the expected
+  and actual values under testing.
+  Prefer placing the expected result on the right, unless the assertion is a
+  pattern match.
+  <sup>[[link](#testing-assert-order)]</sup>
+
+  ```elixir
+  # preferred - expected result on the right
+  assert actual_function(1) == true
+  assert actual_function(2) == false
+
+  # not preferred - inconsistent order
+  assert actual_function(1) == true
+  assert false == actual_function(2)
+
+  # required - the assertion is a pattern match
+  assert {:ok, expected} = actual_function(3)
+  ```
+
 ### Suggested Alternatives
 
 Suggested alternatives are styles that haven't been seen much in the community
@@ -1085,6 +1108,7 @@ project.
 [Elixir Style Guide]: https://github.com/christopheradams/elixir_style_guide
 [Elixir]: http://elixir-lang.org
 [ExDoc]: https://github.com/elixir-lang/ex_doc
+[ExUnit]: https://hexdocs.pm/ex_unit/ExUnit.html
 [Guard Expressions]: http://elixir-lang.org/getting-started/case-cond-and-if.html#expressions-in-guard-clauses
 [Hex]: https://hex.pm/packages
 [License]: http://creativecommons.org/licenses/by/3.0/deed.en_US
