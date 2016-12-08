@@ -96,6 +96,7 @@ If you're looking for other projects to contribute to please see the
   ```elixir
   sum = 1 + 2
   {a, b} = {2, 3}
+  [first | rest] = [1, 2, 3]
   Enum.map(["one", <<"two">>, "three"], fn num -> IO.puts num end)
   ```
 
@@ -133,7 +134,7 @@ If you're looking for other projects to contribute to please see the
   ```elixir
   def some_function(nil), do: {:err, "No Value"}
   def some_function([]), do: :ok
-  def some_function([first|rest]) do
+  def some_function([first | rest]) do
     some_function(rest)
   end
   ```
@@ -178,11 +179,11 @@ If you're looking for other projects to contribute to please see the
     :ok
   end
 
-  def some_function([first|rest]) do
+  def some_function([first | rest]) do
     some_function(rest)
   end
 
-  def some_function([first|rest], opts) do
+  def some_function([first | rest], opts) do
     some_function(rest, opts)
   end
   ```
@@ -542,7 +543,7 @@ If you're looking for other projects to contribute to please see the
 
   # private functions
   defp do_sum([], total), do: total
-  defp do_sum([head|tail], total), do: do_sum(tail, head + total)
+  defp do_sum([head | tail], total), do: do_sum(tail, head + total)
   ```
 
 ### Comments
