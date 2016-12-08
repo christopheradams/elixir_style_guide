@@ -100,6 +100,17 @@ If you're looking for other projects to contribute to please see the
   Enum.map(["one", <<"two">>, "three"], fn num -> IO.puts num end)
   ```
 
+* <a name="no-spaces"></a>
+  Do not use spaces after non-word operators that only take one argument; or
+  around the range operator.
+  <sup>[[link](#no-spaces)]</sup>
+
+  ```elixir
+  0 - 1 == -1
+  ^pinned = some_func()
+  5 in 1..10
+  ```
+
 * <a name="def-spacing"></a>
   Use blank lines between `def`s to break up a function into logical
   paragraphs.
