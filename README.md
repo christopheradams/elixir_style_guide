@@ -20,7 +20,7 @@
   * [Metaprogramming](#metaprogramming)
   * [Testing](#testing)
   * [Suggested Alternatives](#suggested-alternatives)
-  * [Style Guides](#style-guides)
+  * [Alternative Style Guides](#alternative-style-guides)
   * [Tools](#tools)
 * __[Getting Involved](#getting-involved)__
   * [Contributing](#contributing)
@@ -1069,9 +1069,19 @@ yet but might provide some value.
   end
   ```
 
-### Style Guides
+### Alternative Style Guides
 
-Check [Awesome Elixir][Style Guides] for a list of alternative style guides.
+* [Aleksei Magusev's Elixir Style Guide](https://github.com/lexmag/elixir-style-guide#readme)
+  — An opinionated Elixir style guide stemming from the coding style practiced
+  in the Elixir core libraries.
+  Developed by [Aleksei Magusev](https://github.com/lexmag) and
+  [Andrea Leopardi](https://github.com/whatyouhide), members of Elixir core team.
+  While the Elixir project doesn't adhere to any specific style guide,
+  this is the closest available guide to its conventions.
+
+* [Credo's Elixir Style Guide](https://github.com/rrrene/elixir-style-guide#readme)
+  — Style Guide for the Elixir language, implemented by
+  [Credo](http://credo-ci.org) static code analysis tool.
 
 ### Tools
 
@@ -1128,4 +1138,4 @@ project.
 [Ruby community style guide]: https://github.com/bbatsov/ruby-style-guide
 [Sentence Spacing]: http://en.wikipedia.org/wiki/Sentence_spacing
 [Stargazers]: https://github.com/christopheradams/elixir_style_guide/stargazers
-[Style Guides]: https://github.com/h4cc/awesome-elixir#styleguides
+
