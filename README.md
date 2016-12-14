@@ -641,7 +641,7 @@ If you're looking for other projects to contribute to please see the
   <sup>[[link](#one-module-per-file)]</sup>
 
 * <a name="underscored-filenames"></a>
-  Use underscored file names for `CamelCase` module names.
+  Use `snake_case` file names for `CamelCase` module names.
   <sup>[[link](#underscored-filenames)]</sup>
 
   ```elixir
