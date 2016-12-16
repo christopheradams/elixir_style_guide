@@ -41,7 +41,22 @@ merge approved changes.
 1. Significant changes or new style rules should be discussed and approved in a
    pull request.
 
+## Translations
+
+If you would like to help translate the Style Guide, check if there is
+an [existing translation][Translations] to contribute to. To create a new
+translation:
+
+1. [Fork] this repository.
+1. Clone your fork locally.
+1. Copy `README.md` to a new file named after the country/language, like
+   `README-jaJP.md`, and commit your translations there.
+1. Add the main [repo][Repo] as an upstream remote, to fetch and merge changes.
+
 <!-- Links -->
 [Emacs LineWrap]: http://emacswiki.org/emacs/LineWrap
+[Fork]: https://github.com/christopheradams/elixir_style_guide#fork-destination-box
 [Markdownlint]: https://github.com/mivok/markdownlint
+[Repo]: https://github.com/christopheradams/elixir_style_guide.git
+[Translations]: README.md#translations
 [Vim word wrap]: http://vim.wikia.com/wiki/Automatic_word_wrapping
