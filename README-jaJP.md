@@ -624,7 +624,7 @@ Gitを使っている場合はwindowsの改行コードであなたのプロジ�
     1. `@type`
     1. `@module_attribute`
 
-あなたが完璧主義者ならさらにアルファベット順でソートしてください。
+それぞれのグループの間には空白行を入れ、アルファベット順でソートしてください。
 モジュール定義の例を以下に記します。
 
   ```elixir
@@ -636,10 +636,13 @@ Gitを使っている場合はwindowsの改行コードであなたのプロジ�
     @behaviour MyBehaviour
 
     use GenServer
+
     import Something
     import SomethingElse
+
     alias My.Long.Module.Name
     alias My.Other.Module.Name
+
     require Integer
 
     defstruct name: nil, params: []
