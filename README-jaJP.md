@@ -511,7 +511,7 @@ Gitを使っている場合はwindowsの改行コードであなたのプロジ�
 ### コメント
 
 * <a name="self-documenting-code"></a>
-自己説明的で、コメントのいらないコードを書いてこのセクションの残りは無視してください(本気です！)
+表現力豊かなコードを書いてください。 制御フロー、構造、命名を通じてプログラムの意図を伝えてください。
   <sup>[[link](#self-documenting-code)]</sup>
 
 * <a name="comment-leading-spaces"></a>
