@@ -5,29 +5,29 @@
 
 * __[はじめに](#prelude)__
 * __[このガイドについて](#the-guide)__
-    * [ソースコードレイアウト](#source-code-layout)
-    * [構文](#syntax)
-    * [命名](#naming)
-    * [コメント](#comments)
-        * [注釈](#comment-annotations)
-    * [モジュール](#modules)
-    * [ドキュメント](#documentation)
-    * [Typespecs](#typespecs)
-    * [構造体](#structs)
-    * [例外](#exceptions)
-    * _コレクション_
-    * [文字列](#strings)
-    * _正規表現_
-    * [メタプログラミング](#metaprogramming)
-    * [その他のスタイル](#suggested-alternatives)
-    * [スタイルガイド](#style-guides)
-    * [ツール](#tools)
+  * [ソースコードレイアウト](#source-code-layout)
+  * [構文](#syntax)
+  * [命名](#naming)
+  * [コメント](#comments)
+      * [注釈](#comment-annotations)
+  * [モジュール](#modules)
+  * [ドキュメント](#documentation)
+  * [Typespecs](#typespecs)
+  * [構造体](#structs)
+  * [例外](#exceptions)
+  * _コレクション_
+  * [文字列](#strings)
+  * _正規表現_
+  * [メタプログラミング](#metaprogramming)
+  * [その他のスタイル](#suggested-alternatives)
+  * [スタイルガイド](#style-guides)
+  * [ツール](#tools)
 * __[Getting Involved](#getting-involved)__
-    * [Contributing](#contributing)
-    * [Spread the Word](#spread-the-word)
+  * [Contributing](#contributing)
+  * [Spread the Word](#spread-the-word)
 * __[Copying](#copying)__
-    * [License](#license)
-    * [Attribution](#attribution)
+  * [License](#license)
+  * [Attribution](#attribution)
 
 
 ## はじめに
@@ -53,9 +53,9 @@
 <!-- TODO: Add crafty quote here -->
 
 * <a name="spaces-indentation"></a>
-    インデントは **スペース** 2つ。ハードタブは使わないこと。
+  インデントは **スペース** 2つ。ハードタブは使わないこと。
 
-    <sup>[[link](#spaces-indentation)]</sup>
+  <sup>[[link](#spaces-indentation)]</sup>
 
   ```elixir
   # 悪い例 - スペースが4つ
@@ -70,11 +70,11 @@
   ```
 
 * <a name="line-endings"></a>
- Unixスタイルの改行コードを使うこと (\*BSD/Solaris/Linux/OSX ではこれがデフォルトです Windowsを使っている場合は気をつけてください)
+  Unixスタイルの改行コードを使うこと (\*BSD/Solaris/Linux/OSX ではこれがデフォルトです Windowsを使っている場合は気をつけてください)
   <sup>[[link](#line-endings)]</sup>
 
 * <a name="autocrlf"></a>
-Gitを使っている場合はwindowsの改行コードであなたのプロジェクトがめちゃくちゃになるのを防ぐために、このように設定してください。  
+  Gitを使っている場合はwindowsの改行コードであなたのプロジェクトがめちゃくちゃになるのを防ぐために、このように設定してください。  
   <sup>[[link](#autocrlf)]</sup>
 
   ```sh
@@ -94,7 +94,7 @@ Gitを使っている場合はwindowsの改行コードであなたのプロジ�
   ```
 
 * <a name="def-spacing"></a>
- `def`の間や関数内のロジックの区切りに空白行を入れてください。
+  `def`の間や関数内のロジックの区切りに空白行を入れてください。
   <sup>[[link](#def-spacing)]</sup>
 
   ```elixir
@@ -219,7 +219,7 @@ Gitを使っている場合はwindowsの改行コードであなたのプロジ�
   ```
 
 * <a name="bare-variables"></a>
-関数チェインの最初の値は関数の戻り値ではなく、通常の変数を使ってください。
+  関数チェインの最初の値は関数の戻り値ではなく、通常の変数を使ってください。
   <sup>[[link](#bare-variables)]</sup>
 
   ```elixir
@@ -364,8 +364,8 @@ Gitを使っている場合はwindowsの改行コードであなたのプロジ�
   ```
 
 * <a name="macro-calls-and-parentheses"></a>
-`do`ブロックをとるマクロの呼び出しでは括弧を省略すること。
-<sup>[[link](#macro-calls-and-parentheses)]</sup>
+  `do`ブロックをとるマクロの呼び出しでは括弧を省略すること。
+  <sup>[[link](#macro-calls-and-parentheses)]</sup>
 
   ```elixir
   # 悪い例
@@ -380,8 +380,8 @@ Gitを使っている場合はwindowsの改行コードであなたのプロジ�
   ```
 
 * <a name="parentheses-and-function-expressions"></a>
-引数の最後が関数の場合は括弧を省略してもよい。
-<sup>[[link](#parentheses-and-function-expressions)]</sup>
+  引数の最後が関数の場合は括弧を省略してもよい。
+  <sup>[[link](#parentheses-and-function-expressions)]</sup>
 
   ```elixir
   # 良い例
@@ -396,8 +396,8 @@ Gitを使っている場合はwindowsの改行コードであなたのプロジ�
   ```
 
 * <a name="parentheses-and-functions-with-zero-arity"></a>
-変数と区別するため引数がない関数呼び出しでも括弧を使うこと。
-<sup>[[link](#parentheses-and-functions-with-zero-arity)]</sup>
+  変数と区別するため引数がない関数呼び出しでも括弧を使うこと。
+  <sup>[[link](#parentheses-and-functions-with-zero-arity)]</sup>
 
   ```elixir
   defp do_stuff, do: ...
@@ -417,7 +417,7 @@ Gitを使っている場合はwindowsの改行コードであなたのプロジ�
 ### 命名
 
 * <a name="snake-case"></a>
-アトム、関数、変数には `snake_case` を使うこと。
+  アトム、関数、変数には `snake_case` を使うこと。
   <sup>[[link](#snake-case)]</sup>
 
   ```elixir
@@ -447,7 +447,7 @@ Gitを使っている場合はwindowsの改行コードであなたのプロジ�
   ```
 
 * <a name="camel-case"></a>
-モジュール名は`CamelCase`を使うこと(HTTP, RFC, XMLなどの頭地語はそのままでよい)
+  モジュール名は`CamelCase`を使うこと(HTTP, RFC, XMLなどの頭地語はそのままでよい)
   <sup>[[link](#camel-case)]</sup>
 
   ```elixir
@@ -475,8 +475,8 @@ Gitを使っている場合はwindowsの改行コードであなたのプロジ�
   ```
 
 * <a name="predicate-macro-names-with-guards"></a>
-ガード内で使用できる述語マクロ（コンパイル時にbooleanを返す関数になるもの）には`is_`接頭辞をつけること。
-ガード内で使用できる式については [Expressions in Guard Clauses](http://elixir-lang.org/getting-started/case-cond-and-if.html#expressions-in-guard-clauses)を参照してください。
+  ガード内で使用できる述語マクロ（コンパイル時にbooleanを返す関数になるもの）には`is_`接頭辞をつけること。
+  ガード内で使用できる式については [Expressions in Guard Clauses](http://elixir-lang.org/getting-started/case-cond-and-if.html#expressions-in-guard-clauses)を参照してください。
   <sup>[[link](#predicate-macro-names-with-guards)]</sup>
 
   ```elixir
@@ -486,8 +486,8 @@ Gitを使っている場合はwindowsの改行コードであなたのプロジ�
   ```
 
 * <a name="predicate-macro-names-no-guards"></a>
-ガード内で使わない述語関数は`is_`接頭辞ではなく末尾に`?`をつけること。
-<sup>[[link](#predicate-macro-names-no-guards)]</sup>
+  ガード内で使わない述語関数は`is_`接頭辞ではなく末尾に`?`をつけること。
+  <sup>[[link](#predicate-macro-names-no-guards)]</sup>
 
   ```elixir
   def cool?(var) do
@@ -496,8 +496,8 @@ Gitを使っている場合はwindowsの改行コードであなたのプロジ�
   ```
 
 * <a name="private-functions-with-same-name-as-public"></a>
-パブリック関数と同名のプライベート関数を定義したい場合は`do_`を頭につけること。
-<sup>[[link](#private-functions-with-same-name-as-public)]</sup>
+  パブリック関数と同名のプライベート関数を定義したい場合は`do_`を頭につけること。
+  <sup>[[link](#private-functions-with-same-name-as-public)]</sup>
 
   ```elixir
   def sum(list), do: do_sum(list, 0)
@@ -511,16 +511,16 @@ Gitを使っている場合はwindowsの改行コードであなたのプロジ�
 ### コメント
 
 * <a name="self-documenting-code"></a>
-表現力豊かなコードを書いてください。 制御フロー、構造、命名を通じてプログラムの意図を伝えてください。
+  表現力豊かなコードを書いてください。 制御フロー、構造、命名を通じてプログラムの意図を伝えてください。
   <sup>[[link](#self-documenting-code)]</sup>
 
 * <a name="comment-leading-spaces"></a>
-`#` とコメントの間にスペースを一つ入れること。
+  `#` とコメントの間にスペースを一つ入れること。
   <sup>[[link](#comment-leading-spaces)]</sup>
 
 * <a name="comment-spacing"></a>
-一語以上のコメントは先頭を大文字にして句読点を使うこと。
-ピリオドの後には[スペースを一つ](http://en.wikipedia.org/wiki/Sentence_spacing)入れること。
+  一語以上のコメントは先頭を大文字にして句読点を使うこと。
+  ピリオドの後には[スペースを一つ](http://en.wikipedia.org/wiki/Sentence_spacing)入れること。
   <sup>[[link](#comment-spacing)]</sup>
 
   ```elixir
@@ -531,57 +531,57 @@ Gitを使っている場合はwindowsの改行コードであなたのプロジ�
 #### 注釈
 
 * <a name="annotations"></a>
-注釈は関連するコードのすぐ上に書くこと。
+  注釈は関連するコードのすぐ上に書くこと。
   <sup>[[link](#annotations)]</sup>
 
 * <a name="annotation-keyword"></a>
-注釈キーワードの後には: とスペースを入れてから本文を書いてください。
+  注釈キーワードの後には: とスペースを入れてから本文を書いてください。
   <sup>[[link](#annotation-keyword)]</sup>
 
 * <a name="multiple-line-annotations"></a>
-もし問題の説明が複数行になる場合は#の後にスペースを２つ入れてください。
+  もし問題の説明が複数行になる場合は#の後にスペースを２つ入れてください。
   <sup>[[link](#multiple-line-annotations)]</sup>
 
 * <a name="exceptions-to-annotations"></a>
-もし問題が明らかな場合は注釈キーワードだけを該当行の最後に入れてください。
-これは強制ではありません。
+  もし問題が明らかな場合は注釈キーワードだけを該当行の最後に入れてください。
+  これは強制ではありません。
   <sup>[[link](#exceptions-to-annotations)]</sup>
 
 * <a name="todo-notes"></a>
-未実装や、将来の機能追加のための注釈には`TODO`を使ってください。
+  未実装や、将来の機能追加のための注釈には`TODO`を使ってください。
   <sup>[[link](#todo-notes)]</sup>
 
 * <a name="fixme-notes"></a>
-壊れたコードの注釈には `FIXME` を使ってください。
+  壊れたコードの注釈には `FIXME` を使ってください。
   <sup>[[link](#fixme-notes)]</sup>
 
 * <a name="optimize-notes"></a>
-遅かったり、非効率的なコードの注釈には`OPTIMIZE` を使ってください。
+  遅かったり、非効率的なコードの注釈には`OPTIMIZE` を使ってください。
   <sup>[[link](#optimize-notes)]</sup>
 
 * <a name="hack-notes"></a>
-コードの書き方に疑問の残る箇所の注釈には`HACK`を使ってください。
+  コードの書き方に疑問の残る箇所の注釈には`HACK`を使ってください。
   <sup>[[link](#hack-notes)]</sup>
 
 * <a name="review-notes"></a>
-正しく動くか確認する必要があるコードの注釈には `REVIEW` を使ってください。
+  正しく動くか確認する必要があるコードの注釈には `REVIEW` を使ってください。
   例: `REVIEW: Are we sure this is how the client does X currently?`
   <sup>[[link](#review-notes)]</sup>
 
 * <a name="custom-keywords"></a>
-もし必要があるようなら独自の注釈キーワードを使ってもかまいませんが、それらはプロジェクトの `README` などに書かれるべきでしょう。
+  もし必要があるようなら独自の注釈キーワードを使ってもかまいませんが、それらはプロジェクトの `README` などに書かれるべきでしょう。
   <sup>[[link](#custom-keywords)]</sup>
 
 
 ### モジュール
 
 * <a name="one-module-per-file"></a>
-モジュールは一つのファイルに一つだけ定義すること。
-ただし内部的にのみ使用しているモジュール（テストなど) の場合はこの限りではない。
+  モジュールは一つのファイルに一つだけ定義すること。
+  ただし内部的にのみ使用しているモジュール（テストなど) の場合はこの限りではない。
   <sup>[[link](#one-module-per-file)]</sup>
 
 * <a name="underscored-filenames"></a>
-キャメルケースのモジュール名をアンダースコア化したファイル名にすること。
+  キャメルケースのモジュール名をアンダースコア化したファイル名にすること。
   <sup>[[link](#underscored-filenames)]</sup>
 
   ```elixir
@@ -592,8 +592,8 @@ Gitを使っている場合はwindowsの改行コードであなたのプロジ�
   ```
 
 * <a name="module-name-nesting"></a>
-モジュール名のネストはディレクトリ構造を反映させること。
-<sup>[[link](#module-name-nesting)]</sup>
+  モジュール名のネストはディレクトリ構造を反映させること。
+  <sup>[[link](#module-name-nesting)]</sup>
 
   ```elixir
   # file is called parser/core/xml_parser.ex
@@ -603,29 +603,29 @@ Gitを使っている場合はwindowsの改行コードであなたのプロジ�
   ```
 
 * <a name="defmodule-spacing"></a>
-`defmodule`の後に空行を開けてはいけない。
-<sup>[[link](#defmodule-spacing)]</sup>
+  `defmodule`の後に空行を開けてはいけない。
+  <sup>[[link](#defmodule-spacing)]</sup>
 
 * <a name="module-block-spacing"></a>
-モジュールレベルのコードブロックの後には空行を入れること。
-<sup>[[link](#module-block-spacing)]</sup>
+  モジュールレベルのコードブロックの後には空行を入れること。
+  <sup>[[link](#module-block-spacing)]</sup>
 
 * <a name="module-attribute-ordering"></a>
-モジュール内の定義順は下記のようにする。
+  モジュール内の定義順は下記のようにする。
   <sup>[[link](#module-attribute-ordering)]</sup>
 
-    1. `@moduledoc`
-    1. `@behaviour`
-    1. `use`
-    1. `import`
-    1. `alias`
-    1. `require`
-    1. `defstruct`
-    1. `@type`
-    1. `@module_attribute`
+  1. `@moduledoc`
+  1. `@behaviour`
+  1. `use`
+  1. `import`
+  1. `alias`
+  1. `require`
+  1. `defstruct`
+  1. `@type`
+  1. `@module_attribute`
 
-それぞれのグループの間には空白行を入れ、アルファベット順でソートしてください。
-モジュール定義の例を以下に記します。
+  それぞれのグループの間には空白行を入れ、アルファベット順でソートしてください。
+  モジュール定義の例を以下に記します。
 
   ```elixir
   defmodule MyModule do
@@ -657,9 +657,9 @@ Gitを使っている場合はwindowsの改行コードであなたのプロジ�
   ```
 
 * <a name="module-pseudo-variable"></a>
-モジュールが自身を参照するには`__MODULE__`疑似変数を使用すること。
-これならモジュール名が変更されてもコードの変更が要りません。
-<sup>[[link](#module-pseudo-variable)]</sup>
+  モジュールが自身を参照するには`__MODULE__`疑似変数を使用すること。
+  これならモジュール名が変更されてもコードの変更が要りません。
+  <sup>[[link](#module-pseudo-variable)]</sup>
 
   ```elixir
   defmodule SomeProject.SomeModule do
@@ -670,8 +670,8 @@ Gitを使っている場合はwindowsの改行コードであなたのプロジ�
   ```
 
 * <a name="alias-self-referencing-modules"></a>
-もしモジュール自身の参照にもっとわかりやすい名前を使いたければaliasを使うことができます。
-<sup>[[link](#alias-self-referencing-modules)]</sup>
+  もしモジュール自身の参照にもっとわかりやすい名前を使いたければaliasを使うことができます。
+  <sup>[[link](#alias-self-referencing-modules)]</sup>
 
   ```elixir
   defmodule SomeProject.SomeModule do
@@ -685,11 +685,11 @@ Gitを使っている場合はwindowsの改行コードであなたのプロジ�
 
 
 ### ドキュメント
-Elixrのドキュメント(`iex`の中で`h`を入力するか、[ExDoc](https://github.com/elixir-lang/ex_doc)で作られたもの) はモジュールアトリビュート [Module Attributes](\
-http://elixir-lang.org/getting-started/module-attributes.html#as-annotations) `@moduledoc` と `@doc`を使います。
+  Elixrのドキュメント(`iex`の中で`h`を入力するか、[ExDoc](https://github.com/elixir-lang/ex_doc)で作られたもの) はモジュールアトリビュート [Module Attributes](\
+  http://elixir-lang.org/getting-started/module-attributes.html#as-annotations) `@moduledoc` と `@doc`を使います。
 
 * <a name="moduledocs"></a>
-`@moduledoc` は必ず`defmodule`の次の行に書くこと。
+  `@moduledoc` は必ず`defmodule`の次の行に書くこと。
   <sup>[[link](#moduledocs)]</sup>
 
   ```elixir
@@ -722,7 +722,7 @@ http://elixir-lang.org/getting-started/module-attributes.html#as-annotations) `@
   ```
 
 * <a name="moduledoc-false"></a>
-モジュールについてのドキュメントを書かない場合は `@moduledoc false`を使ってください。
+  モジュールについてのドキュメントを書かない場合は `@moduledoc false`を使ってください。
   <sup>[[link](#moduledoc-false)]</sup>
 
   ```elixir
@@ -733,7 +733,7 @@ http://elixir-lang.org/getting-started/module-attributes.html#as-annotations) `@
   ```
 
 * <a name="moduledoc-spacing"></a>
-`@moduledoc`の後には空白行を開けてください。
+  `@moduledoc`の後には空白行を開けてください。
   <sup>[[link](#moduledoc-spacing)]</sup>
 
   ```elixir
@@ -757,7 +757,7 @@ http://elixir-lang.org/getting-started/module-attributes.html#as-annotations) `@
   ```
 
 * <a name="heredocs"></a>
-ドキュメントのため、複数行コメント内ではmarkdownを使いましょう。
+  ドキュメントのため、複数行コメント内ではmarkdownを使いましょう。
   <sup>[[link](#heredocs)]</sup>
 
   ```elixir
@@ -818,7 +818,7 @@ typespecsは、型と仕様を宣言するための表記法です。
   ```
 
 * <a name="union-types"></a>
-直和型の定義が長過ぎる場合は改行して戻り値の型で整列するようにインデントしてください。
+  直和型の定義が長過ぎる場合は改行して戻り値の型で整列するようにインデントしてください。
   <sup>[[link](#union-types)]</sup>
 
   ```elixir
@@ -838,7 +838,7 @@ typespecsは、型と仕様を宣言するための表記法です。
   ```
 
 * <a name="naming-main-types"></a>
-モジュール内で定義された構造体などの型定義は `t`としてください。
+  モジュール内で定義された構造体などの型定義は `t`としてください。
   <sup>[[link](#naming-main-types)]</sup>
 
   ```elixir
@@ -851,7 +851,7 @@ typespecsは、型と仕様を宣言するための表記法です。
   ```
 
 * <a name="spec-spacing"></a>
-型定義は関数のすぐ上に空白行無しで書いてください。
+  型定義は関数のすぐ上に空白行無しで書いてください。
   <sup>[[link](#spec-spacing)]</sup>
 
   ```elixir
@@ -865,7 +865,7 @@ typespecsは、型と仕様を宣言するための表記法です。
 ### 構造体
 
 * <a name="nil-struct-field-defaults"></a>
-もし構造体のフィールドのデフォルト値が全てnilならアトムのリストとしてください。
+  もし構造体のフィールドのデフォルト値が全てnilならアトムのリストとしてください。
   <sup>[[link](#nil-struct-field-defaults)]</sup>
 
   ```elixir
@@ -877,7 +877,7 @@ typespecsは、型と仕様を宣言するための表記法です。
   ```
 
 * <a name="additional-struct-def-lines"></a>
-複数行に渡る構造体の定義の場合は、最初のキーの位置に合わせてインデントしてください。
+  複数行に渡る構造体の定義の場合は、最初のキーの位置に合わせてインデントしてください。
   <sup>[[link](#additional-struct-def-lines)]</sup>
 
   ```elixir
@@ -889,7 +889,7 @@ typespecsは、型と仕様を宣言するための表記法です。
 ### 例外
 
 * <a name="exception-names"></a>
-例外の名前は`Error`で終わること。
+  例外の名前は`Error`で終わること。
   [[link](#exception-names)]</sup>
 
   ```elixir
@@ -909,7 +909,7 @@ typespecsは、型と仕様を宣言するための表記法です。
   ```
 
 * <a name="lowercase-error-messages"></a>
-エラーメッセージは小文字で句読点を省いてください
+  エラーメッセージは小文字で句読点を省いてください
   <sup>[[link](#lowercase-error-messages)]</sup>
 
   ```elixir
@@ -949,7 +949,7 @@ _コレクションに関するガイドラインは今のところありませ�
 ### メタプログラミング
 
 * <a name="avoid-metaprogramming"></a>
-不要なメタプログラミングをしてはいけない。
+  不要なメタプログラミングをしてはいけない。
   <sup>[[link](#avoid-metaprogramming)]</sup>
 
 
@@ -960,8 +960,8 @@ _コレクションに関するガイドラインは今のところありませ�
 #### Cond
 
 * <a name="atom-conditions"></a>
-アトムは`true`として評価されるので`cond`の最後に入れるすべてにマッチする節として使うことができます。
-`:else` か `:otherwise` を使うと良いでしょう。
+  アトムは`true`として評価されるので`cond`の最後に入れるすべてにマッチする節として使うことができます。
+  `:else` か `:otherwise` を使うと良いでしょう。
   <sup>[[link](#atom-conditions)]</sup>
 
   ```elixir
