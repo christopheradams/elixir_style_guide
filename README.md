@@ -51,6 +51,7 @@ been around five times as long.
 If you're looking for other projects to contribute to please see the
 [Hex package manager site][Hex].
 
+<a name="translations"></a>
 Translations of the guide are available in the following languages:
 
 * [Japanese]
