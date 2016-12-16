@@ -51,6 +51,11 @@ been around five times as long.
 If you're looking for other projects to contribute to please see the
 [Hex package manager site][Hex].
 
+Translations of the guide are available in the following languages:
+
+* [Japanese]
+* [Korean]
+
 ### Source Code Layout
 
 <!-- TODO: Add crafty quote here -->
@@ -1123,6 +1128,8 @@ project.
 [ExUnit]: https://hexdocs.pm/ex_unit/ExUnit.html
 [Guard Expressions]: http://elixir-lang.org/getting-started/case-cond-and-if.html#expressions-in-guard-clauses
 [Hex]: https://hex.pm/packages
+[Japanese]: https://github.com/kenichirow/elixir_style_guide/blob/master/README-jaJP.md
+[Korean]: https://github.com/marocchino/elixir_style_guide/blob/new-korean/README-koKR.md
 [License]: http://creativecommons.org/licenses/by/3.0/deed.en_US
 [Module Attributes]: http://elixir-lang.org/getting-started/module-attributes.html#as-annotations
 [Ruby community style guide]: https://github.com/bbatsov/ruby-style-guide
