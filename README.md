@@ -425,6 +425,8 @@ Translations of the guide are available in the following languages:
 * <a name="parentheses-and-functions-with-zero-arity"></a>
   Use parentheses for calls to functions with zero arity, so they can be
   distinguished from variables.
+  Starting in Elixir 1.4, the compiler will warn you about
+  locations where this ambiguity exists.
   <sup>[[link](#parentheses-and-functions-with-zero-arity)]</sup>
 
   ```elixir
@@ -432,7 +434,7 @@ Translations of the guide are available in the following languages:
 
   # not preferred
   def my_func do
-    do_stuff # is this a variable or a function call
+    do_stuff # is this a variable or a function call?
   end
 
   # preferred
