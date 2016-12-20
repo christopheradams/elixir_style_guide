@@ -413,6 +413,29 @@
   end
   ```
 
+* <a name="with-clauses"></a>
+  連続した`with`節はインデントを揃え、引数の`do:`を新しい行に入れてください。
+  <sup>[[link](#with-clauses)]</sup>
+
+  ```elixir
+  with {:ok, foo} <- fetch(opts, :foo),
+       {:ok, bar} <- fetch(opts, :bar),
+    do: {:ok, foo, bar}
+  ```
+
+* <a name="with-else"></a>
+　`with` に 複数行の`do`ブロックがある場合や、`else`オプションがある場合は複数行の構文を使用してください。
+  <sup>[[link](#with-else)]</sup>
+
+  ```elixir
+  with {:ok, foo} <- fetch(opts, :foo),
+       {:ok, bar} <- fetch(opts, :bar) do
+    {:ok, foo, bar}
+  else
+    :error ->
+      {:error, :bad_arg}
+  end
+  ```
 
 ### 命名
 
