@@ -54,6 +54,7 @@ If you're looking for other projects to contribute to please see the
 <a name="translations"></a>
 Translations of the guide are available in the following languages:
 
+* [Chinese Traditional]
 * [Japanese]
 * [Korean]
 
@@ -1133,6 +1134,7 @@ Here's the [list of people who has kindly contributed][Contributors] to this
 project.
 
 <!-- Links -->
+[Chinese Traditional]: https://github.com/elixirtw/elixir_style_guide/blob/master/README_zhTW.md
 [Code Analysis]: https://github.com/h4cc/awesome-elixir#code-analysis
 [Contributors]: https://github.com/christopheradams/elixir_style_guide/graphs/contributors
 [Elixir Style Guide]: https://github.com/christopheradams/elixir_style_guide
