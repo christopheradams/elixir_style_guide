@@ -918,7 +918,7 @@ directives (see [Modules](#modules)).
   defstruct name: nil, params: []
 
   @type t :: %__MODULE__{
-    name: String.t,
+    name: String.t | nil,
     params: Keyword.t
   }
   ```
