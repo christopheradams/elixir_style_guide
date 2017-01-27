@@ -47,6 +47,12 @@
 
 もし他に貢献できるプロジェクトを探しているなら[Hex package manager site][Hex]を見てみてください。
 
+<a name="translations"></a>
+このガイドは以下の言語にも翻訳されています。
+
+* [Chinese Traditional]
+* [Japanese]
+* [Korean]
 
 ### ソースコードのレイアウト
 
@@ -1054,11 +1060,14 @@ Here's the [list of people who has kindly contributed][Contributors] to this
 project.
 
 <!-- Links -->
+[Chinese Traditional]: https://github.com/elixirtw/elixir_style_guide/blob/master/README_zhTW.md
 [Elixir Style Guide]: https://github.com/christopheradams/elixir_style_guide
 [Stargazers]: https://github.com/christopheradams/elixir_style_guide/stargazers
 [Contributors]: https://github.com/christopheradams/elixir_style_guide/graphs/contributors
 [Elixir]: http://elixir-lang.org
 [Hex]: https://hex.pm/packages
+[Japanese]: https://github.com/kenichirow/elixir_style_guide/blob/master/README-jaJP.md
+[Korean]: https://github.com/marocchino/elixir_style_guide/blob/new-korean/README-koKR.md
 [license]: http://creativecommons.org/licenses/by/3.0/deed.en_US
 [Ruby community style guide]: https://github.com/bbatsov/ruby-style-guide
 [Code Analysis]: https://github.com/h4cc/awesome-elixir#code-analysis
