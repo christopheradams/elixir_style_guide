@@ -403,6 +403,7 @@
 
 * <a name="parentheses-and-functions-with-zero-arity"></a>
   変数と区別するため引数がない関数呼び出しでも括弧を使うこと。
+  (Elixir 1.4からは、このようなあいまいな記述があった場合には警告を出すようになりました)
   <sup>[[link](#parentheses-and-functions-with-zero-arity)]</sup>
 
   ```elixir
