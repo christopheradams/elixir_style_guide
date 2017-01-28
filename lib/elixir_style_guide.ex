@@ -1,0 +1,2 @@
+defmodule ElixirStyleGuide do
+end

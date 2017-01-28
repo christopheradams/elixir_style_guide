@@ -26,6 +26,12 @@ Install [Markdownlint] to check your changes, and run:
 mdl --style 'markdown.rb' README.md
 ```
 
+Check additional style guidelines by installing Elixir and running:
+
+```sh
+mix elixir_style_guide.check README.md
+```
+
 **IMPORTANT**: By submitting a patch, you agree that your work will be
 licensed under the license used by the project.
 
