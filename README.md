@@ -611,8 +611,8 @@ Translations of the guide are available in the following languages:
   <sup>[[link](#annotations)]</sup>
 
 * <a name="annotation-keyword"></a>
-  The annotation keyword is followed by a colon and a space, then a note
-  describing the problem.
+  The annotation keyword is uppercase, and is followed by a colon and a space,
+  then a note describing the problem.
   <sup>[[link](#annotation-keyword)]</sup>
 
 * <a name="exceptions-to-annotations"></a>
