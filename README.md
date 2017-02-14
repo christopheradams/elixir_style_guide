@@ -346,7 +346,8 @@ Translations of the guide are available in the following languages:
   ```
 
 * <a name="true-as-last-condition"></a>
-  Always use `true` as the last condition of a `cond` statement.
+  Use `true` as the last condition of the `cond` special form when you need a
+  clause that always matches.
   <sup>[[link](#true-as-last-condition)]</sup>
 
   ```elixir
