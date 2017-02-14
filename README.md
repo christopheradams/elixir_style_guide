@@ -19,7 +19,6 @@
   * _Regular Expressions_
   * [Metaprogramming](#metaprogramming)
   * [Testing](#testing)
-  * [Suggested Alternatives](#suggested-alternatives)
   * [Alternative Style Guides](#alternative-style-guides)
   * [Tools](#tools)
 * __[Getting Involved](#getting-involved)__
@@ -351,6 +350,17 @@ Translations of the guide are available in the following languages:
   <sup>[[link](#true-as-last-condition)]</sup>
 
   ```elixir
+  # not preferred
+  cond do
+    1 + 2 == 5 ->
+      "Nope"
+    1 + 3 == 5 ->
+      "Uh, uh"
+    :else ->
+      "OK"
+  end
+
+  # preferred
   cond do
     1 + 2 == 5 ->
       "Nope"
@@ -1043,40 +1053,6 @@ _No guidelines for regular expressions have been added yet._
 
   # required - the assertion is a pattern match
   assert {:ok, expected} = actual_function(3)
-  ```
-
-### Suggested Alternatives
-
-Suggested alternatives are styles that haven't been seen much in the community
-yet but might provide some value.
-
-#### Cond
-
-* <a name="atom-conditions"></a>
-  An atom can be used as a catch-all expression in a `cond` as it evaluates
-  to a truthy value.
-  Suggested atoms are `:else` or `:otherwise`
-  <sup>[[link](#atom-conditions)]</sup>
-
-  ```elixir
-  cond do
-    1 + 2 == 5 ->
-      "Nope"
-    1 + 3 == 5 ->
-      "Uh, uh"
-    :else ->
-      "OK"
-  end
-
-  # is the same as
-  cond do
-    1 + 2 == 5 ->
-      "Nope"
-    1 + 3 == 5 ->
-      "Uh, uh"
-    true ->
-      "OK"
-  end
   ```
 
 ### Alternative Style Guides
