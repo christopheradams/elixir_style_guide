@@ -589,14 +589,18 @@ Translations of the guide are available in the following languages:
   the comment.
   <sup>[[link](#comment-leading-spaces)]</sup>
 
-* <a name="comment-spacing"></a>
-  Comments longer than a word are capitalized and use punctuation.
+* <a name="comment-grammar"></a>
+  Comments longer than a word are capitalized, and sentences use punctuation.
   Use [one space][Sentence Spacing] after periods.
-  <sup>[[link](#comment-spacing)]</sup>
+  <sup>[[link](#comment-grammar)]</sup>
 
   ```elixir
   # not preferred
-  String.upcase(some_string) # Capitalize string.
+  # these lowercase comments are missing punctuation
+
+  # preferred
+  # Capitalization example
+  # Use punctuation for complete sentences.
   ```
 
 #### Comment Annotations
