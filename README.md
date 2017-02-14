@@ -615,12 +615,22 @@ Translations of the guide are available in the following languages:
   then a note describing the problem.
   <sup>[[link](#annotation-keyword)]</sup>
 
+  ```elixir
+  # TODO: Deprecate in v1.5.
+  def some_function(arg), do: {:ok, arg}
+  ```
+
 * <a name="exceptions-to-annotations"></a>
   In cases where the problem is so obvious that any documentation would be
   redundant, annotations may be left at the end of the offending line with no
   note.
   This usage should be the exception and not the rule.
   <sup>[[link](#exceptions-to-annotations)]</sup>
+
+  ```elixir
+  start_task()
+  Process.sleep(5000) # FIXME
+  ```
 
 * <a name="todo-notes"></a>
   Use `TODO` to note missing features or functionality that should be added at a
