@@ -615,11 +615,6 @@ Translations of the guide are available in the following languages:
   describing the problem.
   <sup>[[link](#annotation-keyword)]</sup>
 
-* <a name="multiple-line-annotations"></a>
-  If multiple lines are required to describe the problem, subsequent lines
-  should be indented two spaces after the `#`.
-  <sup>[[link](#multiple-line-annotations)]</sup>
-
 * <a name="exceptions-to-annotations"></a>
   In cases where the problem is so obvious that any documentation would be
   redundant, annotations may be left at the end of the offending line with no
