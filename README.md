@@ -589,6 +589,11 @@ Translations of the guide are available in the following languages:
   the comment.
   <sup>[[link](#comment-leading-spaces)]</sup>
 
+  ```elixir
+  String.first(some_string) #not preferred
+  String.first(some_string) # preferred
+  ```
+
 * <a name="comment-grammar"></a>
   Comments longer than a word are capitalized, and sentences use punctuation.
   Use [one space][Sentence Spacing] after periods.
