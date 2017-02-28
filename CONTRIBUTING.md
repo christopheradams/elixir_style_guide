@@ -20,10 +20,12 @@ formatting/markup/style rules so that the style remains consistent:
   alphabetical order at the end of the document, and capitalize the first word
   of the link label.
 
-Install [Markdownlint] to check your changes, and run:
+Use Ruby and [Markdownlint] to check your changes:
 
 ```sh
-mdl --style 'markdown.rb' README.md
+gem install bundler
+bundle install
+bundle exec rake test
 ```
 
 **IMPORTANT**: By submitting a patch, you agree that your work will be

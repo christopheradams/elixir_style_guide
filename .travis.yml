@@ -6,8 +6,7 @@ rvm:
   - 2.3.0
 
 install:
-  - gem install mdl
+  - bundle install
 
 script:
-  - mdl --style 'markdown.rb' README.md
-  - mdl --style 'markdown.rb' CONTRIBUTING.md
+  - bundle exec rake test
