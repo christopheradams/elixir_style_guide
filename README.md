@@ -41,11 +41,9 @@ Don't stifle the style.
 
 ## The Guide
 
-This is our attempt at starting a community style guide for the
-[Elixir programming language][Elixir].
-Please feel free to make pull requests and contribute.
-We really want Elixir to have as vibrant of a community as any language that's
-been around five times as long.
+This is community style guide for the [Elixir programming language][Elixir].
+Please feel free to make pull requests and suggestions, and be a part of
+Elixir's vibrant community.
 
 If you're looking for other projects to contribute to please see the
 [Hex package manager site][Hex].
@@ -58,8 +56,6 @@ Translations of the guide are available in the following languages:
 * [Korean]
 
 ### Source Code Layout
-
-<!-- TODO: Add crafty quote here -->
 
 * <a name="spaces-indentation"></a>
   Use two **spaces** per indentation level.
@@ -1121,7 +1117,7 @@ points made in this document were borrowed from the [Ruby community style guide]
 A lot of things were applicable to Elixir and allowed us to get _some_ document
 out quicker to start the conversation.
 
-Here's the [list of people who has kindly contributed][Contributors] to this
+Here's the [list of people who have kindly contributed][Contributors] to this
 project.
 
 <!-- Links -->
