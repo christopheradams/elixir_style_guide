@@ -6,7 +6,7 @@ rvm:
   - 2.3.0
 
 install:
-  - bundle install
+  - gem install mdl rake
 
 script:
-  - bundle exec rake test
+  - rake test

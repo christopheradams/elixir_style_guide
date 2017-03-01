@@ -23,9 +23,8 @@ formatting/markup/style rules so that the style remains consistent:
 Use Ruby and [Markdownlint] to check your changes:
 
 ```sh
-gem install bundler
-bundle install
-bundle exec rake test
+gem install mdl rake
+rake test
 ```
 
 **IMPORTANT**: By submitting a patch, you agree that your work will be
