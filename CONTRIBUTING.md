@@ -30,6 +30,18 @@ rake test
 **IMPORTANT**: By submitting a patch, you agree that your work will be
 licensed under the license used by the project.
 
+## The Project Board
+
+If you are looking for issues to work on, the [project board][Project KanBan]
+is the place to go. Usually, you look at the issues from right to left, as
+the ones in the rightmost part are the closer to get merged and have higher
+priority.
+
+If you just want to dive in and start writing, the backlog has the
+'ready to be picked up' issues. These issues have been discussed already and
+are most likely just waiting for someone to make a PR. Just look for the
+issues with the `enhancement` and/or `help wanted` labels.
+
 ## Collaborators
 
 If you have contributed to the repository you can be appointed as a collaborator
@@ -58,6 +70,7 @@ translation:
 [Emacs LineWrap]: http://emacswiki.org/emacs/LineWrap
 [Fork]: https://github.com/christopheradams/elixir_style_guide#fork-destination-box
 [Markdownlint]: https://github.com/mivok/markdownlint
+[Project KanBan]: https://github.com/christopheradams/elixir_style_guide/projects/1
 [Repo]: https://github.com/christopheradams/elixir_style_guide.git
 [Translations]: README.md#translations
 [Vim word wrap]: http://vim.wikia.com/wiki/Automatic_word_wrapping
