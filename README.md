@@ -291,6 +291,49 @@ Translations of the guide are available in the following languages:
   end
   ```
 
+* <a name="add-blank-line-after-multiline-assignment"></a>
+  Add a blank line after a multiline assignment as a
+  visual cue that the assignment is 'over'.
+  <sup>[[link](#add-blank-line-after-multiline-assignment)]</sup>
+
+  ```elixir
+  # not preferred
+  some_string =
+    "Hello"
+    |> String.downcase
+    |> String.strip
+  another_string <> some_string
+
+  # preferred
+  some_string =
+    "Hello"
+    |> String.downcase
+    |> String.strip
+
+  another_string <> some_string
+  ```
+
+  ```elixir
+  # also not preferred
+  something =
+    if x == 2 do
+      "Hi"
+    else
+      "Bye"
+    end
+  something |> String.downcase
+
+  # preferred
+  something =
+    if x == 2 do
+      "Hi"
+    else
+      "Bye"
+    end
+
+  something |> String.downcase
+  ```
+
 * <a name="do-with-multi-line-if-unless"></a>
   Never use `do:` for multi-line `if/unless`.
   <sup>[[link](#do-with-multi-line-if-unless)]</sup>
