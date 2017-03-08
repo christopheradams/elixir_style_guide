@@ -3,25 +3,25 @@
 
 ## 目次
 
-* __[はじめに](#prelude)__
-* __[このガイドについて](#the-guide)__
-  * [ソースコードレイアウト](#source-code-layout)
-  * [構文](#syntax)
-  * [命名](#naming)
-  * [コメント](#comments)
-      * [注釈](#comment-annotations)
-  * [モジュール](#modules)
-  * [ドキュメント](#documentation)
+* __[はじめに](#はじめに)__
+* __[このガイドについて](#このガイドについて)__
+  * [ソースコードレイアウト](#ソースコードレイアウト)
+  * [構文](#構文)
+  * [命名](#命名)
+  * [コメント](#コメント)
+      * [注釈](#注釈)
+  * [モジュール](#モジュール)
+  * [ドキュメント](#ドキュメント)
   * [Typespecs](#typespecs)
-  * [構造体](#structs)
-  * [例外](#exceptions)
+  * [構造体](#構造体)
+  * [例外](#例外)
   * _コレクション_
-  * [文字列](#strings)
+  * [文字列](#文字列)
   * _正規表現_
-  * [メタプログラミング](#metaprogramming)
-  * [その他のスタイル](#suggested-alternatives)
-  * [スタイルガイド](#style-guides)
-  * [ツール](#tools)
+  * [メタプログラミング](#メタプログラミング)
+  * [その他のスタイル](#その他のスタイル)
+  * [スタイルガイド](#スタイルガイド)
+  * [ツール](#ツール)
 * __[Getting Involved](#getting-involved)__
   * [Contributing](#contributing)
   * [Spread the Word](#spread-the-word)
