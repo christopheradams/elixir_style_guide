@@ -817,6 +817,24 @@ Translations of the guide are available in the following languages:
   end
   ```
 
+* <a name="repetitive-module-names"></a>
+  Avoid repeating fragments in module names and namespaces.
+  This improves overall readability and
+  eliminates [ambiguous aliases][Conflicting Aliases].
+  <sup>[[link](#repetitive-module-names)]</sup>
+
+  ```elixir
+  # not preferred
+  defmodule Todo.Todo do
+    ...
+  end
+
+  # preferred
+  defmodule Todo.Item do
+    ...
+  end
+  ```
+
 ### Documentation
 
 Documentation in Elixir (when read either in `iex` with `h` or generated with
@@ -1167,6 +1185,7 @@ project.
 [Chinese Traditional]: https://github.com/elixirtw/elixir_style_guide/blob/master/README_zhTW.md
 [Code Analysis]: https://github.com/h4cc/awesome-elixir#code-analysis
 [Code Of Conduct]: https://github.com/christopheradams/elixir_style_guide/blob/master/CODE_OF_CONDUCT.md
+[Conflicting Aliases]: https://elixirforum.com/t/using-aliases-for-fubar-fubar-named-module/1723
 [Contributing]: https://github.com/elixir-lang/elixir/blob/master/CODE_OF_CONDUCT.md
 [Contributors]: https://github.com/christopheradams/elixir_style_guide/graphs/contributors
 [Elixir Style Guide]: https://github.com/christopheradams/elixir_style_guide
