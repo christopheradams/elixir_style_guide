@@ -774,11 +774,11 @@ Translations of the guide are available in the following languages:
   end
   ```
 
-* <a name="avoid-repeating-aliased-module-fragments"></a>
+* <a name="repetitive-module-names"></a>
   Avoid repeating fragments in module names and namespaces.
   This improves overall readability and
   eliminates [ambiguous aliases][Conflicting Aliases].
-  <sup>[[link](#avoid-repeating-aliased-module-fragments)]</sup>
+  <sup>[[link](#repetitive-module-names)]</sup>
 
   ```elixir
   # not preferred
