@@ -756,6 +756,9 @@ Translations of the guide are available in the following languages:
   1. `defstruct`
   1. `@type`
   1. `@module_attribute`
+  1. `@callback`
+  1. `@macrocallback`
+  1. `@optional_callbacks`
 
   Add a blank line between each grouping, and sort the terms (like module names)
   alphabetically.
@@ -785,6 +788,12 @@ Translations of the guide are available in the following languages:
 
     @module_attribute :foo
     @other_attribute 100
+
+    @callback some_function(term) :: :ok | {:error, term}
+
+    @macrocallback macro_name(term) :: Macro.t
+
+    @optional_callbacks macro_name: 1
 
     ...
   end
