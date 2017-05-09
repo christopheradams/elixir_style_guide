@@ -981,7 +981,7 @@ directives (see [Modules](#modules)).
 
 * <a name="union-types"></a>
   If a union type is too long to fit on a single line, add a newline
-  and indent with spaces to keep the return types aligned.
+  and indent with spaces to keep the types aligned.
   <sup>[[link](#union-types)]</sup>
 
   ```elixir
@@ -993,7 +993,7 @@ directives (see [Modules](#modules)).
   @type long_union_type :: some_type | another_type | some_other_type
                          | a_final_type
 
-  # also preferred - one return type per line
+  # also preferred - one type per line
   @type long_union_type :: some_type
                          | another_type
                          | some_other_type
