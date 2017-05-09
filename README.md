@@ -778,7 +778,7 @@ Translations of the guide are available in the following languages:
     import SomethingElse
 
     alias My.Long.Module.Name
-    alias My.Other.Module.Name
+    alias My.Other.Module.Example
 
     require Integer
 
