@@ -986,18 +986,18 @@ directives (see [Modules](#modules)).
 
   ```elixir
   # not preferred - no indentation
-  @type long_union_type :: some_type | another_type | some_other_type
-  | a_final_type
+  @type long_union_type :: some_type | another_type | some_other_type |
+  a_final_type
 
   # preferred
-  @type long_union_type :: some_type | another_type | some_other_type
-                         | a_final_type
+  @type long_union_type :: some_type | another_type | some_other_type |
+                           a_final_type
 
   # also preferred - one type per line
-  @type long_union_type :: some_type
-                         | another_type
-                         | some_other_type
-                         | a_final_type
+  @type long_union_type :: some_type |
+                           another_type |
+                           some_other_type |
+                           a_final_type
   ```
 
 * <a name="naming-main-types"></a>
