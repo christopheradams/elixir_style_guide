@@ -1048,7 +1048,7 @@ directives (see [Modules](#modules)).
 
   ```elixir
   defstruct foo: "test", bar: true, baz: false,
-            qux: false, quux: nil
+            qux: false, quux: 1
   ```
 
 ### Exceptions
