@@ -1029,15 +1029,16 @@ directives (see [Modules](#modules)).
 ### Structs
 
 * <a name="nil-struct-field-defaults"></a>
-  If all the struct's fields default to nil, supply them as a list of atoms.
+  Use a list of atoms for struct fields that default to `nil`, followed by the
+  other keywords.
   <sup>[[link](#nil-struct-field-defaults)]</sup>
 
   ```elixir
   # not preferred
-  defstruct name: nil, params: nil
+  defstruct name: nil, params: nil, active: true
 
   # preferred
-  defstruct [:name, :params]
+  defstruct [:name, :params, active: true]
   ```
 
 * <a name="additional-struct-def-lines"></a>
