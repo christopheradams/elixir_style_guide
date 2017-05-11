@@ -12,6 +12,7 @@
   * [Modules](#modules)
   * [Documentation](#documentation)
   * [Typespecs](#typespecs)
+  * [Callbacks](#callbacks)
   * [Structs](#structs)
   * [Exceptions](#exceptions)
   * _Collections_
@@ -1026,6 +1027,28 @@ directives (see [Modules](#modules)).
   end
   ```
 
+### Callbacks
+
+Callbacks are used to define [Behaviours].
+
+Callbacks should be defined at the top of your module, right before any
+function (see [Modules](#modules)).
+
+* <a name="callbacks"></a>
+  Each `@callback` or `@macrocallback` should be grouped with its corresponding
+  `@doc`. Separate each pair with a blank line.
+
+  ```elixir
+  @doc "Describe what the callback function should do"
+  @callback operation() :: :ok | {:error, term}
+
+  @doc "Describe what the macro is expected to do"
+  @macrocallback macro_name() :: Macro.t
+  ```
+
+* <a name="callback-types"></a>
+  The types on callbacks should follow the rules for [Typespecs](#typespecs).
+
 ### Structs
 
 * <a name="nil-struct-field-defaults"></a>
@@ -1192,6 +1215,7 @@ Here's the [list of people who have kindly contributed][Contributors] to this
 project.
 
 <!-- Links -->
+[Behaviours]: http://elixir-lang.org/getting-started/typespecs-and-behaviours.html#behaviours
 [Chinese Traditional]: https://github.com/elixirtw/elixir_style_guide/blob/master/README_zhTW.md
 [Code Analysis]: https://github.com/h4cc/awesome-elixir#code-analysis
 [Code Of Conduct]: https://github.com/christopheradams/elixir_style_guide/blob/master/CODE_OF_CONDUCT.md
