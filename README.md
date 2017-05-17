@@ -257,6 +257,32 @@ Translations of the guide are available in the following languages:
   some_string |> String.strip |> String.downcase |> String.codepoints
   ```
 
+* <a name="list-bracket-lines"></a>
+  Place the opening and closing square brackets of a list on the same line as
+  the first and last element, respectively.
+  <sup>[[link](#list-bracket-lines)]</sup>
+
+  ```elixir
+  # not preferred
+  list = [
+    :first_item, :second_item
+  ]
+
+  list =
+  [
+    :first_item,
+    :second_item
+  ]
+
+  # preferred
+  list =
+    [:first_item, :second_item]
+
+  list =
+    [:first_item,
+      :second_item]
+  ```
+
 * <a name="trailing-whitespace"></a>
   Avoid trailing whitespace.
   <sup>[[link](#trailing-whitespace)]</sup>
