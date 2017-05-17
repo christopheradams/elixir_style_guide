@@ -494,6 +494,18 @@ Translations of the guide are available in the following languages:
   end
   ```
 
+* <a name="keyword-list-syntax"></a>
+  Always use the special syntax for keyword lists.
+  <sup>[[link](#keyword-list-syntax)]</sup>
+
+  ```elixir
+  # not preferred
+  some_value = [{:a, "baz"}, {:b, "qux"}]
+
+  # preferred
+  some_value = [a: "baz", b: "qux"]
+  ```
+
 * <a name="keyword-list-brackets"></a>
   Omit square brackets from keyword lists whenever they are optional.
   <sup>[[link](#keyword-list-brackets)]</sup>
