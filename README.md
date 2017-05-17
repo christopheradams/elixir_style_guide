@@ -1041,6 +1041,21 @@ directives (see [Modules](#modules)).
   defstruct [:name, :params, active: true]
   ```
 
+* <a name="struct-def-brackets"></a>
+  Omit square brackets when the argument of a `defstruct` is a keyword list.
+  <sup>[[link](#struct-def-brackets)]</sup>
+
+  ```elixir
+  # not preferred
+  defstruct [params: [], active: true]
+
+  # preferred
+  defstruct params: [], active: true
+
+  # required - brackets are not optional, with at least one atom in the list
+  defstruct [:name, params: [], active: true]
+  ```
+
 * <a name="additional-struct-def-lines"></a>
   Indent additional lines of the struct definition, keeping the first keys
   aligned.
