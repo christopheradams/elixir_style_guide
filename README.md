@@ -494,6 +494,18 @@ Translations of the guide are available in the following languages:
   end
   ```
 
+* <a name="keyword-list-brackets"></a>
+  Omit square brackets from keyword lists whenever they are optional.
+  <sup>[[link](#keyword-list-brackets)]</sup>
+
+  ```elixir
+  # not preferred
+  some_function(foo, bar, [a: "baz", b: "qux"])
+
+  # preferred
+  some_function(foo, bar, a: "baz", b: "qux")
+  ```
+
 * <a name="with-clauses"></a>
   Indent and align successive `with` clauses.
   Put the `do:` argument on a new line, indented normally.
