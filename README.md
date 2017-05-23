@@ -257,6 +257,38 @@ Translations of the guide are available in the following languages:
   some_string |> String.strip |> String.downcase |> String.codepoints
   ```
 
+* <a name="multiline-list-assign"></a>
+  When assigning a list that spans multiple lines, start the list on a newline,
+  with proper indentation.
+  <sup>[[link](#multiline-list-assign)]</sup>
+
+   ```elixir
+  # not preferred - no indentation
+  list = [:first_item, :second_item, :next_item,
+  :last_item]
+
+  # better, but not preferred - with indentation
+  list = [:first_item, :second_item, :next_item,
+          :last_item]
+
+  # preferred - list starts on its own line
+  # good for shorter, more compact lists
+  list =
+    [:first_item, :second_item, :next_item,
+     :last_item]
+
+  # also preferred - when each element is on its own line
+  # good for long lists, lists with long elements, or lists with comments
+  list = [
+    :first_item,
+    :second_item,
+    :next_item,
+    # comment
+    :many_items,
+    :last_item
+  ]
+  ```
+
 * <a name="trailing-whitespace"></a>
   Avoid trailing whitespace.
   <sup>[[link](#trailing-whitespace)]</sup>
