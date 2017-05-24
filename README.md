@@ -259,7 +259,7 @@ Translations of the guide are available in the following languages:
 
 * <a name="multiline-list-assign"></a>
   When assigning a list that spans multiple lines, start the list on a newline,
-  with proper indentation.
+  and indent the elements to keep them aligned.
   <sup>[[link](#multiline-list-assign)]</sup>
 
   ```elixir
