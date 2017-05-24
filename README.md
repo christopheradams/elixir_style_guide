@@ -262,7 +262,7 @@ Translations of the guide are available in the following languages:
   with proper indentation.
   <sup>[[link](#multiline-list-assign)]</sup>
 
-   ```elixir
+  ```elixir
   # not preferred - no indentation
   list = [:first_item, :second_item, :next_item,
   :last_item]
