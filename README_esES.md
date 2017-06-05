@@ -56,7 +56,7 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   <sup>[[enlace](#spaces-indentation)]</sup>
 
   ```elixir
-  # no recomendado - four spaces
+  # no recomendado - cuatro espacios
   def some_function do
       do_something
   end
@@ -74,8 +74,8 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   <sup>[[enlace](#line-endings)]</sup>
 
 * <a name="autocrlf"></a>
-  If you're using Git you might want to add the following configuration
-  setting to protect your project from Windows line endings creeping in:
+  Si usas Git puede que quieras utilizar la siguiente configuración para protegerte de
+  que se te cuelen los finales de línea en Windows:
   <sup>[[enlace](#autocrlf)]</sup>
 
   ```sh
@@ -83,10 +83,11 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="spaces"></a>
-  Use spaces around operators, after commas, colons and semicolons.
-  Do not put spaces around matched pairs like brackets, parentheses, etc.
-  Whitespace might be (mostly) irrelevant to the Elixir runtime, but its proper
-  use is the key to writing easily readable code.
+  Usa espacios alrededor de operadores, después de comas, dos puntos y de punto y coma.
+  No coloques espacios alrededor de parejas como llaves, paréntesis, etc.
+  Los espacios en blanco puede que sean (en la mayoría de casos) irrelevantes para Elixir
+  en tiempo de ejecución, pero su uso apropiado es clave para escribir código fácilmente
+  legible.
   <sup>[[enlace](#spaces)]</sup>
 
   ```elixir
@@ -97,8 +98,8 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="no-spaces"></a>
-  Do not use spaces after non-word operators that only take one argument; or
-  around the range operator.
+  No utilices espacios después de operadores que no sean una palabra y que sólo reciben un
+  argumento; o alrededor del operador de rango.
   <sup>[[enlace](#no-spaces)]</sup>
 
   ```elixir
@@ -108,8 +109,7 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="def-spacing"></a>
-  Use blank lines between `def`s to break up a function into logical
-  paragraphs.
+  Utiliza líneas en blanco entre `def`s para separar las funciones en párrafos lógicos.
   <sup>[[enlace](#def-spacing)]</sup>
 
   ```elixir
@@ -135,7 +135,8 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="single-line-defs"></a>
-  ...but run single-line `def`s that match for the same function together.
+  ...pero no dejes líneas en blanco cuando tengas `def`s de una sola línea cuyos
+  argumentos representen pattern matching.
   <sup>[[enlace](#single-line-defs)]</sup>
 
   ```elixir
@@ -147,9 +148,9 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="long-dos"></a>
-  If you use the `do:` syntax with functions and the line that makes up the
-  function body is long, put the `do:` on a new line indented one level more
-  than the previous line.
+  Si utilizas la sintaxis `do:` con funciones y la línea que constituye el cuerpo de la
+  función es demasiado larga, pon el `do:` en una nueva línea con un nivel de indentación
+  más que la línea previa.
   <sup>[[enlace](#long-dos)]</sup>
 
   ```elixir
@@ -157,8 +158,9 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
     do: Enum.map(args, fn(arg) -> arg <> " is on a very long line!" end)
   ```
 
-  When you use the convention above and you have more than one function clause
-  using the `do:` syntax, put the `do:` on a new line for each function clause:
+  Si tienes varias funciones con la misma cláusula y en alguno de los casos la línea que
+  constituye el cuerpo de la función es demasiado larga, pon el `do:` en una nueva línea
+  para cada función:
 
   ```elixir
   # no recomendado
@@ -174,7 +176,7 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="multiple-function-defs"></a>
-  If you have more than one multi-line `def`s do not use single-line `def`s.
+  Si tienes más de un `def`s multilínea, no utilices `def`s de una sola línea.
   <sup>[[enlace](#multiple-function-defs)]</sup>
 
   ```elixir
@@ -196,7 +198,7 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="pipe-operator"></a>
-  Use the pipe operator (`|>`) to chain functions together.
+  Usa el operador pipe (`|>`) para encadenar funciones una tras otra.
   <sup>[[enlace](#pipe-operator)]</sup>
 
   ```elixir
@@ -206,25 +208,26 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   # recomendado
   some_string |> String.downcase |> String.strip
 
-  # Multiline pipelines are not further indented
+  # Los pipelines multilínea no se indentan a mayores
   some_string
   |> String.downcase
   |> String.strip
 
-  # Multiline pipelines on the right side of a pattern match
-  # should be indented on a new line
+  # Los pipelines multilínea que estén en el lado derecho de un pattern match
+  # deben ser indentados en una nueva línea
   sanitized_string =
     some_string
     |> String.downcase
     |> String.strip
   ```
 
-  While this is the preferred method, take into account that copy-pasting
-  multiline pipelines into IEx might result in a syntax error, as IEx will
-  evaluate the first line without realizing that the next line has a pipeline.
+  Aunque este sea el método recomendado, ten en cuenta que al copiar y pegar
+  pipelines multilínea en IEx podría causar un error de sintaxis, ya que IEx
+  evaluará la primera línea sin darse cuenta de que la siguiente línea tiene
+  otro pipeline.
 
 * <a name="avoid-single-pipelines"></a>
-  Avoid using the pipe operator just once.
+  Evita utilizar el operador pipe una única vez.
   <sup>[[enlace](#avoid-single-pipelines)]</sup>
 
   ```elixir
@@ -236,12 +239,12 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="bare-variables"></a>
-  Use _bare_ variables in the first part of a function chain.
+  Utiliza variables simples (_bare_ variables) como comienzo de una cadena de funciones.
   <sup>[[enlace](#bare-variables)]</sup>
 
   ```elixir
-  # THE WORST!
-  # This actually parses as String.strip("nope" |> String.downcase).
+  # ¡LO PEOR QUE NUNCA DEBES HACER!
+  # Esto realmente se parsea como String.strip("nope" |> String.downcase).
   String.strip "nope" |> String.downcase
 
   # no recomendado
@@ -252,43 +255,43 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="multiline-list-assign"></a>
-  When assigning a list that spans multiple lines, start the list on a newline,
-  and indent the elements to keep them aligned.
+  Al definir una lista que ocupa varias líneas, inicia la lista en una nueva línea, e
+  indenta los elementos para mantenerlos alineados.
   <sup>[[enlace](#multiline-list-assign)]</sup>
 
   ```elixir
-  # no recomendado - no indentation
+  # no recomendado - sin indentación
   list = [:first_item, :second_item, :next_item,
   :last_item]
 
-  # better, but not preferred - with indentation
+  # mejor, pero no recomendado - con indentación
   list = [:first_item, :second_item, :next_item,
           :last_item]
 
-  # recomendado - list starts on its own line
-  # good for shorter, more compact lists
+  # recomendado - la lista comienza en su propia línea
+  # bueno para listas cortas y compactas
   list =
     [:first_item, :second_item, :next_item,
      :last_item]
 
-  # also preferred - when each element is on its own line
-  # good for long lists, lists with long elements, or lists with comments
+  # también recomendado - cuando cada elemento está en su propia línea
+  # bueno para listas largas, listas con elementos largos, o listas con comentarios
   list = [
     :first_item,
     :second_item,
     :next_item,
-    # comment
+    # comentario
     :many_items,
     :last_item
   ]
   ```
 
 * <a name="trailing-whitespace"></a>
-  Avoid trailing whitespace.
+  Evita los espacios y tabulaciones al final de línea (trailing whitespace).
   <sup>[[enlace](#trailing-whitespace)]</sup>
 
 * <a name="newline-eof"></a>
-  End each file with a newline.
+  Termina cada fichero con una nueva línea.
   <sup>[[enlace](#newline-eof)]</sup>
 
 ### Syntax
