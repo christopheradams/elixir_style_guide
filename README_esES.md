@@ -5,11 +5,11 @@
 * __[Preludio](#preludio)__
 * __[La Guía](#la-guia)__
   * [Disposición del Código Fuente (Layout)](#source-code-layout)
-  * [Syntax](#syntax)
-  * [Naming](#naming)
-  * [Comments](#comments)
-    * [Comment Annotations](#comment-annotations)
-  * [Modules](#modules)
+  * [Sintaxis](#sintaxis)
+  * [Nombrado](#nombrado)
+  * [Comentarios](#comentarios)
+    * [Comentarios Anotaciones](#commentarios-anotaciones)
+  * [Módulos](#modules)
   * [Documentation](#documentation)
   * [Typespecs](#typespecs)
   * [Structs](#structs)
@@ -42,8 +42,8 @@ No estropees el estilo.
 ## <a name="la-guia">La Guía</a>
 
 Esta es la guía de estilo de la comunidad para
-[el lenguaje de programación Elixir][Elixir]. Por favor, se libre de abrir pull requests
-y sugerencias, y forma parte de la vibrante comunidad de Elixir.
+[el lenguaje de programación Elixir][Elixir]. Por favor, siéntete libre de abrir pull
+requests y sugerencias, y ¡forma parte de la vibrante comunidad de Elixir!.
 
 Si estás buscando otros proyectos en los que contribuir, por favor ve al
 [sitio web de Hex package manager][Hex].
@@ -150,7 +150,7 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
 * <a name="long-dos"></a>
   Si utilizas la sintaxis `do:` con funciones y la línea que constituye el cuerpo de la
   función es demasiado larga, pon el `do:` en una nueva línea con un nivel de indentación
-  más que la línea previa.
+  más que la línea anterior.
   <sup>[[enlace](#long-dos)]</sup>
 
   ```elixir
@@ -158,7 +158,7 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
     do: Enum.map(args, fn(arg) -> arg <> " is on a very long line!" end)
   ```
 
-  Si tienes varias funciones con la misma cláusula y en alguno de los casos la línea que
+  Si tienes varias funciones con el mismo nombre y en alguno de los casos la línea que
   constituye el cuerpo de la función es demasiado larga, pon el `do:` en una nueva línea
   para cada función:
 
@@ -244,7 +244,7 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
 
   ```elixir
   # ¡LO PEOR QUE NUNCA DEBES HACER!
-  # Esto realmente se parsea como String.strip("nope" |> String.downcase).
+  # Esto realmente se interpreta como String.strip("nope" |> String.downcase).
   String.strip "nope" |> String.downcase
 
   # no recomendado
@@ -294,10 +294,10 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   Termina cada fichero con una nueva línea.
   <sup>[[enlace](#newline-eof)]</sup>
 
-### Syntax
+### Sintaxis
 
 * <a name="parentheses"></a>
-  Use parentheses when a `def` has arguments, and omit them when it doesn't.
+  Usa paréntesis cuando `def` tenga argumentos, y omítelos cuando no.
   <sup>[[enlace](#parentheses)]</sup>
 
   ```elixir
@@ -321,8 +321,8 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="add-blank-line-after-multiline-assignment"></a>
-  Add a blank line after a multiline assignment as a
-  visual cue that the assignment is 'over'.
+  Añade una línea en blanco tras una "asignación" multilínea como una pista visual de que
+  ha terminado.
   <sup>[[enlace](#add-blank-line-after-multiline-assignment)]</sup>
 
   ```elixir
@@ -343,7 +343,7 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
   ```elixir
-  # also not preferred
+  # tampoco recomendado
   something =
     if x == 2 do
       "Hi"
@@ -364,7 +364,7 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="do-with-multi-line-if-unless"></a>
-  Never use `do:` for multi-line `if/unless`.
+  Nunca utilices `do:` para `if/unless` multilínea.
   <sup>[[enlace](#do-with-multi-line-if-unless)]</sup>
 
   ```elixir
@@ -383,7 +383,7 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="do-with-single-line-if-unless"></a>
-  Use `do:` for single line `if/unless` statements.
+  Utiliza `do:` para sentencias `if/unless` de una sola línea.
   <sup>[[enlace](#do-with-single-line-if-unless)]</sup>
 
   ```elixir
@@ -392,8 +392,8 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="unless-with-else"></a>
-  Never use `unless` with `else`.
-  Rewrite these with the positive case first.
+  Nunca utilices `unless` con `else`.
+  Reescríbelas con el caso positivo primero.
   <sup>[[enlace](#unless-with-else)]</sup>
 
   ```elixir
@@ -413,8 +413,8 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="true-as-last-condition"></a>
-  Use `true` as the last condition of the `cond` special form when you need a
-  clause that always matches.
+  Utiliza `true` como la última condición de `cond` cuando necesites una cláusula por
+  defecto.
   <sup>[[enlace](#true-as-last-condition)]</sup>
 
   ```elixir
@@ -440,7 +440,7 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="function-names-with-parentheses"></a>
-  Never put a space between a function name and the opening parenthesis.
+  Nunca dejes un espacio entre el nombre de la función y el paréntesis de apertura.
   <sup>[[enlace](#function-names-with-parentheses)]</sup>
 
   ```elixir
@@ -452,7 +452,7 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="function-calls-and-parentheses"></a>
-  Use parentheses in function calls, especially inside a pipeline.
+  Utiliza paréntesis en las llamadas a funciones, sobretodo dentro de un pipeline.
   <sup>[[enlace](#function-calls-and-parentheses)]</sup>
 
   ```elixir
@@ -462,7 +462,7 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   # recomendado
   f(3)
 
-  # no recomendado and parses as rem(2, (3 |> g)), which is not what you want.
+  # no recomendado y además se interpreta como rem(2, (3 |> g)), que no es lo que quieres.
   2 |> rem 3 |> g
 
   # recomendado
@@ -470,7 +470,7 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="macro-calls-and-parentheses"></a>
-  Omit parentheses in macro calls when a do block is passed.
+  Omite los paréntesis en las llamadas a macros en las que se pasa un bloque do.
   <sup>[[enlace](#macro-calls-and-parentheses)]</sup>
 
   ```elixir
@@ -486,8 +486,8 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="parentheses-and-function-expressions"></a>
-  Optionally omit parentheses in function calls (outside a pipeline) when the
-  last argument is a function expression.
+  Opcionalmente omite los paréntesis en llamadas a funciones (fuera de un pipeline) cuando
+  el último argumento es una función.
   <sup>[[enlace](#parentheses-and-function-expressions)]</sup>
 
   ```elixir
@@ -496,17 +496,17 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
     x + acc
   end)
 
-  # also preferred
+  # también recomendado
   Enum.reduce 1..10, 0, fn x, acc ->
     x + acc
   end
   ```
 
 * <a name="parentheses-and-functions-with-zero-arity"></a>
-  Use parentheses for calls to functions with zero arity, so they can be
-  distinguished from variables.
-  Starting in Elixir 1.4, the compiler will warn you about
-  locations where this ambiguity exists.
+  Usa paréntesis para llamadas a funciones con aridad cero, de tal forma que puedan ser
+  distinguidas de las variables.
+  A partir de Elixir 1.4, el compilador te avisará de los lugares en los que exista
+  ambiguedad.
   <sup>[[enlace](#parentheses-and-functions-with-zero-arity)]</sup>
 
   ```elixir
@@ -514,17 +514,17 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
 
   # no recomendado
   def my_func do
-    do_stuff # is this a variable or a function call?
+    do_stuff # ¿es una variable o una llamada a una función?
   end
 
   # recomendado
   def my_func do
-    do_stuff() # this is clearly a function call
+    do_stuff() # esto es claramente una llamada a una función
   end
   ```
 
 * <a name="keyword-list-syntax"></a>
-  Always use the special syntax for keyword lists.
+  Utiliza siempre la sintaxis especial para listas de keywords.
   <sup>[[enlace](#keyword-list-syntax)]</sup>
 
   ```elixir
@@ -536,7 +536,7 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="keyword-list-brackets"></a>
-  Omit square brackets from keyword lists whenever they are optional.
+  Omite los corchetes de las listas de keywords siempre que sean opcionales.
   <sup>[[enlace](#keyword-list-brackets)]</sup>
 
   ```elixir
@@ -548,8 +548,8 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="with-clauses"></a>
-  Indent and align successive `with` clauses.
-  Put the `do:` argument on a new line, indented normally.
+  Indenta y alinea las cláusulas `with` sucesivas.
+  Pon el argumento `do:` en una nueva línea, indentada normalmente.
   <sup>[[enlace](#with-clauses)]</sup>
 
   ```elixir
@@ -559,8 +559,8 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="with-else"></a>
-  If the `with` expression has a `do` block with more than one line, or has an
-  `else` option, use multiline syntax.
+  Si la expresión `with` tiene un bloque `do` con más de una línea, o tiene una opción
+  `else`, utiliza la sintaxis multilínea.
   <sup>[[enlace](#with-else)]</sup>
 
   ```elixir
@@ -573,10 +573,10 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   end
   ```
 
-### Naming
+### Nombrado
 
 * <a name="snake-case"></a>
-  Use `snake_case` for atoms, functions and variables.
+  Usa `snake_case` para atoms, funciones y variables.
   <sup>[[enlace](#snake-case)]</sup>
 
   ```elixir
@@ -606,7 +606,7 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="camel-case"></a>
-  Use `CamelCase` for modules (keep acronyms like HTTP, RFC, XML uppercase).
+  Usa `CamelCase` para módulos (mantén los acrónimos como HTTP, RFC, XML en mayúsculas).
   <sup>[[enlace](#camel-case)]</sup>
 
   ```elixir
@@ -634,9 +634,10 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="predicate-macro-names-with-guards"></a>
-  The names of predicate macros (compile-time generated functions that return a
-  boolean value) _that can be used within guards_ should be prefixed with `is_`.
-  For a list of allowed expressions, see the [Guard][Guard Expressions] docs.
+  Los nombres de macros predicado (funciones generadas en tiempo de compilación que
+  devuelven un valor booleano) _que pueden ser utilizadas dentro de guards_ deberían
+  prefijarse con `is_`. Para una lista de las expresiones permitidas, échale un vistazo
+  a la documentación de [Guard][Guard Expressions].
   <sup>[[enlace](#predicate-macro-names-with-guards)]</sup>
 
   ```elixir
@@ -646,8 +647,9 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="predicate-macro-names-no-guards"></a>
-  The names of predicate functions _that cannot be used within guards_ should
-  have a trailing question mark (`?`) rather than the `is_` (or similar) prefix.
+  Los nombres de las funciones predicado _que no pueden ser usadas dentro de guards_
+  deberían de terminar en signo de interrogación (`?`) enlugar de tener un prefijo
+  `is_` (o similar).
   <sup>[[enlace](#predicate-macro-names-no-guards)]</sup>
 
   ```elixir
@@ -657,8 +659,8 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="private-functions-with-same-name-as-public"></a>
-  Private functions with the same name as public functions should start with
-  `do_`.
+  Las funciones privadas que compartan el mismo nombre con alguna función pública deben
+  empezar con `do_`.
   <sup>[[enlace](#private-functions-with-same-name-as-public)]</sup>
 
   ```elixir
@@ -669,47 +671,48 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   defp do_sum([head | tail], total), do: do_sum(tail, head + total)
   ```
 
-### Comments
+### Comentarios
 
 * <a name="expressive-code"></a>
-  Write expressive code and try to convey your program's intention through
-  control-flow, structure and naming.
+  Escribe código expresivo e intenta transmitir la intención de tu programa a través de
+  flujos de control, estructura y nombrado.
   <sup>[[enlace](#expressive-code)]</sup>
 
 * <a name="comment-leading-spaces"></a>
-  Use one space between the leading `#` character of the comment and the text of
-  the comment.
+  Utiliza un espacio entre el carácter introductorio del comentario `#` y el resto del
+  texto del comentario.
   <sup>[[enlace](#comment-leading-spaces)]</sup>
 
   ```elixir
-  String.first(some_string) #not preferred
+  String.first(some_string) #no recomendado
   String.first(some_string) # recomendado
   ```
 
 * <a name="comment-grammar"></a>
-  Comments longer than a word are capitalized, and sentences use punctuation.
+  Los comentarios que sean más largos de una palabra se escribirán capitalizados, y las
+  frases utilizarán signos de puntuación.
   Use [one space][Sentence Spacing] after periods.
   <sup>[[enlace](#comment-grammar)]</sup>
 
   ```elixir
   # no recomendado
-  # these lowercase comments are missing punctuation
+  # a estos comentarios en minúsculas les falta los signos de puntuación
 
   # recomendado
-  # Capitalization example
-  # Use punctuation for complete sentences.
+  # Ejemplo de capitalización
+  # Usa signos de puntuación para frases completas.
   ```
 
-#### Comment Annotations
+#### Comentarios Anotaciones
 
 * <a name="annotations"></a>
-  Annotations should usually be written on the line immediately above the
-  relevant code.
+  Las anotaciones se escriben normalmente en la línea inmediatamente superior al código
+  que anotan.
   <sup>[[enlace](#annotations)]</sup>
 
 * <a name="annotation-keyword"></a>
-  The annotation keyword is uppercase, and is followed by a colon and a space,
-  then a note describing the problem.
+  La palabra clave para la anotación estará completamente en mayúsculas, seguida de dos
+  puntos y un espacio, a continuación se añade la nota que describe el problema.
   <sup>[[enlace](#annotation-keyword)]</sup>
 
   ```elixir
@@ -718,10 +721,10 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="exceptions-to-annotations"></a>
-  In cases where the problem is so obvious that any documentation would be
-  redundant, annotations may be left at the end of the offending line with no
-  note.
-  This usage should be the exception and not the rule.
+  En casos en los que el problema sea tan obvio que cualquier tipo de documentación
+  resultará redundante, puedes poner las anotaciones al final de la línea sin ningún tipo
+  de nota.
+  Este uso debería de ser la excepción y no la norma.
   <sup>[[enlace](#exceptions-to-annotations)]</sup>
 
   ```elixir
@@ -730,66 +733,66 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="todo-notes"></a>
-  Use `TODO` to note missing features or functionality that should be added at a
-  later date.
+  Utiliza `TODO` para anotar código que falte o funcionalidades que deberán ser añadidas
+  posteriormente.
   <sup>[[enlace](#todo-notes)]</sup>
 
 * <a name="fixme-notes"></a>
-  Use `FIXME` to note broken code that needs to be fixed.
+  Utiliza `FIXME` para denotar código que debe ser arreglado.
   <sup>[[enlace](#fixme-notes)]</sup>
 
 * <a name="optimize-notes"></a>
-  Use `OPTIMIZE` to note slow or inefficient code that may cause performance
-  problems.
+  Utiliza `OPTIMIZE` para denotar código lento o ineficiente que pudiese llegar a causar
+  problemas de rendimiento.
   <sup>[[enlace](#optimize-notes)]</sup>
 
 * <a name="hack-notes"></a>
-  Use `HACK` to note code smells where questionable coding practices were used
-  and should be refactored away.
+  Utiliza `HACK` para denotar "code smells" en los que se hayan empleado prácticas de
+  programación cuestionables y que deban ser refactorizados.
   <sup>[[enlace](#hack-notes)]</sup>
 
 * <a name="review-notes"></a>
-  Use `REVIEW` to note anything that should be looked at to confirm it is
-  working as intended.
-  For example: `REVIEW: Are we sure this is how the client does X currently?`
+  Utiliza `REVIEW` para denotar cualquier cosa que deba ser revisada para confirmar que
+  funciona como se espera.
+  Por ejemplo: `REVIEW: Are we sure this is how the client does X currently?`
   <sup>[[enlace](#review-notes)]</sup>
 
 * <a name="custom-keywords"></a>
-  Use other custom annotation keywords if it feels appropriate, but be sure to
-  document them in your project's `README` or similar.
+  Utiliza claves de anotación propias si lo consideras oportuno, pero asegurate de
+  documentarlas en el fichero `README` de tu proyecto o similar.
   <sup>[[enlace](#custom-keywords)]</sup>
 
-### Modules
+### <a name="modules">Módulos</a>
 
 * <a name="one-module-per-file"></a>
-  Use one module per file unless the module is only used internally by another
-  module (such as a test).
+  Utiliza un fichero por módulo a no ser que el módulo sea utilizado únicamente de manera
+  interna por otro módulo (como en el caso de un test).
   <sup>[[enlace](#one-module-per-file)]</sup>
 
 * <a name="underscored-filenames"></a>
-  Use `snake_case` file names for `CamelCase` module names.
+  Utiliza `snake_case` para el nombre del fichero y `CamelCase` para el nombre del módulo.
   <sup>[[enlace](#underscored-filenames)]</sup>
 
   ```elixir
-  # file is called some_module.ex
+  # el fichero se llama some_module.ex
 
   defmodule SomeModule do
   end
   ```
 
 * <a name="module-name-nesting"></a>
-  Represent each level of nesting within a module name as a directory.
+  Representa cada nivel de anidación dentro del módulo como un directorio.
   <sup>[[enlace](#module-name-nesting)]</sup>
 
   ```elixir
-  # file is called parser/core/xml_parser.ex
+  # el fichero se llama parser/core/xml_parser.ex
 
   defmodule Parser.Core.XMLParser do
   end
   ```
 
 * <a name="defmodule-spacing"></a>
-  Don't put a blank line after `defmodule`.
+  No dejes una línea en blanco tras `defmodule`.
   <sup>[[enlace](#defmodule-spacing)]</sup>
 
 * <a name="module-block-spacing"></a>
