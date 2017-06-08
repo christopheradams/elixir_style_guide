@@ -8,12 +8,12 @@
   * [Sintaxis](#sintaxis)
   * [Nombrado](#nombrado)
   * [Comentarios](#comentarios)
-    * [Comentarios Anotaciones](#comentarios-anotaciones)
+    * [Comentarios de Anotación](#comments-annotations)
   * [Módulos](#modules)
   * [Documentación](#documentation)
   * [Typespecs](#typespecs)
   * [Structs](#structs)
-  * [Excepciones](#exceptions)
+  * [Excepciones](#excepciones)
   * _Colecciones_
   * [Strings](#strings)
   * _Expresiones Regulares_
@@ -23,7 +23,7 @@
   * [Herramientas](#herramientas)
 * __[Cómo participar](#getting-involved)__
   * [Contribuir](#contribuir)
-  * [Pasa la bola](#pasa-la-bola)
+  * [Corre la voz](#corre-la-voz)
 * __[Derechos](#derechos)__
   * [Licencia](#licencia)
   * [Atribución](#attribution)
@@ -35,9 +35,8 @@
 >
 > —Frank Gehry
 
-El estilo importa.
-[Elixir] tiene mucho estilo pero como todos los lenguajes puede estropearse.
-No estropees el estilo.
+El estilo importa. Aunque [Elixir] tiene mucho estilo, como ocurre con todos los
+lenguajes, puede estropearse. No estropees el estilo.
 
 ## <a name="la-guia">La Guía</a>
 
@@ -243,8 +242,8 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   <sup>[[enlace](#bare-variables)]</sup>
 
   ```elixir
-  # ¡LO PEOR QUE NUNCA DEBES HACER!
-  # Esto realmente se interpreta como String.strip("nope" |> String.downcase).
+  # ¡NUNCA HAGAS ESTO!
+  # Realmente se interpretará como String.strip("nope" |> String.downcase).
   String.strip "nope" |> String.downcase
 
   # no recomendado
@@ -393,7 +392,7 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
 
 * <a name="unless-with-else"></a>
   Nunca utilices `unless` con `else`.
-  Reescríbelas con el caso positivo primero.
+  Reescríbelo poniendo el caso positivo primero.
   <sup>[[enlace](#unless-with-else)]</sup>
 
   ```elixir
@@ -506,7 +505,7 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   Usa paréntesis para llamadas a funciones con aridad cero, de tal forma que puedan ser
   distinguidas de las variables.
   A partir de Elixir 1.4, el compilador te avisará de los lugares en los que exista
-  ambiguedad.
+  ambigüedad.
   <sup>[[enlace](#parentheses-and-functions-with-zero-arity)]</sup>
 
   ```elixir
@@ -648,7 +647,7 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
 
 * <a name="predicate-macro-names-no-guards"></a>
   Los nombres de las funciones predicado _que no pueden ser usadas dentro de guards_
-  deberían de terminar en signo de interrogación (`?`) enlugar de tener un prefijo
+  deberían de terminar en signo de interrogación (`?`) en lugar de tener un prefijo
   `is_` (o similar).
   <sup>[[enlace](#predicate-macro-names-no-guards)]</sup>
 
@@ -691,7 +690,7 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
 * <a name="comment-grammar"></a>
   Los comentarios que sean más largos de una palabra se escribirán capitalizados, y las
   frases utilizarán signos de puntuación.
-  Use [one space][Sentence Spacing] after periods.
+  Usa [un espacio][Sentence Spacing] tras cada punto.
   <sup>[[enlace](#comment-grammar)]</sup>
 
   ```elixir
@@ -703,7 +702,7 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   # Usa signos de puntuación para frases completas.
   ```
 
-#### Comentarios Anotaciones
+#### <a name="comments-annotations">Comentarios de Anotación</a>
 
 * <a name="annotations"></a>
   Las anotaciones se escriben normalmente en la línea inmediatamente superior al código
@@ -758,7 +757,7 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   <sup>[[enlace](#review-notes)]</sup>
 
 * <a name="custom-keywords"></a>
-  Utiliza claves de anotación propias si lo consideras oportuno, pero asegurate de
+  Utiliza claves de anotación propias si lo consideras oportuno, pero asegúrate de
   documentarlas en el fichero `README` de tu proyecto o similar.
   <sup>[[enlace](#custom-keywords)]</sup>
 
@@ -857,7 +856,7 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
 
 * <a name="module-pseudo-variable"></a>
   Usa la pseudo variable `__MODULE__` cuando un módulo se refiera a sí mismo. Esto evitará
-  que tengas que actualizar cualquier referencia cuando el nomnbre del módulo cambie.
+  que tengas que actualizar cualquier referencia cuando el nombre del módulo cambie.
   <sup>[[enlace](#module-pseudo-variable)]</sup>
 
   ```elixir
@@ -901,7 +900,7 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
 
 ### <a name="documentation"></a>Documentación
 
-La documentación en Elixir (ya sea cuando es leída en `iex` con `h` o cuando  es generada
+La documentación en Elixir (ya sea cuando es leída en `iex` mediante `h` o cuando  es generada
 con [ExDoc]) utiliza los [atributos de módulo][Module Attributes] `@moduledoc` y `@doc`.
 
 * <a name="moduledocs"></a>
@@ -1144,8 +1143,8 @@ demás directivas (ver [Módulos](#modules)).
   ```
 
 * <a name="lowercase-error-messages"></a>
-  Utiliza mensajes de error en minúsculas cuando lances excepciones. No utileces
-  puntuación al final
+  Utiliza mensajes de error en minúsculas cuando lances excepciones. No utilices
+  puntuación al final.
   <sup>[[enlace](#lowercase-error-messages)]</sup>
 
   ```elixir
@@ -1158,7 +1157,7 @@ demás directivas (ver [Módulos](#modules)).
 
 ### Colecciones
 
-_Por el momento no se han añadido pautas para las colecciones._
+_Por el momento no se han añadido recomendaciones para las colecciones._
 
 ### Strings
 
@@ -1177,7 +1176,7 @@ _Por el momento no se han añadido pautas para las colecciones._
 
 ### Expresiones Regulares
 
-_Por el momento no se han añadido pautas para expresiones regulares._
+_Por el momento no se han añadido recomendaciones para expresiones regulares._
 
 ### <a name="metaprogramming">Metaprogramación</a>
 
@@ -1188,7 +1187,7 @@ _Por el momento no se han añadido pautas para expresiones regulares._
 ### Testing
 
 * <a name="testing-assert-order"></a>
-  Cuando escribas aserciones [ExUnit], se consistente con el orden de los valores
+  Cuando escribas aserciones con [ExUnit], se consistente con el orden de los valores
   esperados y actuales que estás probando.
   Es preferible poner el valor esperado a la derecha, a no ser que la aserción sea un
   pattern match.
@@ -1219,30 +1218,30 @@ _Por el momento no se han añadido pautas para expresiones regulares._
   guía más cercana a sus convenciones.
 
 * [Credo's Elixir Style Guide](https://github.com/rrrene/elixir-style-guide#readme)
-  — Guía de Estilo para el lenguaje Elixir, implementada para la herramienda de análisis
+  — Guía de Estilo para el lenguaje Elixir, implementada para la herramienta de análisis
   estático de código [Credo](http://credo-ci.org).
 
 ### Herramientas
 
-Dirígete a [Awesome Elixir][Code Analysis] para encontrar liberías y herramientas que
+Dirígete a [Awesome Elixir][Code Analysis] para encontrar librerías y herramientas que
 puedan ayudarte con el análisis de código y corrección estilo.
 
 ## <a name="getting-involved">Cómo participar</a>
 
 ### Contribuir
 
-Es nuestra esperanza que esto se convierta en una lugar central en el que la comunidad
+Es nuestra esperanza que esto se convierta en un lugar central en el que la comunidad
 discuta las mejores prácticas en Elixir.
 Estás invitado a abrir tickets y a enviar pull requests con mejoras.
-¡Gracias por adelantado por tu ayuda!
+¡Gracias por tu ayuda por adelantado!
 
 Revisa la [guía para contribuir][Contributing]
 y el [código de conducta][Code Of Conduct] (ambos en inglés) para más información.
 
-### Pasa la bola
+### Corre la voz
 
 Una guía de estilo de la comunidad no tiene sentido sin el soporte de la comunidad. Por
-favor tuitea, [star][Stargazers], y haz que otros programadores de Elixir conozcan
+favor tuitea, ponle [star][Stargazers], y haz que otros programadores de Elixir conozcan
 [esta guía][Elixir Style Guide] de forma que puedan contribuir.
 
 ## Derechos
@@ -1257,7 +1256,7 @@ Este trabajo está hecho bajo licencia
 
 La estructura de esta guía, partes del código de ejemplo, y muchos otros puntos iniciales
 de este documento fueron tomados de la [Ruby community style guide].
-Muchas cosas ya eran directamente aplicables a Elixir, lo que esto nos permitió sacar
+Muchas cosas ya eran directamente aplicables a Elixir, lo que nos permitió sacar
 antes este documento y empezar más rápido.
 
 Aquí está la [lista de gente que ha contribuido amablemente][Contributors] a este
@@ -1276,6 +1275,7 @@ proyecto.
 [ExUnit]: https://hexdocs.pm/ex_unit/ExUnit.html
 [Guard Expressions]: http://elixir-lang.org/getting-started/case-cond-and-if.html#expressions-in-guard-clauses
 [Hex]: https://hex.pm/packages
+[License]: http://creativecommons.org/licenses/by/3.0/deed.en_US
 [Module Attributes]: http://elixir-lang.org/getting-started/module-attributes.html#as-annotations
 [Ruby community style guide]: https://github.com/bbatsov/ruby-style-guide
 [Sentence Spacing]: http://en.wikipedia.org/wiki/Sentence_spacing
