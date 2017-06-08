@@ -54,6 +54,7 @@ Translations of the guide are available in the following languages:
 * [Chinese Traditional]
 * [Japanese]
 * [Korean]
+* [Spanish]
 
 ### Source Code Layout
 
@@ -1281,5 +1282,6 @@ project.
 [Module Attributes]: http://elixir-lang.org/getting-started/module-attributes.html#as-annotations
 [Ruby community style guide]: https://github.com/bbatsov/ruby-style-guide
 [Sentence Spacing]: http://en.wikipedia.org/wiki/Sentence_spacing
+[Spanish]: https://github.com/albertoalmagro/elixir_style_guide/blob/spanish/README_esES.md
 [Stargazers]: https://github.com/christopheradams/elixir_style_guide/stargazers
 
