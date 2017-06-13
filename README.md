@@ -201,6 +201,17 @@ Translations of the guide are available in the following languages:
     some_function(rest, opts)
   end
   ```
+* <a name="parentheses-pipe-operator"></a>
+  Use parentheses for one-arity functions when using the pipe operator(`|>`).
+  <sup>[[link](#parentheses-pipe-operator)]</sup>
+
+  ```elixir
+  # not preferred
+  some_string |> String.downcase |> String.strip
+
+  # preferred
+  some_string |> String.downcase() |> String.strip()
+  ```
 
 * <a name="pipe-operator"></a>
   Use the pipe operator (`|>`) to chain functions together.
