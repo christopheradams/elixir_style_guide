@@ -201,8 +201,9 @@ Translations of the guide are available in the following languages:
     some_function(rest, opts)
   end
   ```
+
 * <a name="parentheses-pipe-operator"></a>
-  Use parentheses for one-arity functions when using the pipe operator(`|>`).
+  Use parentheses for one-arity functions when using the pipe operator (`|>`).
   <sup>[[link](#parentheses-pipe-operator)]</sup>
 
   ```elixir
@@ -214,7 +215,7 @@ Translations of the guide are available in the following languages:
   ```
 
 * <a name="pipe-operator"></a>
-  Use the pipe operator (`|>`) to chain functions together.
+  Use the pipe operator to chain functions together.
   <sup>[[link](#pipe-operator)]</sup>
 
   ```elixir
@@ -222,19 +223,19 @@ Translations of the guide are available in the following languages:
   String.strip(String.downcase(some_string))
 
   # preferred
-  some_string |> String.downcase |> String.strip
+  some_string |> String.downcase() |> String.strip()
 
   # Multiline pipelines are not further indented
   some_string
-  |> String.downcase
-  |> String.strip
+  |> String.downcase()
+  |> String.strip()
 
   # Multiline pipelines on the right side of a pattern match
   # should be indented on a new line
   sanitized_string =
     some_string
-    |> String.downcase
-    |> String.strip
+    |> String.downcase()
+    |> String.strip()
   ```
 
   While this is the preferred method, take into account that copy-pasting
@@ -247,7 +248,7 @@ Translations of the guide are available in the following languages:
 
   ```elixir
   # not preferred
-  some_string |> String.downcase
+  some_string |> String.downcase()
 
   # preferred
   String.downcase(some_string)
@@ -259,14 +260,14 @@ Translations of the guide are available in the following languages:
 
   ```elixir
   # THE WORST!
-  # This actually parses as String.strip("nope" |> String.downcase).
-  String.strip "nope" |> String.downcase
+  # This actually parses as String.strip("nope" |> String.downcase()).
+  String.strip "nope" |> String.downcase()
 
   # not preferred
-  String.strip(some_string) |> String.downcase |> String.codepoints
+  String.strip(some_string) |> String.downcase() |> String.codepoints()
 
   # preferred
-  some_string |> String.strip |> String.downcase |> String.codepoints
+  some_string |> String.strip() |> String.downcase() |> String.codepoints()
   ```
 
 * <a name="multiline-list-assign"></a>
@@ -344,15 +345,15 @@ Translations of the guide are available in the following languages:
   # not preferred
   some_string =
     "Hello"
-    |> String.downcase
-    |> String.strip
+    |> String.downcase()
+    |> String.strip()
   another_string <> some_string
 
   # preferred
   some_string =
     "Hello"
-    |> String.downcase
-    |> String.strip
+    |> String.downcase()
+    |> String.strip()
 
   another_string <> some_string
   ```
@@ -365,7 +366,7 @@ Translations of the guide are available in the following languages:
     else
       "Bye"
     end
-  something |> String.downcase
+  something |> String.downcase()
 
   # preferred
   something =
@@ -375,7 +376,7 @@ Translations of the guide are available in the following languages:
       "Bye"
     end
 
-  something |> String.downcase
+  something |> String.downcase()
   ```
 
 * <a name="do-with-multi-line-if-unless"></a>
