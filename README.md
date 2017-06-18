@@ -366,7 +366,7 @@ Translations of the guide are available in the following languages:
     else
       "Bye"
     end
-  something |> String.downcase()
+  String.downcase(something)
 
   # preferred
   something =
@@ -376,7 +376,7 @@ Translations of the guide are available in the following languages:
       "Bye"
     end
 
-  something |> String.downcase()
+  String.downcase(something)
   ```
 
 * <a name="do-with-multi-line-if-unless"></a>
