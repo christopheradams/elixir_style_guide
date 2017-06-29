@@ -54,6 +54,7 @@ Translations of the guide are available in the following languages:
 * [Chinese Traditional]
 * [Japanese]
 * [Korean]
+* [Portuguese]
 * [Spanish]
 
 ### Source Code Layout
@@ -1292,6 +1293,7 @@ project.
 [Korean]: https://github.com/marocchino/elixir_style_guide/blob/new-korean/README-koKR.md
 [License]: http://creativecommons.org/licenses/by/3.0/deed.en_US
 [Module Attributes]: http://elixir-lang.org/getting-started/module-attributes.html#as-annotations
+[Portuguese]: https://github.com/gusaiani/elixir_style_guide/blob/master/README_ptBR.md
 [Ruby community style guide]: https://github.com/bbatsov/ruby-style-guide
 [Sentence Spacing]: http://en.wikipedia.org/wiki/Sentence_spacing
 [Spanish]: https://github.com/albertoalmagro/elixir_style_guide/blob/spanish/README_esES.md
