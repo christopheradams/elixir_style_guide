@@ -147,7 +147,7 @@ Translations of the guide are available in the following languages:
   <sup>[[link](#single-line-defs)]</sup>
 
   ```elixir
-  def some_function(nil), do: {:err, "No Value"}
+  def some_function(nil), do: {:error, "No Value"}
   def some_function([]), do: :ok
   def some_function([first | rest]) do
     some_function(rest)
@@ -187,7 +187,7 @@ Translations of the guide are available in the following languages:
 
   ```elixir
   def some_function(nil) do
-    {:err, "No Value"}
+    {:error, "No Value"}
   end
 
   def some_function([]) do
