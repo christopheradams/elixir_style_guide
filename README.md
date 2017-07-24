@@ -603,7 +603,6 @@ Translations of the guide are available in the following languages:
   defdelegate some_function(arg1 \\ %{}), to: # module in a.ex
   ```
 
-
 ### Naming
 
 * <a name="snake-case"></a>
