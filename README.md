@@ -590,6 +590,19 @@ Translations of the guide are available in the following languages:
   end
   ```
 
+* <a name="defdelegate-default"></a>
+  In `defdelegate` declarations, include default values that match the original
+  function definition.
+  <sup>[[link](#defdelegate-default)]</sup>
+
+  ```elixir
+  # a.ex
+  def some_function(arg1 \\ %{}), do: # some stuff
+
+  # b.ex
+  defdelegate some_function(arg1 \\ %{}), to: # module in a.ex
+  ```
+
 ### Naming
 
 * <a name="snake-case"></a>
