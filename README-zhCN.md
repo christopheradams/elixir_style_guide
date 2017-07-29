@@ -28,16 +28,15 @@
   * [协议](#license)
   * [归属](#attribution)
 
-## Prelude
+## 序幕
 
-> Liquid architecture. It's like jazz — you improvise, you work together, you
-> play off each other, you make something, they make something.
+> 液体架构。像爵士乐一样 - 你们一起即兴演奏，互相回应着对方，你们在创作着音乐，他们在创作着音乐。
 >
 > —Frank Gehry
 
-Style matters.
-[Elixir] has plenty of style but like all languages it can be stifled.
-Don't stifle the style.
+风格很重要。
+[Elixir] 有着大量的风格指南，但是像其他语言一样，这些指南都有可能被扼杀。
+请不要扼杀这份指南。
 
 ## The Guide
 
