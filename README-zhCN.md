@@ -1,32 +1,32 @@
-# [The Elixir Style Guide][Elixir Style Guide]
+# [Elixir 风格指南][Elixir Style Guide]
 
-## Table of Contents
+## 目录
 
-* __[Prelude](#prelude)__
-* __[The Guide](#the-guide)__
-  * [Source Code Layout](#source-code-layout)
-  * [Syntax](#syntax)
-  * [Naming](#naming)
-  * [Comments](#comments)
-    * [Comment Annotations](#comment-annotations)
-  * [Modules](#modules)
-  * [Documentation](#documentation)
-  * [Typespecs](#typespecs)
-  * [Structs](#structs)
-  * [Exceptions](#exceptions)
-  * _Collections_
-  * [Strings](#strings)
-  * _Regular Expressions_
-  * [Metaprogramming](#metaprogramming)
-  * [Testing](#testing)
-  * [Alternative Style Guides](#alternative-style-guides)
-  * [Tools](#tools)
-* __[Getting Involved](#getting-involved)__
-  * [Contributing](#contributing)
-  * [Spread the Word](#spread-the-word)
-* __[Copying](#copying)__
-  * [License](#license)
-  * [Attribution](#attribution)
+* __[序幕](#prelude)__
+* __[风格指南](#the-guide)__
+  * [组织](#source-code-layout)
+  * [语法](#syntax)
+  * [命名](#naming)
+  * [注释](#comments)
+    * [注解](#comment-annotations)
+  * [模块](#modules)
+  * [文档](#documentation)
+  * [类型声明](#typespecs)
+  * [结构](#structs)
+  * [异常](#exceptions)
+  * 集合
+  * [字符串](#strings)
+  * 正则表达式
+  * [元编程](#metaprogramming)
+  * [测试](#testing)
+  * [更多风格指南](#alternative-style-guides)
+  * [工具](#tools)
+* __[参与文档](#getting-involved)__
+  * [贡献](#contributing)
+  * [口耳相传](#spread-the-word)
+* __[授权](#copying)__
+  * [协议](#license)
+  * [归属](#attribution)
 
 ## Prelude
 
@@ -1298,4 +1298,3 @@ project.
 [Sentence Spacing]: http://en.wikipedia.org/wiki/Sentence_spacing
 [Spanish]: https://github.com/albertoalmagro/elixir_style_guide/blob/spanish/README_esES.md
 [Stargazers]: https://github.com/christopheradams/elixir_style_guide/stargazers
-
