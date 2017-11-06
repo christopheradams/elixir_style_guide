@@ -1249,8 +1249,7 @@ best practices in Elixir.
 Feel free to open tickets or send pull requests with improvements.
 Thanks in advance for your help!
 
-Check the [contributing guidelines][Contributing]
-and [code of conduct][Code Of Conduct] for more information.
+Check the [contributing guidelines][Contributing] for more information.
 
 ### Spread the Word
 
@@ -1279,9 +1278,9 @@ project.
 <!-- Links -->
 [Chinese Traditional]: https://github.com/elixirtw/elixir_style_guide/blob/master/README_zhTW.md
 [Code Analysis]: https://github.com/h4cc/awesome-elixir#code-analysis
-[Code Of Conduct]: https://github.com/christopheradams/elixir_style_guide/blob/master/CODE_OF_CONDUCT.md
+[Code Of Conduct]: https://github.com/elixir-lang/elixir/blob/master/CODE_OF_CONDUCT.md
 [Conflicting Aliases]: https://elixirforum.com/t/using-aliases-for-fubar-fubar-named-module/1723
-[Contributing]: https://github.com/elixir-lang/elixir/blob/master/CODE_OF_CONDUCT.md
+[Contributing]: https://github.com/christopheradams/elixir_style_guide/blob/master/CONTRIBUTING.md
 [Contributors]: https://github.com/christopheradams/elixir_style_guide/graphs/contributors
 [Elixir Style Guide]: https://github.com/christopheradams/elixir_style_guide
 [Elixir]: http://elixir-lang.org
