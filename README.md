@@ -573,10 +573,6 @@ Translations of the guide are available in the following languages:
     ...
   end
 
-  def SomeFunction do
-    ...
-  end
-
   # preferred
   :some_atom
 
