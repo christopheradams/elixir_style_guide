@@ -910,10 +910,12 @@ Documentation in Elixir (when read either in `iex` with `h` or generated with
 
   # preferred
 
-  defmodule SomeModule do
+  defmodule AThirdModule do
     @moduledoc """
     About the module
     """
+
+    use SomeModule
     ...
   end
   ```
