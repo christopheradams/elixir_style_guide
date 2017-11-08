@@ -380,25 +380,6 @@ Translations of the guide are available in the following languages:
   String.downcase(something)
   ```
 
-* <a name="do-with-multi-line-if-unless"></a>
-  Never use `do:` for multi-line `if/unless`.
-  <sup>[[link](#do-with-multi-line-if-unless)]</sup>
-
-  ```elixir
-  # not preferred
-  if some_condition, do:
-    # a line of code
-    # another line of code
-    # note no end in this block
-
-  # preferred
-  if some_condition do
-    # some
-    # lines
-    # of code
-  end
-  ```
-
 * <a name="do-with-single-line-if-unless"></a>
   Use `do:` for single line `if/unless` statements.
   <sup>[[link](#do-with-single-line-if-unless)]</sup>
