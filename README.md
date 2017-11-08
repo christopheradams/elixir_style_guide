@@ -443,10 +443,10 @@ Translations of the guide are available in the following languages:
 
   ```elixir
   # not preferred
-  f (3 + 2) + 1
+  f (3 + 2)
 
   # preferred
-  f(3 + 2) + 1
+  f(3 + 2)
   ```
 
 * <a name="function-calls-and-parentheses"></a>
