@@ -122,7 +122,7 @@ Translations of the guide are available in the following languages:
 
   ```elixir
   def some_function(some_data) do
-    altered_data = Module.function(data)
+    some_data |> other_function() |> List.first()
   end
 
   def some_function do
