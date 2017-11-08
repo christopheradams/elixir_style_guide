@@ -467,22 +467,6 @@ Translations of the guide are available in the following languages:
   2 |> rem(3) |> g
   ```
 
-* <a name="macro-calls-and-parentheses"></a>
-  Omit parentheses in macro calls when a do block is passed.
-  <sup>[[link](#macro-calls-and-parentheses)]</sup>
-
-  ```elixir
-  # not preferred
-  quote(do
-    foo
-  end)
-
-  # preferred
-  quote do
-    foo
-  end
-  ```
-
 * <a name="parentheses-and-function-expressions"></a>
   Optionally omit parentheses in function calls (outside a pipeline) when the
   last argument is a function expression.
