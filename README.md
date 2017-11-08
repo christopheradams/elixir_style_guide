@@ -937,7 +937,6 @@ Documentation in Elixir (when read either in `iex` with `h` or generated with
 
   ```elixir
   # not preferred
-
   defmodule SomeModule do
     @moduledoc """
     About the module
@@ -961,7 +960,6 @@ Documentation in Elixir (when read either in `iex` with `h` or generated with
 
   ```elixir
   # not preferred
-
   defmodule SomeModule do
     @moduledoc "About the module"
   end
