@@ -1183,7 +1183,7 @@ _No guidelines for collections have been added yet._
 
   ```elixir
   # not preferred
-  <<"my"::utf8, _rest>> = "my string"
+  <<"my"::utf8, _rest::bytes>> = "my string"
 
   # preferred
   "my" <> _rest = "my string"
