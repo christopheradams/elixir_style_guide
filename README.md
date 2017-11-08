@@ -396,14 +396,14 @@ Translations of the guide are available in the following languages:
 
   ```elixir
   # not preferred
-  unless success? do
+  unless success do
     IO.puts('failure')
   else
     IO.puts('success')
   end
 
   # preferred
-  if success? do
+  if success do
     IO.puts('success')
   else
     IO.puts('failure')
