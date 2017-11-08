@@ -101,7 +101,7 @@ Translations of the guide are available in the following languages:
   sum = 1 + 2
   {a, b} = {2, 3}
   [first | rest] = [1, 2, 3]
-  Enum.map(["one", <<"two">>, "three"], fn num -> IO.puts num end)
+  Enum.map(["one", <<"two">>, "three"], fn num -> IO.puts(num) end)
   ```
 
 * <a name="no-spaces"></a>
@@ -416,16 +416,16 @@ Translations of the guide are available in the following languages:
   ```elixir
   # not preferred
   unless success? do
-    IO.puts 'failure'
+    IO.puts('failure')
   else
-    IO.puts 'success'
+    IO.puts('success')
   end
 
   # preferred
   if success? do
-    IO.puts 'success'
+    IO.puts('success')
   else
-    IO.puts 'failure'
+    IO.puts('failure')
   end
   ```
 
