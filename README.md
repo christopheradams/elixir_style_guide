@@ -1048,24 +1048,21 @@ directives (see [Modules](#modules)).
   ```
 
 * <a name="union-types"></a>
-  If a union type is too long to fit on a single line, add a newline
-  and indent with spaces to keep the types aligned.
+  If a union type is too long to fit on a single line, put each part of the
+  type on a separate line, indented one level past the name of the type.
   <sup>[[link](#union-types)]</sup>
 
   ```elixir
-  # not preferred - no indentation
+  # not preferred
   @type long_union_type :: some_type | another_type | some_other_type |
   a_final_type
 
   # preferred
-  @type long_union_type :: some_type | another_type | some_other_type |
-                           a_final_type
-
-  # also preferred - one type per line
-  @type long_union_type :: some_type |
-                           another_type |
-                           some_other_type |
-                           a_final_type
+  @type long_union_type ::
+          some_type
+          | another_type
+          | some_other_type
+          | a_final_type
   ```
 
 * <a name="naming-main-types"></a>
@@ -1077,9 +1074,9 @@ directives (see [Modules](#modules)).
   defstruct name: nil, params: []
 
   @type t :: %__MODULE__{
-    name: String.t | nil,
-    params: Keyword.t
-  }
+          name: String.t() | nil,
+          params: Keyword.t()
+        }
   ```
 
 * <a name="spec-spacing"></a>
