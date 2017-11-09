@@ -166,8 +166,8 @@ Translations of the guide are available in the following languages:
     do: Enum.map(args, fn arg -> arg <> " is on a very long line!" end)
   ```
 
-  When you use the convention above and you have more than one function clause
-  using the `do:` syntax, put the `do:` on a new line for each function clause:
+  When the `do:` clause starts on its own line, treat it as a multiline
+  function by separating it with blank lines.
 
   ```elixir
   # not preferred
@@ -176,8 +176,8 @@ Translations of the guide are available in the following languages:
     do: :very_long_line_here
 
   # preferred
-  def some_function([]),
-    do: :empty
+  def some_function([]), do: :empty
+
   def some_function(_),
     do: :very_long_line_here
   ```
