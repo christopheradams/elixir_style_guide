@@ -859,7 +859,7 @@ Translations of the guide are available in the following languages:
 
     @callback some_function(term) :: :ok | {:error, term}
 
-    @macrocallback macro_name(term) :: Macro.t
+    @macrocallback macro_name(term) :: Macro.t()
 
     @optional_callbacks macro_name: 1
 
