@@ -272,35 +272,43 @@ Translations of the guide are available in the following languages:
   some_string |> String.strip() |> String.downcase() |> String.codepoints()
   ```
 
-* <a name="multiline-list-assign"></a>
-  When assigning a list that spans multiple lines, start the list on a newline,
-  and indent the elements to keep them aligned.
-  <sup>[[link](#multiline-list-assign)]</sup>
+* <a name="multiline-enums"></a>
+  If a list, map, or struct spans multiple lines, put each element, as well as
+  the opening and closing brackets, on its own line.
+  Indent each element one level, but not the brackets.
+  <sup>[[link](#multiline-enums)]</sup>
 
   ```elixir
-  # not preferred - no indentation
-  list = [:first_item, :second_item, :next_item,
-  :last_item]
+  # not preferred
+  [:first_item, :second_item, :next_item,
+  :final_item]
 
-  # better, but not preferred - with indentation
-  list = [:first_item, :second_item, :next_item,
-          :last_item]
-
-  # preferred - list starts on its own line
-  # good for shorter, more compact lists
-  list =
-    [:first_item, :second_item, :next_item,
-     :last_item]
-
-  # also preferred - when each element is on its own line
-  # good for long lists, lists with long elements, or lists with comments
-  list = [
+  # preferred
+  [
     :first_item,
     :second_item,
     :next_item,
-    # comment
-    :many_items,
-    :last_item
+    :final_item
+  ]
+  ```
+
+* <a name="multiline-list-assign"></a>
+  When assigning a list, map, or struct, keep the opening bracket on the same
+  line as the assignment.
+  <sup>[[link](#multiline-list-assign)]</sup>
+
+  ```elixir
+  # not preferred
+  list =
+  [
+    :first_item,
+    :second_item
+  ]
+
+  # preferred
+  list = [
+    :first_item,
+    :second_item
   ]
   ```
 
