@@ -1121,14 +1121,27 @@ directives (see [Modules](#modules)).
   defstruct [:name, params: [], active: true]
   ```
 
-* <a name="additional-struct-def-lines"></a>
-  Indent additional lines of the struct definition, keeping the first keys
-  aligned.
-  <sup>[[link](#additional-struct-def-lines)]</sup>
+* <a name="multiline-structs"></a>
+  If a struct definition spans multiple lines, put each element on its own line,
+  keeping the elements aligned.
+  <sup>[[link](#multiline-structs)]</sup>
 
   ```elixir
-  defstruct foo: "test", bar: true, baz: false,
-            qux: false, quux: 1
+  defstruct foo: "test",
+            bar: true,
+            baz: false,
+            qux: false,
+            quux: 1
+  ```
+
+  If a multiline struct requires brackets, format it as a multiline list:
+
+  ```elixir
+  defstruct [
+    :name,
+    params: [],
+    active: true
+  ]
   ```
 
 ### Exceptions
