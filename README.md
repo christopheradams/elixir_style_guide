@@ -312,6 +312,30 @@ Translations of the guide are available in the following languages:
   ]
   ```
 
+* <a name="multiline-case-clauses"></a>
+  When `case` or `cond` clauses span multiple lines, separate each clause with a
+  blank line.
+  <sup>[[link](#multiline-case-clauses)]</sup>
+
+  ```elixir
+  # not preferred
+  case arg do
+    true ->
+      :ok
+    false ->
+      :error
+  end
+
+  # preferred
+  case arg do
+    true ->
+      :ok
+
+    false ->
+      :error
+  end
+  ```
+
 * <a name="trailing-whitespace"></a>
   Avoid trailing whitespace.
   <sup>[[link](#trailing-whitespace)]</sup>
@@ -429,8 +453,10 @@ Translations of the guide are available in the following languages:
   cond do
     1 + 2 == 5 ->
       "Nope"
+
     1 + 3 == 5 ->
       "Uh, uh"
+
     :else ->
       "OK"
   end
@@ -439,8 +465,10 @@ Translations of the guide are available in the following languages:
   cond do
     1 + 2 == 5 ->
       "Nope"
+
     1 + 3 == 5 ->
       "Uh, uh"
+
     true ->
       "OK"
   end
