@@ -143,12 +143,14 @@ Translations of the guide are available in the following languages:
   ```
 
 * <a name="single-line-defs"></a>
-  ...but run single-line `def`s that match for the same function together.
+  Run single-line `def`s that match for the same function together, but separate
+  multiline `def`s with a blank line.
   <sup>[[link](#single-line-defs)]</sup>
 
   ```elixir
   def some_function(nil), do: {:error, "No Value"}
   def some_function([]), do: :ok
+
   def some_function([first | rest]) do
     some_function(rest)
   end
