@@ -553,13 +553,13 @@ Translations of the guide are available in the following languages:
 
 * <a name="with-clauses"></a>
   Indent and align successive `with` clauses.
-  Put the `do:` argument on a new line, indented normally.
+  Put the `do:` argument on a new line, aligned with the previous clauses.
   <sup>[[link](#with-clauses)]</sup>
 
   ```elixir
   with {:ok, foo} <- fetch(opts, :foo),
        {:ok, bar} <- fetch(opts, :bar),
-    do: {:ok, foo, bar}
+       do: {:ok, foo, bar}
   ```
 
 * <a name="with-else"></a>
