@@ -157,14 +157,13 @@ Translations of the guide are available in the following languages:
   ```
 
 * <a name="long-dos"></a>
-  If you use the `do:` syntax with functions and the line that makes up the
-  function body is long, put the `do:` on a new line indented one level more
-  than the previous line.
+  If the function head and `do:` clause are too long to fit on the same line, put
+  `do:` on a new line, indented one level more than the previous line.
   <sup>[[link](#long-dos)]</sup>
 
   ```elixir
-  def some_function(args),
-    do: Enum.map(args, fn(arg) -> arg <> " is on a very long line!" end)
+  def some_function([:foo, :bar, :baz] = args),
+    do: Enum.map(args, fn arg -> arg <> " is on a very long line!" end)
   ```
 
   When you use the convention above and you have more than one function clause
