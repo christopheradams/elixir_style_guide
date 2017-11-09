@@ -516,12 +516,14 @@ Translations of the guide are available in the following languages:
 
   # not preferred
   def my_func do
-    do_stuff # is this a variable or a function call?
+    # is this a variable or a function call?
+    do_stuff
   end
 
   # preferred
   def my_func do
-    do_stuff() # this is clearly a function call
+    # this is clearly a function call
+    do_stuff()
   end
   ```
 
@@ -674,14 +676,28 @@ Translations of the guide are available in the following languages:
   control-flow, structure and naming.
   <sup>[[link](#expressive-code)]</sup>
 
+* <a name="comments-above-line"></a>
+  Place comments above the line they comment on.
+  <sup>[[link](#comments-above-line)]</sup>
+
+  ```elixir
+  String.first(some_string) # not preferred
+
+  # preferred
+  String.first(some_string)
+  ```
+
 * <a name="comment-leading-spaces"></a>
   Use one space between the leading `#` character of the comment and the text of
   the comment.
   <sup>[[link](#comment-leading-spaces)]</sup>
 
   ```elixir
-  String.first(some_string) #not preferred
-  String.first(some_string) # preferred
+  #not preferred
+  String.first(some_string)
+
+  # preferred
+  String.first(some_string)
   ```
 
 * <a name="comment-grammar"></a>
@@ -717,14 +733,15 @@ Translations of the guide are available in the following languages:
 
 * <a name="exceptions-to-annotations"></a>
   In cases where the problem is so obvious that any documentation would be
-  redundant, annotations may be left at the end of the offending line with no
-  note.
+  redundant, annotations may be left with no note.
   This usage should be the exception and not the rule.
   <sup>[[link](#exceptions-to-annotations)]</sup>
 
   ```elixir
   start_task()
-  Process.sleep(5000) # FIXME
+
+  # FIXME
+  Process.sleep(5000)
   ```
 
 * <a name="todo-notes"></a>
