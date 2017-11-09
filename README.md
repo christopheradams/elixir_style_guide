@@ -504,23 +504,6 @@ Translations of the guide are available in the following languages:
   2 |> rem(3) |> g
   ```
 
-* <a name="parentheses-and-function-expressions"></a>
-  Optionally omit parentheses in function calls (outside a pipeline) when the
-  last argument is a function expression.
-  <sup>[[link](#parentheses-and-function-expressions)]</sup>
-
-  ```elixir
-  # preferred
-  Enum.reduce(1..10, 0, fn x, acc ->
-    x + acc
-  end)
-
-  # also preferred
-  Enum.reduce 1..10, 0, fn x, acc ->
-    x + acc
-  end
-  ```
-
 * <a name="parentheses-and-functions-with-zero-arity"></a>
   Use parentheses for calls to functions with zero arity, so they can be
   distinguished from variables.
