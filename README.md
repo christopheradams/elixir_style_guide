@@ -183,7 +183,7 @@ Translations of the guide are available in the following languages:
   ```
 
 * <a name="multiple-function-defs"></a>
-  If you have more than one multi-line `def`s do not use single-line `def`s.
+  If you have more than one multiline `def`, do not use single-line `def`s.
   <sup>[[link](#multiple-function-defs)]</sup>
 
   ```elixir
