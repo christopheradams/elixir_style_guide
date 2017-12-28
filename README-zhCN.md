@@ -38,51 +38,38 @@
 [Elixir] 有着大量的风格指南，但是像其他语言一样，这些指南都有可能被扼杀。
 请不要扼杀这份指南。
 
-## The Guide
+## 指南
 
-This is community style guide for the [Elixir programming language][Elixir].
-Please feel free to make pull requests and suggestions, and be a part of
-Elixir's vibrant community.
+这是一份社群维护的 [Elixir 编程语言][Elixir] 风格指南。
 
-If you're looking for other projects to contribute to please see the
-[Hex package manager site][Hex].
+欢迎提交 pull requests 和建议来完善这份指南，成为 Elixir 富有活力的社区的一员。
 
-<a name="translations"></a>
-Translations of the guide are available in the following languages:
+你可以在 [Hex 官网][Hex] 寻找其他的项目来贡献代码。
 
-* [Chinese Traditional]
-* [Japanese]
-* [Korean]
-* [Portuguese]
-* [Spanish]
-
-### Source Code Layout
+### 代码排版
 
 * <a name="spaces-indentation"></a>
-  Use two **spaces** per indentation level.
-  No hard tabs.
+  使用两个 **空格** 进行缩进，不要使用 Hard Tab。
   <sup>[[link](#spaces-indentation)]</sup>
 
   ```elixir
-  # not preferred - four spaces
+  # 不好 - 四个空格
   def some_function do
       do_something
   end
 
-  # preferred
+  # 好
   def some_function do
     do_something
   end
   ```
 
 * <a name="line-endings"></a>
-  Use Unix-style line endings (\*BSD/Solaris/Linux/OSX users are covered by
-  default, Windows users have to be extra careful).
+  使用 Unix 风格换行符 (包括 \*BSD/Solaris/Linux/OSX 的用户, Windows 用户要特别小心)。
   <sup>[[link](#line-endings)]</sup>
 
 * <a name="autocrlf"></a>
-  If you're using Git you might want to add the following configuration
-  setting to protect your project from Windows line endings creeping in:
+  如果你使用 Git，可以使用下面的配置来避免 Windows 风格换行符：
   <sup>[[link](#autocrlf)]</sup>
 
   ```sh
@@ -90,10 +77,9 @@ Translations of the guide are available in the following languages:
   ```
 
 * <a name="spaces"></a>
-  Use spaces around operators, after commas, colons and semicolons.
-  Do not put spaces around matched pairs like brackets, parentheses, etc.
-  Whitespace might be (mostly) irrelevant to the Elixir runtime, but its proper
-  use is the key to writing easily readable code.
+  在运算符的两侧添加空格，在逗号`,`，冒号`:`，分号`;`，之后添加空格。
+  不要在配对的括号两侧添加空格，例如，小括号`()`，大括号`{}`，等等。
+  空格一般来说对 (大部分) Elixir 编译器是无关紧要的，但是恰当的使用空格是写出可读性高的代码的关键。
   <sup>[[link](#spaces)]</sup>
 
   ```elixir
@@ -104,8 +90,7 @@ Translations of the guide are available in the following languages:
   ```
 
 * <a name="no-spaces"></a>
-  Do not use spaces after non-word operators that only take one argument; or
-  around the range operator.
+  在仅有一个参数的运算符之后，或者是范围运算符前后，不要添加空格。
   <sup>[[link](#no-spaces)]</sup>
 
   ```elixir
@@ -115,8 +100,7 @@ Translations of the guide are available in the following languages:
   ```
 
 * <a name="def-spacing"></a>
-  Use blank lines between `def`s to break up a function into logical
-  paragraphs.
+  在 `def` 直接使用空行，并且把函数分成合乎逻辑的段落。
   <sup>[[link](#def-spacing)]</sup>
 
   ```elixir
@@ -142,7 +126,7 @@ Translations of the guide are available in the following languages:
   ```
 
 * <a name="single-line-defs"></a>
-  ...but run single-line `def`s that match for the same function together.
+  ...但是具有相同函数名的单行 `def` 写在一起。
   <sup>[[link](#single-line-defs)]</sup>
 
   ```elixir
@@ -154,9 +138,7 @@ Translations of the guide are available in the following languages:
   ```
 
 * <a name="long-dos"></a>
-  If you use the `do:` syntax with functions and the line that makes up the
-  function body is long, put the `do:` on a new line indented one level more
-  than the previous line.
+  当你使用 `do:` 的语法声明函数时，如果函数体太长，将 `do:` 放在新的一行，并且进行缩进。
   <sup>[[link](#long-dos)]</sup>
 
   ```elixir
@@ -164,16 +146,15 @@ Translations of the guide are available in the following languages:
     do: Enum.map(args, fn(arg) -> arg <> " is on a very long line!" end)
   ```
 
-  When you use the convention above and you have more than one function clause
-  using the `do:` syntax, put the `do:` on a new line for each function clause:
+  当你使用了上面的风格，并且同时 `do:` 声明多个函数子句时，请把所有的 `do:` 函数子句主体放在
 
   ```elixir
-  # not preferred
+  # 不好
   def some_function([]), do: :empty
   def some_function(_),
     do: :very_long_line_here
 
-  # preferred
+  # 好
   def some_function([]),
     do: :empty
   def some_function(_),
@@ -181,7 +162,7 @@ Translations of the guide are available in the following languages:
   ```
 
 * <a name="multiple-function-defs"></a>
-  If you have more than one multi-line `def`s do not use single-line `def`s.
+  如果你使用了多行的 `def`，请不要再使用单行的 `def`。
   <sup>[[link](#multiple-function-defs)]</sup>
 
   ```elixir
@@ -203,54 +184,52 @@ Translations of the guide are available in the following languages:
   ```
 
 * <a name="parentheses-pipe-operator"></a>
-  Use parentheses for one-arity functions when using the pipe operator (`|>`).
+  使用管道运算符 (`|>`) 时，函数添加括号。
   <sup>[[link](#parentheses-pipe-operator)]</sup>
 
   ```elixir
-  # not preferred
+  # 不好
   some_string |> String.downcase |> String.strip
 
-  # preferred
+  # 好
   some_string |> String.downcase() |> String.strip()
   ```
 
 * <a name="pipe-operator"></a>
-  Use the pipe operator to chain functions together.
+  使用管道运算符链接多个函数。
   <sup>[[link](#pipe-operator)]</sup>
 
   ```elixir
-  # not preferred
+  # 不好
   String.strip(String.downcase(some_string))
 
-  # preferred
+  # 好
   some_string |> String.downcase() |> String.strip()
 
-  # Multiline pipelines are not further indented
+  # 多行管道不需要缩进
   some_string
   |> String.downcase()
   |> String.strip()
 
-  # Multiline pipelines on the right side of a pattern match
-  # should be indented on a new line
+  # 多行管道在模式匹配的右侧要在下一行缩进
   sanitized_string =
     some_string
     |> String.downcase()
     |> String.strip()
   ```
 
-  While this is the preferred method, take into account that copy-pasting
-  multiline pipelines into IEx might result in a syntax error, as IEx will
-  evaluate the first line without realizing that the next line has a pipeline.
+  虽然这是推荐的写法，务必记得在 IEx 中直接粘贴多行管道时，可能会引起错误。这是由于 IEx 会
+  直接解释第一行，而不会意识到下一行管道的存在。
 
 * <a name="avoid-single-pipelines"></a>
-  Avoid using the pipe operator just once.
+  避免只使用一次的管道。
   <sup>[[link](#avoid-single-pipelines)]</sup>
 
   ```elixir
-  # not preferred
+  # 不好
   some_string |> String.downcase()
 
-  # preferred
+  # 好
   String.downcase(some_string)
   ```
 
@@ -817,17 +796,17 @@ Translations of the guide are available in the following languages:
   <sup>[[link](#module-attribute-ordering)]</sup>
 
   1. `@moduledoc`
-  1. `@behaviour`
-  1. `use`
-  1. `import`
-  1. `alias`
-  1. `require`
-  1. `defstruct`
-  1. `@type`
-  1. `@module_attribute`
-  1. `@callback`
-  1. `@macrocallback`
-  1. `@optional_callbacks`
+  2. `@behaviour`
+  3. `use`
+  4. `import`
+  5. `alias`
+  6. `require`
+  7. `defstruct`
+  8. `@type`
+  9. `@module_attribute`
+  10. `@callback`
+  11. `@macrocallback`
+  12. `@optional_callbacks`
 
   Add a blank line between each grouping, and sort the terms (like module names)
   alphabetically.
