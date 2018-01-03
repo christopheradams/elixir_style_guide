@@ -734,16 +734,18 @@
   # Use punctuation for complete sentences.
   ```
 
-#### Comment Annotations
+#### 注解
 
 * <a name="annotations"></a>
-  Annotations should usually be written on the line immediately above the
-  relevant code.
+
+  注解通常写在相关代码的上一行。
+
   <sup>[[link](#annotations)]</sup>
 
 * <a name="annotation-keyword"></a>
-  The annotation keyword is uppercase, and is followed by a colon and a space,
-  then a note describing the problem.
+
+  注解关键字要大写，紧接着是一个冒号和一个空格，然后是问题的描述。
+
   <sup>[[link](#annotation-keyword)]</sup>
 
   ```elixir
@@ -752,10 +754,11 @@
   ```
 
 * <a name="exceptions-to-annotations"></a>
-  In cases where the problem is so obvious that any documentation would be
-  redundant, annotations may be left at the end of the offending line with no
-  note.
-  This usage should be the exception and not the rule.
+
+  在问题显而易见的情况下，任何说明都是多余的，注解要放到代码的最后并且不带任何解释。
+
+  这个用法是特例而不是规则。
+
   <sup>[[link](#exceptions-to-annotations)]</sup>
 
   ```elixir
@@ -764,33 +767,40 @@
   ```
 
 * <a name="todo-notes"></a>
-  Use `TODO` to note missing features or functionality that should be added at a
-  later date.
+
+  使用 `TODO` 来标记未来要实现功能或特性。
+
   <sup>[[link](#todo-notes)]</sup>
 
 * <a name="fixme-notes"></a>
-  Use `FIXME` to note broken code that needs to be fixed.
+
+  使用 `FIXME` 来标记要被修复的代码。
+
   <sup>[[link](#fixme-notes)]</sup>
 
 * <a name="optimize-notes"></a>
-  Use `OPTIMIZE` to note slow or inefficient code that may cause performance
-  problems.
+
+  使用 `OPTIMIZE` 来标记可能会引起性能问题的缓慢或者低效的代码。
+
   <sup>[[link](#optimize-notes)]</sup>
 
 * <a name="hack-notes"></a>
-  Use `HACK` to note code smells where questionable coding practices were used
-  and should be refactored away.
+
+  使用 `HACK` 来比较代码中的坏味道，这些有问题的编码实践应当被重构。
+
   <sup>[[link](#hack-notes)]</sup>
 
 * <a name="review-notes"></a>
-  Use `REVIEW` to note anything that should be looked at to confirm it is
-  working as intended.
-  For example: `REVIEW: Are we sure this is how the client does X currently?`
+
+  使用 `REVIEW` 来标记需要确认是否正常工作的地方。
+
+  例如: `REVIEW: Are we sure this is how the client does X currently?`
   <sup>[[link](#review-notes)]</sup>
 
 * <a name="custom-keywords"></a>
-  Use other custom annotation keywords if it feels appropriate, but be sure to
-  document them in your project's `README` or similar.
+
+  如果你觉得需要的话，使用其他自定义的关键字，并将它们记录到 `README` 或者其他类似的文档中。
+
   <sup>[[link](#custom-keywords)]</sup>
 
 ### Modules
