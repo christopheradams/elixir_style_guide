@@ -234,43 +234,46 @@
   ```
 
 * <a name="bare-variables"></a>
-  Use _bare_ variables in the first part of a function chain.
+
+  把纯变量放在函数调用链的开头。
+
   <sup>[[link](#bare-variables)]</sup>
 
   ```elixir
-  # THE WORST!
-  # This actually parses as String.strip("nope" |> String.downcase()).
+  # 非常不好!
+  # 这会被编译为 String.strip("nope" |> String.downcase()).
   String.strip "nope" |> String.downcase()
 
-  # not preferred
+  # 不好
   String.strip(some_string) |> String.downcase() |> String.codepoints()
 
-  # preferred
+  # 好
   some_string |> String.strip() |> String.downcase() |> String.codepoints()
   ```
 
 * <a name="multiline-list-assign"></a>
-  When assigning a list that spans multiple lines, start the list on a newline,
-  and indent the elements to keep them aligned.
+
+  多行列表进行赋值时，另起一行，并且列表的元素要进行对齐。
+
   <sup>[[link](#multiline-list-assign)]</sup>
 
   ```elixir
-  # not preferred - no indentation
+  # 不好 - 没有缩进
   list = [:first_item, :second_item, :next_item,
   :last_item]
 
-  # better, but not preferred - with indentation
+  # 好一点 - 进行缩进
   list = [:first_item, :second_item, :next_item,
           :last_item]
 
-  # preferred - list starts on its own line
-  # good for shorter, more compact lists
+  # 好 - 列表另起一行
+  # 适合更短，更紧凑的列表
   list =
     [:first_item, :second_item, :next_item,
      :last_item]
 
-  # also preferred - when each element is on its own line
-  # good for long lists, lists with long elements, or lists with comments
+  # 同样很好 - 列表的每个元素另起一行
+  # 适合长列表，长元素列表，或者有注释的列表
   list = [
     :first_item,
     :second_item,
@@ -282,21 +285,25 @@
   ```
 
 * <a name="trailing-whitespace"></a>
-  Avoid trailing whitespace.
+  避免行尾的空白 (trailing whitespace)。
   <sup>[[link](#trailing-whitespace)]</sup>
 
 * <a name="newline-eof"></a>
-  End each file with a newline.
+
+  用新的一行来结束源文件。
+
   <sup>[[link](#newline-eof)]</sup>
 
-### Syntax
+### 语法
 
 * <a name="parentheses"></a>
-  Use parentheses when a `def` has arguments, and omit them when it doesn't.
+
+  有参函数使用括号，否则省略括号。
+
   <sup>[[link](#parentheses)]</sup>
 
   ```elixir
-  # not preferred
+  # 不好
   def some_function arg1, arg2 do
     # body omitted
   end
@@ -305,7 +312,7 @@
     # body omitted
   end
 
-  # preferred
+  # 好
   def some_function(arg1, arg2) do
     # body omitted
   end
@@ -316,19 +323,20 @@
   ```
 
 * <a name="add-blank-line-after-multiline-assignment"></a>
-  Add a blank line after a multiline assignment as a
-  visual cue that the assignment is 'over'.
+
+  多行赋值后添加空行，表示赋值结束。
+
   <sup>[[link](#add-blank-line-after-multiline-assignment)]</sup>
 
   ```elixir
-  # not preferred
+  # 不好
   some_string =
     "Hello"
     |> String.downcase()
     |> String.strip()
   another_string <> some_string
 
-  # preferred
+  # 好
   some_string =
     "Hello"
     |> String.downcase()
@@ -338,7 +346,7 @@
   ```
 
   ```elixir
-  # also not preferred
+  # 不好
   something =
     if x == 2 do
       "Hi"
@@ -347,7 +355,7 @@
     end
   String.downcase(something)
 
-  # preferred
+  # 好
   something =
     if x == 2 do
       "Hi"
@@ -359,17 +367,19 @@
   ```
 
 * <a name="do-with-multi-line-if-unless"></a>
-  Never use `do:` for multi-line `if/unless`.
+
+  多行 `if/unless` 时，避免使用 `do:`。
+
   <sup>[[link](#do-with-multi-line-if-unless)]</sup>
 
   ```elixir
-  # not preferred
+  # 不好
   if some_condition, do:
     # a line of code
     # another line of code
     # note no end in this block
 
-  # preferred
+  # 好
   if some_condition do
     # some
     # lines
@@ -378,28 +388,31 @@
   ```
 
 * <a name="do-with-single-line-if-unless"></a>
-  Use `do:` for single line `if/unless` statements.
+
+  单行 `if/unless` 时使用 `do:`。
+
   <sup>[[link](#do-with-single-line-if-unless)]</sup>
 
   ```elixir
-  # preferred
+  # 好
   if some_condition, do: # some_stuff
   ```
 
 * <a name="unless-with-else"></a>
-  Never use `unless` with `else`.
-  Rewrite these with the positive case first.
+
+  避免使用 `unless` 搭配 `else`，将它们改写为肯定条件。
+
   <sup>[[link](#unless-with-else)]</sup>
 
   ```elixir
-  # not preferred
+  # 不好
   unless success? do
     IO.puts 'failure'
   else
     IO.puts 'success'
   end
 
-  # preferred
+  # 好
   if success? do
     IO.puts 'success'
   else
@@ -408,12 +421,13 @@
   ```
 
 * <a name="true-as-last-condition"></a>
-  Use `true` as the last condition of the `cond` special form when you need a
-  clause that always matches.
+
+  `cond` 的最后一个条件一定是 `true` 。
+
   <sup>[[link](#true-as-last-condition)]</sup>
 
   ```elixir
-  # not preferred
+  # 不好
   cond do
     1 + 2 == 5 ->
       "Nope"
@@ -423,7 +437,7 @@
       "OK"
   end
 
-  # preferred
+  # 好
   cond do
     1 + 2 == 5 ->
       "Nope"
@@ -435,116 +449,129 @@
   ```
 
 * <a name="function-names-with-parentheses"></a>
-  Never put a space between a function name and the opening parenthesis.
+
+  不要在函数名和左括号之间添加空格。
+
   <sup>[[link](#function-names-with-parentheses)]</sup>
 
   ```elixir
-  # not preferred
+  # 不好
   f (3 + 2) + 1
 
-  # preferred
+  # 好
   f(3 + 2) + 1
   ```
 
 * <a name="function-calls-and-parentheses"></a>
-  Use parentheses in function calls, especially inside a pipeline.
+
+  函数调用时使用括号，特别在使用管道时。
+
   <sup>[[link](#function-calls-and-parentheses)]</sup>
 
   ```elixir
-  # not preferred
+  # 不好
   f 3
 
-  # preferred
+  # 好
   f(3)
 
-  # not preferred and parses as rem(2, (3 |> g)), which is not what you want.
+  # 不好
   2 |> rem 3 |> g
 
-  # preferred
+  # 好
   2 |> rem(3) |> g
   ```
 
 * <a name="macro-calls-and-parentheses"></a>
-  Omit parentheses in macro calls when a do block is passed.
+
+  当使用 `do` 块调用宏时，省略括号。
+
   <sup>[[link](#macro-calls-and-parentheses)]</sup>
 
   ```elixir
-  # not preferred
+  # 不好
   quote(do
     foo
   end)
 
-  # preferred
+  # 好
   quote do
     foo
   end
   ```
 
 * <a name="parentheses-and-function-expressions"></a>
-  Optionally omit parentheses in function calls (outside a pipeline) when the
-  last argument is a function expression.
+
+  当函数调用在管道之外，并且最后一个参数是函数表达式时，可以选择性的省略括号。
+
   <sup>[[link](#parentheses-and-function-expressions)]</sup>
 
   ```elixir
-  # preferred
+  # 好
   Enum.reduce(1..10, 0, fn x, acc ->
     x + acc
   end)
 
-  # also preferred
+  # 同样好
   Enum.reduce 1..10, 0, fn x, acc ->
     x + acc
   end
   ```
 
 * <a name="parentheses-and-functions-with-zero-arity"></a>
-  Use parentheses for calls to functions with zero arity, so they can be
-  distinguished from variables.
-  Starting in Elixir 1.4, the compiler will warn you about
-  locations where this ambiguity exists.
+
+  无参函数调用时添加括号，以便和变量进行区分。
+
+  从 Elixir 1.4 开始，编译器会在有歧义的地方发出警告。
+
   <sup>[[link](#parentheses-and-functions-with-zero-arity)]</sup>
 
   ```elixir
   defp do_stuff, do: ...
 
-  # not preferred
+  # 不好
   def my_func do
-    do_stuff # is this a variable or a function call?
+    do_stuff # 这是变量还是函数调用?
   end
 
-  # preferred
+  # 好用
   def my_func do
-    do_stuff() # this is clearly a function call
+    do_stuff() # 这是一个明确的函数调用
   end
   ```
 
 * <a name="keyword-list-syntax"></a>
-  Always use the special syntax for keyword lists.
+
+  关键字列表总是使用特殊语法。
+
   <sup>[[link](#keyword-list-syntax)]</sup>
 
   ```elixir
-  # not preferred
+  # 不好
   some_value = [{:a, "baz"}, {:b, "qux"}]
 
-  # preferred
+  # 好
   some_value = [a: "baz", b: "qux"]
   ```
 
 * <a name="keyword-list-brackets"></a>
-  Omit square brackets from keyword lists whenever they are optional.
+
+  当关键字列表的括号可选时则省略。
+
   <sup>[[link](#keyword-list-brackets)]</sup>
 
   ```elixir
-  # not preferred
+  # 不好
   some_function(foo, bar, [a: "baz", b: "qux"])
 
-  # preferred
+  # 好
   some_function(foo, bar, a: "baz", b: "qux")
   ```
 
 * <a name="with-clauses"></a>
-  Indent and align successive `with` clauses.
-  Put the `do:` argument on a new line, indented normally.
+
+  缩排 `with` 的多个条件，`do` 的参数在新的一行正常缩进。
+
   <sup>[[link](#with-clauses)]</sup>
 
   ```elixir
@@ -554,8 +581,9 @@
   ```
 
 * <a name="with-else"></a>
-  If the `with` expression has a `do` block with more than one line, or has an
-  `else` option, use multiline syntax.
+
+  如果 `with` 表达式 `do` 块超过了一行，或者使用了 `else`，请使用多行语法。
+
   <sup>[[link](#with-else)]</sup>
 
   ```elixir
@@ -568,14 +596,16 @@
   end
   ```
 
-### Naming
+### 命名
 
 * <a name="snake-case"></a>
-  Use `snake_case` for atoms, functions and variables.
+
+  符号，方法，变量，使用蛇底式 (`snake_case`)。
+
   <sup>[[link](#snake-case)]</sup>
 
   ```elixir
-  # not preferred
+  # 不好
   :"some atom"
   :SomeAtom
   :someAtom
@@ -590,7 +620,7 @@
     ...
   end
 
-  # preferred
+  # 好
   :some_atom
 
   some_var = 5
@@ -601,11 +631,13 @@
   ```
 
 * <a name="camel-case"></a>
-  Use `CamelCase` for modules (keep acronyms like HTTP, RFC, XML uppercase).
+
+  模块名使用驼峰式 (`CamelCase`) (保留像是 HTTP, RFC, XML 这种缩写为大写形式)。
+
   <sup>[[link](#camel-case)]</sup>
 
   ```elixir
-  # not preferred
+  # 不好
   defmodule Somemodule do
     ...
   end
@@ -618,7 +650,7 @@
     ...
   end
 
-  # preferred
+  # 好
   defmodule SomeModule do
     ...
   end
@@ -629,9 +661,11 @@
   ```
 
 * <a name="predicate-macro-names-with-guards"></a>
-  The names of predicate macros (compile-time generated functions that return a
-  boolean value) _that can be used within guards_ should be prefixed with `is_`.
-  For a list of allowed expressions, see the [Guard][Guard Expressions] docs.
+
+  可以在 `guard clause` 中使用的谓词宏 (编译期生成返回布尔值的函数)，命名应该使用 `is_` 前缀。
+
+  允许的表达式列表，请参考 [Guard][Guard Expressions] 文档。
+
   <sup>[[link](#predicate-macro-names-with-guards)]</sup>
 
   ```elixir
@@ -641,8 +675,9 @@
   ```
 
 * <a name="predicate-macro-names-no-guards"></a>
-  The names of predicate functions _that cannot be used within guards_ should
-  have a trailing question mark (`?`) rather than the `is_` (or similar) prefix.
+
+  谓词函数，无法在 `guard clause` 中使用，命名时应该以 `?` 结尾，而不是 `is_` 作为前缀。
+
   <sup>[[link](#predicate-macro-names-no-guards)]</sup>
 
   ```elixir
@@ -652,8 +687,9 @@
   ```
 
 * <a name="private-functions-with-same-name-as-public"></a>
-  Private functions with the same name as public functions should start with
-  `do_`.
+
+  当私有函数和公共函数具有相同的名称时，使用 `do_` 作为前缀。
+
   <sup>[[link](#private-functions-with-same-name-as-public)]</sup>
 
   ```elixir
@@ -664,33 +700,36 @@
   defp do_sum([head | tail], total), do: do_sum(tail, head + total)
   ```
 
-### Comments
+### 注释
 
 * <a name="expressive-code"></a>
-  Write expressive code and try to convey your program's intention through
-  control-flow, structure and naming.
+
+  编写富有表现力的代码，通过控制流，结构和命名来表达程序的意图。
+
   <sup>[[link](#expressive-code)]</sup>
 
 * <a name="comment-leading-spaces"></a>
-  Use one space between the leading `#` character of the comment and the text of
-  the comment.
+
+  在注释的 `#` 之后，保留一个空格。
+
   <sup>[[link](#comment-leading-spaces)]</sup>
 
   ```elixir
-  String.first(some_string) #not preferred
-  String.first(some_string) # preferred
+  String.first(some_string) #不好
+  String.first(some_string) # 好
   ```
 
 * <a name="comment-grammar"></a>
-  Comments longer than a word are capitalized, and sentences use punctuation.
-  Use [one space][Sentence Spacing] after periods.
+
+  一个字以上的注释需要使用正确的英文大小写以及标点符号，并且在句号后添加空格。
+
   <sup>[[link](#comment-grammar)]</sup>
 
   ```elixir
-  # not preferred
+  # 不好
   # these lowercase comments are missing punctuation
 
-  # preferred
+  # 好
   # Capitalization example
   # Use punctuation for complete sentences.
   ```
