@@ -51,6 +51,7 @@ If you're looking for other projects to contribute to please see the
 <a name="translations"></a>
 Translations of the guide are available in the following languages:
 
+* [Chinese Simplified]
 * [Chinese Traditional]
 * [Japanese]
 * [Korean]
@@ -1284,6 +1285,7 @@ Here's the [list of people who have kindly contributed][Contributors] to this
 project.
 
 <!-- Links -->
+[Chinese Simplified]: https://github.com/geekerzp/elixir_style_guide/blob/master/README-zhCN.md
 [Chinese Traditional]: https://github.com/elixirtw/elixir_style_guide/blob/master/README_zhTW.md
 [Code Analysis]: https://github.com/h4cc/awesome-elixir#code-analysis
 [Code Of Conduct]: https://github.com/elixir-lang/elixir/blob/master/CODE_OF_CONDUCT.md
@@ -1305,4 +1307,3 @@ project.
 [Sentence Spacing]: http://en.wikipedia.org/wiki/Sentence_spacing
 [Spanish]: https://github.com/albertoalmagro/elixir_style_guide/blob/spanish/README_esES.md
 [Stargazers]: https://github.com/christopheradams/elixir_style_guide/stargazers
-
