@@ -1,4 +1,4 @@
-# [Elixir 风格指南][Elixir Style Guide]
+# [The Elixir Style Guide][Elixir Style Guide]
 
 ## 目录
 
@@ -908,7 +908,7 @@
   ```
 
 * <a name="module-pseudo-variable"></a>
-  当模块引用自身时使用 `__MODULE__` 伪变量。 
+  当模块引用自身时使用 `__MODULE__` 伪变量。
 
   如果模块名称修改，可以避免更新对模块自身的引用。
 
