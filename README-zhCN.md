@@ -803,15 +803,18 @@
 
   <sup>[[link](#custom-keywords)]</sup>
 
-### Modules
+### 模块
 
 * <a name="one-module-per-file"></a>
-  Use one module per file unless the module is only used internally by another
-  module (such as a test).
+
+  每个源文件内只有一个模块，除非模块只在另一个模块内部使用 (例如测试)。
+
   <sup>[[link](#one-module-per-file)]</sup>
 
 * <a name="underscored-filenames"></a>
-  Use `snake_case` file names for `CamelCase` module names.
+
+  文件名使用 `蛇底式` (`snake_case`)，模块名使用 `驼峰式` (`CamelCase`)。
+
   <sup>[[link](#underscored-filenames)]</sup>
 
   ```elixir
@@ -822,7 +825,9 @@
   ```
 
 * <a name="module-name-nesting"></a>
-  Represent each level of nesting within a module name as a directory.
+
+  嵌套模块命名中的每一层代表一层文件夹。
+
   <sup>[[link](#module-name-nesting)]</sup>
 
   ```elixir
@@ -833,15 +838,21 @@
   ```
 
 * <a name="defmodule-spacing"></a>
-  Don't put a blank line after `defmodule`.
+
+  `defmodule` 之后不要添加空行。
+
   <sup>[[link](#defmodule-spacing)]</sup>
 
 * <a name="module-block-spacing"></a>
-  Put a blank line after module-level code blocks.
+
+  模块代码之后添加空行。
+
   <sup>[[link](#module-block-spacing)]</sup>
 
 * <a name="module-attribute-ordering"></a>
-  List module attributes and directives in the following order:
+
+  模块属性和指令要按照下面的顺序：
+
   <sup>[[link](#module-attribute-ordering)]</sup>
 
   1. `@moduledoc`
@@ -857,9 +868,9 @@
   11. `@macrocallback`
   12. `@optional_callbacks`
 
-  Add a blank line between each grouping, and sort the terms (like module names)
-  alphabetically.
-  Here's an overall example of how you should order things in your modules:
+  在每一组属性或者指令后加入空行，并且本组的项目 (例如，模块名) 要按照字母排序。
+
+  这里有一个完整的例子：
 
   ```elixir
   defmodule MyModule do
@@ -897,8 +908,10 @@
   ```
 
 * <a name="module-pseudo-variable"></a>
-  Use the `__MODULE__` pseudo variable when a module refers to itself. This
-  avoids having to update any self-references when the module name changes.
+  当模块引用自身时使用 `__MODULE__` 伪变量。 
+
+  如果模块名称修改，可以避免更新对模块自身的引用。
+
   <sup>[[link](#module-pseudo-variable)]</sup>
 
   ```elixir
@@ -910,7 +923,9 @@
   ```
 
 * <a name="alias-self-referencing-modules"></a>
-  If you want a prettier name for a module self-reference, set up an alias.
+
+  设置一个别名，可以让模块名更具可读性。
+
   <sup>[[link](#alias-self-referencing-modules)]</sup>
 
   ```elixir
@@ -924,35 +939,34 @@
   ```
 
 * <a name="repetitive-module-names"></a>
-  Avoid repeating fragments in module names and namespaces.
-  This improves overall readability and
-  eliminates [ambiguous aliases][Conflicting Aliases].
+  避免在模块名和命名空间中使用重复的名称，这样提高可读性并且消除 [ambiguous aliases][Conflicting Aliases]。
+
   <sup>[[link](#repetitive-module-names)]</sup>
 
   ```elixir
-  # not preferred
+  # 不好
   defmodule Todo.Todo do
     ...
   end
 
-  # preferred
+  # 好
   defmodule Todo.Item do
     ...
   end
   ```
 
-### Documentation
+### 文档
 
-Documentation in Elixir (when read either in `iex` with `h` or generated with
-[ExDoc]) uses the [Module Attributes] `@moduledoc` and `@doc`.
+使用模块变量 (Module Attributes) `@moduledoc` 和 `@doc` 声明文档 (在 `iex` 使用 `h`查看或者使用 [ExDoc] 生成)。
 
 * <a name="moduledocs"></a>
-  Always include a `@moduledoc` attribute in the line right after `defmodule` in
-  your module.
+
+  在 `defmodule` 之后下一行总是定义 `@moduledoc` 变量。
+
   <sup>[[link](#moduledocs)]</sup>
 
   ```elixir
-  # not preferred
+  # 不好
 
   defmodule SomeModule do
 
@@ -970,7 +984,7 @@ Documentation in Elixir (when read either in `iex` with `h` or generated with
     ...
   end
 
-  # preferred
+  # 好
 
   defmodule SomeModule do
     @moduledoc """
@@ -981,7 +995,9 @@ Documentation in Elixir (when read either in `iex` with `h` or generated with
   ```
 
 * <a name="moduledoc-false"></a>
-  Use `@moduledoc false` if you do not intend on documenting the module.
+
+  使用 `@moduledoc false`，如果你不想为这个模块增加文档。
+
   <sup>[[link](#moduledoc-false)]</sup>
 
   ```elixir
@@ -992,11 +1008,13 @@ Documentation in Elixir (when read either in `iex` with `h` or generated with
   ```
 
 * <a name="moduledoc-spacing"></a>
-  Separate code after the `@moduledoc` with a blank line.
+
+  `@moduledoc` 之后添加一个空行，与其他代码分开。
+
   <sup>[[link](#moduledoc-spacing)]</sup>
 
   ```elixir
-  # not preferred
+  # 不好
 
   defmodule SomeModule do
     @moduledoc """
@@ -1005,7 +1023,7 @@ Documentation in Elixir (when read either in `iex` with `h` or generated with
     use AnotherModule
   end
 
-  # preferred
+  # 好
   defmodule SomeModule do
     @moduledoc """
     About the module
@@ -1016,11 +1034,13 @@ Documentation in Elixir (when read either in `iex` with `h` or generated with
   ```
 
 * <a name="heredocs"></a>
-  Use heredocs with markdown for documentation.
+
+  在文档内使用 `heredocs` 和 `markdown`。
+
   <sup>[[link](#heredocs)]</sup>
 
   ```elixir
-  # not preferred
+  # 不好
 
   defmodule SomeModule do
     @moduledoc "About the module"
@@ -1036,7 +1056,7 @@ Documentation in Elixir (when read either in `iex` with `h` or generated with
     """
   end
 
-  # preferred
+  # 好
   defmodule SomeModule do
     @moduledoc """
     About the module
@@ -1049,17 +1069,16 @@ Documentation in Elixir (when read either in `iex` with `h` or generated with
   end
   ```
 
-### Typespecs
+### 类型声明 (Typespecs)
 
-Typespecs are notation for declaring types and specifications, for
-documentation or for the static analysis tool Dialyzer.
+Typespecs是用于声明类型和规格的符号，主要用于文档或是静态分析工具，例如 Dialyzer。
 
-Custom types should be defined at the top of the module with the other
-directives (see [Modules](#modules)).
+自定义类型应当与其他指令一起位于模块的顶部。 (详见 [模块](#modules)).
 
 * <a name="typedocs"></a>
-  Place `@typedoc` and `@type` definitions together, and separate each
-  pair with a blank line.
+
+  同时使用 `@typedoc` 和 `@type`，并且每对之间使用空行间隔。
+
   <sup>[[link](#typedocs)]</sup>
 
   ```elixir
@@ -1077,20 +1096,21 @@ directives (see [Modules](#modules)).
   ```
 
 * <a name="union-types"></a>
-  If a union type is too long to fit on a single line, add a newline
-  and indent with spaces to keep the types aligned.
+
+  如果联合类型 (union type) 声明超过一行，增加新的一行并且使用空格缩进，保持类型对齐。
+
   <sup>[[link](#union-types)]</sup>
 
   ```elixir
-  # not preferred - no indentation
+  # 不好 - 没有缩进
   @type long_union_type :: some_type | another_type | some_other_type |
   a_final_type
 
-  # preferred
+  # 好
   @type long_union_type :: some_type | another_type | some_other_type |
                            a_final_type
 
-  # also preferred - one type per line
+  # 同样好 - 每一个类型单独一行
   @type long_union_type :: some_type |
                            another_type |
                            some_other_type |
@@ -1098,8 +1118,9 @@ directives (see [Modules](#modules)).
   ```
 
 * <a name="naming-main-types"></a>
-  Name the main type for a module `t`, for example: the type specification for a
-  struct.
+
+  模块的主类型命名为 `t`，例子：结构的类型声明。
+
   <sup>[[link](#naming-main-types)]</sup>
 
   ```elixir
@@ -1112,8 +1133,9 @@ directives (see [Modules](#modules)).
   ```
 
 * <a name="spec-spacing"></a>
-  Place specifications right before the function definition,
-  without separating them by a blank line.
+
+  将函数的类型声明放到函数定义之上，不用空行间隔。
+
   <sup>[[link](#spec-spacing)]</sup>
 
   ```elixir
@@ -1123,39 +1145,42 @@ directives (see [Modules](#modules)).
   end
   ```
 
-### Structs
+### 结构
 
 * <a name="nil-struct-field-defaults"></a>
-  Use a list of atoms for struct fields that default to `nil`, followed by the
-  other keywords.
+  默认值为 `nil` 的结构字段使用原子符号列表 (list of atoms)，后面紧跟着其他关键字。
+
   <sup>[[link](#nil-struct-field-defaults)]</sup>
 
   ```elixir
-  # not preferred
+  # 不好
   defstruct name: nil, params: nil, active: true
 
-  # preferred
+  # 好
   defstruct [:name, :params, active: true]
   ```
 
 * <a name="struct-def-brackets"></a>
-  Omit square brackets when the argument of a `defstruct` is a keyword list.
+
+  如果 `defstruct` 的参数是关键字列表 (keyword list)，则省略括号。
+
   <sup>[[link](#struct-def-brackets)]</sup>
 
   ```elixir
-  # not preferred
+  # 不好
   defstruct [params: [], active: true]
 
-  # preferred
+  # 好
   defstruct params: [], active: true
 
-  # required - brackets are not optional, with at least one atom in the list
+  # 必须 - 由于至少有一个原子符号，括号不可以省略
   defstruct [:name, params: [], active: true]
   ```
 
 * <a name="additional-struct-def-lines"></a>
-  Indent additional lines of the struct definition, keeping the first keys
-  aligned.
+
+  如果结构定义是多行，保持每行第一个键缩进对齐。
+
   <sup>[[link](#additional-struct-def-lines)]</sup>
 
   ```elixir
@@ -1163,14 +1188,16 @@ directives (see [Modules](#modules)).
             qux: false, quux: 1
   ```
 
-### Exceptions
+### 异常
 
 * <a name="exception-names"></a>
-  Make exception names end with a trailing `Error`.
+
+  异常的命名以 `Error` 结尾。
+
   <sup>[[link](#exception-names)]</sup>
 
   ```elixir
-  # not preferred
+  # 不好
   defmodule BadHTTPCode do
     defexception [:message]
   end
@@ -1179,76 +1206,80 @@ directives (see [Modules](#modules)).
     defexception [:message]
   end
 
-  # preferred
+  # 好
   defmodule BadHTTPCodeError do
     defexception [:message]
   end
   ```
 
 * <a name="lowercase-error-messages"></a>
-  Use lowercase error messages when raising exceptions, with no trailing
-  punctuation.
+
+  抛出异常时，异常信息使用小写，并且最后不需要添加标点符号。
+
   <sup>[[link](#lowercase-error-messages)]</sup>
 
   ```elixir
-  # not preferred
+  # 不好
   raise ArgumentError, "This is not valid."
 
-  # preferred
+  # 好
   raise ArgumentError, "this is not valid"
   ```
 
-### Collections
+### 集合
 
-_No guidelines for collections have been added yet._
+暂无内容。
 
-### Strings
+### 字符串
 
 * <a name="strings-matching-with-concatenator"></a>
-  Match strings using the string concatenator rather than binary patterns:
+
+  字符串进行模式匹配时，使用字符串拼接的方式而不要使用二进制的方式。
+
   <sup>[[link](#strings-matching-with-concatenator)]</sup>
 
   ```elixir
-  # not preferred
+  # 不好
   <<"my"::utf8, _rest>> = "my string"
 
-  # preferred
+  # 好
   "my" <> _rest = "my string"
   ```
 
-### Regular Expressions
+### 正则表达式
 
-_No guidelines for regular expressions have been added yet._
+暂无内容。
 
-### Metaprogramming
+### 元编程 (metaprogramming)
 
 * <a name="avoid-metaprogramming"></a>
-  Avoid needless metaprogramming.
+  避免不必要的元编程。
   <sup>[[link](#avoid-metaprogramming)]</sup>
 
-### Testing
+### 测试
 
 * <a name="testing-assert-order"></a>
-  When writing [ExUnit] assertions, be consistent with the order of the expected
-  and actual values under testing.
-  Prefer placing the expected result on the right, unless the assertion is a
-  pattern match.
+
+  在编写 [ExUnit] 断言 (assertions) 时，保持预期值和测试值顺序的一致性。
+
+  尽量把预期值放在右边，除非这条断言在进行模式匹配。
+
   <sup>[[link](#testing-assert-order)]</sup>
 
   ```elixir
-  # preferred - expected result on the right
+  # 好 - 预期值在右边
   assert actual_function(1) == true
   assert actual_function(2) == false
 
-  # not preferred - inconsistent order
+  # 不好 - 顺序不一致
   assert actual_function(1) == true
   assert false == actual_function(2)
 
-  # required - the assertion is a pattern match
+  # 必要 - 断言是模式匹配
   assert {:ok, expected} = actual_function(3)
   ```
 
-### Alternative Style Guides
+### 更多风格指南
 
 * [Aleksei Magusev's Elixir Style Guide](https://github.com/lexmag/elixir-style-guide#readme)
   — An opinionated Elixir style guide stemming from the coding style practiced
@@ -1262,66 +1293,31 @@ _No guidelines for regular expressions have been added yet._
   — Style Guide for the Elixir language, implemented by
   [Credo](http://credo-ci.org) static code analysis tool.
 
-### Tools
+### 工具
 
-Refer to [Awesome Elixir][Code Analysis] for libraries and tools that can help
-with code analysis and style linting.
+参考 [Awesome Elixir][Code Analysis] 来了解可以帮助代码分析的库和工具。
 
-## Getting Involved
+## 参与
 
-### Contributing
+### 贡献
 
-It's our hope that this will become a central hub for community discussion on
-best practices in Elixir.
-Feel free to open tickets or send pull requests with improvements.
-Thanks in advance for your help!
+我们希望这将成为社区讨论 Elixir 最佳实践的中心。
 
-Check the [contributing guidelines][Contributing]
-and [code of conduct][Code Of Conduct] for more information.
+欢迎发起讨论或提交一个带有改进性质的更新请求。在此提前感谢你的帮助！
 
-### Spread the Word
+参考 [contributing guidelines][Contributing]
+和 [code of conduct][Code Of Conduct] 获得更多信息。
 
-A community style guide is meaningless without the community's support. Please
-tweet, [star][Stargazers], and let any Elixir programmer know
-about [this guide][Elixir Style Guide] so they can contribute.
+### 口耳相传
 
-## Copying
+一份社区驱动的风格指南，如果没多少人知道， 对一个社区来说就没有多少用处。
+
+请转发，关注这份指南，让每一个 Elixir 程序员都知晓这份指南，让每一个 Elixir 程序员都可以贡献这份指南！
+
+## 授权
 
 ### License
 
 ![Creative Commons License](http://i.creativecommons.org/l/by/3.0/88x31.png)
-This work is licensed under a
-[Creative Commons Attribution 3.0 Unported License][License]
-
-### Attribution
-
-The structure of this guide, bits of example code, and many of the initial
-points made in this document were borrowed from the [Ruby community style guide].
-A lot of things were applicable to Elixir and allowed us to get _some_ document
-out quicker to start the conversation.
-
-Here's the [list of people who have kindly contributed][Contributors] to this
-project.
-
-<!-- Links -->
-[Chinese Traditional]: https://github.com/elixirtw/elixir_style_guide/blob/master/README_zhTW.md
-[Code Analysis]: https://github.com/h4cc/awesome-elixir#code-analysis
-[Code Of Conduct]: https://github.com/christopheradams/elixir_style_guide/blob/master/CODE_OF_CONDUCT.md
-[Conflicting Aliases]: https://elixirforum.com/t/using-aliases-for-fubar-fubar-named-module/1723
-[Contributing]: https://github.com/elixir-lang/elixir/blob/master/CODE_OF_CONDUCT.md
-[Contributors]: https://github.com/christopheradams/elixir_style_guide/graphs/contributors
-[Elixir Style Guide]: https://github.com/christopheradams/elixir_style_guide
-[Elixir]: http://elixir-lang.org
-[ExDoc]: https://github.com/elixir-lang/ex_doc
-[ExUnit]: https://hexdocs.pm/ex_unit/ExUnit.html
-[Guard Expressions]: http://elixir-lang.org/getting-started/case-cond-and-if.html#expressions-in-guard-clauses
-[Hex]: https://hex.pm/packages
-[Japanese]: https://github.com/kenichirow/elixir_style_guide/blob/master/README-jaJP.md
-[Korean]: https://github.com/marocchino/elixir_style_guide/blob/new-korean/README-koKR.md
-[License]: http://creativecommons.org/licenses/by/3.0/deed.en_US
-[Module Attributes]: http://elixir-lang.org/getting-started/module-attributes.html#as-annotations
-[Portuguese]: https://github.com/gusaiani/elixir_style_guide/blob/master/README_ptBR.md
-[Ruby community style guide]: https://github.com/bbatsov/ruby-style-guide
-[Sentence Spacing]: http://en.wikipedia.org/wiki/Sentence_spacing
-[Spanish]: https://github.com/albertoalmagro/elixir_style_guide/blob/spanish/README_esES.md
-[Stargazers]: https://github.com/christopheradams/elixir_style_guide/stargazers
+本指南基于
+[Creative Commons Attribution 3.0 Unported License][License] 授权许可。
