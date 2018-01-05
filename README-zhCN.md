@@ -2,31 +2,30 @@
 
 ## 目录
 
-* __[序幕](#prelude)__
-* __[风格指南](#the-guide)__
-  * [组织](#source-code-layout)
-  * [语法](#syntax)
-  * [命名](#naming)
-  * [注释](#comments)
-    * [注解](#comment-annotations)
-  * [模块](#modules)
-  * [文档](#documentation)
-  * [类型声明](#typespecs)
-  * [结构](#structs)
-  * [异常](#exceptions)
+* __[序幕](#序幕)__
+* __[风格指南](#风格指南)__
+  * [组织](#组织)
+  * [语法](#语法)
+  * [命名](#命名)
+  * [注释](#注释)
+    * [注解](#注解)
+  * [模块](#模块)
+  * [文档](#文档)
+  * [类型声明](#类型声明)
+  * [结构](#结构)
+  * [异常](#异常)
   * 集合
-  * [字符串](#strings)
+  * [字符串](#字符串)
   * 正则表达式
-  * [元编程](#metaprogramming)
-  * [测试](#testing)
-  * [更多风格指南](#alternative-style-guides)
-  * [工具](#tools)
-* __[参与文档](#getting-involved)__
-  * [贡献](#contributing)
-  * [口耳相传](#spread-the-word)
-* __[授权](#copying)__
-  * [协议](#license)
-  * [归属](#attribution)
+  * [元编程](#元编程)
+  * [测试](#测试)
+  * [更多风格指南](#更多风格指南)
+  * [工具](#工具)
+* __[参与文档](#参与文档)__
+  * [贡献](#贡献)
+  * [口耳相传](#口耳相传)
+* __[授权](#授权)__
+  * [协议](#协议)
 
 ## 序幕
 
@@ -38,7 +37,7 @@
 [Elixir] 有着大量的风格指南，但是像其他语言一样，这些指南都有可能被扼杀。
 请不要扼杀这份指南。
 
-## 指南
+## 风格指南
 
 这是一份社群维护的 [Elixir 编程语言][Elixir] 风格指南。
 
@@ -46,7 +45,7 @@
 
 你可以在 [Hex 官网][Hex] 寻找其他的项目来贡献代码。
 
-### 代码排版
+### 组织
 
 * <a name="spaces-indentation"></a>
   使用两个 **空格** 进行缩进，不要使用 Hard Tab。
@@ -1297,7 +1296,7 @@ Typespecs是用于声明类型和规格的符号，主要用于文档或是静�
 
 参考 [Awesome Elixir][Code Analysis] 来了解可以帮助代码分析的库和工具。
 
-## 参与
+## 参与文档
 
 ### 贡献
 
@@ -1316,7 +1315,7 @@ Typespecs是用于声明类型和规格的符号，主要用于文档或是静�
 
 ## 授权
 
-### License
+### 协议
 
 ![Creative Commons License](http://i.creativecommons.org/l/by/3.0/88x31.png)
 本指南基于
