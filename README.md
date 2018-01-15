@@ -553,24 +553,16 @@ Translations of the guide are available in the following languages:
   ```
 
 * <a name="with-clauses"></a>
-  Indent and align successive `with` clauses.
-  Put the `do:` argument on a new line, aligned with the previous clauses.
+  Put a line separator `\` with a space right after the `with` keyword.
+  Always put `with` clauses on separate lines.
+  `do` blocks should start on a new line and use the multiline syntax.
   <sup>[[link](#with-clauses)]</sup>
 
   ```elixir
-  with {:ok, foo} <- fetch(opts, :foo),
-       {:ok, bar} <- fetch(opts, :bar),
-       do: {:ok, foo, bar}
-  ```
-
-* <a name="with-else"></a>
-  If the `with` expression has a `do` block with more than one line, or has an
-  `else` option, use multiline syntax.
-  <sup>[[link](#with-else)]</sup>
-
-  ```elixir
-  with {:ok, foo} <- fetch(opts, :foo),
-       {:ok, bar} <- fetch(opts, :bar) do
+  with \
+    {:ok, foo} <- fetch(opts, :foo),
+    {:ok, bar} <- fetch(opts, :bar)
+  do
     {:ok, foo, bar}
   else
     :error ->
