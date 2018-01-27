@@ -53,6 +53,7 @@ Translations of the guide are available in the following languages:
 
 * [Chinese Simplified]
 * [Chinese Traditional]
+* [French]
 * [Japanese]
 * [Korean]
 * [Portuguese]
@@ -1296,6 +1297,7 @@ project.
 [Elixir]: http://elixir-lang.org
 [ExDoc]: https://github.com/elixir-lang/ex_doc
 [ExUnit]: https://hexdocs.pm/ex_unit/ExUnit.html
+[French]: https://github.com/ronanboiteau/elixir_style_guide/blob/master/README_frFR.md
 [Guard Expressions]: http://elixir-lang.org/getting-started/case-cond-and-if.html#expressions-in-guard-clauses
 [Hex]: https://hex.pm/packages
 [Japanese]: https://github.com/kenichirow/elixir_style_guide/blob/master/README-jaJP.md
