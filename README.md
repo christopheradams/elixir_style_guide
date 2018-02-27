@@ -158,6 +158,29 @@ Translations of the guide are available in the following languages:
   end
   ```
 
+* <a name="control-flow-override-defps"></a>
+  Avoid overriding multi-line `defp`s for control flow. Use a `case` inside a single `defp`
+  instead.
+  <sup>[[link](#control-flow-override-defps)]</sup>
+  ```elixir
+  # not preferred
+  defp some_function(nil, _bar) do
+    nil
+  end
+
+  defp dome_function(foo, bar) do
+    {bar, foo}
+  end
+
+  # preferred
+  defp some_function(foo, bar) do
+    case {foo, bar} do
+      {nil, _bar} -> nil
+      _ -> {bar, foo}
+    end
+  end
+  ```
+
 * <a name="long-dos"></a>
   If the function head and `do:` clause are too long to fit on the same line, put
   `do:` on a new line, indented one level more than the previous line.
