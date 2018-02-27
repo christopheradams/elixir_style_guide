@@ -144,8 +144,22 @@ Translations of the guide are available in the following languages:
   end
   ```
 
+* <a name="single-line-defs"></a>
+  Run single-line `def`s that match for the same function together, but separate
+  multiline `def`s with a blank line.
+  <sup>[[link](#single-line-defs)]</sup>
+
+  ```elixir
+  def some_function(nil), do: {:error, "No Value"}
+  def some_function([]), do: :ok
+
+  def some_function([first | rest]) do
+    some_function(rest)
+  end
+  ```
+
 * <a name="control-flow-override-defps"></a>
-  Avoid overriding `defp`s for control flow. Use a `case` inside a single `defp`
+  Avoid overriding multi-line `defp`s for control flow. Use a `case` inside a single `defp`
   instead.
   <sup>[[link](#control-flow-override-defps)]</sup>
   ```elixir
@@ -164,20 +178,6 @@ Translations of the guide are available in the following languages:
       {nil, _bar} -> nil
       _ -> {bar, foo}
     end
-  end
-  ```
-
-* <a name="single-line-defs"></a>
-  Run single-line `def`s that match for the same function together, but separate
-  multiline `def`s with a blank line.
-  <sup>[[link](#single-line-defs)]</sup>
-
-  ```elixir
-  def some_function(nil), do: {:error, "No Value"}
-  def some_function([]), do: :ok
-
-  def some_function([first | rest]) do
-    some_function(rest)
   end
   ```
 
