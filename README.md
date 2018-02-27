@@ -144,6 +144,29 @@ Translations of the guide are available in the following languages:
   end
   ```
 
+* <a name="control-flow-override-defps"></a>
+  Avoid overriding `defp`s for control flow. Use a `case` inside a single `defp`
+  instead.
+  <sup>[[link](#control-flow-override-defps)]</sup>
+  ```elixir
+  # not preferred
+  defp some_function(nil, _bar) do
+    nil
+  end
+
+  defp dome_function(foo, bar) do
+    {bar, foo}
+  end
+
+  # preferred
+  defp some_function(foo, bar) do
+    case {foo, bar} do
+      {nil, _bar} -> nil
+      _ -> {bar, foo}
+    end
+  end
+  ```
+
 * <a name="single-line-defs"></a>
   Run single-line `def`s that match for the same function together, but separate
   multiline `def`s with a blank line.
