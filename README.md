@@ -158,6 +158,33 @@ Translations of the guide are available in the following languages:
   end
   ```
 
+
+* <a name="one-arity-defs"></a>
+  When a function takes only one argument, do not use a keyword argument unless
+  there are multiple definitions
+  <sup>[[link](#one-arity-defs)]</sup>
+
+  ```elixir
+  # not preferred
+  def some_function(foo: foo) do
+    do_something
+  end
+
+  # preferred
+  def some_function(foo) do
+    do_something
+  end
+
+  # okay
+  def some_function(foo: foo) do
+    do_something
+  end
+
+  def some_function(bar: bar) do
+    do_something
+  end
+  ```
+
 * <a name="control-flow-override-defps"></a>
   Avoid overriding multi-line `defp`s for control flow. Use a `case` inside a single `defp`
   instead.
