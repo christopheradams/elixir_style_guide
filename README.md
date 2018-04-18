@@ -158,6 +158,56 @@ Translations of the guide are available in the following languages:
   end
   ```
 
+
+* <a name="one-arity-defs"></a>
+  When a function takes only one argument, do not use a keyword argument unless
+  there are multiple definitions
+  <sup>[[link](#one-arity-defs)]</sup>
+
+  ```elixir
+  # not preferred
+  def some_function(foo: foo) do
+    do_something
+  end
+
+  # preferred
+  def some_function(foo) do
+    do_something
+  end
+
+  # okay
+  def some_function(foo: foo) do
+    do_something
+  end
+
+  def some_function(bar: bar) do
+    do_something
+  end
+  ```
+
+* <a name="control-flow-override-defps"></a>
+  Avoid overriding multi-line `defp`s for control flow. Use a `case` inside a single `defp`
+  instead.
+  <sup>[[link](#control-flow-override-defps)]</sup>
+  ```elixir
+  # not preferred
+  defp some_function(nil, _bar) do
+    nil
+  end
+
+  defp dome_function(foo, bar) do
+    {bar, foo}
+  end
+
+  # preferred
+  defp some_function(foo, bar) do
+    case {foo, bar} do
+      {nil, _bar} -> nil
+      _ -> {bar, foo}
+    end
+  end
+  ```
+
 * <a name="long-dos"></a>
   If the function head and `do:` clause are too long to fit on the same line, put
   `do:` on a new line, indented one level more than the previous line.
