@@ -608,7 +608,7 @@ Translations of the guide are available in the following languages:
   ```
 
 * <a name="camel-case"></a>
-  Use `CamelCase` for modules (keep acronyms like HTTP, RFC, XML uppercase).
+  Use `CamelCase` for modules. Treat initialisms like ordinary words.
   <sup>[[link](#camel-case)]</sup>
 
   ```elixir
@@ -621,7 +621,7 @@ Translations of the guide are available in the following languages:
     ...
   end
 
-  defmodule SomeXml do
+  defmodule SomeXML do
     ...
   end
 
@@ -630,7 +630,7 @@ Translations of the guide are available in the following languages:
     ...
   end
 
-  defmodule SomeXML do
+  defmodule SomeXml do
     ...
   end
   ```
