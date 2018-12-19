@@ -816,60 +816,34 @@ Translations of the guide are available in the following languages:
   Put a blank line after module-level code blocks.
   <sup>[[link](#module-block-spacing)]</sup>
 
-* <a name="module-attribute-ordering"></a>
-  List module attributes and directives in the following order:
-  <sup>[[link](#module-attribute-ordering)]</sup>
+* <a name="compiler-directive-ordering"></a>
+  List compiler directives in the following order:
+  <sup>[[link](#compiler-directive-ordering)]</sup>
 
-  1. `@moduledoc`
-  1. `@behaviour`
   1. `use`
-  1. `import`
-  1. `alias`
-  1. `require`
-  1. `defstruct`
-  1. `@type`
-  1. `@module_attribute`
-  1. `@callback`
-  1. `@macrocallback`
-  1. `@optional_callbacks`
+  2. `alias`
+  3. `import`
+  4. `require`
 
-  Add a blank line between each grouping, and sort the terms (like module names)
-  alphabetically.
-  Here's an overall example of how you should order things in your modules:
+  Add a blank line between each grouping, and sort the terms (like module names) alphabetically.
+  The `use` directive comes first since it actually alters the code in your module.
+  The other directives are types of imports—telling the compiler how to reference other modules.
+  Note that moduledocs should come directly _after_ `use` calls in your module since these calls override anything preceeding them.
+
+  Here's an overall example of how you should order the directives in your modules:
 
   ```elixir
-  defmodule MyModule do
-    @moduledoc """
-    An example module
-    """
-
-    @behaviour MyBehaviour
-
     use GenServer
 
-    import Something
-    import SomethingElse
+    @moduledoc false
 
-    alias My.Long.Module.Name
-    alias My.Other.Module.Example
+    alias MyApp.{Companion, Enemy, Planet}
+    alias Something, as: S
+
+    import SomethingElse
+    import SomethingElseYet
 
     require Integer
-
-    defstruct name: nil, params: []
-
-    @type params :: [{binary, binary}]
-
-    @module_attribute :foo
-    @other_attribute 100
-
-    @callback some_function(term) :: :ok | {:error, term}
-
-    @macrocallback macro_name(term) :: Macro.t()
-
-    @optional_callbacks macro_name: 1
-
-    ...
-  end
   ```
 
 * <a name="module-pseudo-variable"></a>
@@ -923,8 +897,8 @@ Documentation in Elixir (when read either in `iex` with `h` or generated with
 [ExDoc]) uses the [Module Attributes] `@moduledoc` and `@doc`.
 
 * <a name="moduledocs"></a>
-  Always include a `@moduledoc` attribute in the line right after `defmodule` in
-  your module.
+  Always include a `@moduledoc` attribute directly after the `use` calls in your module.
+  If there are no `use` calls, include the `@moduledoc` attribute in the line right after `defmodule`.
   <sup>[[link](#moduledocs)]</sup>
 
   ```elixir
@@ -939,21 +913,29 @@ Documentation in Elixir (when read either in `iex` with `h` or generated with
   end
 
   defmodule AnotherModule do
-    use SomeModule
     @moduledoc """
     About the module
     """
+
+    use SomeModule
     ...
   end
 
   # preferred
 
   defmodule AThirdModule do
+    use SomeModule
+
     @moduledoc """
     About the module
     """
+    ...
+  end
 
-    use SomeModule
+  defmodule AFourthModule do
+    @moduledoc """
+    About the module
+    """
     ...
   end
   ```
@@ -979,7 +961,7 @@ Documentation in Elixir (when read either in `iex` with `h` or generated with
     @moduledoc """
     About the module
     """
-    use AnotherModule
+    require AnotherModule
   end
 
   # preferred
@@ -988,7 +970,7 @@ Documentation in Elixir (when read either in `iex` with `h` or generated with
     About the module
     """
 
-    use AnotherModule
+    require AnotherModule
   end
   ```
 
