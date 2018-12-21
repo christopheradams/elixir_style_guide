@@ -16,6 +16,7 @@
   * [Exceptions](#exceptions)
   * _Collections_
   * [Strings](#strings)
+  * [Booleans](#booleans)
   * _Regular Expressions_
   * [Metaprogramming](#metaprogramming)
   * [Testing](#testing)
@@ -1197,6 +1198,27 @@ _No guidelines for collections have been added yet._
 
   # preferred
   "my" <> _rest = "my string"
+  ```
+
+### Booleans
+
+* <a name="boolean-operators"></a>
+  Never use `||`, `&&`, or `!` for strictly boolean checks.
+  Use these operators only if the primary operand is non-boolean.
+
+  ```elixir
+  # not preferred
+  is_atom(planet) && name != nil
+  is_binary(name) || is_atom(planet)
+  !is_map(enemy)
+
+  # preferred
+  is_atom(planet) and name != nil
+  is_binary(name) or is_atom(planet)
+  not is_map(enemy)
+  regeneration_count && regeneration_count != 0
+  file || "martha_jones.exs"
+  !file
   ```
 
 ### Regular Expressions
