@@ -1212,22 +1212,19 @@ _No guidelines for regular expressions have been added yet._
 ### Testing
 
 * <a name="testing-assert-order"></a>
-  When writing [ExUnit] assertions, be consistent with the order of the expected
-  and actual values under testing.
-  Prefer placing the expected result on the right, unless the assertion is a
-  pattern match.
+  When writing [ExUnit] assertions, place the expected result to the left of the actual value under test.
+  This style of assertion is sometimes referred to as a yoda assertion.
   <sup>[[link](#testing-assert-order)]</sup>
 
   ```elixir
-  # preferred - expected result on the right
-  assert actual_function(1) == true
-  assert actual_function(2) == false
+  # not preferred
+  assert actual_function(1) < 1_963
+  assert actual_function(2) === "Bad Wolf"
+  assert {:ok, expected} = actual_function(3)
 
-  # not preferred - inconsistent order
-  assert actual_function(1) == true
-  assert false == actual_function(2)
-
-  # required - the assertion is a pattern match
+  # preferred
+  assert 1_963 > actual_function(1)
+  assert "Bad Wolf" === actual_function(2)
   assert {:ok, expected} = actual_function(3)
   ```
 
