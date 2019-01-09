@@ -659,16 +659,18 @@ Translations of the guide are available in the following languages:
   ```
 
 * <a name="private-functions-with-same-name-as-public"></a>
-  Private functions with the same name as public functions should start with
-  `do_`.
+  Private functions with the same name and arity as public functions should start with `do_`.
   <sup>[[link](#private-functions-with-same-name-as-public)]</sup>
 
   ```elixir
-  def sum(list), do: do_sum(list, 0)
+  def sum(first, second),
+    do: do_sum([first, second], 0)
 
-  # private functions
-  defp do_sum([], total), do: total
-  defp do_sum([head | tail], total), do: do_sum(tail, head + total)
+  defp do_sum([], total),
+    do: total
+
+  defp do_sum([head | tail], total),
+    do: do_sum(tail, head + total)
   ```
 
 ### Comments
