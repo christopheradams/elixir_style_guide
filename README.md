@@ -885,20 +885,6 @@ Translations of the guide are available in the following languages:
   end
   ```
 
-* <a name="alias-self-referencing-modules"></a>
-  If you want a prettier name for a module self-reference, set up an alias.
-  <sup>[[link](#alias-self-referencing-modules)]</sup>
-
-  ```elixir
-  defmodule SomeProject.SomeModule do
-    alias __MODULE__, as: SomeModule
-
-    defstruct [:name]
-
-    def name(%SomeModule{name: name}), do: name
-  end
-  ```
-
 * <a name="repetitive-module-names"></a>
   Avoid repeating fragments in module names and namespaces.
   This improves overall readability and
