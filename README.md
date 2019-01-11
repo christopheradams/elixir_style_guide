@@ -489,10 +489,6 @@ are provided here as examples of the preferred style.
   <sup>[[link](#bare-variables)]</sup>
 
   ```elixir
-  # THE WORST!
-  # This actually parses as String.strip("nope" |> String.downcase()).
-  String.strip "nope" |> String.downcase()
-
   # not preferred
   String.strip(some_string) |> String.downcase() |> String.codepoints()
 
