@@ -284,6 +284,30 @@ are provided here as examples of the preferred style.
   end
   ```
 
+* <a name="comments-above-line"></a>
+  Place comments above the line they comment on.
+  <sup>[[link](#comments-above-line)]</sup>
+
+  ```elixir
+  String.first(some_string) # not preferred
+
+  # preferred
+  String.first(some_string)
+  ```
+
+* <a name="comment-leading-spaces"></a>
+  Use one space between the leading `#` character of the comment and the text of
+  the comment.
+  <sup>[[link](#comment-leading-spaces)]</sup>
+
+  ```elixir
+  #not preferred
+  String.first(some_string)
+
+  # preferred
+  String.first(some_string)
+  ```
+
 #### Indentation
 
 * <a name="with-clauses"></a>
@@ -682,30 +706,6 @@ are provided here as examples of the preferred style.
   Write expressive code and try to convey your program's intention through
   control-flow, structure and naming.
   <sup>[[link](#expressive-code)]</sup>
-
-* <a name="comments-above-line"></a>
-  Place comments above the line they comment on.
-  <sup>[[link](#comments-above-line)]</sup>
-
-  ```elixir
-  String.first(some_string) # not preferred
-
-  # preferred
-  String.first(some_string)
-  ```
-
-* <a name="comment-leading-spaces"></a>
-  Use one space between the leading `#` character of the comment and the text of
-  the comment.
-  <sup>[[link](#comment-leading-spaces)]</sup>
-
-  ```elixir
-  #not preferred
-  String.first(some_string)
-
-  # preferred
-  String.first(some_string)
-  ```
 
 * <a name="comment-grammar"></a>
   Comments longer than a word are capitalized, and sentences use punctuation.
