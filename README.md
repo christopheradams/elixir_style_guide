@@ -3,12 +3,13 @@
 ## Table of Contents
 
 * __[Prelude](#prelude)__
+* __[About](#about)__
+* __[Formatting](#formatting)__
+  * [Whitespace](#whitespace)
+  * [Indentation](#indentation)
+  * [Parentheses](#parentheses)
+  * [Syntax](#syntax)
 * __[The Guide](#the-guide)__
-  * [Formatting](#formatting)
-    * [Whitespace](#whitespace)
-    * [Indentation](#indentation)
-    * [Parentheses](#parentheses)
-    * [Syntax](#syntax)
   * [Expressions](#expressions)
   * [Naming](#naming)
   * [Comments](#comments)
@@ -43,7 +44,7 @@ Style matters.
 [Elixir] has plenty of style but like all languages it can be stifled.
 Don't stifle the style.
 
-## The Guide
+## About
 
 This is community style guide for the [Elixir programming language][Elixir].
 Please feel free to make pull requests and suggestions, and be a part of
@@ -63,7 +64,7 @@ Translations of the guide are available in the following languages:
 * [Portuguese]
 * [Spanish]
 
-### Formatting
+## Formatting
 
 Elixir v1.6 introduced a [Code Formatter] and [Mix format] task.
 The formatter should be preferred for all new projects and source code.
@@ -71,7 +72,7 @@ The formatter should be preferred for all new projects and source code.
 The rules in this section are applied automatically by the code formatter, but
 are provided here as examples of the preferred style.
 
-#### Whitespace
+### Whitespace
 
 * <a name="trailing-whitespace"></a>
   Avoid trailing whitespace.
@@ -308,7 +309,7 @@ are provided here as examples of the preferred style.
   String.first(some_string)
   ```
 
-#### Indentation
+### Indentation
 
 * <a name="with-clauses"></a>
   Indent and align successive `with` clauses.
@@ -336,7 +337,7 @@ are provided here as examples of the preferred style.
   end
   ```
 
-#### Parentheses
+### Parentheses
 
 * <a name="parentheses-pipe-operator"></a>
   Use parentheses for one-arity functions when using the pipe operator (`|>`).
@@ -380,7 +381,7 @@ are provided here as examples of the preferred style.
   2 |> rem(3) |> g
   ```
 
-#### Syntax
+### Syntax
 
 * <a name="keyword-list-syntax"></a>
   Always use the special syntax for keyword lists.
@@ -405,6 +406,11 @@ are provided here as examples of the preferred style.
   # preferred
   some_function(foo, bar, a: "baz", b: "qux")
   ```
+
+## The Guide
+
+The rules in this section may not be applied by the code formatter, but they are
+generally preferred practice.
 
 ### Expressions
 
