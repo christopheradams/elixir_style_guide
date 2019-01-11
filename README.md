@@ -4,8 +4,12 @@
 
 * __[Prelude](#prelude)__
 * __[The Guide](#the-guide)__
-  * [Source Code Layout](#source-code-layout)
-  * [Syntax](#syntax)
+  * [Formatting](#formatting)
+    * [Whitespace](#whitespace)
+    * [Indentation](#indentation)
+    * [Parentheses](#parentheses)
+    * [Syntax](#syntax)
+  * [Expressions](#expressions)
   * [Naming](#naming)
   * [Comments](#comments)
     * [Comment Annotations](#comment-annotations)
@@ -59,24 +63,23 @@ Translations of the guide are available in the following languages:
 * [Portuguese]
 * [Spanish]
 
-### Source Code Layout
+### Formatting
 
-* <a name="spaces-indentation"></a>
-  Use two **spaces** per indentation level.
-  No hard tabs.
-  <sup>[[link](#spaces-indentation)]</sup>
+Elixir v1.6 introduced a [Code Formatter] and [Mix format] task.
+The formatter should be preferred for all new projects and source code.
 
-  ```elixir
-  # not preferred - four spaces
-  def some_function do
-      do_something
-  end
+The rules in this section are applied automatically by the code formatter, but
+are provided here as examples of the preferred style.
 
-  # preferred
-  def some_function do
-    do_something
-  end
-  ```
+#### Whitespace
+
+* <a name="trailing-whitespace"></a>
+  Avoid trailing whitespace.
+  <sup>[[link](#trailing-whitespace)]</sup>
+
+* <a name="newline-eof"></a>
+  End each file with a newline.
+  <sup>[[link](#newline-eof)]</sup>
 
 * <a name="line-endings"></a>
   Use Unix-style line endings (\*BSD/Solaris/Linux/OSX users are covered by
@@ -144,19 +147,9 @@ Translations of the guide are available in the following languages:
   end
   ```
 
-* <a name="single-line-defs"></a>
-  Run single-line `def`s that match for the same function together, but separate
-  multiline `def`s with a blank line.
-  <sup>[[link](#single-line-defs)]</sup>
-
-  ```elixir
-  def some_function(nil), do: {:error, "No Value"}
-  def some_function([]), do: :ok
-
-  def some_function([first | rest]) do
-    some_function(rest)
-  end
-  ```
+* <a name="defmodule-spacing"></a>
+  Don't put a blank line after `defmodule`.
+  <sup>[[link](#defmodule-spacing)]</sup>
 
 * <a name="long-dos"></a>
   If the function head and `do:` clause are too long to fit on the same line, put
@@ -184,94 +177,47 @@ Translations of the guide are available in the following languages:
     do: :very_long_line_here
   ```
 
-* <a name="multiple-function-defs"></a>
-  If you have more than one multiline `def`, do not use single-line `def`s.
-  <sup>[[link](#multiple-function-defs)]</sup>
-
-  ```elixir
-  def some_function(nil) do
-    {:error, "No Value"}
-  end
-
-  def some_function([]) do
-    :ok
-  end
-
-  def some_function([first | rest]) do
-    some_function(rest)
-  end
-
-  def some_function([first | rest], opts) do
-    some_function(rest, opts)
-  end
-  ```
-
-* <a name="parentheses-pipe-operator"></a>
-  Use parentheses for one-arity functions when using the pipe operator (`|>`).
-  <sup>[[link](#parentheses-pipe-operator)]</sup>
+* <a name="add-blank-line-after-multiline-assignment"></a>
+  Add a blank line after a multiline assignment as a
+  visual cue that the assignment is 'over'.
+  <sup>[[link](#add-blank-line-after-multiline-assignment)]</sup>
 
   ```elixir
   # not preferred
-  some_string |> String.downcase |> String.strip
-
-  # preferred
-  some_string |> String.downcase() |> String.strip()
-  ```
-
-* <a name="pipe-operator"></a>
-  Use the pipe operator to chain functions together.
-  <sup>[[link](#pipe-operator)]</sup>
-
-  ```elixir
-  # not preferred
-  String.strip(String.downcase(some_string))
-
-  # preferred
-  some_string |> String.downcase() |> String.strip()
-
-  # Multiline pipelines are not further indented
-  some_string
-  |> String.downcase()
-  |> String.strip()
-
-  # Multiline pipelines on the right side of a pattern match
-  # should be indented on a new line
-  sanitized_string =
-    some_string
+  some_string =
+    "Hello"
     |> String.downcase()
     |> String.strip()
-  ```
-
-  While this is the preferred method, take into account that copy-pasting
-  multiline pipelines into IEx might result in a syntax error, as IEx will
-  evaluate the first line without realizing that the next line has a pipeline.
-
-* <a name="avoid-single-pipelines"></a>
-  Avoid using the pipe operator just once.
-  <sup>[[link](#avoid-single-pipelines)]</sup>
-
-  ```elixir
-  # not preferred
-  some_string |> String.downcase()
+  another_string <> some_string
 
   # preferred
-  String.downcase(some_string)
+  some_string =
+    "Hello"
+    |> String.downcase()
+    |> String.strip()
+
+  another_string <> some_string
   ```
 
-* <a name="bare-variables"></a>
-  Use _bare_ variables in the first part of a function chain.
-  <sup>[[link](#bare-variables)]</sup>
-
   ```elixir
-  # THE WORST!
-  # This actually parses as String.strip("nope" |> String.downcase()).
-  String.strip "nope" |> String.downcase()
-
-  # not preferred
-  String.strip(some_string) |> String.downcase() |> String.codepoints()
+  # also not preferred
+  something =
+    if x == 2 do
+      "Hi"
+    else
+      "Bye"
+    end
+  String.downcase(something)
 
   # preferred
-  some_string |> String.strip() |> String.downcase() |> String.codepoints()
+  something =
+    if x == 2 do
+      "Hi"
+    else
+      "Bye"
+    end
+
+  String.downcase(something)
   ```
 
 * <a name="multiline-enums"></a>
@@ -338,15 +284,197 @@ Translations of the guide are available in the following languages:
   end
   ```
 
-* <a name="trailing-whitespace"></a>
-  Avoid trailing whitespace.
-  <sup>[[link](#trailing-whitespace)]</sup>
+#### Indentation
 
-* <a name="newline-eof"></a>
-  End each file with a newline.
-  <sup>[[link](#newline-eof)]</sup>
+* <a name="with-clauses"></a>
+  Indent and align successive `with` clauses.
+  Put the `do:` argument on a new line, aligned with the previous clauses.
+  <sup>[[link](#with-clauses)]</sup>
 
-### Syntax
+  ```elixir
+  with {:ok, foo} <- fetch(opts, :foo),
+       {:ok, bar} <- fetch(opts, :bar),
+       do: {:ok, foo, bar}
+  ```
+
+* <a name="with-else"></a>
+  If the `with` expression has a `do` block with more than one line, or has an
+  `else` option, use multiline syntax.
+  <sup>[[link](#with-else)]</sup>
+
+  ```elixir
+  with {:ok, foo} <- fetch(opts, :foo),
+       {:ok, bar} <- fetch(opts, :bar) do
+    {:ok, foo, bar}
+  else
+    :error ->
+      {:error, :bad_arg}
+  end
+  ```
+
+#### Parentheses
+
+* <a name="parentheses-pipe-operator"></a>
+  Use parentheses for one-arity functions when using the pipe operator (`|>`).
+  <sup>[[link](#parentheses-pipe-operator)]</sup>
+
+  ```elixir
+  # not preferred
+  some_string |> String.downcase |> String.strip
+
+  # preferred
+  some_string |> String.downcase() |> String.strip()
+  ```
+
+* <a name="function-names-with-parentheses"></a>
+  Never put a space between a function name and the opening parenthesis.
+  <sup>[[link](#function-names-with-parentheses)]</sup>
+
+  ```elixir
+  # not preferred
+  f (3 + 2)
+
+  # preferred
+  f(3 + 2)
+  ```
+
+* <a name="function-calls-and-parentheses"></a>
+  Use parentheses in function calls, especially inside a pipeline.
+  <sup>[[link](#function-calls-and-parentheses)]</sup>
+
+  ```elixir
+  # not preferred
+  f 3
+
+  # preferred
+  f(3)
+
+  # not preferred and parses as rem(2, (3 |> g)), which is not what you want.
+  2 |> rem 3 |> g
+
+  # preferred
+  2 |> rem(3) |> g
+  ```
+
+#### Syntax
+
+* <a name="keyword-list-syntax"></a>
+  Always use the special syntax for keyword lists.
+  <sup>[[link](#keyword-list-syntax)]</sup>
+
+  ```elixir
+  # not preferred
+  some_value = [{:a, "baz"}, {:b, "qux"}]
+
+  # preferred
+  some_value = [a: "baz", b: "qux"]
+  ```
+
+* <a name="keyword-list-brackets"></a>
+  Omit square brackets from keyword lists whenever they are optional.
+  <sup>[[link](#keyword-list-brackets)]</sup>
+
+  ```elixir
+  # not preferred
+  some_function(foo, bar, [a: "baz", b: "qux"])
+
+  # preferred
+  some_function(foo, bar, a: "baz", b: "qux")
+  ```
+
+### Expressions
+
+* <a name="single-line-defs"></a>
+  Run single-line `def`s that match for the same function together, but separate
+  multiline `def`s with a blank line.
+  <sup>[[link](#single-line-defs)]</sup>
+
+  ```elixir
+  def some_function(nil), do: {:error, "No Value"}
+  def some_function([]), do: :ok
+
+  def some_function([first | rest]) do
+    some_function(rest)
+  end
+  ```
+
+* <a name="multiple-function-defs"></a>
+  If you have more than one multiline `def`, do not use single-line `def`s.
+  <sup>[[link](#multiple-function-defs)]</sup>
+
+  ```elixir
+  def some_function(nil) do
+    {:error, "No Value"}
+  end
+
+  def some_function([]) do
+    :ok
+  end
+
+  def some_function([first | rest]) do
+    some_function(rest)
+  end
+
+  def some_function([first | rest], opts) do
+    some_function(rest, opts)
+  end
+  ```
+
+* <a name="pipe-operator"></a>
+  Use the pipe operator to chain functions together.
+  <sup>[[link](#pipe-operator)]</sup>
+
+  ```elixir
+  # not preferred
+  String.strip(String.downcase(some_string))
+
+  # preferred
+  some_string |> String.downcase() |> String.strip()
+
+  # Multiline pipelines are not further indented
+  some_string
+  |> String.downcase()
+  |> String.strip()
+
+  # Multiline pipelines on the right side of a pattern match
+  # should be indented on a new line
+  sanitized_string =
+    some_string
+    |> String.downcase()
+    |> String.strip()
+  ```
+
+  While this is the preferred method, take into account that copy-pasting
+  multiline pipelines into IEx might result in a syntax error, as IEx will
+  evaluate the first line without realizing that the next line has a pipeline.
+
+* <a name="avoid-single-pipelines"></a>
+  Avoid using the pipe operator just once.
+  <sup>[[link](#avoid-single-pipelines)]</sup>
+
+  ```elixir
+  # not preferred
+  some_string |> String.downcase()
+
+  # preferred
+  String.downcase(some_string)
+  ```
+
+* <a name="bare-variables"></a>
+  Use _bare_ variables in the first part of a function chain.
+  <sup>[[link](#bare-variables)]</sup>
+
+  ```elixir
+  # THE WORST!
+  # This actually parses as String.strip("nope" |> String.downcase()).
+  String.strip "nope" |> String.downcase()
+
+  # not preferred
+  String.strip(some_string) |> String.downcase() |> String.codepoints()
+
+  # preferred
+  some_string |> String.strip() |> String.downcase() |> String.codepoints()
+  ```
 
 * <a name="parentheses"></a>
   Use parentheses when a `def` has arguments, and omit them when it doesn't.
@@ -370,49 +498,6 @@ Translations of the guide are available in the following languages:
   def some_function do
     # body omitted
   end
-  ```
-
-* <a name="add-blank-line-after-multiline-assignment"></a>
-  Add a blank line after a multiline assignment as a
-  visual cue that the assignment is 'over'.
-  <sup>[[link](#add-blank-line-after-multiline-assignment)]</sup>
-
-  ```elixir
-  # not preferred
-  some_string =
-    "Hello"
-    |> String.downcase()
-    |> String.strip()
-  another_string <> some_string
-
-  # preferred
-  some_string =
-    "Hello"
-    |> String.downcase()
-    |> String.strip()
-
-  another_string <> some_string
-  ```
-
-  ```elixir
-  # also not preferred
-  something =
-    if x == 2 do
-      "Hi"
-    else
-      "Bye"
-    end
-  String.downcase(something)
-
-  # preferred
-  something =
-    if x == 2 do
-      "Hi"
-    else
-      "Bye"
-    end
-
-  String.downcase(something)
   ```
 
 * <a name="do-with-single-line-if-unless"></a>
@@ -476,36 +561,6 @@ Translations of the guide are available in the following languages:
   end
   ```
 
-* <a name="function-names-with-parentheses"></a>
-  Never put a space between a function name and the opening parenthesis.
-  <sup>[[link](#function-names-with-parentheses)]</sup>
-
-  ```elixir
-  # not preferred
-  f (3 + 2)
-
-  # preferred
-  f(3 + 2)
-  ```
-
-* <a name="function-calls-and-parentheses"></a>
-  Use parentheses in function calls, especially inside a pipeline.
-  <sup>[[link](#function-calls-and-parentheses)]</sup>
-
-  ```elixir
-  # not preferred
-  f 3
-
-  # preferred
-  f(3)
-
-  # not preferred and parses as rem(2, (3 |> g)), which is not what you want.
-  2 |> rem 3 |> g
-
-  # preferred
-  2 |> rem(3) |> g
-  ```
-
 * <a name="parentheses-and-functions-with-zero-arity"></a>
   Use parentheses for calls to functions with zero arity, so they can be
   distinguished from variables.
@@ -526,56 +581,6 @@ Translations of the guide are available in the following languages:
   def my_func do
     # this is clearly a function call
     do_stuff()
-  end
-  ```
-
-* <a name="keyword-list-syntax"></a>
-  Always use the special syntax for keyword lists.
-  <sup>[[link](#keyword-list-syntax)]</sup>
-
-  ```elixir
-  # not preferred
-  some_value = [{:a, "baz"}, {:b, "qux"}]
-
-  # preferred
-  some_value = [a: "baz", b: "qux"]
-  ```
-
-* <a name="keyword-list-brackets"></a>
-  Omit square brackets from keyword lists whenever they are optional.
-  <sup>[[link](#keyword-list-brackets)]</sup>
-
-  ```elixir
-  # not preferred
-  some_function(foo, bar, [a: "baz", b: "qux"])
-
-  # preferred
-  some_function(foo, bar, a: "baz", b: "qux")
-  ```
-
-* <a name="with-clauses"></a>
-  Indent and align successive `with` clauses.
-  Put the `do:` argument on a new line, aligned with the previous clauses.
-  <sup>[[link](#with-clauses)]</sup>
-
-  ```elixir
-  with {:ok, foo} <- fetch(opts, :foo),
-       {:ok, bar} <- fetch(opts, :bar),
-       do: {:ok, foo, bar}
-  ```
-
-* <a name="with-else"></a>
-  If the `with` expression has a `do` block with more than one line, or has an
-  `else` option, use multiline syntax.
-  <sup>[[link](#with-else)]</sup>
-
-  ```elixir
-  with {:ok, foo} <- fetch(opts, :foo),
-       {:ok, bar} <- fetch(opts, :bar) do
-    {:ok, foo, bar}
-  else
-    :error ->
-      {:error, :bad_arg}
   end
   ```
 
@@ -805,14 +810,6 @@ Translations of the guide are available in the following languages:
   end
   ```
 
-* <a name="defmodule-spacing"></a>
-  Don't put a blank line after `defmodule`.
-  <sup>[[link](#defmodule-spacing)]</sup>
-
-* <a name="module-block-spacing"></a>
-  Put a blank line after module-level code blocks.
-  <sup>[[link](#module-block-spacing)]</sup>
-
 * <a name="module-attribute-ordering"></a>
   List module attributes and directives in the following order:
   <sup>[[link](#module-attribute-ordering)]</sup>
@@ -927,16 +924,9 @@ Documentation in Elixir (when read either in `iex` with `h` or generated with
   ```elixir
   # not preferred
 
-  defmodule SomeModule do
-
-    @moduledoc """
-    About the module
-    """
-    ...
-  end
-
   defmodule AnotherModule do
     use SomeModule
+
     @moduledoc """
     About the module
     """
@@ -1056,14 +1046,15 @@ directives (see [Modules](#modules)).
 
   ```elixir
   # not preferred
-  @type long_union_type :: some_type | another_type | some_other_type |
-  a_final_type
+  @type long_union_type ::
+          some_type | another_type | some_other_type | one_more_type | a_final_type
 
   # preferred
   @type long_union_type ::
           some_type
           | another_type
           | some_other_type
+          | one_more_type
           | a_final_type
   ```
 
@@ -1290,6 +1281,7 @@ project.
 [Chinese Traditional]: https://github.com/elixirtw/elixir_style_guide/blob/master/README_zhTW.md
 [Code Analysis]: https://github.com/h4cc/awesome-elixir#code-analysis
 [Code Of Conduct]: https://github.com/elixir-lang/elixir/blob/master/CODE_OF_CONDUCT.md
+[Code Formatter]: https://hexdocs.pm/elixir/Code.html#format_string!/2
 [Conflicting Aliases]: https://elixirforum.com/t/using-aliases-for-fubar-fubar-named-module/1723
 [Contributing]: https://github.com/christopheradams/elixir_style_guide/blob/master/CONTRIBUTING.md
 [Contributors]: https://github.com/christopheradams/elixir_style_guide/graphs/contributors
@@ -1303,6 +1295,7 @@ project.
 [Japanese]: https://github.com/kenichirow/elixir_style_guide/blob/master/README-jaJP.md
 [Korean]: https://github.com/marocchino/elixir_style_guide/blob/new-korean/README-koKR.md
 [License]: http://creativecommons.org/licenses/by/3.0/deed.en_US
+[Mix format]: https://hexdocs.pm/mix/Mix.Tasks.Format.html
 [Module Attributes]: http://elixir-lang.org/getting-started/module-attributes.html#as-annotations
 [Portuguese]: https://github.com/gusaiani/elixir_style_guide/blob/master/README_ptBR.md
 [Ruby community style guide]: https://github.com/bbatsov/ruby-style-guide
