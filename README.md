@@ -24,6 +24,7 @@
   * _Regular Expressions_
   * [Metaprogramming](#metaprogramming)
   * [Testing](#testing)
+* __[Resources](#resources)__
   * [Alternative Style Guides](#alternative-style-guides)
   * [Tools](#tools)
 * __[Getting Involved](#getting-involved)__
@@ -1223,6 +1224,8 @@ _No guidelines for regular expressions have been added yet._
   # required - the assertion is a pattern match
   assert {:ok, expected} = actual_function(3)
   ```
+
+## Resources
 
 ### Alternative Style Guides
 
