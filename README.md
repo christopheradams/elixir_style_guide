@@ -1207,20 +1207,17 @@ _No guidelines for regular expressions have been added yet._
 ### Testing
 
 * <a name="testing-assert-order"></a>
-  When writing [ExUnit] assertions, be consistent with the order of the expected
-  and actual values under testing.
-  Prefer placing the expected result on the right, unless the assertion is a
-  pattern match.
+  When writing [ExUnit] assertions, put the expression being tested to the left
+  of the operator, and the expected result to the right, unless the assertion is
+  a pattern match.
   <sup>[[link](#testing-assert-order)]</sup>
 
   ```elixir
-  # preferred - expected result on the right
+  # preferred
   assert actual_function(1) == true
-  assert actual_function(2) == false
 
-  # not preferred - inconsistent order
-  assert actual_function(1) == true
-  assert false == actual_function(2)
+  # not preferred
+  assert true == actual_function(1)
 
   # required - the assertion is a pattern match
   assert {:ok, expected} = actual_function(3)
