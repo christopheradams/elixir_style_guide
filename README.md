@@ -125,7 +125,9 @@ Translations of the guide are available in the following languages:
 
   ```elixir
   def some_function(some_data) do
-    some_data |> other_function() |> List.first()
+    some_data
+    |> other_function()
+    |> List.first()
   end
 
   def some_function do
@@ -185,28 +187,6 @@ Translations of the guide are available in the following languages:
     do: :very_long_line_here
   ```
 
-* <a name="multiple-function-defs"></a>
-  If you have more than one multiline `def`, do not use single-line `def`s.
-  <sup>[[link](#multiple-function-defs)]</sup>
-
-  ```elixir
-  def some_function(nil) do
-    {:error, "No Value"}
-  end
-
-  def some_function([]) do
-    :ok
-  end
-
-  def some_function([first | rest]) do
-    some_function(rest)
-  end
-
-  def some_function([first | rest], opts) do
-    some_function(rest, opts)
-  end
-  ```
-
 * <a name="parentheses-pipe-operator"></a>
   Use parentheses for one-arity functions when using the pipe operator (`|>`).
   <sup>[[link](#parentheses-pipe-operator)]</sup>
@@ -216,7 +196,9 @@ Translations of the guide are available in the following languages:
   some_string |> String.downcase |> String.strip
 
   # preferred
-  some_string |> String.downcase() |> String.strip()
+  some_string
+  |> String.downcase()
+  |> String.strip()
   ```
 
 * <a name="pipe-operator"></a>
@@ -228,7 +210,9 @@ Translations of the guide are available in the following languages:
   String.strip(String.downcase(some_string))
 
   # preferred
-  some_string |> String.downcase() |> String.strip()
+  some_string
+  |> String.downcase()
+  |> String.strip()
 
   # Multiline pipelines are not further indented
   some_string
@@ -272,7 +256,10 @@ Translations of the guide are available in the following languages:
   String.strip(some_string) |> String.downcase() |> String.codepoints()
 
   # preferred
-  some_string |> String.strip() |> String.downcase() |> String.codepoints()
+  some_string
+  |> String.strip()
+  |> String.downcase()
+  |> String.codepoints()
   ```
 
 * <a name="multiline-enums"></a>
@@ -833,17 +820,19 @@ Translations of the guide are available in the following languages:
   Here's an overall example of how you should order the directives in your modules:
 
   ```elixir
-    use GenServer
+    defmodule MyApp do
+      use GenServer
 
-    @moduledoc false
+      @moduledoc false
 
-    alias MyApp.{Companion, Enemy, Planet}
-    alias Something, as: S
+      alias MyApp.{Companion, Enemy, Planet}
+      alias Something, as: S
 
-    import SomethingElse
-    import SomethingElseYet
+      import SomethingElse
+      import SomethingElseYet
 
-    require Integer
+      require Integer
+    end
   ```
 
 * <a name="module-pseudo-variable"></a>
@@ -1095,18 +1084,6 @@ directives (see [Modules](#modules)).
   ```
 
 * <a name="multiline-structs"></a>
-  If a struct definition spans multiple lines, put each element on its own line,
-  keeping the elements aligned.
-  <sup>[[link](#multiline-structs)]</sup>
-
-  ```elixir
-  defstruct foo: "test",
-            bar: true,
-            baz: false,
-            qux: false,
-            quux: 1
-  ```
-
   If a multiline struct requires brackets, format it as a multiline list:
 
   ```elixir
@@ -1152,10 +1129,6 @@ directives (see [Modules](#modules)).
   raise ArgumentError, "this is not valid"
   ```
 
-### Collections
-
-_No guidelines for collections have been added yet._
-
 ### Strings
 
 * <a name="strings-matching-with-concatenator"></a>
@@ -1191,10 +1164,6 @@ _No guidelines for collections have been added yet._
   !file
   ```
 
-### Regular Expressions
-
-_No guidelines for regular expressions have been added yet._
-
 ### Metaprogramming
 
 * <a name="avoid-metaprogramming"></a>
@@ -1220,41 +1189,10 @@ _No guidelines for regular expressions have been added yet._
   assert {:ok, expected} = actual_function(3)
   ```
 
-### Alternative Style Guides
-
-* [Aleksei Magusev's Elixir Style Guide](https://github.com/lexmag/elixir-style-guide#readme)
-  — An opinionated Elixir style guide stemming from the coding style practiced
-  in the Elixir core libraries.
-  Developed by [Aleksei Magusev](https://github.com/lexmag) and
-  [Andrea Leopardi](https://github.com/whatyouhide), members of Elixir core team.
-  While the Elixir project doesn't adhere to any specific style guide,
-  this is the closest available guide to its conventions.
-
-* [Credo's Elixir Style Guide](https://github.com/rrrene/elixir-style-guide#readme)
-  — Style Guide for the Elixir language, implemented by
-  [Credo](http://credo-ci.org) static code analysis tool.
-
 ### Tools
 
 Refer to [Awesome Elixir][Code Analysis] for libraries and tools that can help
 with code analysis and style linting.
-
-## Getting Involved
-
-### Contributing
-
-It's our hope that this will become a central hub for community discussion on
-best practices in Elixir.
-Feel free to open tickets or send pull requests with improvements.
-Thanks in advance for your help!
-
-Check the [contributing guidelines][Contributing] for more information.
-
-### Spread the Word
-
-A community style guide is meaningless without the community's support. Please
-tweet, [star][Stargazers], and let any Elixir programmer know
-about [this guide][Elixir Style Guide] so they can contribute.
 
 ## Copying
 
