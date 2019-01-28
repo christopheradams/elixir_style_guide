@@ -14,10 +14,8 @@
   * [Typespecs](#typespecs)
   * [Structs](#structs)
   * [Exceptions](#exceptions)
-  * _Collections_
   * [Strings](#strings)
   * [Booleans](#booleans)
-  * _Regular Expressions_
   * [Metaprogramming](#metaprogramming)
   * [Testing](#testing)
   * [Alternative Style Guides](#alternative-style-guides)
@@ -42,23 +40,8 @@ Don't stifle the style.
 
 ## The Guide
 
-This is community style guide for the [Elixir programming language][Elixir].
-Please feel free to make pull requests and suggestions, and be a part of
-Elixir's vibrant community.
-
-If you're looking for other projects to contribute to please see the
-[Hex package manager site][Hex].
-
-<a name="translations"></a>
-Translations of the guide are available in the following languages:
-
-* [Chinese Simplified]
-* [Chinese Traditional]
-* [French]
-* [Japanese]
-* [Korean]
-* [Portuguese]
-* [Spanish]
+This is the Avocado style guide for the [Elixir programming language][Elixir].
+Please feel free to make pull requests and suggestions.
 
 ### Source Code Layout
 
