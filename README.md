@@ -326,22 +326,6 @@ are provided here as examples of the preferred style.
 
 ### Parentheses
 
-* <a name="parentheses-pipe-operator"></a>
-  Use parentheses for one-arity functions when using the pipe operator (`|>`).
-  <sup>[[link](#parentheses-pipe-operator)]</sup>
-
-  ```elixir
-  # not preferred
-  some_string
-  |> String.downcase
-  |> String.strip
-
-  # preferred
-  some_string
-  |> String.downcase()
-  |> String.strip()
-  ```
-
 * <a name="function-names-with-parentheses"></a>
   Never put a space between a function name and the opening parenthesis.
   <sup>[[link](#function-names-with-parentheses)]</sup>
@@ -354,41 +338,7 @@ are provided here as examples of the preferred style.
   f(3 + 2)
   ```
 
-* <a name="function-calls-and-parentheses"></a>
-  Use parentheses in function calls, especially inside a pipeline.
-  <sup>[[link](#function-calls-and-parentheses)]</sup>
-
-  ```elixir
-  # not preferred
-  f 3
-
-  # preferred
-  f(3)
-
-  # not preferred and parses as rem(2, (3 |> g)), which is not what you want.
-  2
-  |> rem 3
-  |> g
-
-  # preferred
-  2
-  |> rem(3)
-  |> g()
-  ```
-
 ### Syntax
-
-* <a name="keyword-list-syntax"></a>
-  Always use the special syntax for keyword lists.
-  <sup>[[link](#keyword-list-syntax)]</sup>
-
-  ```elixir
-  # not preferred
-  some_value = [{:a, "baz"}, {:b, "qux"}]
-
-  # preferred
-  some_value = [a: "baz", b: "qux"]
-  ```
 
 * <a name="keyword-list-brackets"></a>
   Omit square brackets from keyword lists whenever they are optional.
@@ -421,6 +371,22 @@ generally preferred practice.
   def some_function([first | rest]) do
     some_function(rest)
   end
+  ```
+
+* <a name="parentheses-pipe-operator"></a>
+  Use parentheses for one-arity functions when using the pipe operator (`|>`).
+  <sup>[[link](#parentheses-pipe-operator)]</sup>
+
+  ```elixir
+  # not preferred
+  some_string
+  |> String.downcase
+  |> byte_size
+
+  # preferred
+  some_string
+  |> String.downcase()
+  |> byte_size()
   ```
 
 * <a name="pipe-operator"></a>
@@ -563,6 +529,28 @@ generally preferred practice.
   end
   ```
 
+* <a name="function-calls-and-parentheses"></a>
+  Use parentheses in function calls, especially inside a pipeline.
+  <sup>[[link](#function-calls-and-parentheses)]</sup>
+
+  ```elixir
+  # not preferred
+  f 3
+
+  # preferred
+  f(3)
+
+  # not preferred and parses as rem(2, (3 |> g)), which is not what you want.
+  2
+  |> rem 3
+  |> g
+
+  # preferred
+  2
+  |> rem(3)
+  |> g()
+  ```
+
 * <a name="parentheses-and-functions-with-zero-arity"></a>
   Use parentheses for calls to functions with zero arity, so they can be
   distinguished from variables.
@@ -584,6 +572,18 @@ generally preferred practice.
     # this is clearly a function call
     do_stuff()
   end
+  ```
+
+* <a name="keyword-list-syntax"></a>
+  Always use the special syntax for keyword lists.
+  <sup>[[link](#keyword-list-syntax)]</sup>
+
+  ```elixir
+  # not preferred
+  some_value = [{:a, "baz"}, {:b, "qux"}]
+
+  # preferred
+  some_value = [a: "baz", b: "qux"]
   ```
 
 ### Naming
