@@ -75,22 +75,6 @@ generally preferred practice.
   end
   ```
 
-* <a name="parentheses-pipe-operator"></a>
-  Use parentheses for one-arity functions when using the pipe operator (`|>`).
-  <sup>[[link](#parentheses-pipe-operator)]</sup>
-
-  ```elixir
-  # not preferred
-  some_string
-  |> String.downcase
-  |> byte_size
-
-  # preferred
-  some_string
-  |> String.downcase()
-  |> byte_size()
-  ```
-
 * <a name="pipe-operator"></a>
   Use the pipe operator to chain functions together.
   <sup>[[link](#pipe-operator)]</sup>
@@ -237,12 +221,18 @@ generally preferred practice.
 
   ```elixir
   # not preferred
-  f 3
+  def my_func do
+    # is this a variable or a function call?
+    make_ref
+  end
 
   # preferred
-  f(3)
+  def my_func do
+    # this is clearly a function call
+    make_ref()
+  end
 
-  # not preferred and parses as rem(2, (3 |> g)), which is not what you want.
+  # not preferred
   2
   |> rem 3
   |> g
@@ -251,29 +241,16 @@ generally preferred practice.
   2
   |> rem(3)
   |> g()
-  ```
-
-* <a name="parentheses-and-functions-with-zero-arity"></a>
-  Use parentheses for calls to functions with zero arity, so they can be
-  distinguished from variables.
-  Starting in Elixir 1.4, the compiler will warn you about
-  locations where this ambiguity exists.
-  <sup>[[link](#parentheses-and-functions-with-zero-arity)]</sup>
-
-  ```elixir
-  defp do_stuff, do: ...
 
   # not preferred
-  def my_func do
-    # is this a variable or a function call?
-    do_stuff
-  end
+  some_string
+  |> String.downcase()
+  |> byte_size
 
   # preferred
-  def my_func do
-    # this is clearly a function call
-    do_stuff()
-  end
+  some_string
+  |> String.downcase()
+  |> byte_size()
   ```
 
 * <a name="keyword-list-syntax"></a>
