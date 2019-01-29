@@ -131,24 +131,16 @@ generally preferred practice.
   ```
 
 * <a name="parentheses"></a>
-  Use parentheses when a `def` has arguments, and omit them when it doesn't.
+  Omit parentheses when a `def` has no arguments.
   <sup>[[link](#parentheses)]</sup>
 
   ```elixir
   # not preferred
-  def some_function arg1, arg2 do
-    # body omitted
-  end
-
   def some_function() do
     # body omitted
   end
 
   # preferred
-  def some_function(arg1, arg2) do
-    # body omitted
-  end
-
   def some_function do
     # body omitted
   end
@@ -725,32 +717,6 @@ directives (see [Modules](#modules)).
 
   # preferred
   defstruct [:name, :params, active: true]
-  ```
-
-* <a name="struct-def-brackets"></a>
-  Omit square brackets when the argument of a `defstruct` is a keyword list.
-  <sup>[[link](#struct-def-brackets)]</sup>
-
-  ```elixir
-  # not preferred
-  defstruct [params: [], active: true]
-
-  # preferred
-  defstruct params: [], active: true
-
-  # required - brackets are not optional, with at least one atom in the list
-  defstruct [:name, params: [], active: true]
-  ```
-
-* <a name="multiline-structs"></a>
-  If a multiline struct requires brackets, format it as a multiline list:
-
-  ```elixir
-  defstruct [
-    :name,
-    params: [],
-    active: true
-  ]
   ```
 
 ### Exceptions
