@@ -128,6 +128,28 @@ generally preferred practice.
   |> String.strip()
   |> String.downcase()
   |> String.codepoints()
+
+  # not preferred
+  keyed_structure[key]
+  |> Float.round()
+  |> Float.to_string()
+
+  # preferred
+  keyed_structure
+  |> Access.get(key)
+  |> Float.round()
+  |> Float.to_string()
+
+  # not preferred
+  map.date
+  |> Date.add(7)
+  |> Date.quarter_of_year()
+
+  # preferred
+  map
+  |> Map.fetch!(date)
+  |> Date.add(7)
+  |> Date.quarter_of_year()
   ```
 
 * <a name="parentheses"></a>
