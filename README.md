@@ -1,14 +1,10 @@
-# [The Elixir Style Guide][Elixir Style Guide]
+# The Elixir Style Guide
 
 ## Table of Contents
 
 * __[Prelude](#prelude)__
 * __[About](#about)__
 * __[Formatting](#formatting)__
-  * [Whitespace](#whitespace)
-  * [Indentation](#indentation)
-  * [Parentheses](#parentheses)
-  * [Syntax](#syntax)
 * __[The Guide](#the-guide)__
   * [Expressions](#expressions)
   * [Naming](#naming)
@@ -24,11 +20,7 @@
   * [Metaprogramming](#metaprogramming)
   * [Testing](#testing)
 * __[Resources](#resources)__
-  * [Alternative Style Guides](#alternative-style-guides)
   * [Tools](#tools)
-* __[Getting Involved](#getting-involved)__
-  * [Contributing](#contributing)
-  * [Spread the Word](#spread-the-word)
 * __[Copying](#copying)__
   * [License](#license)
   * [Attribution](#attribution)
@@ -862,28 +854,15 @@ Here's the [list of people who have kindly contributed][Contributors] to this
 project.
 
 <!-- Links -->
-[Chinese Simplified]: https://github.com/geekerzp/elixir_style_guide/blob/master/README-zhCN.md
-[Chinese Traditional]: https://github.com/elixirtw/elixir_style_guide/blob/master/README_zhTW.md
 [Code Analysis]: https://github.com/h4cc/awesome-elixir#code-analysis
-[Code Of Conduct]: https://github.com/elixir-lang/elixir/blob/master/CODE_OF_CONDUCT.md
 [Code Formatter]: https://hexdocs.pm/elixir/Code.html#format_string!/2
 [Conflicting Aliases]: https://elixirforum.com/t/using-aliases-for-fubar-fubar-named-module/1723
-[Contributing]: https://github.com/christopheradams/elixir_style_guide/blob/master/CONTRIBUTING.md
 [Contributors]: https://github.com/christopheradams/elixir_style_guide/graphs/contributors
-[Elixir Style Guide]: https://github.com/christopheradams/elixir_style_guide
 [Elixir]: http://elixir-lang.org
 [ExDoc]: https://github.com/elixir-lang/ex_doc
 [ExUnit]: https://hexdocs.pm/ex_unit/ExUnit.html
-[French]: https://github.com/ronanboiteau/elixir_style_guide/blob/master/README_frFR.md
 [Guard Expressions]: http://elixir-lang.org/getting-started/case-cond-and-if.html#expressions-in-guard-clauses
-[Hex]: https://hex.pm/packages
-[Japanese]: https://github.com/kenichirow/elixir_style_guide/blob/master/README-jaJP.md
-[Korean]: https://github.com/marocchino/elixir_style_guide/blob/new-korean/README-koKR.md
-[License]: http://creativecommons.org/licenses/by/3.0/deed.en_US
 [Mix format]: https://hexdocs.pm/mix/Mix.Tasks.Format.html
 [Module Attributes]: http://elixir-lang.org/getting-started/module-attributes.html#as-annotations
-[Portuguese]: https://github.com/gusaiani/elixir_style_guide/blob/master/README_ptBR.md
 [Ruby community style guide]: https://github.com/bbatsov/ruby-style-guide
 [Sentence Spacing]: http://en.wikipedia.org/wiki/Sentence_spacing
-[Spanish]: https://github.com/albertoalmagro/elixir_style_guide/blob/spanish/README_esES.md
-[Stargazers]: https://github.com/christopheradams/elixir_style_guide/stargazers
