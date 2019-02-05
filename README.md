@@ -160,15 +160,6 @@ generally preferred practice.
   end
   ```
 
-* <a name="do-with-single-line-if-unless"></a>
-  Use `do:` for single line `if/unless` statements.
-  <sup>[[link](#do-with-single-line-if-unless)]</sup>
-
-  ```elixir
-  # preferred
-  if some_condition, do: # some_stuff
-  ```
-
 * <a name="unless-with-else"></a>
   Never use `unless` with `else`.
   Rewrite these with the positive case first.
