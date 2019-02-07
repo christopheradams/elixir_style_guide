@@ -474,19 +474,23 @@ generally preferred practice.
   2. `alias`
   3. `import`
   4. `require`
+  5. `@opaque`
+  6. `@type`
+  7. `@typep``
 
   Add a blank line between each grouping, and sort the terms (like module names) alphabetically.
-  The `use` directive comes first since it actually alters the code in your module.
-  The other directives are types of imports—telling the compiler how to reference other modules.
+  The `use` macro call comes first since it actually alters the code in your module.
   Note that moduledocs should come directly _after_ `use` calls in your module since these calls override anything preceeding them.
 
   Here's an overall example of how you should order the directives in your modules:
 
   ```elixir
-    defmodule MyApp do
+    defmodule MyApp.Tardis do
       use GenServer
 
-      @moduledoc false
+      @moduledoc """
+      A TARDIS data structure and functions.
+      """
 
       alias MyApp.{Companion, Enemy, Planet}
       alias Something, as: S
@@ -495,6 +499,13 @@ generally preferred practice.
       import SomethingElseYet
 
       require Integer
+
+      @opaque t :: %__MODULE__{}
+
+      @type control_room :: binary
+      @type chameleon_circuit :: pid
+
+      @typep seq :: pos_integer
     end
   ```
 
