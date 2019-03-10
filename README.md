@@ -478,6 +478,7 @@ generally preferred practice.
   While this is the preferred method, take into account that copy-pasting
   multiline pipelines into IEx might result in a syntax error, as IEx will
   evaluate the first line without realizing that the next line has a pipeline.
+  To avoid this, you can wrap the pasted code in parentheses.
 
 * <a name="avoid-single-pipelines"></a>
   Avoid using the pipe operator just once.
