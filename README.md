@@ -97,6 +97,10 @@ are provided here as examples of the preferred style.
   git config --global core.autocrlf true
   ```
 
+* <a name="line-length"></a>
+  Limit lines to 98 characters.
+  <sup>[[link](#line-length)]</sup>
+
 * <a name="spaces"></a>
   Use spaces around operators, after commas, colons and semicolons.
   Do not put spaces around matched pairs like brackets, parentheses, etc.
