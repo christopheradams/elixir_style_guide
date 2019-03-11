@@ -99,6 +99,7 @@ are provided here as examples of the preferred style.
 
 * <a name="line-length"></a>
   Limit lines to 98 characters.
+  Otherwise, set the `:line_length` option in your `.formatter.exs` file.
   <sup>[[link](#line-length)]</sup>
 
 * <a name="spaces"></a>
