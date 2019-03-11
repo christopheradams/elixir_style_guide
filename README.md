@@ -730,6 +730,10 @@ generally preferred practice.
   # Use punctuation for complete sentences.
   ```
 
+* <a name="comment-line-length"></a>
+  Limit comment lines to 100 characters.
+  <sup>[[link](#comment-line-length)]</sup>
+
 #### Comment Annotations
 
 * <a name="annotations"></a>
