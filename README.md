@@ -19,7 +19,7 @@
   * [Typespecs](#typespecs)
   * [Structs](#structs)
   * [Exceptions](#exceptions)
-  * _Collections_
+  * [Collections](#collections)
   * [Strings](#strings)
   * _Regular Expressions_
   * [Metaprogramming](#metaprogramming)
