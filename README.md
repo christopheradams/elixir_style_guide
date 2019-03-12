@@ -1185,6 +1185,18 @@ directives (see [Modules](#modules)).
   some_value = [a: "baz", b: "qux"]
   ```
 
+* <a name="map-key-atom"></a>
+  Use the shorthand key-value syntax for maps when all of the keys are atoms.
+  <sup>[[link](#map-key-atom)]</sup>
+
+  ```elixir
+  # not preferred
+  %{:a => 1, :b => 2, :c => 0}
+
+  # preferred
+  %{a: 1, b: 2, c: 3}
+  ```
+
 ### Strings
 
 * <a name="strings-matching-with-concatenator"></a>
