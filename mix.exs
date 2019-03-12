@@ -5,7 +5,7 @@ defmodule ElixirStyleGuide.Mixfile do
   A community driven style guide for Elixir
   """
 
-  @version "0.1.0"
+  @version "0.2.0-dev"
   @source_url "https://github.com/christopheradams/elixir_style_guide"
 
   def project do
