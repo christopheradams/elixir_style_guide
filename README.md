@@ -387,20 +387,6 @@ are provided here as examples of the preferred style.
   2 |> rem(3) |> g
   ```
 
-### Syntax
-
-* <a name="keyword-list-syntax"></a>
-  Always use the special syntax for keyword lists.
-  <sup>[[link](#keyword-list-syntax)]</sup>
-
-  ```elixir
-  # not preferred
-  some_value = [{:a, "baz"}, {:b, "qux"}]
-
-  # preferred
-  some_value = [a: "baz", b: "qux"]
-  ```
-
 * <a name="keyword-list-brackets"></a>
   Omit square brackets from keyword lists whenever they are optional.
   <sup>[[link](#keyword-list-brackets)]</sup>
@@ -1187,7 +1173,17 @@ directives (see [Modules](#modules)).
 
 ### Collections
 
-_No guidelines for collections have been added yet._
+* <a name="keyword-list-syntax"></a>
+  Always use the special syntax for keyword lists.
+  <sup>[[link](#keyword-list-syntax)]</sup>
+
+  ```elixir
+  # not preferred
+  some_value = [{:a, "baz"}, {:b, "qux"}]
+
+  # preferred
+  some_value = [a: "baz", b: "qux"]
+  ```
 
 ### Strings
 
