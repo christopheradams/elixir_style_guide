@@ -1197,6 +1197,18 @@ directives (see [Modules](#modules)).
   %{a: 1, b: 2, c: 3}
   ```
 
+* <a name="map-key-arrow"></a>
+  Use the verbose key-value syntax for maps if any key is not an atom.
+  <sup>[[link](#map-key-arrow)]</sup>
+
+  ```elixir
+  # not preferred
+  %{"c" => 0, a: 1, b: 2}
+
+  # preferred
+  %{:a => 1, :b => 2, "c" => 0}
+  ```
+
 ### Strings
 
 * <a name="strings-matching-with-concatenator"></a>
