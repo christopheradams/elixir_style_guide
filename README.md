@@ -851,7 +851,7 @@ generally preferred practice.
     @module_attribute :foo
     @other_attribute 100
 
-    defstruct name: nil, params: []
+    defstruct [:name, params: []]
 
     @type params :: [{binary, binary}]
 
@@ -1063,7 +1063,7 @@ directives (see [Modules](#modules)).
   <sup>[[link](#naming-main-types)]</sup>
 
   ```elixir
-  defstruct name: nil, params: []
+  defstruct [:name, params: []]
 
   @type t :: %__MODULE__{
           name: String.t() | nil,
