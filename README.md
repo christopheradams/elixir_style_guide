@@ -819,9 +819,9 @@ generally preferred practice.
   1. `import`
   1. `alias`
   1. `require`
+  1. `@module_attribute`
   1. `defstruct`
   1. `@type`
-  1. `@module_attribute`
   1. `@callback`
   1. `@macrocallback`
   1. `@optional_callbacks`
@@ -848,12 +848,12 @@ generally preferred practice.
 
     require Integer
 
+    @module_attribute :foo
+    @other_attribute 100
+
     defstruct name: nil, params: []
 
     @type params :: [{binary, binary}]
-
-    @module_attribute :foo
-    @other_attribute 100
 
     @callback some_function(term) :: :ok | {:error, term}
 
