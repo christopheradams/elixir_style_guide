@@ -194,14 +194,14 @@ are provided here as examples of the preferred style.
   some_string =
     "Hello"
     |> String.downcase()
-    |> String.strip()
+    |> String.trim()
   another_string <> some_string
 
   # preferred
   some_string =
     "Hello"
     |> String.downcase()
-    |> String.strip()
+    |> String.trim()
 
   another_string <> some_string
   ```
@@ -351,10 +351,10 @@ are provided here as examples of the preferred style.
 
   ```elixir
   # not preferred
-  some_string |> String.downcase |> String.strip
+  some_string |> String.downcase |> String.trim
 
   # preferred
-  some_string |> String.downcase() |> String.strip()
+  some_string |> String.downcase() |> String.trim()
   ```
 
 * <a name="function-names-with-parentheses"></a>
@@ -448,22 +448,22 @@ generally preferred practice.
 
   ```elixir
   # not preferred
-  String.strip(String.downcase(some_string))
+  String.trim(String.downcase(some_string))
 
   # preferred
-  some_string |> String.downcase() |> String.strip()
+  some_string |> String.downcase() |> String.trim()
 
   # Multiline pipelines are not further indented
   some_string
   |> String.downcase()
-  |> String.strip()
+  |> String.trim()
 
   # Multiline pipelines on the right side of a pattern match
   # should be indented on a new line
   sanitized_string =
     some_string
     |> String.downcase()
-    |> String.strip()
+    |> String.trim()
   ```
 
   While this is the preferred method, take into account that copy-pasting
@@ -489,10 +489,10 @@ generally preferred practice.
 
   ```elixir
   # not preferred
-  String.strip(some_string) |> String.downcase() |> String.codepoints()
+  String.trim(some_string) |> String.downcase() |> String.codepoints()
 
   # preferred
-  some_string |> String.strip() |> String.downcase() |> String.codepoints()
+  some_string |> String.trim() |> String.downcase() |> String.codepoints()
   ```
 
 * <a name="parentheses"></a>
