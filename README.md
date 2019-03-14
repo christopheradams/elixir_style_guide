@@ -324,8 +324,8 @@ are provided here as examples of the preferred style.
 
   ```elixir
   with {:ok, foo} <- fetch(opts, :foo),
-       {:ok, bar} <- fetch(opts, :bar),
-       do: {:ok, foo, bar}
+       {:ok, my_var} <- fetch(opts, :my_var),
+       do: {:ok, foo, my_var}
   ```
 
 * <a name="with-else"></a>
@@ -335,8 +335,8 @@ are provided here as examples of the preferred style.
 
   ```elixir
   with {:ok, foo} <- fetch(opts, :foo),
-       {:ok, bar} <- fetch(opts, :bar) do
-    {:ok, foo, bar}
+       {:ok, my_var} <- fetch(opts, :my_var) do
+    {:ok, foo, my_var}
   else
     :error ->
       {:error, :bad_arg}
