@@ -1270,8 +1270,11 @@ _No guidelines for regular expressions have been added yet._
 
 ### Tools
 
-Refer to [Awesome Elixir][Code Analysis] for libraries and tools that can help
-with code analysis and style linting.
+The [credo_contrib](https://github.com/xtian/credo_contrib) library implements
+many of the rules from this style guide as custom Credo checks.
+
+Refer to [Awesome Elixir][Code Analysis] for more libraries and tools that can
+help with code analysis and style linting.
 
 ## Getting Involved
 
