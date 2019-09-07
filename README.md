@@ -1073,10 +1073,14 @@ directives (see [Modules](#modules)).
 
 * <a name="spec-spacing"></a>
   Place specifications right before the function definition,
+  after the `@doc`,
   without separating them by a blank line.
   <sup>[[link](#spec-spacing)]</sup>
 
   ```elixir
+  @doc """
+  Some function description.
+  """
   @spec some_function(term) :: result
   def some_function(some_data) do
     {:ok, some_data}
