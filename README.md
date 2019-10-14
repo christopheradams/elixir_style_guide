@@ -1325,7 +1325,7 @@ project.
 [ExDoc]: https://github.com/elixir-lang/ex_doc
 [ExUnit]: https://hexdocs.pm/ex_unit/ExUnit.html
 [French]: https://github.com/ronanboiteau/elixir_style_guide/blob/master/README_frFR.md
-[Guard Expressions]: http://elixir-lang.org/getting-started/case-cond-and-if.html#expressions-in-guard-clauses
+[Guard Expressions]: https://hexdocs.pm/elixir/guards.html#list-of-allowed-expressions
 [Hex]: https://hex.pm/packages
 [Japanese]: https://github.com/kenichirow/elixir_style_guide/blob/master/README-jaJP.md
 [Korean]: https://github.com/marocchino/elixir_style_guide/blob/new-korean/README-koKR.md
