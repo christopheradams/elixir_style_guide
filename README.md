@@ -660,15 +660,14 @@ generally preferred practice.
   ```
 
 * <a name="predicate-macro-names-with-guards"></a>
-  The names of predicate macros (compile-time generated functions that return a
-  boolean value) _that can be used within guards_ should be prefixed with `is_`.
+  The name of macros suitable for use in guard expressions should be prefixed
+  with `is_`.
   For a list of allowed expressions, see the [Guard][Guard Expressions] docs.
   <sup>[[link](#predicate-macro-names-with-guards)]</sup>
 
   ```elixir
-  defmacro is_cool(var) do
-    quote do: unquote(var) == "cool"
-  end
+  defguard is_cool(var) when var == "cool"
+  defguardp is_very_cool(var) when var == "very cool"
   ```
 
 * <a name="predicate-macro-names-no-guards"></a>
