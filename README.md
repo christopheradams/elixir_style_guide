@@ -495,9 +495,9 @@ generally preferred practice.
   some_string |> String.trim() |> String.downcase() |> String.codepoints()
   ```
 
-* <a name="parentheses"></a>
+* <a name="fun-def-parentheses"></a>
   Use parentheses when a `def` has arguments, and omit them when it doesn't.
-  <sup>[[link](#parentheses)]</sup>
+  <sup>[[link](#fun-def-parentheses)]</sup>
 
   ```elixir
   # not preferred
