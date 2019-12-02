@@ -41,8 +41,8 @@ lenguajes, puede estropearse. No estropees el estilo.
 ## <a name="la-guia">La Guía</a>
 
 Esta es la guía de estilo de la comunidad para
-[el lenguaje de programación Elixir][Elixir]. Por favor, siéntete libre de abrir pull
-requests y sugerencias, y ¡forma parte de la vibrante comunidad de Elixir!
+[el lenguaje de programación Elixir][Elixir]. Por favor, siéntete libre de abrir
+pull requests y sugerencias, y ¡forma parte de la vibrante comunidad de Elixir!
 
 Si estás buscando otros proyectos en los que contribuir, por favor ve al
 [sitio web de Hex package manager][Hex].
@@ -73,8 +73,8 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   <sup>[[enlace](#line-endings)]</sup>
 
 * <a name="autocrlf"></a>
-  Si usas Git puede que quieras utilizar la siguiente configuración para protegerte de
-  que se te cuelen los finales de línea en Windows:
+  Si usas Git puede que quieras utilizar la siguiente configuración para protegerte
+  de que se te cuelen los finales de línea en Windows:
   <sup>[[enlace](#autocrlf)]</sup>
 
   ```sh
@@ -82,11 +82,11 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="spaces"></a>
-  Usa espacios alrededor de operadores, después de comas, dos puntos y de punto y coma.
+  Usa espacios alrededor de operadores, después de comas, dos puntos y punto y coma.
   No coloques espacios alrededor de parejas como llaves, paréntesis, etc.
-  Los espacios en blanco puede que sean (en la mayoría de casos) irrelevantes para Elixir
-  en tiempo de ejecución, pero su uso apropiado es clave para escribir código fácilmente
-  legible.
+  Los espacios en blanco puede que sean (en la mayoría de casos) irrelevantes para
+  Elixir en tiempo de ejecución, pero su uso apropiado es clave para escribir código
+  fácilmente legible.
   <sup>[[enlace](#spaces)]</sup>
 
   ```elixir
@@ -97,8 +97,8 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="no-spaces"></a>
-  No utilices espacios después de operadores que no sean una palabra y que sólo reciben un
-  argumento; o alrededor del operador de rango.
+  No utilices espacios después de operadores que no sean una palabra y que sólo
+  reciben un argumento; o alrededor del operador de rango.
   <sup>[[enlace](#no-spaces)]</sup>
 
   ```elixir
@@ -147,9 +147,9 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="long-dos"></a>
-  Si utilizas la sintaxis `do:` con funciones y la línea que constituye el cuerpo de la
-  función es demasiado larga, pon el `do:` en una nueva línea con un nivel de indentación
-  más que la línea anterior.
+  Si utilizas la sintaxis `do:` con funciones y la línea que constituye el cuerpo
+  de la función es demasiado larga, pon el `do:` en una nueva línea con un nivel
+  de indentación más que la línea anterior.
   <sup>[[enlace](#long-dos)]</sup>
 
   ```elixir
@@ -157,9 +157,9 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
     do: Enum.map(args, fn(arg) -> arg <> " is on a very long line!" end)
   ```
 
-  Si tienes varias funciones con el mismo nombre y en alguno de los casos la línea que
-  constituye el cuerpo de la función es demasiado larga, pon el `do:` en una nueva línea
-  para cada función:
+  Si tienes varias funciones con el mismo nombre y en alguno de los casos la línea
+  que constituye el cuerpo de la función es demasiado larga, pon el `do:` en una
+  nueva línea para cada función:
 
   ```elixir
   # no recomendado
@@ -254,8 +254,8 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="multiline-list-assign"></a>
-  Al definir una lista que ocupa varias líneas, inicia la lista en una nueva línea, e
-  indenta los elementos para mantenerlos alineados.
+  Al definir una lista que ocupa varias líneas, inicia la lista en una nueva línea,
+  e indenta los elementos para mantenerlos alineados.
   <sup>[[enlace](#multiline-list-assign)]</sup>
 
   ```elixir
@@ -320,8 +320,8 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="add-blank-line-after-multiline-assignment"></a>
-  Añade una línea en blanco tras una "asignación" multilínea como una pista visual de que
-  ha terminado.
+  Añade una línea en blanco tras una "asignación" multilínea como una pista
+  visual de que ha terminado.
   <sup>[[enlace](#add-blank-line-after-multiline-assignment)]</sup>
 
   ```elixir
@@ -412,8 +412,8 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="true-as-last-condition"></a>
-  Utiliza `true` como la última condición de `cond` cuando necesites una cláusula por
-  defecto.
+  Utiliza `true` como la última condición de `cond` cuando necesites una
+  cláusula por defecto.
   <sup>[[enlace](#true-as-last-condition)]</sup>
 
   ```elixir
@@ -461,7 +461,8 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   # recomendado
   f(3)
 
-  # no recomendado y además se interpreta como rem(2, (3 |> g)), que no es lo que quieres.
+  # no recomendado y además se interpreta como rem(2, (3 |> g)),
+  # que no es lo que quieres.
   2 |> rem 3 |> g
 
   # recomendado
@@ -485,8 +486,8 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="parentheses-and-function-expressions"></a>
-  Opcionalmente omite los paréntesis en llamadas a funciones (fuera de un pipeline) cuando
-  el último argumento es una función.
+  Opcionalmente omite los paréntesis en llamadas a funciones (fuera de un pipeline)
+  cuando el último argumento es una función.
   <sup>[[enlace](#parentheses-and-function-expressions)]</sup>
 
   ```elixir
@@ -502,8 +503,8 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="parentheses-and-functions-with-zero-arity"></a>
-  Usa paréntesis para llamadas a funciones con aridad cero, de tal forma que puedan ser
-  distinguidas de las variables.
+  Usa paréntesis para llamadas a funciones con aridad cero, de tal forma que puedan
+  ser distinguidas de las variables.
   A partir de Elixir 1.4, el compilador te avisará de los lugares en los que exista
   ambigüedad.
   <sup>[[enlace](#parentheses-and-functions-with-zero-arity)]</sup>
@@ -658,8 +659,8 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="private-functions-with-same-name-as-public"></a>
-  Las funciones privadas que compartan el mismo nombre con alguna función pública deben
-  empezar con `do_`.
+  Las funciones privadas que compartan el mismo nombre con alguna función pública
+  deben empezar con `do_`.
   <sup>[[enlace](#private-functions-with-same-name-as-public)]</sup>
 
   ```elixir
@@ -673,13 +674,13 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
 ### Comentarios
 
 * <a name="expressive-code"></a>
-  Escribe código expresivo e intenta transmitir la intención de tu programa a través de
-  flujos de control, estructura y nombrado.
+  Escribe código expresivo e intenta transmitir la intención de tu programa a
+  través de flujos de control, estructura y nombrado.
   <sup>[[enlace](#expressive-code)]</sup>
 
 * <a name="comment-leading-spaces"></a>
-  Utiliza un espacio entre el carácter introductorio del comentario `#` y el resto del
-  texto del comentario.
+  Utiliza un espacio entre el carácter introductorio del comentario `#` y el
+  resto del texto del comentario.
   <sup>[[enlace](#comment-leading-spaces)]</sup>
 
   ```elixir
@@ -688,8 +689,8 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="comment-grammar"></a>
-  Los comentarios que sean más largos de una palabra se escribirán capitalizados, y las
-  frases utilizarán signos de puntuación.
+  Los comentarios que sean más largos de una palabra se escribirán capitalizados,
+  y las frases utilizarán signos de puntuación.
   Usa [un espacio][Sentence Spacing] tras cada punto.
   <sup>[[enlace](#comment-grammar)]</sup>
 
@@ -705,13 +706,14 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
 #### <a name="comments-annotations">Comentarios de Anotación</a>
 
 * <a name="annotations"></a>
-  Las anotaciones se escriben normalmente en la línea inmediatamente superior al código
-  que anotan.
+  Las anotaciones se escriben normalmente en la línea inmediatamente superior
+  al código que anotan.
   <sup>[[enlace](#annotations)]</sup>
 
 * <a name="annotation-keyword"></a>
-  La palabra clave para la anotación estará completamente en mayúsculas, seguida de dos
-  puntos y un espacio, a continuación se añade la nota que describe el problema.
+  La palabra clave para la anotación estará completamente en mayúsculas,
+  seguida de dos puntos y un espacio, a continuación se añade la nota que
+  describe el problema.
   <sup>[[enlace](#annotation-keyword)]</sup>
 
   ```elixir
@@ -721,8 +723,8 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
 
 * <a name="exceptions-to-annotations"></a>
   En casos en los que el problema sea tan obvio que cualquier tipo de documentación
-  resultará redundante, puedes poner las anotaciones al final de la línea sin ningún tipo
-  de nota.
+  resultará redundante, puedes poner las anotaciones al final de la línea sin
+  ningún tipo de nota.
   Este uso debería de ser la excepción y no la norma.
   <sup>[[enlace](#exceptions-to-annotations)]</sup>
 
@@ -741,18 +743,18 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   <sup>[[enlace](#fixme-notes)]</sup>
 
 * <a name="optimize-notes"></a>
-  Utiliza `OPTIMIZE` para denotar código lento o ineficiente que pudiese llegar a causar
-  problemas de rendimiento.
+  Utiliza `OPTIMIZE` para denotar código lento o ineficiente que pudiese llegar a
+  causar problemas de rendimiento.
   <sup>[[enlace](#optimize-notes)]</sup>
 
 * <a name="hack-notes"></a>
-  Utiliza `HACK` para denotar "code smells" en los que se hayan empleado prácticas de
-  programación cuestionables y que deban ser refactorizados.
+  Utiliza `HACK` para denotar "code smells" en los que se hayan empleado prácticas
+  de programación cuestionables y que deban ser refactorizados.
   <sup>[[enlace](#hack-notes)]</sup>
 
 * <a name="review-notes"></a>
-  Utiliza `REVIEW` para denotar cualquier cosa que deba ser revisada para confirmar que
-  funciona como se espera.
+  Utiliza `REVIEW` para denotar cualquier cosa que deba ser revisada para confirmar
+  que funciona como se espera.
   Por ejemplo: `REVIEW: Are we sure this is how the client does X currently?`
   <sup>[[enlace](#review-notes)]</sup>
 
@@ -764,12 +766,13 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
 ### <a name="modules">Módulos</a>
 
 * <a name="one-module-per-file"></a>
-  Utiliza un fichero por módulo a no ser que el módulo sea utilizado únicamente de manera
-  interna por otro módulo (como en el caso de un test).
+  Utiliza un fichero por módulo a no ser que el módulo sea utilizado únicamente de
+  manera interna por otro módulo (como en el caso de un test).
   <sup>[[enlace](#one-module-per-file)]</sup>
 
 * <a name="underscored-filenames"></a>
-  Utiliza `snake_case` para el nombre del fichero y `CamelCase` para el nombre del módulo.
+  Utiliza `snake_case` para el nombre del fichero y `CamelCase` para el nombre del
+  módulo.
   <sup>[[enlace](#underscored-filenames)]</sup>
 
   ```elixir
@@ -815,8 +818,8 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   1. `@macrocallback`
   1. `@optional_callbacks`
 
-  Añade una línea en blanco entre cada grupo, y ordena alfabéticamente los términos (como
-  nombres de módulo).
+  Añade una línea en blanco entre cada grupo, y ordena alfabéticamente los términos
+  (como nombres de módulo).
   Aquí tienes un ejemplo general de cómo deberías ordenar el código en tus módulos:
 
   ```elixir
@@ -855,8 +858,9 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```
 
 * <a name="module-pseudo-variable"></a>
-  Usa la pseudo variable `__MODULE__` cuando un módulo se refiera a sí mismo. Esto evitará
-  que tengas que actualizar cualquier referencia cuando el nombre del módulo cambie.
+  Usa la pseudo variable `__MODULE__` cuando un módulo se refiera a sí mismo.
+  Esto evitará que tengas que actualizar cualquier referencia cuando el nombre
+  del módulo cambie.
   <sup>[[enlace](#module-pseudo-variable)]</sup>
 
   ```elixir
@@ -900,8 +904,9 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
 
 ### <a name="documentation"></a>Documentación
 
-La documentación en Elixir (ya sea cuando es leída en `iex` mediante `h` o cuando  es generada
-con [ExDoc]) utiliza los [atributos de módulo][Module Attributes] `@moduledoc` y `@doc`.
+La documentación en Elixir (ya sea cuando es leída en `iex` mediante `h` o cuando
+es generada con [ExDoc]) utiliza los [atributos de módulo][Module Attributes]
+`@moduledoc` y `@doc`.
 
 * <a name="moduledocs"></a>
   Incluye siempre un atributo `@moduledoc` en la línea inmediatamente posterior a
@@ -1011,12 +1016,12 @@ con [ExDoc]) utiliza los [atributos de módulo][Module Attributes] `@moduledoc` 
 Typespecs es una notación para declarar tipos y especificaciones, ya sea para
 documentación o para la herramienta de análisis estático Dialyzer.
 
-Los tipos propios deben de ser definidos en la parte superior del módulo junto con las
-demás directivas (ver [Módulos](#modules)).
+Los tipos propios deben de ser definidos en la parte superior del módulo junto
+con las demás directivas (ver [Módulos](#modules)).
 
 * <a name="typedocs"></a>
-  Sitúa las definiciones `@typedoc` y `@type` juntas, y separa cada par con una línea en
-  blanco.
+  Sitúa las definiciones `@typedoc` y `@type` juntas, y separa cada par con una
+  línea en blanco.
   <sup>[[enlace](#typedocs)]</sup>
 
   ```elixir
@@ -1034,8 +1039,8 @@ demás directivas (ver [Módulos](#modules)).
   ```
 
 * <a name="union-types"></a>
-  Si la unión de tipos es demasiado larga para caber en una sola línea, añade una nueva
-  línea e indenta con espacios para mantener los tipos alineados.
+  Si la unión de tipos es demasiado larga para caber en una sola línea, añade
+  una nueva línea e indenta con espacios para mantener los tipos alineados.
   <sup>[[enlace](#union-types)]</sup>
 
   ```elixir
@@ -1055,8 +1060,8 @@ demás directivas (ver [Módulos](#modules)).
   ```
 
 * <a name="naming-main-types"></a>
-  Nombra al tipo principal para un módulo `t`, por ejemplo: la especificación de tipo para
-  una struct.
+  Nombra al tipo principal para un módulo `t`, por ejemplo: la especificación de
+  tipo para una struct.
   <sup>[[enlace](#naming-main-types)]</sup>
 
   ```elixir
@@ -1083,8 +1088,8 @@ demás directivas (ver [Módulos](#modules)).
 ### Structs
 
 * <a name="nil-struct-field-defaults"></a>
-  Usa una lista de atoms para los campos de la struct que tengan valor `nil`, seguida del
-  resto de claves.
+  Usa una lista de atoms para los campos de la struct que tengan valor `nil`, seguida
+  del resto de claves.
   <sup>[[enlace](#nil-struct-field-defaults)]</sup>
 
   ```elixir
@@ -1106,13 +1111,14 @@ demás directivas (ver [Módulos](#modules)).
   # recomendado
   defstruct params: [], active: true
 
-  # obligatorio - los corchetes no son opcionales cuando la lista tenga al menos un atom
+  # obligatorio - los corchetes no son opcionales cuando la lista tenga al menos
+  # un atom
   defstruct [:name, params: [], active: true]
   ```
 
 * <a name="additional-struct-def-lines"></a>
-  Indenta las líneas adicionales en la definición de una struct, manteniendo las primeras
-  claves alineadas.
+  Indenta las líneas adicionales en la definición de una struct, manteniendo
+  las primeras claves alineadas.
   <sup>[[enlace](#additional-struct-def-lines)]</sup>
 
   ```elixir
@@ -1187,10 +1193,10 @@ _Por el momento no se han añadido recomendaciones para expresiones regulares._
 ### Testing
 
 * <a name="testing-assert-order"></a>
-  Cuando escribas aserciones con [ExUnit], se consistente con el orden de los valores
-  esperados y actuales que estás probando.
-  Es preferible poner el valor esperado a la derecha, a no ser que la aserción sea un
-  pattern match.
+  Cuando escribas aserciones con [ExUnit], se consistente con el orden de los
+  valores esperados y actuales que estás probando.
+  Es preferible poner el valor esperado a la derecha, a no ser que la aserción
+  sea un pattern match.
   <sup>[[Enlace](#testing-assert-order)]</sup>
 
   ```elixir
@@ -1209,13 +1215,13 @@ _Por el momento no se han añadido recomendaciones para expresiones regulares._
 ### <a name="alternative-style-guides">Guías de Estilo Alternativas</a>
 
 * [Aleksei Magusev's Elixir Style Guide](https://github.com/lexmag/elixir-style-guide#readme)
-  — Una guía que surge del estilo de programación utilizado en las librerías del core de
-  Elixir.
+  — Una guía que surge del estilo de programación utilizado en las librerías del
+  core de Elixir.
   Desarrollada por [Aleksei Magusev](https://github.com/lexmag) y
-  [Andrea Leopardi](https://github.com/whatyouhide), miembros del equipo principal de
-  Elixir.
-  Aunque el proyecto Elixir no se adhiere a ninguna guía de estilo específica, esta es la
-  guía más cercana a sus convenciones.
+  [Andrea Leopardi](https://github.com/whatyouhide), miembros del equipo principal
+  de Elixir.
+  Aunque el proyecto Elixir no se adhiere a ninguna guía de estilo específica, esta
+  es la guía más cercana a sus convenciones.
 
 * [Credo's Elixir Style Guide](https://github.com/rrrene/elixir-style-guide#readme)
   — Guía de Estilo para el lenguaje Elixir, implementada para la herramienta de análisis
@@ -1223,8 +1229,8 @@ _Por el momento no se han añadido recomendaciones para expresiones regulares._
 
 ### Herramientas
 
-Dirígete a [Awesome Elixir][Code Analysis] para encontrar librerías y herramientas que
-puedan ayudarte con el análisis de código y corrección estilo.
+Dirígete a [Awesome Elixir][Code Analysis] para encontrar librerías y herramientas
+que puedan ayudarte con el análisis de código y corrección estilo.
 
 ## <a name="getting-involved">Cómo participar</a>
 
@@ -1240,9 +1246,9 @@ y el [código de conducta][Code Of Conduct] (ambos en inglés) para más informa
 
 ### Corre la voz
 
-Una guía de estilo de la comunidad no tiene sentido sin el soporte de la comunidad. Por
-favor tuitea, ponle [star][Stargazers], y haz que otros programadores de Elixir conozcan
-[esta guía][Elixir Style Guide] de forma que puedan contribuir.
+Una guía de estilo de la comunidad no tiene sentido sin el soporte de la comunidad.
+Por favor tuitea, ponle [star][Stargazers], y haz que otros programadores de Elixir
+conozcan [esta guía][Elixir Style Guide] de forma que puedan contribuir.
 
 ## Derechos
 
