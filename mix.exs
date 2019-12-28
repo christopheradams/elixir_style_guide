@@ -5,11 +5,12 @@ defmodule ElixirStyleGuide.Mixfile do
   A community driven style guide for Elixir
   """
 
-  @version "0.2.0-dev"
+  @version "0.2.0"
   @source_url "https://github.com/christopheradams/elixir_style_guide"
 
   def project do
     [
+      name: "Elixir Style Guide",
       app: :elixir_style_guide,
       version: @version,
       elixir: "~> 1.0",
@@ -37,11 +38,25 @@ defmodule ElixirStyleGuide.Mixfile do
   defp docs() do
     [
       source_ref: "v#{@version}",
-      main: "readme",
+      main: "README",
       markdown_processor: ExDocMakeup,
-      extras: [
-        "README.md": [title: "README"]
-      ]
+      extras: extras(),
+      groups_for_extras: groups_for_extras()
+    ]
+  end
+
+  defp extras do
+    [
+      "README.md": [title: "README"],
+      "CONTRIBUTING.md": [title: "CONTRIBUTING"],
+      "TRANSLATIONS.md": [title: "TRANSLATIONS"],
+      "i18n/README_es.md": [title: "Spanish"]
+    ]
+  end
+
+  defp groups_for_extras do
+    [
+      Translations: ~r/i18n\/[^\/]+\.md/
     ]
   end
 
