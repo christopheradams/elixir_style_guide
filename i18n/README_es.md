@@ -3,8 +3,10 @@
 ## Tabla de Contenidos
 
 * __[Preludio](#preludio)__
-* __[La Guía](#la-guia)__
-  * [Disposición del Código Fuente (Layout)](#source-code-layout)
+* __[Acerca de](#about)__
+  * [Traducciones](#translations)
+* __[Formato](#formato)__
+  * [Espacio en blanco](#whitespace)
   * [Sintaxis](#sintaxis)
   * [Nombrado](#nombrado)
   * [Comentarios](#comentarios)
@@ -38,7 +40,7 @@
 El estilo importa. Aunque [Elixir] tiene mucho estilo, como ocurre con todos los
 lenguajes, puede estropearse. No estropees el estilo.
 
-## <a name="la-guia">La Guía</a>
+## <a name="about">Acerca de</a>
 
 Esta es la guía de estilo de la comunidad para
 [el lenguaje de programación Elixir][Elixir]. Por favor, siéntete libre de abrir
@@ -47,24 +49,36 @@ pull requests y sugerencias, y ¡forma parte de la vibrante comunidad de Elixir!
 Si estás buscando otros proyectos en los que contribuir, por favor ve al
 [sitio web de Hex package manager][Hex].
 
-### <a name="source-code-layout">Disposición del Código Fuente (Layout)</a>
+### <a name="translations">Traducciones</a>
+Las traducciones de la guía están disponibles en los siguientes lenguajes:
 
-* <a name="spaces-indentation"></a>
-  Usa dos **espacios** por nivel de indentación.
-  No utilices tabulaciones.
-  <sup>[[enlace](#spaces-indentation)]</sup>
+* [Chino Simplificado]
+* [Chino Tradicional]
+* [Frances]
+* [Japones]
+* [Coreano]
+* [Portugues]
+* [Español]
+* [Ingles]
 
-  ```elixir
-  # no recomendado - cuatro espacios
-  def some_function do
-      do_something
-  end
 
-  # recomendado
-  def some_function do
-    do_something
-  end
-  ```
+## Formato
+
+Elixir v1.6 introduce el __formateador de código__ ( [Code Formatter] ) y la tarea de [mix format].
+Se debe preferir el formateador para todos los proyectos nuevos y el código fuente.
+
+El formateador de código aplica automáticamente las reglas de esta sección,
+pero se proporcionan aquí como ejemplos del estilo preferido.
+
+### <a name="whitespace">Espacio en blanco</a>
+
+* <a name="trailing-whitespace"></a>
+  Evitar los espacios en blanco al final.
+  <sup>[[enlace](#trailing-whitespace)]</sup>
+
+* <a name="newline-eof"></a>
+  Terminar cada archivo con una nueva línea.
+  <sup>[[enlace](#newline-eof)]</sup>
 
 * <a name="line-endings"></a>
   Usa los finales de línea de Unix (Los usuarios de \*BSD/Solaris/Linux/OSX ya están
@@ -80,6 +94,11 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   ```sh
   git config --global core.autocrlf true
   ```
+  
+* <a name="line-length"></a>
+  Limitar las líneas a 98 caracteres.
+  De lo contrario, asignar la opción de `:line_length` en el archivo `.formatter.exs`.
+  <sup>[[enlace](#line-length)]</sup>
 
 * <a name="spaces"></a>
   Usa espacios alrededor de operadores, después de comas, dos puntos y punto y coma.
@@ -133,18 +152,9 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   end
   ```
 
-* <a name="single-line-defs"></a>
-  ...pero no dejes líneas en blanco cuando tengas `def`s de una sola línea cuyos
-  argumentos representen pattern matching.
-  <sup>[[enlace](#single-line-defs)]</sup>
-
-  ```elixir
-  def some_function(nil), do: {:err, "No Value"}
-  def some_function([]), do: :ok
-  def some_function([first | rest]) do
-    some_function(rest)
-  end
-  ```
+* <a name="defmodule-spacing"></a>
+  No dejar líneas en blanco después de `defmodule`.
+  <sup>[[link](#defmodule-spacing)]</sup>
 
 * <a name="long-dos"></a>
   Si utilizas la sintaxis `do:` con funciones y la línea que constituye el cuerpo
@@ -153,13 +163,11 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
   <sup>[[enlace](#long-dos)]</sup>
 
   ```elixir
-  def some_function(args),
-    do: Enum.map(args, fn(arg) -> arg <> " is on a very long line!" end)
+  def some_function([:foo, :bar, :baz] = args),
+    do: Enum.map(args, fn arg -> arg <> " is on a very long line!" end)
   ```
 
-  Si tienes varias funciones con el mismo nombre y en alguno de los casos la línea
-  que constituye el cuerpo de la función es demasiado larga, pon el `do:` en una
-  nueva línea para cada función:
+  Cuando la cláusula `do:` comienza en su propia línea, se trata como una función multilínea separándola con líneas en blanco.
 
   ```elixir
   # no recomendado
@@ -168,8 +176,8 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
     do: :very_long_line_here
 
   # recomendado
-  def some_function([]),
-    do: :empty
+  def some_function([]), do: :empty
+  
   def some_function(_),
     do: :very_long_line_here
   ```
@@ -1272,6 +1280,7 @@ proyecto.
 [Chinese Traditional]: https://github.com/elixirtw/elixir_style_guide/blob/master/README_zhTW.md
 [Code Analysis]: https://github.com/h4cc/awesome-elixir#code-analysis
 [Code Of Conduct]: https://github.com/christopheradams/elixir_style_guide/blob/master/CODE_OF_CONDUCT.md
+[Code Formatter]: https://hexdocs.pm/elixir/Code.html#format_string!/2
 [Conflicting Aliases]: https://elixirforum.com/t/using-aliases-for-fubar-fubar-named-module/1723
 [Contributing]: https://github.com/elixir-lang/elixir/blob/master/CODE_OF_CONDUCT.md
 [Contributors]: https://github.com/christopheradams/elixir_style_guide/graphs/contributors
@@ -1282,8 +1291,16 @@ proyecto.
 [Guard Expressions]: http://elixir-lang.org/getting-started/case-cond-and-if.html#expressions-in-guard-clauses
 [Hex]: https://hex.pm/packages
 [License]: http://creativecommons.org/licenses/by/3.0/deed.en_US
+[mix format]: https://hexdocs.pm/mix/Mix.Tasks.Format.html
 [Module Attributes]: http://elixir-lang.org/getting-started/module-attributes.html#as-annotations
 [Ruby community style guide]: https://github.com/bbatsov/ruby-style-guide
 [Sentence Spacing]: http://en.wikipedia.org/wiki/Sentence_spacing
 [Stargazers]: https://github.com/christopheradams/elixir_style_guide/stargazers
-
+[Chino Simplificado]: https://github.com/geekerzp/elixir_style_guide/blob/master/README-zhCN.md
+[Chino Tradicional]: https://github.com/elixirtw/elixir_style_guide/blob/master/README_zhTW.md
+[Frances]: https://github.com/ronanboiteau/elixir_style_guide/blob/master/README_frFR.md
+[Japones]: https://github.com/kenichirow/elixir_style_guide/blob/master/README-jaJP.md
+[Coreano]: https://github.com/marocchino/elixir_style_guide/blob/new-korean/README-koKR.md
+[Portugues]: https://github.com/gusaiani/elixir_style_guide/blob/master/README_ptBR.md
+[Ingles]: https://github.com/christopheradams/elixir_style_guide/
+[Español]: https://github.com/albertoalmagro/elixir_style_guide/blob/spanish/README_esES.md

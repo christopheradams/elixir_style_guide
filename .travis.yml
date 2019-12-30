@@ -3,10 +3,14 @@ sudo: false
 language: ruby
 
 rvm:
-  - 2.3.0
+  - 2.6.0
 
 install:
   - gem install mdl rake
+  - wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb && sudo dpkg -i erlang-solutions_2.0_all.deb
+  - sudo apt-get -y update
+  - sudo apt-get install -y esl-erlang
+  - sudo apt-get install -y elixir
 
 script:
   - rake test
