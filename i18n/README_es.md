@@ -32,13 +32,13 @@
 
 ## Preludio
 
-> Arquitectura líquida. Es como el jazz — improvisáis, trabajáis juntos, tocáis
+> Arquitectura líquida. Es como el jazz — improvisar, trabajar juntos, tocar
 > los unos con los otros, haces algo, hacen algo.
 >
 > —Frank Gehry
 
 El estilo importa. Aunque [Elixir] tiene mucho estilo, como ocurre con todos los
-lenguajes, puede estropearse. No estropees el estilo.
+lenguajes, puede estropearse. **No estropees el estilo.**
 
 ## <a name="about">Acerca de</a>
 
@@ -50,6 +50,7 @@ Si estás buscando otros proyectos en los que contribuir, por favor ve al
 [sitio web de Hex package manager][Hex].
 
 ### <a name="translations">Traducciones</a>
+
 Las traducciones de la guía están disponibles en los siguientes lenguajes:
 
 * [Chino Simplificado]
@@ -81,14 +82,14 @@ pero se proporcionan aquí como ejemplos del estilo preferido.
   <sup>[[enlace](#newline-eof)]</sup>
 
 * <a name="line-endings"></a>
-  Usa los finales de línea de Unix (Los usuarios de \*BSD/Solaris/Linux/OSX ya están
+  Usar los finales de línea de Unix (Los usuarios de \*BSD/Solaris/Linux/OSX ya están
   cubiertos por defecto, pero los usuarios de Windows tendrán que prestar especial
   atención).
   <sup>[[enlace](#line-endings)]</sup>
 
 * <a name="autocrlf"></a>
-  Si usas Git puede que quieras utilizar la siguiente configuración para protegerte
-  de que se te cuelen los finales de línea en Windows:
+  Al usar Git puede que quieras utilizar la siguiente configuración para protegerte
+  de que se cuelen los finales de línea en Windows:
   <sup>[[enlace](#autocrlf)]</sup>
 
   ```sh
@@ -101,12 +102,11 @@ pero se proporcionan aquí como ejemplos del estilo preferido.
   <sup>[[enlace](#line-length)]</sup>
 
 * <a name="spaces"></a>
-  Usa espacios alrededor de operadores, después de comas, dos puntos y punto y coma.
-  No coloques espacios alrededor de parejas como llaves, paréntesis, etc.
+  Usar espacios alrededor de operadores, después de comas, dos puntos y punto y coma.
+  No colocar espacios alrededor de parejas como llaves, paréntesis, etc.
   Los espacios en blanco puede que sean (en la mayoría de casos) irrelevantes para
   Elixir en tiempo de ejecución, pero su uso apropiado es clave para escribir código
-  fácilmente legible.
-  <sup>[[enlace](#spaces)]</sup>
+  fácilmente legible. <sup>[[enlace](#spaces)]</sup>
 
   ```elixir
   sum = 1 + 2
@@ -116,7 +116,7 @@ pero se proporcionan aquí como ejemplos del estilo preferido.
   ```
 
 * <a name="no-spaces"></a>
-  No utilices espacios después de operadores que no sean una palabra y que sólo
+  No usar espacios después de operadores que no sean una palabra y que sólo
   reciben un argumento; o alrededor del operador de rango.
   <sup>[[enlace](#no-spaces)]</sup>
 
@@ -127,7 +127,7 @@ pero se proporcionan aquí como ejemplos del estilo preferido.
   ```
 
 * <a name="def-spacing"></a>
-  Utiliza líneas en blanco entre `def`s para separar las funciones en párrafos lógicos.
+  Utilizar líneas en blanco entre `def`s para separar las funciones en párrafos lógicos.
   <sup>[[enlace](#def-spacing)]</sup>
 
   ```elixir

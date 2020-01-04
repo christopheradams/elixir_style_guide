@@ -11,6 +11,7 @@ test:
 	rake test
 
 compile:
+	@echo "Building documents ..."
 	@rm -rf doc/
 	@mix deps.get
 	@mix docs
