@@ -157,9 +157,9 @@ pero se proporcionan aquí como ejemplos del estilo preferido.
   <sup>[[link](#defmodule-spacing)]</sup>
 
 * <a name="long-dos"></a>
-  Si utilizas la sintaxis `do:` con funciones y la línea que constituye el cuerpo
-  de la función es demasiado larga, pon el `do:` en una nueva línea con un nivel
-  de indentación más que la línea anterior.
+  Si se utiliza la sintaxis `do:` con funciones y la línea que constituye el cuerpo
+  de la función es demasiado larga, se debe poner el `do:` en una nueva línea con 
+  un nivel de indentación más que la línea anterior.
   <sup>[[enlace](#long-dos)]</sup>
 
   ```elixir
