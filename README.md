@@ -495,6 +495,8 @@ generally preferred practice.
   some_string |> String.trim() |> String.downcase() |> String.codepoints()
   ```
 
+### Syntax
+
 * <a name="fun-def-parentheses"></a>
   Use parentheses when a `def` has arguments, and omit them when it doesn't.
   <sup>[[link](#fun-def-parentheses)]</sup>
