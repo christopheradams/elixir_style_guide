@@ -20,14 +20,14 @@
   * [Typespecs](#typespecs)
   * [Structs](#structs)
   * [Excepciones](#excepciones)
-  * _Colecciones_
+  * [Colecciones](#collections)
   * [Strings](#strings)
   * _Expresiones Regulares_
   * [Metaprogramming](#metaprogramming)
   * [Testing](#testing)
 * __[Resources](#resources)__
   * [Guías de Estilo Alternativas](#alternative-style-guides)
-  * [Herramientas](#herramientas)
+  * [Herramientas](#tools)
 * __[Cómo participar](#getting-involved)__
   * [Contribuir](#contribuir)
   * [Corre la voz](#corre-la-voz)
@@ -833,11 +833,11 @@ una práctica generalmente preferida.
   ```
 
 * <a name="module-block-spacing"></a>
-  Deja una línea en blanco después de cada bloque de código a nivel de módulo.
+  Dejar una línea en blanco después de cada bloque de código a nivel de módulo.
   <sup>[[enlace](#module-block-spacing)]</sup>
 
 * <a name="module-attribute-ordering"></a>
-  Lista los atributos y directivas del módulo en el siguiente orden:
+  Listar los atributos y directivas del módulo en el siguiente orden:
   <sup>[[enlace](#module-attribute-ordering)]</sup>
 
   1. `@moduledoc`
@@ -846,16 +846,16 @@ una práctica generalmente preferida.
   1. `import`
   1. `alias`
   1. `require`
+  1. `@module_attribute`
   1. `defstruct`
   1. `@type`
-  1. `@module_attribute`
   1. `@callback`
   1. `@macrocallback`
   1. `@optional_callbacks`
 
-  Añade una línea en blanco entre cada grupo, y ordena alfabéticamente los términos
+  Añadir una línea en blanco entre cada grupo, y ordenar alfabéticamente los términos
   (como nombres de módulo).
-  Aquí tienes un ejemplo general de cómo deberías ordenar el código en tus módulos:
+  Aquí un ejemplo general de cómo se debe ordenar el código en los módulos:
 
   ```elixir
   defmodule MyModule do
@@ -875,16 +875,16 @@ una práctica generalmente preferida.
 
     require Integer
 
-    defstruct name: nil, params: []
-
-    @type params :: [{binary, binary}]
-
     @module_attribute :foo
     @other_attribute 100
 
+    defstruct [:name, params: []]
+
+    @type params :: [{binary, binary}]
+
     @callback some_function(term) :: :ok | {:error, term}
 
-    @macrocallback macro_name(term) :: Macro.t
+    @macrocallback macro_name(term) :: Macro.t()
 
     @optional_callbacks macro_name: 1
 
@@ -893,8 +893,8 @@ una práctica generalmente preferida.
   ```
 
 * <a name="module-pseudo-variable"></a>
-  Usa la pseudo variable `__MODULE__` cuando un módulo se refiera a sí mismo.
-  Esto evitará que tengas que actualizar cualquier referencia cuando el nombre
+  Usar la pseudo variable `__MODULE__` cuando un módulo se refiera a sí mismo.
+  Esto evitará actualizar cualquier referencia cuando el nombre
   del módulo cambie.
   <sup>[[enlace](#module-pseudo-variable)]</sup>
 
@@ -907,7 +907,7 @@ una práctica generalmente preferida.
   ```
 
 * <a name="alias-self-referencing-modules"></a>
-  Si prefieres utilizar otro nombre para esta referencia, define un alias.
+  Si se prefiere un nombre más bonito para esta referencia, se puede definir un alias.
   <sup>[[enlace](#alias-self-referencing-modules)]</sup>
 
   ```elixir
@@ -921,8 +921,8 @@ una práctica generalmente preferida.
   ```
 
 * <a name="repetitive-module-names"></a>
-  Evita repeticiones en los nombres de módulos y espacios de nombrado.
-  Mejorará la legibilidad global y elimina [alias ambiguos][Conflicting Aliases].
+  Evitar repeticiones en los nombres de módulos y espacios de nombrado.
+  Esto mejora la legibilidad global y elimina [alias ambiguos][Conflicting Aliases].
   <sup>[[enlace](#repetitive-module-names)]</sup>
 
   ```elixir
@@ -944,23 +944,16 @@ es generada con [ExDoc]) utiliza los [atributos de módulo][Module Attributes]
 `@moduledoc` y `@doc`.
 
 * <a name="moduledocs"></a>
-  Incluye siempre un atributo `@moduledoc` en la línea inmediatamente posterior a
-  `defmodule` de tu módulo.
+  Incluir siempre un atributo `@moduledoc` en la línea inmediatamente posterior a
+  `defmodule` de un módulo.
   <sup>[[enlace](#moduledocs)]</sup>
 
   ```elixir
   # no recomendado
 
-  defmodule SomeModule do
-
-    @moduledoc """
-    About the module
-    """
-    ...
-  end
-
   defmodule AnotherModule do
     use SomeModule
+
     @moduledoc """
     About the module
     """
@@ -969,16 +962,18 @@ es generada con [ExDoc]) utiliza los [atributos de módulo][Module Attributes]
 
   # recomendado
 
-  defmodule SomeModule do
+  defmodule AThirdModule do
     @moduledoc """
     About the module
     """
+
+    use SomeModule
     ...
   end
   ```
 
 * <a name="moduledoc-false"></a>
-  Utiliza `@moduledoc false` si no pretendes documentar un módulo.
+  Utilizar `@moduledoc false` si no se desea documentar un módulo.
   <sup>[[enlace](#moduledoc-false)]</sup>
 
   ```elixir
@@ -989,12 +984,11 @@ es generada con [ExDoc]) utiliza los [atributos de módulo][Module Attributes]
   ```
 
 * <a name="moduledoc-spacing"></a>
-  Separa el código tras `@moduledoc` con una línea en blanco.
+  Separa el código después de `@moduledoc` con una línea en blanco.
   <sup>[[enlace](#moduledoc-spacing)]</sup>
 
   ```elixir
   # no recomendado
-
   defmodule SomeModule do
     @moduledoc """
     About the module
@@ -1013,12 +1007,11 @@ es generada con [ExDoc]) utiliza los [atributos de módulo][Module Attributes]
   ```
 
 * <a name="heredocs"></a>
-  Usa heredocs con markdown para la documentación.
+  Usar heredocs con markdown para la documentación.
   <sup>[[enlace](#heredocs)]</sup>
 
   ```elixir
   # no recomendado
-
   defmodule SomeModule do
     @moduledoc "About the module"
   end
@@ -1055,7 +1048,7 @@ Los tipos propios deben de ser definidos en la parte superior del módulo junto
 con las demás directivas (ver [Módulos](#modules)).
 
 * <a name="typedocs"></a>
-  Sitúa las definiciones `@typedoc` y `@type` juntas, y separa cada par con una
+  Situar las definiciones `@typedoc` y `@type` juntas, y separar cada par con una
   línea en blanco.
   <sup>[[enlace](#typedocs)]</sup>
 
@@ -1074,56 +1067,57 @@ con las demás directivas (ver [Módulos](#modules)).
   ```
 
 * <a name="union-types"></a>
-  Si la unión de tipos es demasiado larga para caber en una sola línea, añade
-  una nueva línea e indenta con espacios para mantener los tipos alineados.
+  Si la unión de tipos es demasiado larga para caber en una sola línea, añadir
+  una nueva línea e indentar con espacios para mantener los tipos alineados.
   <sup>[[enlace](#union-types)]</sup>
 
   ```elixir
-  # no recomendado - sin indentación
-  @type long_union_type :: some_type | another_type | some_other_type |
-  a_final_type
+   # not preferred
+  @type long_union_type ::
+          some_type | another_type | some_other_type | one_more_type | a_final_type
 
-  # recomendado
-  @type long_union_type :: some_type | another_type | some_other_type |
-                           a_final_type
-
-  # también recomendado - un tipo por línea
-  @type long_union_type :: some_type |
-                           another_type |
-                           some_other_type |
-                           a_final_type
+  # preferred
+  @type long_union_type ::
+          some_type
+          | another_type
+          | some_other_type
+          | one_more_type
+          | a_final_type
   ```
 
 * <a name="naming-main-types"></a>
-  Nombra al tipo principal para un módulo `t`, por ejemplo: la especificación de
-  tipo para una struct.
+  Nombrar al tipo principal para un módulo `t`, por ejemplo: la especificación de
+  tipo para una estructura (struct).
   <sup>[[enlace](#naming-main-types)]</sup>
 
   ```elixir
-  defstruct name: nil, params: []
+  defstruct [:name, params: []]
 
   @type t :: %__MODULE__{
-    name: String.t | nil,
-    params: Keyword.t
-  }
+          name: String.t() | nil,
+          params: Keyword.t()
+        }
   ```
 
 * <a name="spec-spacing"></a>
-  Sitúa las especificaciones justo antes de la definición de la función, sin separarlas
-  con una línea en blanco.
+  Situar las especificaciones justo antes de la definición de la función después de `@doc`,
+  sin separarlas con una línea en blanco.
   <sup>[[enlace](#spec-spacing)]</sup>
 
   ```elixir
+  @doc """
+  Some function description.
+  """
   @spec some_function(term) :: result
   def some_function(some_data) do
     {:ok, some_data}
   end
   ```
 
-### Structs
+### <a name="structs"></a> Estructuras
 
 * <a name="nil-struct-field-defaults"></a>
-  Usa una lista de atoms para los campos de la struct que tengan valor `nil`, seguida
+  Usar una lista de atoms para los campos de la struct que tengan valor `nil`, seguida
   del resto de claves.
   <sup>[[enlace](#nil-struct-field-defaults)]</sup>
 
@@ -1136,7 +1130,7 @@ con las demás directivas (ver [Módulos](#modules)).
   ```
 
 * <a name="struct-def-brackets"></a>
-  Omite los corchetes cuando el argumento de `defstruct` sea una lista de keywords.
+  Omitir los corchetes cuando el argumento de `defstruct` sea una lista de keywords.
   <sup>[[enlace](#struct-def-brackets)]</sup>
 
   ```elixir
@@ -1147,24 +1141,37 @@ con las demás directivas (ver [Módulos](#modules)).
   defstruct params: [], active: true
 
   # obligatorio - los corchetes no son opcionales cuando la lista tenga al menos
-  # un atom
+  # un átomo
   defstruct [:name, params: [], active: true]
   ```
 
-* <a name="additional-struct-def-lines"></a>
-  Indenta las líneas adicionales en la definición de una struct, manteniendo
-  las primeras claves alineadas.
-  <sup>[[enlace](#additional-struct-def-lines)]</sup>
+* <a name="multiline-structs"></a>
+  Si la definición de una estructura abarca múltiples líneas, poner cada elemento en su propia línea,
+  manteniendo los elementos alineados.
+  <sup>[[link](#multiline-structs)]</sup>
 
   ```elixir
-  defstruct foo: "test", bar: true, baz: false,
-            qux: false, quux: 1
+  defstruct foo: "test",
+            bar: true,
+            baz: false,
+            qux: false,
+            quux: 1
   ```
 
-### Excepciones
+  Si una estructura con múltiples líneas requiere corchetes, formatear como una lista de múltiples líneas:
+
+  ```elixir
+  defstruct [
+    :name,
+    params: [],
+    active: true
+  ]
+  ```
+
+### <a name="exceptions"></a> Excepciones
 
 * <a name="exception-names"></a>
-  Haz que los nombres de las excepciones terminen en `Error`.
+  Hacer que los nombres de las excepciones terminen en `Error`.
   <sup>[[enlace](#exception-names)]</sup>
 
   ```elixir
@@ -1184,7 +1191,7 @@ con las demás directivas (ver [Módulos](#modules)).
   ```
 
 * <a name="lowercase-error-messages"></a>
-  Utiliza mensajes de error en minúsculas cuando lances excepciones. No utilices
+  Usar mensajes de error en minúsculas cuando lances excepciones. No usar
   puntuación al final.
   <sup>[[enlace](#lowercase-error-messages)]</sup>
 
@@ -1196,10 +1203,10 @@ con las demás directivas (ver [Módulos](#modules)).
   raise ArgumentError, "this is not valid"
   ```
 
-### Colecciones
+### <a name="collections"></a> Colecciones
 
 * <a name="keyword-list-syntax"></a>
-  Utilizar siempre la sintaxis especial para listas de keywords.
+  Usar siempre la sintaxis especial para listas de keywords.
   <sup>[[enlace](#keyword-list-syntax)]</sup>
 
   ```elixir
@@ -1210,57 +1217,80 @@ con las demás directivas (ver [Módulos](#modules)).
   some_value = [a: "baz", b: "qux"]
   ```
 
-### Strings
+* <a name="map-key-atom"></a>
+  Usar la sintaxis abreviada de llave-valor para los mapas cuando todas las llaves son átomos.
+  <sup>[[link](#map-key-atom)]</sup>
+
+  ```elixir
+  # no recomendado
+  %{:a => 1, :b => 2, :c => 0}
+
+  # recomendado
+  %{a: 1, b: 2, c: 3}
+  ```
+
+* <a name="map-key-arrow"></a>
+  Usar la sintaxis detallada de llave-valor para los mapas si alguna clave no es un átomo.
+  <sup>[[link](#map-key-arrow)]</sup>
+
+  ```elixir
+  # no recomendado
+  %{"c" => 0, a: 1, b: 2}
+
+  # recomendado
+  %{:a => 1, :b => 2, "c" => 0}
+  ```
+
+### <a name="strings"></a> Cadenas
 
 * <a name="strings-matching-with-concatenator"></a>
-  Haz match de strings utilizando la concatenación de string en lugar de patrones
+  Hacer coincidencia de cadenas utilizando la concatenación de string en lugar de patrones
   binarios:
   <sup>[[enlace](#strings-matching-with-concatenator)]</sup>
 
   ```elixir
   # no recomendado
-  <<"my"::utf8, _rest>> = "my string"
+  <<"my"::utf8, _rest::bytes>> = "my string"
 
   # recomendado
   "my" <> _rest = "my string"
   ```
 
-### Expresiones Regulares
+### <a name="regex"></a> Expresiones Regulares
 
 _Por el momento no se han añadido recomendaciones para expresiones regulares._
 
 ### <a name="metaprogramming">Metaprogramación</a>
 
 * <a name="avoid-metaprogramming"></a>
-  Evita la metaprogramación cuando no sea necesaria.
+  Evita la metaprogramación innecesaria.
   <sup>[[enlace](#avoid-metaprogramming)]</sup>
 
 ### Testing
 
 * <a name="testing-assert-order"></a>
-  Cuando escribas aserciones con [ExUnit], se consistente con el orden de los
-  valores esperados y actuales que estás probando.
-  Es preferible poner el valor esperado a la derecha, a no ser que la aserción
-  sea un pattern match.
+  Cuando se escriban aserciones con [ExUnit], colocar la expresión que se está probando a la izquierda
+  del operador, y el resultado esperado a la derecha, a menos que sea
+  un patrón de coincidencia (pattern match)
   <sup>[[Enlace](#testing-assert-order)]</sup>
 
   ```elixir
-  # recomendado - resultado esperado a la derecha
+  # recomendado
   assert actual_function(1) == true
-  assert actual_function(2) == false
 
-  # no recomendado - orden inconsistente
-  assert actual_function(1) == true
-  assert false == actual_function(2)
+  # no recomendado
+  assert true == actual_function(1)
 
   # obligatorio - la aserción es un pattern match
   assert {:ok, expected} = actual_function(3)
   ```
 
+## <a name="resources"></a> Recursos
+
 ### <a name="alternative-style-guides">Guías de Estilo Alternativas</a>
 
 * [Aleksei Magusev's Elixir Style Guide](https://github.com/lexmag/elixir-style-guide#readme)
-  — Una guía que surge del estilo de programación utilizado en las librerías del
+  — Guía que surge del estilo de programación utilizado en las librerías del
   core de Elixir.
   Desarrollada por [Aleksei Magusev](https://github.com/lexmag) y
   [Andrea Leopardi](https://github.com/whatyouhide), miembros del equipo principal
@@ -1272,14 +1302,14 @@ _Por el momento no se han añadido recomendaciones para expresiones regulares._
   — Guía de Estilo para el lenguaje Elixir, implementada para la herramienta de análisis
   estático de código [Credo](http://credo-ci.org).
 
-### Herramientas
+### <a name="tools"> Herramientas
 
-Dirígete a [Awesome Elixir][Code Analysis] para encontrar librerías y herramientas
-que puedan ayudarte con el análisis de código y corrección estilo.
+Dirigirse a [Awesome Elixir][Code Analysis] para encontrar bibliotecas y herramientas
+que puedan ayudar con el análisis de código y corrección estilo.
 
 ## <a name="getting-involved">Cómo participar</a>
 
-### Contribuir
+### <a name="contributing"></a> Contribuir
 
 Es nuestra esperanza que esto se convierta en un lugar central en el que la comunidad
 discuta las mejores prácticas en Elixir.
@@ -1307,14 +1337,15 @@ Este trabajo está hecho bajo licencia
 
 La estructura de esta guía, partes del código de ejemplo, y muchos otros puntos iniciales
 de este documento fueron tomados de la [Ruby community style guide].
-Muchas cosas ya eran directamente aplicables a Elixir, lo que nos permitió sacar
+Muchas cosas ya eran directamente aplicables a Elixir, lo que permitió sacar
 antes este documento y empezar más rápido.
 
 Aquí está la [lista de gente que ha contribuido amablemente][Contributors] a este
 proyecto.
 
 <!-- Enlaces -->
-[Chinese Traditional]: https://github.com/elixirtw/elixir_style_guide/blob/master/README_zhTW.md
+[Chino Simplificado]: https://github.com/geekerzp/elixir_style_guide/blob/master/README-zhCN.md
+[Chino Tradicional]: https://github.com/elixirtw/elixir_style_guide/blob/master/README_zhTW.md
 [Code Analysis]: https://github.com/h4cc/awesome-elixir#code-analysis
 [Code Of Conduct]: https://github.com/christopheradams/elixir_style_guide/blob/master/CODE_OF_CONDUCT.md
 [Code Formatter]: https://hexdocs.pm/elixir/Code.html#format_string!/2
@@ -1323,21 +1354,18 @@ proyecto.
 [Contributors]: https://github.com/christopheradams/elixir_style_guide/graphs/contributors
 [Elixir Style Guide]: https://github.com/christopheradams/elixir_style_guide
 [Elixir]: http://elixir-lang.org
+[Español]: https://github.com/albertoalmagro/elixir_style_guide/blob/spanish/README_esES.md
 [ExDoc]: https://github.com/elixir-lang/ex_doc
-[ExUnit]: https://hexdocs.pm/ex_unit/ExUnit.html
+[Frances]: https://github.com/ronanboiteau/elixir_style_guide/blob/master/README_frFR.md[ExUnit]: https://hexdocs.pm/ex_unit/ExUnit.html
 [Guard Expressions]: http://elixir-lang.org/getting-started/case-cond-and-if.html#expressions-in-guard-clauses
 [Hex]: https://hex.pm/packages
+[Ingles]: https://github.com/christopheradams/elixir_style_guide/
+[Japones]: https://github.com/kenichirow/elixir_style_guide/blob/master/README-jaJP.md
+[Coreano]: https://github.com/marocchino/elixir_style_guide/blob/new-korean/README-koKR.md
 [License]: http://creativecommons.org/licenses/by/3.0/deed.en_US
 [mix format]: https://hexdocs.pm/mix/Mix.Tasks.Format.html
 [Module Attributes]: http://elixir-lang.org/getting-started/module-attributes.html#as-annotations
+[Portugues]: https://github.com/gusaiani/elixir_style_guide/blob/master/README_ptBR.md
 [Ruby community style guide]: https://github.com/bbatsov/ruby-style-guide
 [Sentence Spacing]: http://en.wikipedia.org/wiki/Sentence_spacing
 [Stargazers]: https://github.com/christopheradams/elixir_style_guide/stargazers
-[Chino Simplificado]: https://github.com/geekerzp/elixir_style_guide/blob/master/README-zhCN.md
-[Chino Tradicional]: https://github.com/elixirtw/elixir_style_guide/blob/master/README_zhTW.md
-[Frances]: https://github.com/ronanboiteau/elixir_style_guide/blob/master/README_frFR.md
-[Japones]: https://github.com/kenichirow/elixir_style_guide/blob/master/README-jaJP.md
-[Coreano]: https://github.com/marocchino/elixir_style_guide/blob/new-korean/README-koKR.md
-[Portugues]: https://github.com/gusaiani/elixir_style_guide/blob/master/README_ptBR.md
-[Ingles]: https://github.com/christopheradams/elixir_style_guide/
-[Español]: https://github.com/albertoalmagro/elixir_style_guide/blob/spanish/README_esES.md
