@@ -13,6 +13,8 @@ test:
 compile:
 	@echo "Building documents ..."
 	@rm -rf doc/
+	@mix local.hex --force;
+	@mix local.rebar --force;
 	@mix deps.get
 	@mix docs
 
