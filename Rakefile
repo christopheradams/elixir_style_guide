@@ -1,7 +1,6 @@
 task :test do
   exit_code = 0
-  langs = "es_MX,es_ES"
-  files = Dir["./{#{langs}}/*.md"] << "CONTRIBUTING.md" << "README.md"
+  files = Dir["./i18n/*.md"] << "CONTRIBUTING.md" << "README.md"
 
   # 'MD036' # Emphasis used instead of a header
   # 'MD033' # Inline HTML - allow for anchor links in each bullet point

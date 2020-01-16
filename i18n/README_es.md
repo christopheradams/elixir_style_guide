@@ -67,10 +67,10 @@ Las traducciones de la guía están disponibles en los siguientes lenguajes:
 * [Español]
 * [Ingles]
 
-
 ## Formato
 
-Elixir v1.6 introduce el __formateador de código__ ( [Code Formatter] ) y la tarea de [mix format].
+Elixir v1.6 introduce el __formateador de código__ ( [Code Formatter] ) y
+la tarea de [mix format].
 Se debe preferir el formateador para todos los proyectos nuevos y el código fuente.
 
 El formateador de código aplica automáticamente las reglas de esta sección,
@@ -100,7 +100,7 @@ pero se proporcionan aquí como ejemplos del estilo preferido.
   ```sh
   git config --global core.autocrlf true
   ```
-  
+
 * <a name="line-length"></a>
   Limitar las líneas a 98 caracteres.
   De lo contrario, asignar la opción de `:line_length` en el archivo `.formatter.exs`.
@@ -137,9 +137,9 @@ pero se proporcionan aquí como ejemplos del estilo preferido.
 
   ```elixir
   def some_function(some_data) do
-    some_data 
-	  |> other_function() 
-	  |> List.first()
+    some_data
+      |> other_function()
+      |> List.first()
   end
 
   def some_function do
@@ -165,7 +165,7 @@ pero se proporcionan aquí como ejemplos del estilo preferido.
 
 * <a name="long-dos"></a>
   Si se utiliza la sintaxis `do:` con funciones y la línea que constituye el cuerpo
-  de la función es demasiado larga, se debe poner el `do:` en una nueva línea con 
+  de la función es demasiado larga, se debe poner el `do:` en una nueva línea con
   un nivel de indentación más que la línea anterior.
   <sup>[[enlace](#long-dos)]</sup>
 
@@ -174,7 +174,8 @@ pero se proporcionan aquí como ejemplos del estilo preferido.
     do: Enum.map(args, fn arg -> arg <> " is on a very long line!" end)
   ```
 
-  Cuando la cláusula `do:` comienza en su propia línea, se trata como una función multilínea separándola con líneas en blanco.
+  Cuando la cláusula `do:` comienza en su propia línea, se trata como una
+  función multilínea separándola con líneas en blanco.
 
   ```elixir
   # no recomendado
@@ -184,7 +185,7 @@ pero se proporcionan aquí como ejemplos del estilo preferido.
 
   # recomendado
   def some_function([]), do: :empty
-  
+
   def some_function(_),
     do: :very_long_line_here
   ```
@@ -233,9 +234,9 @@ pero se proporcionan aquí como ejemplos del estilo preferido.
   ```
 
 * <a name="multiline-enums"></a>
-  Si una lista, mapa o estructura abarca varias líneas, colocar cada elemento, así como
-   los corchetes de apertura y cierre, en su propia línea.
-   Sangrar cada elemento un nivel, pero no los corchetes.  <sup>[[link](#multiline-enums)]</sup>
+  Si una lista, mapa o estructura abarca varias líneas, colocar cada elemento,
+  así como los corchetes de apertura y cierre, en su propia línea.
+  Sangrar cada elemento un nivel, pero no los corchetes.  <sup>[[link](#multiline-enums)]</sup>
 
   ```elixir
   # no recomendado
@@ -280,8 +281,8 @@ pero se proporcionan aquí como ejemplos del estilo preferido.
   ```
 
 * <a name="multiline-case-clauses"></a>
-  Cuando las cláusulas `case` o `cond` abarcan multiples líneas, separar cada una con una 
-  línea en blanco.
+  Cuando las cláusulas `case` o `cond` abarcan multiples líneas, separar cada
+  una con una línea en blanco.
   <sup>[[link](#multiline-case-clauses)]</sup>
 
   ```elixir
@@ -304,7 +305,7 @@ pero se proporcionan aquí como ejemplos del estilo preferido.
   ```
 
 * <a name="comments-above-line"></a>
-  Colocar los comentarios sobre la línea que se comenta.  
+  Colocar los comentarios sobre la línea que se comenta.
   <sup>[[link](#comments-above-line)]</sup>
 
   ```elixir
@@ -358,7 +359,8 @@ pero se proporcionan aquí como ejemplos del estilo preferido.
 ### Paréntesis
 
 * <a name="parentheses-pipe-operator"></a>
-  Usar paréntesis para las funciones de aridad uno `function/1` cuando se usa el operador de tubería (pipe) (`|>`).
+  Usar paréntesis para las funciones de aridad uno `function/1` cuando se usa el
+  operador de tubería (pipe) (`|>`).
   <sup>[[link](#parentheses-pipe-operator)]</sup>
 
   ```elixir
@@ -420,7 +422,7 @@ una práctica generalmente preferida.
 ### Expresiones
 
 * <a name="single-line-defs"></a>
-  Agrupar `def`s de una sola línea que coincidan en nombre de función y respuesta, 
+  Agrupar `def`s de una sola línea que coincidan en nombre de función y respuesta,
   pero separar los `def`s multilinea o no coincidentes con una línea en blanco.
   <sup>[[link](#single-line-defs)]</sup>
 
@@ -479,10 +481,10 @@ una práctica generalmente preferida.
     |> String.trim()
   ```
 
-  Aunque este sea el método recomendado, se debe tener en cuenta que al copiar y pegar
-  pipelines multilínea en IEx podría causar un error de sintaxis, ya que IEx
-  evaluará la primera línea sin darse cuenta de que la siguiente línea tiene
-  otro pipeline.
+  Aunque este sea el método recomendado, se debe tener en cuenta que al copiar
+  y pegar pipelines multilínea en IEx podría causar un error de sintaxis,
+  ya que IEx evaluará la primera línea sin darse cuenta de que la siguiente
+  línea tiene otro pipeline.
 
 * <a name="avoid-single-pipelines"></a>
   Evitar utilizar el operador pipe una única vez.
@@ -511,8 +513,6 @@ una práctica generalmente preferida.
   # recomendado
   some_string |> String.trim() |> String.downcase() |> String.codepoints()
   ```
-
-
 
 ### Sintaxis
 
@@ -613,13 +613,13 @@ una práctica generalmente preferida.
 
   # no recomendado
   def my_func do
-	# ¿es una variable o una llamada a una función?
-    do_stuff 
+    # ¿es una variable o una llamada a una función?
+    do_stuff
   end
 
   # recomendado
   def my_func do
-	# esto es claramente una llamada a una función
+    # esto es claramente una llamada a una función
     do_stuff()
   end
   ```
@@ -683,7 +683,8 @@ una práctica generalmente preferida.
 * <a name="predicate-macro-names-with-guards"></a>
   Los nombres de macros predicado (funciones generadas en tiempo de compilación que
   devuelven un valor booleano) _que pueden ser utilizadas dentro de guards_ deberían
-  prefijarse con `is_`. Para una lista de las expresiones permitidas, ver la documentación de [Guard][Guard Expressions].
+  prefijarse con `is_`. Para una lista de las expresiones permitidas, ver la
+  documentación de [Guard][Guard Expressions].
   <sup>[[enlace](#predicate-macro-names-with-guards)]</sup>
 
   ```elixir
@@ -722,8 +723,6 @@ una práctica generalmente preferida.
   Escribir código expresivo e intentar transmitir la intención del programa a
   través de flujos de control, estructura y nombrado.
   <sup>[[enlace](#expressive-code)]</sup>
-
-
 
 * <a name="comment-grammar"></a>
   Los comentarios que sean más largos de una palabra se escribirán capitalizados,
@@ -1100,8 +1099,8 @@ con las demás directivas (ver [Módulos](#modules)).
   ```
 
 * <a name="spec-spacing"></a>
-  Situar las especificaciones justo antes de la definición de la función después de `@doc`,
-  sin separarlas con una línea en blanco.
+  Situar las especificaciones justo antes de la definición de la función
+  después de `@doc`, sin separarlas con una línea en blanco.
   <sup>[[enlace](#spec-spacing)]</sup>
 
   ```elixir
@@ -1146,8 +1145,8 @@ con las demás directivas (ver [Módulos](#modules)).
   ```
 
 * <a name="multiline-structs"></a>
-  Si la definición de una estructura abarca múltiples líneas, poner cada elemento en su propia línea,
-  manteniendo los elementos alineados.
+  Si la definición de una estructura abarca múltiples líneas, poner cada elemento
+  en su propia línea, manteniendo los elementos alineados.
   <sup>[[link](#multiline-structs)]</sup>
 
   ```elixir
@@ -1158,7 +1157,8 @@ con las demás directivas (ver [Módulos](#modules)).
             quux: 1
   ```
 
-  Si una estructura con múltiples líneas requiere corchetes, formatear como una lista de múltiples líneas:
+  Si una estructura con múltiples líneas requiere corchetes, formatear como una lista
+  de múltiples líneas:
 
   ```elixir
   defstruct [
@@ -1218,7 +1218,8 @@ con las demás directivas (ver [Módulos](#modules)).
   ```
 
 * <a name="map-key-atom"></a>
-  Usar la sintaxis abreviada de llave-valor para los mapas cuando todas las llaves son átomos.
+  Usar la sintaxis abreviada de llave-valor para los mapas cuando todas las
+  llaves son átomos.
   <sup>[[link](#map-key-atom)]</sup>
 
   ```elixir
@@ -1230,7 +1231,8 @@ con las demás directivas (ver [Módulos](#modules)).
   ```
 
 * <a name="map-key-arrow"></a>
-  Usar la sintaxis detallada de llave-valor para los mapas si alguna clave no es un átomo.
+  Usar la sintaxis detallada de llave-valor para los mapas si alguna clave no
+  es un átomo.
   <sup>[[link](#map-key-arrow)]</sup>
 
   ```elixir
@@ -1244,8 +1246,8 @@ con las demás directivas (ver [Módulos](#modules)).
 ### <a name="strings"></a> Cadenas
 
 * <a name="strings-matching-with-concatenator"></a>
-  Hacer coincidencia de cadenas utilizando la concatenación de string en lugar de patrones
-  binarios:
+  Hacer coincidencia de cadenas utilizando la concatenación de string en lugar
+  de patrones binarios:
   <sup>[[enlace](#strings-matching-with-concatenator)]</sup>
 
   ```elixir
@@ -1269,9 +1271,9 @@ _Por el momento no se han añadido recomendaciones para expresiones regulares._
 ### Testing
 
 * <a name="testing-assert-order"></a>
-  Cuando se escriban aserciones con [ExUnit], colocar la expresión que se está probando a la izquierda
-  del operador, y el resultado esperado a la derecha, a menos que sea
-  un patrón de coincidencia (pattern match)
+  Cuando se escriban aserciones con [ExUnit], colocar la expresión que se está
+  probando a la izquierda del operador, y el resultado esperado a la derecha,
+  a menos que sea un patrón de coincidencia (pattern match)
   <sup>[[Enlace](#testing-assert-order)]</sup>
 
   ```elixir
@@ -1356,7 +1358,8 @@ proyecto.
 [Elixir]: http://elixir-lang.org
 [Español]: https://github.com/albertoalmagro/elixir_style_guide/blob/spanish/README_esES.md
 [ExDoc]: https://github.com/elixir-lang/ex_doc
-[Frances]: https://github.com/ronanboiteau/elixir_style_guide/blob/master/README_frFR.md[ExUnit]: https://hexdocs.pm/ex_unit/ExUnit.html
+[Frances]: https://github.com/ronanboiteau/elixir_style_guide/blob/master/README_frFR.md
+[ExUnit]: https://hexdocs.pm/ex_unit/ExUnit.html
 [Guard Expressions]: http://elixir-lang.org/getting-started/case-cond-and-if.html#expressions-in-guard-clauses
 [Hex]: https://hex.pm/packages
 [Ingles]: https://github.com/christopheradams/elixir_style_guide/
