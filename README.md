@@ -8,7 +8,6 @@
   * [Whitespace](#whitespace)
   * [Indentation](#indentation)
   * [Parentheses](#parentheses)
-  * [Syntax](#syntax)
 * __[The Guide](#the-guide)__
   * [Expressions](#expressions)
   * [Naming](#naming)
