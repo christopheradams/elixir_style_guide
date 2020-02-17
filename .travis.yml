@@ -3,7 +3,7 @@ sudo: false
 language: ruby
 
 rvm:
-  - 2.3.0
+  - 2.7.0
 
 install:
   - gem install mdl rake
