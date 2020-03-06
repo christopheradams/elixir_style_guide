@@ -267,22 +267,30 @@ are provided here as examples of the preferred style.
   ```
 
 * <a name="multiline-case-clauses"></a>
-  When `case` or `cond` clauses span multiple lines, separate each clause with a
-  blank line.
+  If any `case` or `cond` clause needs more than one line (due to line length,
+  multiple expressions in the clause body, etc.), use multi-line syntax for all
+  clauses, and separate each one with a blank line.
   <sup>[[link](#multiline-case-clauses)]</sup>
 
   ```elixir
   # not preferred
   case arg do
+    true -> IO.puts("ok"); :ok
+    false -> :error
+  end
+
+  # not preferred
+  case arg do
     true ->
+      IO.puts("ok")
       :ok
-    false ->
-      :error
+    false -> :error
   end
 
   # preferred
   case arg do
     true ->
+      IO.puts("ok")
       :ok
 
     false ->
