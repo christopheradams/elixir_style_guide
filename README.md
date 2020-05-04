@@ -1346,5 +1346,5 @@ project.
 [Portuguese]: https://github.com/gusaiani/elixir_style_guide/blob/master/README_ptBR.md
 [Ruby community style guide]: https://github.com/bbatsov/ruby-style-guide
 [Sentence Spacing]: http://en.wikipedia.org/wiki/Sentence_spacing
-[Spanish]: https://github.com/albertoalmagro/elixir_style_guide/blob/spanish/README_esES.md
+[Spanish]: https://github.com/iver/elixir_style_guide/blob/spanish/i18n/README_es.md
 [Stargazers]: https://github.com/christopheradams/elixir_style_guide/stargazers
