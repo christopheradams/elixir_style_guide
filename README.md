@@ -486,8 +486,12 @@ generally preferred practice.
   # not preferred
   some_string |> String.downcase()
 
+  System.version() |> Version.parse()
+
   # preferred
   String.downcase(some_string)
+
+  Version.parse(System.version())
   ```
 
 * <a name="bare-variables"></a>
