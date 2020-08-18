@@ -835,7 +835,7 @@ generally preferred practice.
   1. `@callback`
   1. `@macrocallback`
   1. `@optional_callbacks`
-  1. `defmacro`, `defguard`, `def`, etc.
+  1. `defmacro`, `defmodule`, `defguard`, `def`, etc.
 
   Add a blank line between each grouping, and sort the terms (like module names)
   alphabetically.
