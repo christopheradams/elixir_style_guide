@@ -854,10 +854,10 @@ generally preferred practice.
     import Something
     import SomethingElse
 
+    require Integer
+
     alias My.Long.Module.Name
     alias My.Other.Module.Example
-
-    require Integer
 
     @module_attribute :foo
     @other_attribute 100
