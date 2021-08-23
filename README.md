@@ -391,7 +391,7 @@ are provided here as examples of the preferred style.
   2 |> rem 3 |> g
 
   # preferred
-  2 |> rem(3) |> g
+  2 |> rem(3) |> g()
   ```
 
 * <a name="keyword-list-brackets"></a>
