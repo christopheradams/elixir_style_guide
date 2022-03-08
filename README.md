@@ -798,7 +798,7 @@ generally preferred practice.
   <sup>[[link](#one-module-per-file)]</sup>
 
 * <a name="underscored-filenames"></a>
-  Use `snake_case` file names for `CamelCase` module names.
+  Use `snake_case` file names for `PascalCase` module names.
   <sup>[[link](#underscored-filenames)]</sup>
 
   ```elixir
