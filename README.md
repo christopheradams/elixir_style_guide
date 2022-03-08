@@ -642,9 +642,9 @@ generally preferred practice.
   end
   ```
 
-* <a name="camel-case"></a>
-  Use `CamelCase` for modules (keep acronyms like HTTP, RFC, XML uppercase).
-  <sup>[[link](#camel-case)]</sup>
+* <a name="pascal-case"></a>
+  Use `PascalCase` for modules (keep acronyms like HTTP, RFC, XML uppercase).
+  <sup>[[link](#pascal-case)]</sup>
 
   ```elixir
   # not preferred
