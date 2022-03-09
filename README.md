@@ -616,6 +616,10 @@ generally preferred practice.
 
 ### Naming
 
+This guide follows the [Naming Conventions] from the Elixir docs,
+including the use of `snake_case` and `CamelCase` to describe the casing
+rules.
+
 * <a name="snake-case"></a>
   Use `snake_case` for atoms, functions and variables.
   <sup>[[link](#snake-case)]</sup>
@@ -1355,6 +1359,7 @@ project.
 [License]: http://creativecommons.org/licenses/by/3.0/deed.en_US
 [Mix format]: https://hexdocs.pm/mix/Mix.Tasks.Format.html
 [Module Attributes]: http://elixir-lang.org/getting-started/module-attributes.html#as-annotations
+[Naming Conventions]: https://hexdocs.pm/elixir/naming-conventions.html
 [Portuguese]: https://github.com/gusaiani/elixir_style_guide/blob/master/README_ptBR.md
 [Ruby community style guide]: https://github.com/bbatsov/ruby-style-guide
 [Sentence Spacing]: http://en.wikipedia.org/wiki/Sentence_spacing
