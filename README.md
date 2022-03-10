@@ -674,26 +674,26 @@ rules.
   end
   ```
 
-* <a name="predicate-macro-names-with-guards"></a>
-  The name of macros suitable for use in guard expressions should be prefixed
-  with `is_`.
-  For a list of allowed expressions, see the [Guard][Guard Expressions] docs.
-  <sup>[[link](#predicate-macro-names-with-guards)]</sup>
-
-  ```elixir
-  defguard is_cool(var) when var == "cool"
-  defguardp is_very_cool(var) when var == "very cool"
-  ```
-
-* <a name="predicate-macro-names-no-guards"></a>
-  The names of predicate functions _that cannot be used within guards_ should
-  have a trailing question mark (`?`) rather than the `is_` (or similar) prefix.
-  <sup>[[link](#predicate-macro-names-no-guards)]</sup>
+* <a name="predicate-function-trailing-question-mark"></a>
+  Functions that return a boolean (`true` or `false`) should be named
+  with a trailing question mark.
+  <sup>[[link](#predicate-function-trailing-question-mark)]</sup>
 
   ```elixir
   def cool?(var) do
-    # Complex check if var is cool not possible in a pure function.
+    String.contains?(var, "cool")
   end
+  ```
+
+* <a name="predicate-function-is-prefix"></a>
+  Boolean checks that can be used in guard clauses should be named with
+  an `is_` prefix.
+  For a list of allowed expressions, see the [Guard][Guard Expressions] docs.
+  <sup>[[link](#predicate-function-is-prefix)]</sup>
+
+  ```elixir
+  defguard is_cool(var) when var == "cool"
+  defguard is_very_cool(var) when var == "very cool"
   ```
 
 * <a name="private-functions-with-same-name-as-public"></a>
