@@ -697,16 +697,18 @@ rules.
   ```
 
 * <a name="private-functions-with-same-name-as-public"></a>
-  Private functions with the same name as public functions should start with
-  `do_`.
+  Private functions should not have the same name as public functions.
+  Also, the `def name` and `defp do_name` pattern is discouraged.
+
+  Usually one can try to find more descriptive names focusing on the differences.
   <sup>[[link](#private-functions-with-same-name-as-public)]</sup>
 
   ```elixir
-  def sum(list), do: do_sum(list, 0)
+  def sum(list), do: sum_total(list, 0)
 
   # private functions
-  defp do_sum([], total), do: total
-  defp do_sum([head | tail], total), do: do_sum(tail, head + total)
+  defp sum_total([], total), do: total
+  defp sum_total([head | tail], total), do: sum_total(tail, head + total)
   ```
 
 ### Comments
