@@ -23,6 +23,7 @@
   * _Regular Expressions_
   * [Metaprogramming](#metaprogramming)
   * [Testing](#testing)
+  * [Migrations](#migrations)
 * __[Resources](#resources)__
   * [Alternative Style Guides](#alternative-style-guides)
   * [Tools](#tools)
@@ -1283,6 +1284,328 @@ _No guidelines for regular expressions have been added yet._
   # required - the assertion is a pattern match
   assert {:ok, expected} = actual_function(3)
   ```
+
+### Migrations
+
+* <a name="migration-files-generator"></a>
+  Use the `mix ecto.gen.migration` task to generate migration files.
+  <sup>[[link](#migration-files-generator)]</sup>
+
+  ```bash
+  mix ecto.gen.migration file_name
+  ```
+
+* <a name="migration-files-name"></a>
+  Use the plural form of the table name when naming migration files.
+  <sup>[[link](#migration-files-name)]</sup>
+
+  ```bash
+  mix ecto.gen.migration *_users
+  ```
+
+  ```bash
+  mix ecto.gen.migration *_products
+  ```
+
+* <a name="migration-files-multiple"></a>
+  Suffix migration files with __Rev{number}__, __{number}__ in ascending order, if there are mulitple migration files with the same name.
+  <sup>[[link](#migration-files-multiple)]</sup>
+
+  ```bash
+  mix ecto.gen.migration *_users_rev1
+  ```
+
+  ```bash
+  mix ecto.gen.migration *_users_rev2
+  ```
+
+* <a name="migration-files-name-verb"></a>
+  Prefix migration files with a verb describing their purpose.
+  <sup>[[link](#migration-files-name-verb)]</sup>
+
+  * create_* to create a table
+
+    ```bash
+    mix ecto.gen.migration create_users
+    ```
+
+    ```elixir
+    # file content
+    
+    defmodule Chainstaker.Repo.Migrations.CreateUsers do
+      use Ecto.Migration
+
+      def change do
+        create table(:users) do
+          # fields
+        end
+      end
+    end
+    ```
+
+  * add_field_name_to_* to add a single field
+
+    ```bash
+    mix ecto.gen.migration add_email_to_users
+    ```
+
+    ```elixir
+    # file content
+    
+    defmodule Chainstaker.Repo.Migrations.AddEmailToUsers do
+      use Ecto.Migration
+
+      def change do
+        alter table(:users) do
+          add :email, :string
+        end
+      end
+    end
+    ```
+  
+  * add_fields_to_* to add multiple fields
+
+    ```bash
+    mix ecto.gen.migration add_fields_to_users
+    ```
+
+    ```elixir
+    # file content
+    
+    defmodule Chainstaker.Repo.Migrations.AddFieldsToUsers do
+      use Ecto.Migration
+
+      def change do
+        alter table(:users) do
+          add :country, :string
+          add :selected_account_id, references(:accounts, on_delete: :nothing)
+        end
+      end
+    end
+    ```
+
+  * update_field_name_in_* to remove or change a single field
+
+    ```bash
+    mix ecto.gen.migration update_email_in_users
+    ```
+
+    ```elixir
+    # file content
+    
+    defmodule Chainstaker.Repo.Migrations.UpdateEmailInUsers do
+      use Ecto.Migration
+
+      def change do
+        alter table(:users) do
+          modify :email, :string, null: false
+        end
+      end
+    end
+    ```
+
+    ```bash
+    mix ecto.gen.migration update_email_in_users_rev1
+    ```
+
+    ```elixir
+    # file content
+    
+    defmodule Chainstaker.Repo.Migrations.UpdateEmailInUsersRev1 do
+      use Ecto.Migration
+
+      def change do
+        alter table(:users) do
+          modify :email, :boolean, default: false
+        end
+      end
+    end
+    ```
+
+    ```bash
+    mix ecto.gen.migration update_email_in_users_rev2
+    ```
+
+    ```elixir
+    # file content
+    
+    defmodule Chainstaker.Repo.Migrations.UpdateEmailInUsersRev2 do
+      use Ecto.Migration
+
+      def change do
+        alter table(:users) do
+          remove :email
+        end
+      end
+    end
+    ```
+
+  * update_fields_in_* to remove or change multiple fields
+
+    ```bash
+    mix ecto.gen.migration update_fields_in_users
+    ```
+
+    ```elixir
+    # file content
+    
+    defmodule Chainstaker.Repo.Migrations.UpdateFieldsInUsers do
+      use Ecto.Migration
+
+      def change do
+        alter table(:users) do
+          modify :email, :string, null: false
+          modify :selected_account_id, references(:accounts, on_delete: :delete_all)
+          remove :country
+        end
+      end
+    end
+    ```
+
+    ```bash
+    mix ecto.gen.migration update_fields_in_users_rev1
+    ```
+
+    ```elixir
+    # file content
+
+    defmodule Chainstaker.Repo.Migrations.UpdateFieldsInUsersRev1 do
+      use Ecto.Migration
+
+      def change do
+        alter table(:users) do
+          modify :email, :boolean, default: false
+          modify :selected_account_id, references(:accounts, on_delete: :delete_all)
+          remove :country
+        end
+      end
+    end
+    ```
+
+    ```bash
+    mix ecto.gen.migration update_fields_in_users_rev2
+    ```
+
+    ```elixir
+    # file content
+    
+    defmodule Chainstaker.Repo.Migrations.UpdateFieldsInUsersRev2 do
+      use Ecto.Migration
+
+      def change do
+        alter table(:users) do
+          modify :email, :string, null: false
+          remove :country
+        end
+      end
+    end
+    ```
+  
+  * create_index_in_* to create (unique) index(es)
+
+    ```bash
+    mix ecto.gen.migration create_index_in_users
+    ```
+
+    ```elixir
+    # file content
+    
+    defmodule Chainstaker.Repo.Migrations.CreateIndexInUsers do
+      use Ecto.Migration
+
+      def change do
+        create index("users", [:email])
+      end
+    end
+    ```
+
+    ```bash
+    mix ecto.gen.migration create_index_in_users_rev1
+    ```
+
+    ```elixir
+    # file content
+    
+    defmodule Chainstaker.Repo.Migrations.CreateIndexInUsersRev1 do
+      use Ecto.Migration
+
+      def change do
+        create index("users", [:selected_account_id])
+        create index("users", [:name])
+
+        create(unique_index("users", [:email])
+      end
+    end
+    ```
+
+    ```bash
+    mix ecto.gen.migration create_index_in_users_rev2
+    ```
+
+    ```elixir
+    # file content
+    
+    defmodule Chainstaker.Repo.Migrations.CreateIndexInUsersRev2 do
+      use Ecto.Migration
+
+      def change do
+        create(unique_index("users", [:email])
+      end
+    end
+    ```
+
+  * drop_index_in_* to drop (unique) index(es)
+
+    ```bash
+    mix ecto.gen.migration drop_index_in_users
+    ```
+
+    ```elixir
+    # file content
+    
+    defmodule Chainstaker.Repo.Migrations.DropIndexInUsers do
+      use Ecto.Migration
+
+      def change do
+        drop index("users", [:email])
+      end
+    end
+    ```
+
+    ```bash
+    mix ecto.gen.migration drop_index_in_users_rev1
+    ```
+
+    ```elixir
+    # file content
+    
+    defmodule Chainstaker.Repo.Migrations.DropIndexInUsersRev1 do
+      use Ecto.Migration
+
+      def change do
+        drop index("users", [:selected_account_id])
+        drop index("users", [:name])
+
+        drop(unique_index("users", [:email])
+      end
+    end
+    ```
+
+    ```bash
+    mix ecto.gen.migration drop_index_in_users_rev2
+    ```
+
+    ```elixir
+    # file content
+    
+    defmodule Chainstaker.Repo.Migrations.DropIndexInUsersRev2 do
+      use Ecto.Migration
+
+      def change do
+        drop(unique_index("users", [:email])
+      end
+    end
+    ```
 
 ## Resources
 
