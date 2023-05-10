@@ -62,6 +62,7 @@ Translations of the guide are available in the following languages:
 * [Japanese]
 * [Korean]
 * [Portuguese]
+* [Russian]
 * [Spanish]
 
 ## Formatting
@@ -1364,6 +1365,7 @@ project.
 [Naming Conventions]: https://hexdocs.pm/elixir/naming-conventions.html
 [Portuguese]: https://github.com/gusaiani/elixir_style_guide/blob/master/README_ptBR.md
 [Ruby community style guide]: https://github.com/bbatsov/ruby-style-guide
+[Russian]: https://github.com/sofialapteva/elixir_style_guide/blob/russian/README_ru.md
 [Sentence Spacing]: http://en.wikipedia.org/wiki/Sentence_spacing
 [Spanish]: https://github.com/iver/elixir_style_guide/blob/spanish/i18n/README_es.md
 [Stargazers]: https://github.com/christopheradams/elixir_style_guide/stargazers
