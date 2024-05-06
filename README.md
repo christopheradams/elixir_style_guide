@@ -64,6 +64,7 @@ Translations of the guide are available in the following languages:
 * [Portuguese]
 * [Russian]
 * [Spanish]
+* [Thai]
 
 ## Formatting
 
@@ -1369,3 +1370,4 @@ project.
 [Sentence Spacing]: http://en.wikipedia.org/wiki/Sentence_spacing
 [Spanish]: https://github.com/iver/elixir_style_guide/blob/spanish/i18n/README_es.md
 [Stargazers]: https://github.com/christopheradams/elixir_style_guide/stargazers
+[Thai]: https://github.com/tamectosphere/elixir_style_guide/blob/feat/thai-translation/README_th.md
