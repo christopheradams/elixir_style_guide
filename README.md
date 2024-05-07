@@ -733,7 +733,7 @@ rules.
   ```
 
 * <a name="comment-line-length"></a>
-  Limit comment lines to 100 characters.
+  Limit comment lines to 80 characters.
   <sup>[[link](#comment-line-length)]</sup>
 
 #### Comment Annotations
